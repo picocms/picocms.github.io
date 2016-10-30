@@ -100,7 +100,7 @@ redirect_from:
 
 <div class="one-third">
     <h3>Clean Blog</h3>
-    <p>A clean, Bootstrap blog theme for Pico.</p>
+    <p>A clean, <a href="https://getbootstrap.com/">Bootstrap</a>-based blog theme for Pico.</p>
     <p><a href="https://github.com/BesrourMS/clean-blog" class="button" target="_blank">Download</a></p>
 </div>
 <div class="one-third">
@@ -110,7 +110,7 @@ redirect_from:
 </div>
 <div class="one-third last">
     <h3>Story</h3>
-    <p>A simple & clean, Bootstrap blog theme for Pico</p>
+    <p>A simple & clean, <a href="https://getbootstrap.com/">Bootstrap</a>-based blog theme for Pico.</p>
     <p><a href="https://github.com/BesrourMS/story" class="button" target="_blank">Download</a></p>
 </div>
 <div class="clear"></div>
