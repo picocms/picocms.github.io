@@ -204,9 +204,9 @@ We'll take it from there.  Be sure to check back and see if we have feedback or 
 [CreatePR]: {{ site.gh_pages_url }}/pulls
 [OfficialThemes]: {{ site.github.url }}/themes/
 [OfficialPlugins]: {{ site.github.url }}/plugins/
-[EditWebsite]: {{ site.gh_pages_url }}/tree/{{ gh_pages_branch }}
-[EditThemes]: {{ site.gh_pages_url }}/tree/{{ gh_pages_branch }}/_themes
-[EditPlugins]: {{ site.gh_pages_url }}/tree/{{ gh_pages_branch }}/_plugins
+[EditWebsite]: {{ site.gh_pages_url }}/tree/{{ site.gh_pages_branch }}
+[EditThemes]: {{ site.gh_pages_url }}/tree/{{ site.gh_pages_branch }}/_themes
+[EditPlugins]: {{ site.gh_pages_url }}/tree/{{ site.gh_pages_branch }}/_plugins
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [GitHubDesktop]: https://desktop.github.com/
 [GitHubGuideContributing]: https://guides.github.com/activities/contributing-to-open-source/
