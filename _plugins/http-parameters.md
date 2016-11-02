@@ -3,7 +3,7 @@ heading: HTTP Parameters
 categories:
   - utility
 description: GET and POST things!
-link: https://github.com/PhrozenByte/pico-file-prefixes
+link: https://github.com/PhrozenByte/pico-http-params
 info:
   By: "[PhrozenByte](https://github.com/PhrozenByte/)"
   License: "[The MIT License](https://github.com/PhrozenByte/pico-http-params/blob/master/LICENSE)"
