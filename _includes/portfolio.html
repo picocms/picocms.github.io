@@ -1,0 +1,108 @@
+{% assign portfolio = include.portfolio | default: page.portfolio.items %}
+{% assign categories = include.categories | default: page.portfolio.categories %}
+
+<div class="portfolio-wrapper showcase">
+    <ul class="filter">
+        <li><a class="active" href="#" data-filter="*">All</a></li>
+        {% for category in categories %}
+            <li><a href="#" data-filter=".{{ category[0] }}">{{ category[1] }}</a></li>
+        {% endfor %}
+    </ul>
+    <ul class="items col4">
+        {% for item in portfolio %}
+            {% capture itemHeading %}
+                <h2>{{ item.heading | markdownify | remove: "<p>" | remove: "</p>" }}</h2>
+            {% endcapture %}
+            {% capture itemInfo %}
+                {% if item.info %}
+                    <ul class="item-info">
+                        {% for info in item.info %}
+                            <li>
+                                {% assign infocheck = info[0] | slice: 0 %}{% if infocheck != "_" %}<span class="lite1">{{ info[0] | markdownify | remove: "<p>" | remove: "</p>" | rstrip }}:</span> {% endif %}
+                                {{ info[1] | markdownify | remove: "<p>" | remove: "</p>" }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endcapture %}
+            {% capture itemButton %}
+                <a href="{{ item.link }}" class="button" target="_blank">
+                    {{ item.button | default: page.portfolio.button | default: "Learn More" }}
+                </a>
+            {% endcapture %}
+            {% capture itemImage %}
+                {% assign imageCount = item.images|size %}
+                {% if imageCount > 0 %}
+                    {% assign itemIndex = forloop.index %}
+                    <div {% if imageCount > 1 %}id="entry-{{ forloop.index0 }}-carousel" class="image carousel slide"{% else %}class="image single"{% endif %}>
+                        {% if imageCount > 1 %}
+                            <div class="carousel-inner">
+                        {% endif %}
+
+                        {% for image in item.images %}
+                            {% if imageCount > 1 %}
+                                <div class="{% if forloop.first %}active {% endif %}item">
+                            {% endif %}
+
+                            <img alt="" src="{{ site.github.url }}/{{ image }}" />
+                            <a href="{{ site.github.url }}/{{ image }}" class="fancybox-media" rel="item-{{ itemIndex }}">
+                                <span class="link"></span>
+                            </a>
+
+                            {% if imageCount > 1 %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if imageCount > 1 %}
+                            </div>
+                            <a class="carousel-control left" href="#entry-{{ forloop.index0 }}-carousel" data-slide="prev"></a>
+                            <a class="carousel-control right" href="#entry-{{ forloop.index0 }}-carousel" data-slide="next"></a>
+                        {% endif %}
+                    </div>
+                {% elsif page.portfolio.defaultImage %}
+                    <div class="image default">
+                        <img alt="" src="{{ site.github.url }}/{{ page.portfolio.defaultImage }}" />
+                    </div>
+                {% endif %}
+            {% endcapture %}
+
+            {% assign view = item.view | default: include.view | default: page.portfolio.view | default: "jumbovision" %}
+            {% capture itemData %}
+                {% if view == "jumbovision" %}
+                    <div class="content">
+                        {{ itemImage }}
+                    </div>
+                    <div class="item-details">
+                        {{ itemHeading }}
+                        {{ itemInfo }}
+                        {{ item.content }}
+                        {{ itemButton }}
+                    </div>
+                {% else %}
+                    <div class="item-details">
+                        {{ itemHeading }}
+                        {{ itemButton }}
+                        {{ itemInfo }}
+                    </div>
+                    <div class="content">
+                        {{ itemImage }}
+                        {{ item.content }}
+                    </div>
+                {% endif %}
+                <div class="clear"></div>
+            {% endcapture %}
+
+            {% capture itemClassNames %}item {{ view }} {{ item.categories|join: ' ' }}{% unless item.thumbnail %} defaultThumbnail{% endunless %}{% endcapture %}
+            <li class="{{ itemClassNames }}" data-layout="{{ view }}" data-path="{{ item.relative_path }}" data-detailcontent="{{ itemData | xml_escape }}">
+                <a href="#">
+                    <div class="overlay">
+                        <h3>{{ item.heading | markdownify | remove: "<p>" | remove: "</p>" }}</h3>
+                        {% if item.description %}<span class="meta">{{ item.description }}</span>{% endif %}
+                    </div>
+                    <img src="{{ site.github.url }}/{{ item.thumbnail | default: page.portfolio.defaultThumbnail | default: "style/images/defaultThumbnail.png" }}" alt="" />
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

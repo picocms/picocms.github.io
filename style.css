@@ -311,7 +311,7 @@ ol li {
     margin: 0 0 0 -1em;
 }
 ul li:before {
-    position: absolute;
+    float: left;
     display: block;
     width: 1em;
     margin-left: -1em;
@@ -325,6 +325,16 @@ ul li:before {
 }
 ul li ul {
     padding: 0 0 0 1.5em;
+}
+dt {
+    width: 120px;
+    margin: 0 20px 10px 0;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+dd {
+    margin: 0 0 20px 140px;
 }
 .menu ul li:before,
 .contact-info li:before,
@@ -1022,6 +1032,8 @@ ul.contact-info li i {
 .items {
     width: 110%;
     clear: both;
+    padding-left: 0;
+    box-sizing: content-box;
 }
 .items li {
     float: left;
@@ -1043,8 +1055,8 @@ ul.contact-info li i {
     display: inline-block;
 }
 .items li a .overlay,
-.fancybox .overlay  {
-    display: none;
+.fancybox a .overlay  {
+    opacity: 0;
     height: 100%;
     position: absolute;
     text-decoration: none;
@@ -1052,6 +1064,47 @@ ul.contact-info li i {
     z-index: 100;
     background-color: rgba(255,103,96, 0.92);
     padding: 20px;
+    transition: opacity 200ms linear 0s;
+}
+.items li:hover a .overlay,
+.items li.active a .overlay,
+.fancybox:hover a .overlay {
+    opacity: 1;
+    transition: opacity 300ms linear 0s;
+}
+.items li.defaultThumbnail a .overlay {
+    opacity: 1;
+    background-color: transparent;
+    transition: background-color 200ms linear 0s;
+}
+.items li.defaultThumbnail:hover a .overlay,
+.items li.defaultThumbnail.active a .overlay {
+    background-color: rgba(255,103,96, 0.92);
+    transition: background-color 300ms linear 0s;
+}
+.items li.defaultThumbnail a .overlay h3 {
+    color: #616161;
+    transition: color 200ms linear 0s;
+}
+.items li.defaultThumbnail:hover a .overlay h3,
+.items li.defaultThumbnail.active a .overlay h3,
+.items li.defaultThumbnail:hover a .overlay span.meta,
+.items li.defaultThumbnail.active a .overlay span.meta {
+    color: white;
+    transition: color 300ms linear 0s;
+}
+.items li.defaultThumbnail a .overlay span.meta {
+    color: #616161;
+    transition: color 200ms linear 0s;
+}
+.items li.defaultThumbnail a img {
+    opacity: .4;
+    transition: opacity 200ms linear 0s;
+}
+.items li.defaultThumbnail:hover a img
+.items li.defaultThumbnail.active a img {
+    opacity: 1;
+    transition: opacity 300ms linear 0s;
 }
 .items li a .overlay h3,
 .fancybox .overlay h3 {
@@ -1153,6 +1206,53 @@ ul.contact-info li i {
 }
 .portfolio-content .item {
     margin-bottom: 60px
+}
+.portfolio-detail-view .portfolio-detail-content-container {
+    padding: 3em 0;
+}
+.portfolio-detail-view.card .portfolio-detail-content-container {
+    padding-bottom: 1em;
+}
+.portfolio-detail-view.card .content {
+    width: 100%;
+}
+.portfolio-detail-view.card .content > .image {
+    max-width: 30%;
+    float: left;
+    margin: 0 2em 2em 0;
+}
+.portfolio-detail-view.card .content > *:last-child {
+    margin-bottom: 2em;
+    padding-bottom: 0;
+}
+.portfolio-detail-view.card .item-details {
+    float: none;
+    width: 100%;
+}
+.portfolio-detail-view.card .item-details h2 {
+    width: 30%;
+    float: left;
+    margin: 0 1.167em 1.167em 0;
+}
+.portfolio-detail-view.card .item-details ul {
+    margin-bottom: 2em;
+    padding: 0;
+}
+.portfolio-detail-view.card .item-details li {
+    display: inline-block;
+}
+.portfolio-detail-view.card .item-details li:not(:last-child) {
+    margin-right: 5em;
+}
+.portfolio-detail-view.card .item-details .button {
+    float: right;
+    margin: 0 0 1em 2em;
+}
+.portfolio-detail-view.card .content > .image.default {
+    background-color: #2f2f2f;
+}
+.portfolio-detail-view.card .content > .image > img {
+    width: 100%;
 }
 /*-----------------------------------------------------------------------------------*/
 /*	PORTFOLIO NAVIGATION
@@ -2694,6 +2794,17 @@ media_tag_5 {media_subcode:5}
 .portfolio-detail-content-container .content {
     width: 770px;
     position: relative;
+}
+.portfolio-detail-view code,
+.portfolio-detail-view pre {
+    background: #444;
+    border-color: #888;
+}
+.item-info li a {
+    color: inherit;
+}
+.item-info li a:hover {
+    color: #ff6760;
 }
 /*-----------------------------------------------------------------------------------*/
 /*	SHOWCASE SLIDER

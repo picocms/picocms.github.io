@@ -9,6 +9,8 @@ collections:
 - development
 - download
 - cookbook
+- themes
+- plugins
 permalink: pretty
 gems:
 - jekyll-redirect-from
