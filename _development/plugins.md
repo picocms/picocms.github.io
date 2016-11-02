@@ -10,7 +10,7 @@ nav: 3
 
 At the heart of customizing Pico is a plugin. You can 'hook-in' to the Pico
 engine at many different times during the rendering of your site and its content.
-You will find a full example template in [plugins/DummyPlugin.php]({{ site.github.url }}/phpDoc/master/classes/DummyPlugin.html) to get you
+You will find a full example template in [plugins/DummyPlugin.php]({{ site.github.url }}/phpDoc/{{ site.gh_project_branch }}/classes/DummyPlugin.html) to get you
 started on building some great stuff. Otherwise, keep reading to learn how to
 create your first plugin!
 
@@ -37,8 +37,8 @@ for discovery is our [Wiki]({{ site.github.url }}/development/#plugin-wiki).
 
 #### 5. From here, you will be able to hook-in to Pico's processing
 Choose an event that makes sense for your situation. Do you need to load configuration values?
-[onConfigLoaded]({{ site.github.url }}/phpDoc/master/classes/DummyPlugin.html#method_onConfigLoaded). You need to modify the content of the page before it is
-rendered by markdown? [onPageRendering]({{ site.github.url }}/phpDoc/master/classes/DummyPlugin.html#method_onPageRendering). Etc... Plugin developers shouldn't
+[onConfigLoaded]({{ site.github.url }}/phpDoc/{{ site.gh_project_branch }}/classes/DummyPlugin.html#method_onConfigLoaded). You need to modify the content of the page before it is
+rendered by markdown? [onPageRendering]({{ site.github.url }}/phpDoc/{{ site.gh_project_branch }}/classes/DummyPlugin.html#method_onPageRendering). Etc... Plugin developers shouldn't
 manipulate data in "wrong" events, this could lead to unexpected behavior.
 
 > *Note:* Don't forget to set your plugins enabled/disabled state, either by default or
