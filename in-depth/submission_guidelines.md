@@ -82,7 +82,7 @@ Your screenshots should match the following specifications:
 * Fullsize screenshots: 1440x900 px or larger
 * Thumbnails: 270x220 px
 
-**ProTip:** You can use Firefox's [Responsive Design Mode][] to quickly take screenshots in your desired resolution.  For thumbnails, we'd sugguest taking a 1080x880 px screenshot, then scailing it down to 270x220 px in your favorite editor.
+**ProTip:** You can use Firefox's [Responsive Design Mode][] or Chrome's [Device Mode][] to quickly take screenshots in your desired resolution.  For thumbnails, we'd sugguest taking a 1080x880 px screenshot, then scailing it down to 270x220 px in your favorite editor.
 
 ### Metadata Breakdown
 
@@ -211,6 +211,7 @@ We'll take it from there.  Be sure to check back and see if we have feedback or 
 [EditPlugins]: {{ site.gh_pages_url }}/tree/{{ site.gh_pages_branch }}/_plugins
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [Responsive Design Mode]: https://developer.mozilla.org/en-US/docs/Tools/Responsive_Design_Mode
+[Device Mode]: https://developers.google.com/web/tools/chrome-devtools/device-mode/emulate-mobile-viewports
 [GitHubDesktop]: https://desktop.github.com/
 [GitHubGuideContributing]: https://guides.github.com/activities/contributing-to-open-source/
 [GitHubGuideForking]: https://guides.github.com/activities/forking/
