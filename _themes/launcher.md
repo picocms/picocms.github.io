@@ -3,7 +3,7 @@ heading: Launcher
 thumbnail: themes/images/thumbnails/launcher.jpg
 categories:
   - single-page
-description: For those of us who aren't ready yet.
+description: Launching in 3... 2... 1...
 link: https://github.com/BesrourMS/launcher
 images:
   - themes/images/fullsize/launcher.jpg
