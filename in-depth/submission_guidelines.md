@@ -130,7 +130,7 @@ Images
 
 Info
 
-: Here you can specify a few lines of "info" that will display above your description.  The recommended items are `By` and `Last Updated`, but you can create your own items if they'd better fit the context of your theme or plugin.  However, each item must at least give information about its license using the `License` item.
+: Here you can specify a few lines of "info" that will display above your description.  Each item must at least give information about its license using the `License` item.  We furthermore recommend adding a `By` item, but you can create your own items if they'd better fit the context of your theme or plugin.
 
   If your entry is a port of someone else's work, please use the `Ported By` and `Original By` lines instead of the regular `By`.  We'd like to make sure that the original content creators receive proper credit for their work.
 
@@ -164,7 +164,6 @@ info:
 #  Ported By: "[The Octocat](https://github.com/octocat)"
 #  Original By: "[Someone Else](http://example.com/)"
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
-  Last Updated: They don't have to be "By" and "Last Updated"
 ---
 
 This is my theme for Pico.
