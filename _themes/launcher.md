@@ -15,4 +15,4 @@ info:
 
 Launcher theme from GetTemplates.co, ported to Pico.
 
-Launcher is a free website template using bootstrap perfect for Coming Soon page. It has a live countdown using the Simply Countdown JavaScript plugin and a cool design.
+Launcher is a free website template using bootstrap, perfect for a Coming Soon page. It has  a cool design and a live countdown using the Simply Countdown JavaScript plugin.
