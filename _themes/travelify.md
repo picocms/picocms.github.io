@@ -2,7 +2,7 @@
 heading: Travelify
 thumbnail: themes/images/thumbnails/travelify.jpg
 categories:
-  - portfolio
+  - blog
 description: A clean theme with menu and sidebar support.
 link: https://github.com/xupefei/Travelify
 images:
