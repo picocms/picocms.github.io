@@ -92,24 +92,25 @@ Additionally, you'll need to either add `fastcgi_param PICO_URL_REWRITING 1;` to
 
 ## Configuring Pico
 
-Pico is ready to go, right out of the box.  However, unless you want your website to be called "Pico", there are a few configuration options you'll probably want to set.
+Pico is ready to go, right out of the box.  However, unless you want your website to be called "Pico", there's at least one configuration option you'll want to set.
 
-{% comment %}
+To configure Pico, start by navigating to the `config` directory and copying/moving Pico's included `config.php.template` to `config.php`.
 
-You can override the default Pico settings (and add your own custom settings) by editing `config/config.php` in the Pico directory. For a brief overview of the available settings and their defaults see [`config/config.php.template`][ConfigTemplate]. To override a setting, copy `config/config.php.template` to `config/config.php`, uncomment the setting and set your custom value.
+Next, in your new `config.php`, you can specify the name of your website by changing the line `// $config['site_title'] = 'Pico';`.  You'll also want to *uncomment* this line by removing the `//` at the beginning.
 
-[ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/config/config.php.template
+That's it!  That's the only configuration that's needed.  You'll find `config.php` is pretty well [documented inline][ConfigTemplate], so we won't go into detail about the rest of the options here.
 
-{% endcomment %}
+Other interesting options you may want to configure include theme, date format, and page order.  A custom theme or plugin may have it's own options for you to add to `config.php`, so we've labeled a section at the bottom where you can add them.
 
 [Upgrading]: {{ site.github.url }}/in-depth/upgrade/
-[LatestRelease]: {{ site.gh_project_url }}/releases/latest
+[Latest Release]: {{ site.gh_project_url }}/releases/latest
 [Composer]: https://getcomposer.org/
 [Packagist.org]: http://packagist.org/packages/picocms/pico
 [ModRewrite]: https://httpd.apache.org/docs/current/mod/mod_rewrite.html
 [NginxConfig]: {{ site.github.url }}/in-depth/nginx/
 [NginxPHP]: {{ site.github.url }}/in-depth/nginx/#php-configuration
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
+[ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/config/config.php.template
 
 {% comment %}
 
@@ -146,12 +147,8 @@ Access Pico from http://localhost:8080.
 
 [PHPServer]: http://php.net/manual/en/features.commandline.webserver.php
 
-
-
-
-
-
-
+---
+---
 
 Here's some quotes from that thread:
 
