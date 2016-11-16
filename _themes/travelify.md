@@ -13,4 +13,4 @@ info:
   License: "[GNU General Public License 2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)"
 ---
 
-Travelify is a clean, simple and fully responsive theme for Pico CMS. It is originally for WordPress by ColorLib. Thie port brings the support of global navigation bar and sidebar which are fully customizable by Markdown.
+Travelify is a clean, simple, and fully responsive theme for Pico CMS. It was originally for WordPress and created by ColorLib. This port brings support for the global navigation bar and sidebar which are fully customizable using Markdown.
