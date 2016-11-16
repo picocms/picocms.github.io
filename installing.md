@@ -26,7 +26,7 @@ galleries:
           This is what Pico's folder looks like after installation.
         thumbnail: /style/images/docs/about/thumbnails/pico_folder.png
         fullsize: /style/images/docs/about/fullsize/pico_folder.png
-        styles: "float: right; margin-left: 2em; border: 1px solid #CCC; border-top: none;"
+        styles: "float: right; margin-left: 2em;"
   standalone_2:
     style: magnify
     images:
@@ -35,6 +35,7 @@ galleries:
         description: Configuring Pico is as simple as uncommenting a few lines in the included config template.
         thumbnail: /style/images/docs/about/thumbnails/config.png
         fullsize: /style/images/docs/about/fullsize/config.png
+        styles: "float: right; margin-left: 2em;"
 ---
 
 Installing Pico is as simple as uploading Pico's directory to your webserver.  Seriously.  But while we could leave it at that, this guide will dive deeper into the subject to cover all you'd ever need to know about the process.
@@ -43,9 +44,9 @@ If you are upgrading your Pico installation, please read our [Upgrading][] guide
 
 ## Downloading and Installing Pico
 
-The best way to get yourself a copy of Pico is to download the [Latest Release][] from our GitHub Page.  This pre-bundled release comes with all the dependencies necessary for Pico to run.  The only system requirement of your webserver is that it's running **at least PHP 5.3 or newer**.
-
 {% include gallery.html gallery='standalone_1' %}
+
+The best way to get yourself a copy of Pico is to download the [Latest Release][] from our GitHub Page.  This pre-bundled release comes with all the dependencies necessary for Pico to run.  The only system requirement of your webserver is that it's running **at least PHP 5.3 or newer**.
 
 Once you have the latest release, simply upload all the extracted files to the `httpdocs` directory (e.g. `/var/www/html`) of your server.  If you are using Apache, make sure you upload our included `.htaccess` file for a worry-free configuration.  **Please Note**: Depending on your OS (specifically Mac and Linux), after you've extracted the files, `.htaccess` may appear hidden by your file manager.
 
@@ -116,9 +117,9 @@ Additionally, you'll need to either add `fastcgi_param PICO_URL_REWRITING 1;` to
 
 ## Configuring Pico
 
-Pico is ready to go, right out of the box.  However, unless you want your website to be called "Pico", there's at least one configuration option you'll want to set.
-
 {% include gallery.html gallery='standalone_2' %}
+
+Pico is ready to go, right out of the box.  However, unless you want your website to be called "Pico", there's at least one configuration option you'll want to set.
 
 To configure Pico, start by navigating to the `config` directory and copying/moving Pico's included `config.php.template` to `config.php`.
 
