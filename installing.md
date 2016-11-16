@@ -73,8 +73,6 @@ If you're using Nginx, configuration is a little more involved.  We have an enti
 
 The following configuration excerpt is somewhat of a "tl;dr" version of a very extensive topic.  It should provide the *bare minimum* configuration you need for Pico.  If you have any trouble, please read all of the aforementioned [Nginx Guide][NginxConfig].  For additional assistance, please refer to our ["Getting Help"][GettingHelp] page.
 
-* Hmm, [GettingHelp][] is going to be refereed to a LOT... maybe I should write that ahead of time.
-
 ```
 location ~ /pico/(\.htaccess|\.git|config|content|content-sample|lib|vendor|CHANGELOG\.md|composer\.(json|lock)) {
 	return 404;
@@ -86,7 +84,11 @@ location ~ ^/pico(.*) {
 }
 ```
 
-Lines `1` to `3` of this example are for denying access to Pico's internal files.  This is recommend for security reasons, and is included in `.htaccess` for our Apache users.  Lines `5` to `8` provide the URL rewriting scheme.  You'll need to adjust the path of `/pico` on lines `1`, `5`, and `7` to match your own Pico installation directory.
+Lines `1` to `3` of this example are for denying access to Pico's internal files.  This is recommend for security reasons, and is included in `.htaccess` for our Apache users.
+
+Lines `5` to `8` provide the URL rewriting scheme.
+
+You'll need to adjust the path of `/pico` on lines `1`, `5`, and `7` to match your own Pico installation directory.
 
 Additionally, you'll need to either add `fastcgi_param PICO_URL_REWRITING 1;` to your [PHP location block][NginxPHP] or specify `$config['rewrite_url'] = true;` in your [Pico Config](#configuring-pico) (`config/config.php`).
 
@@ -96,9 +98,13 @@ Pico is ready to go, right out of the box.  However, unless you want your websit
 
 To configure Pico, start by navigating to the `config` directory and copying/moving Pico's included `config.php.template` to `config.php`.
 
-Next, in your new `config.php`, you can specify the name of your website by changing the line `// $config['site_title'] = 'Pico';`.  You'll also want to *uncomment* this line by removing the `//` at the beginning.
+Next, in your new `config.php`, you can specify the name of your website by changing the line:
 
-That's it!  That's the only configuration that's needed.  You'll find `config.php` is pretty well [documented inline][ConfigTemplate], so we won't go into detail about the rest of the options here.
+`// $config['site_title'] = 'Pico';`
+
+You'll also want to *uncomment* this line by removing the `//` at the beginning.
+
+That's it!  That's the only configuration that's needed.  You'll find `config.php` is pretty well documented [inline][ConfigTemplate], so we won't go into detail about the rest of the options here.
 
 Other interesting options you may want to configure include theme, date format, and page order.  A custom theme or plugin may have it's own options for you to add to `config.php`, so we've labeled a section at the bottom where you can add them.
 
@@ -111,6 +117,10 @@ Other interesting options you may want to configure include theme, date format, 
 [NginxPHP]: {{ site.github.url }}/in-depth/nginx/#php-configuration
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/config/config.php.template
+
+## Creating Content
+
+* Up next, next article, whatever...
 
 {% comment %}
 
@@ -179,4 +189,7 @@ Here's some quotes from that thread:
        * Etc
     * Customization
     * Getting Help
+
+* Hmm, [GettingHelp][] is going to be refereed to a LOT... maybe I should write that ahead of time.
+
 {% endcomment %}
