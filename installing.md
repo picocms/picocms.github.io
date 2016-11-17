@@ -133,6 +133,15 @@ That's it!  That's the only configuration that's needed.  You'll find `config.ph
 
 Other interesting options you may want to configure include theme, date format, and page order.  A custom theme or plugin may have it's own options for you to add to `config.php`, so we've labeled a section at the bottom where you can add them.
 
+---
+
+## Up Next...
+
+So, we've shown you everything you need to setup Pico on your server.  Now it's time for the fun stuff.  In the next guide, you'll learn how to create some content.  Click through to proceed to the next article.
+
+<p class="aligncenter" markdown="1"><a href="{{ site.github.url }}/in-depth/creating-content" class="button">Creating Content</a></p>
+
+
 [Upgrading]: {{ site.github.url }}/in-depth/upgrade/
 [Latest Release]: {{ site.gh_project_url }}/releases/latest
 [Composer]: https://getcomposer.org/
@@ -143,11 +152,14 @@ Other interesting options you may want to configure include theme, date format, 
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/config/config.php.template
 
-## Creating Content
-
-* Up next, next article, whatever...
-
 {% comment %}
+
+* Need to figure out how to make this button work using Markdown...
+
+[NextGuide]: {{ site.github.url }}/in-depth/creating-content
+<p class="aligncenter" markdown="1"> [Creating Content][NextGuide]{.button} </p>
+
+---
 
 ## Testing Pico
 
