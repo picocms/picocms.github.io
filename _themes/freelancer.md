@@ -2,7 +2,7 @@
 heading: Freelancer
 thumbnail: themes/images/thumbnails/freelancer.png
 categories:
-  - single
+  - single-page
   - portfolio
 description: Show everyone what you can do.
 link: https://github.com/smcdougall/startbootstrap-freelancer-pico
