@@ -111,7 +111,7 @@
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">1</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1693145006"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2139642589"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1693145006" class="accordion-body collapse in">
+            <div id="namespace-2139642589" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -190,6 +190,7 @@
                                                                     <a href="../classes/PicoTwigExtension.html#method_getPico" class="">getPico()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_getName" class="">getName()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_getFilters" class="">getFilters()</a><br />
+                                                                    <a href="../classes/PicoTwigExtension.html#method_getFunctions" class="">getFunctions()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_markdownFilter" class="">markdownFilter()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_mapFilter" class="">mapFilter()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_sortByFilter" class="">sortByFilter()</a><br />
@@ -423,7 +424,7 @@
                 <h3 class="public ">getFilters()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getFilters() : array&lt;mixed,\Twig_SimpleFilter&gt;</pre>
-                <p><em>Returns the Twig filters markdown, map and sort_by</em></p>
+                <p><em>Returns a list of Pico-specific Twig filters</em></p>
                 
 
                 
@@ -439,6 +440,37 @@
                                                             <dl>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href=""><span class="namespace-wrapper">\Twig_ExtensionInterface::getFilters()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFunctions" name="method_getFunctions" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getFunctions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFunctions() : array&lt;mixed,\Twig_SimpleFunction&gt;</pre>
+                <p><em>Returns a list of Pico-specific Twig functions</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array&lt;mixed,\Twig_SimpleFunction&gt;
+                                            &mdash; <p>array of Pico's Twig functions</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href=""><span class="namespace-wrapper">\Twig_ExtensionInterface::getFunctions()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -687,7 +719,7 @@ value or NULL when the given key or key path didn't match</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 12th, 2016 at 15:39.
+                    on December 12th, 2016 at 19:44.
                 </section>
             </section>
         </section>
