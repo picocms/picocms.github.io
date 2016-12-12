@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>Pico 1.1 API Documentation (pico-1.1 branch)</title>
+    <title>Pico 2.0 API Documentation (pico-1.1 branch)</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
 
@@ -83,7 +83,7 @@
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-ellipsis-vertical"></i>
             </a>
-            <a class="brand" href="../index.html">Pico 1.1 API Documentation (pico-1.1 branch)</a>
+            <a class="brand" href="../index.html">Pico 2.0 API Documentation (pico-1.1 branch)</a>
 
             <div class="nav-collapse">
                 <ul class="nav pull-right">
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-762252319"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-447042142"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-762252319" class="accordion-body collapse in">
+            <div id="namespace-447042142" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -220,6 +220,7 @@ released under the MIT license.</li>
                                                                     <a href="../classes/Pico.html#method_getRawContent" class="">getRawContent()</a><br />
                                                                     <a href="../classes/Pico.html#method_is404Content" class="">is404Content()</a><br />
                                                                     <a href="../classes/Pico.html#method_getMetaHeaders" class="">getMetaHeaders()</a><br />
+                                                                    <a href="../classes/Pico.html#method_getYamlParser" class="">getYamlParser()</a><br />
                                                                     <a href="../classes/Pico.html#method_parseFileMeta" class="">parseFileMeta()</a><br />
                                                                     <a href="../classes/Pico.html#method_getFileMeta" class="">getFileMeta()</a><br />
                                                                     <a href="../classes/Pico.html#method_getParsedown" class="">getParsedown()</a><br />
@@ -255,11 +256,14 @@ released under the MIT license.</li>
                         <section class="row-fluid protected">
                             <section class="span4">
                                                                     <a href="../classes/Pico.html#method_loadPlugins" class="">loadPlugins()</a><br />
+                                                                    <a href="../classes/Pico.html#method_sortPlugins" class="">sortPlugins()</a><br />
                                                                     <a href="../classes/Pico.html#method_loadConfig" class="">loadConfig()</a><br />
                                                                     <a href="../classes/Pico.html#method_evaluateRequestUrl" class="">evaluateRequestUrl()</a><br />
+                                                                    <a href="../classes/Pico.html#method_registerYamlParser" class="">registerYamlParser()</a><br />
                                                                     <a href="../classes/Pico.html#method_registerParsedown" class="">registerParsedown()</a><br />
                                                                     <a href="../classes/Pico.html#method_readPages" class="">readPages()</a><br />
                                                                     <a href="../classes/Pico.html#method_sortPages" class="">sortPages()</a><br />
+                                                                    <a href="../classes/Pico.html#method_discoverPageSiblings" class="">discoverPageSiblings()</a><br />
                                                                     <a href="../classes/Pico.html#method_discoverCurrentPage" class="">discoverCurrentPage()</a><br />
                                                                     <a href="../classes/Pico.html#method_registerTwig" class="">registerTwig()</a><br />
                                                                     <a href="../classes/Pico.html#method_getTwigVariables" class="">getTwigVariables()</a><br />
@@ -277,6 +281,8 @@ released under the MIT license.</li>
                                                                     <a href="../classes/Pico.html#property_requestFile" class="">$requestFile</a><br />
                                                                     <a href="../classes/Pico.html#property_rawContent" class="">$rawContent</a><br />
                                                                     <a href="../classes/Pico.html#property_is404Content" class="">$is404Content</a><br />
+                                                                    <a href="../classes/Pico.html#property_yamlParser" class="">$yamlParser</a><br />
+                                                                    <a href="../classes/Pico.html#property_metaHeaders" class="">$metaHeaders</a><br />
                                                                     <a href="../classes/Pico.html#property_meta" class="">$meta</a><br />
                                                                     <a href="../classes/Pico.html#property_parsedown" class="">$parsedown</a><br />
                                                                     <a href="../classes/Pico.html#property_content" class="">$content</a><br />
@@ -759,6 +765,58 @@ released under the MIT license.</li>
                         <dl>
                                                                             <dt>See also</dt>
                                                                 <dd><a href=""><span class="namespace-wrapper">\Pico::is404Content()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_yamlParser" name="property_yamlParser" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$yamlParser</h3>
+                <pre class="signature">$yamlParser : \Symfony\Component\Yaml\Parser|null</pre>
+                <p><em>Symfony YAML instance used for meta header parsing</em></p>
+                
+
+                                <h4>Type</h4>
+                \Symfony\Component\Yaml\Parser|null
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_registerYamlParser"><span class="namespace-wrapper">\Pico::registerYamlParser()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_metaHeaders" name="property_metaHeaders" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$metaHeaders</h3>
+                <pre class="signature">$metaHeaders : array&lt;mixed,string&gt;|null</pre>
+                <p><em>List of known meta headers</em></p>
+                
+
+                                <h4>Type</h4>
+                array&lt;mixed,string&gt;|null
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_getMetaHeaders"><span class="namespace-wrapper">\Pico::getMetaHeaders()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1679,9 +1737,8 @@ up from the directory the requested file is in</em></p>
                 <h3 class="public ">getMetaHeaders()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getMetaHeaders() : array&lt;mixed,string&gt;</pre>
-                <p><em>Returns known meta headers and triggers the onMetaHeaders event</em></p>
-                <p>Heads up! Calling this method triggers the <code>onMetaHeaders</code> event.
-Keep this in mind to prevent a infinite loop!</p>
+                <p><em>Returns known meta headers</em></p>
+                
 
                 
                 
@@ -1697,6 +1754,37 @@ found value</p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                             </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getYamlParser" name="method_getYamlParser" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getYamlParser()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getYamlParser() : \Symfony\Component\Yaml\Parser|null</pre>
+                <p><em>Returns the Symfony YAML parser</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \Symfony\Component\Yaml\Parser|null
+                                            &mdash; <p>Symfony YAML parser</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_registerYamlParser"><span class="namespace-wrapper">\Pico::registerYamlParser()</span></a></dd>
+                                                                </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1751,7 +1839,6 @@ meta data is invalid</p></dd>
                                                             <dl>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getFileMeta"><span class="namespace-wrapper">\Pico::getFileMeta()</span></a></dd>
-                                            <dd><a href="http://symfony.com/doc/current/components/yaml/introduction.html"><span class="namespace-wrapper">http://symfony.com/doc/current/components/yaml/introduction.html</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1963,7 +2050,6 @@ e.g. removing the meta header and replacing %base_url%</em></p>
                                                             <dl>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_readPages"><span class="namespace-wrapper">\Pico::readPages()</span></a></dd>
-                                            <dd><a href="../classes/Pico.html#method_sortPages"><span class="namespace-wrapper">\Pico::sortPages()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -2220,7 +2306,7 @@ as a composer dependency. However, ultimately it allows us to use
 <a href="../classes/Pico.html#method_getBaseUrl">Pico::getBaseUrl()</a> as origin of the theme URL. Otherwise Pico
 falls back to the basename of <a href="../classes/Pico.html#property_themesDir">Pico::$themesDir</a> (i.e. assuming
 that <code>Pico::$themesDir</code> is <code>foo/bar/baz</code>, the base URL of the themes
-folder will be <code>baz/</code>; this ensures BC to Pico &lt; 1.1). Pico's base URL
+folder will be <code>baz/</code>; this ensures BC to Pico &lt; 2.0). Pico's base URL
 always gets prepended appropriately.</p>
 
                 
@@ -2545,6 +2631,50 @@ following directives:</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_sortPlugins" name="method_sortPlugins" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">sortPlugins()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">sortPlugins() : void</pre>
+                <p><em>Sorts all loaded plugins using a plugin dependency topology</em></p>
+                <p>Execution order matters: if plugin A depends on plugin B, it usually
+means that plugin B does stuff which plugin A requires. However, Pico
+loads plugins in alphabetical order, so events might get fired on
+plugin A before plugin B.</p>
+<p>Hence plugins need to be sorted. Pico sorts plugins using a dependency
+topology, this means that it moves all plugins, on which a plugin
+depends, in front of that plugin. The order isn't touched apart from
+that, so they are still sorted alphabetically, as long as this doesn't
+interfere with the dependency topology. Circular dependencies are being
+ignored; their behavior is undefiend. Missing dependencies are being
+ignored until you try to enable the dependant plugin.</p>
+<p>This method bases on Marc J. Schmidt's Topological Sort library in
+version 1.1.0, licensed under the MIT license. It uses the <code>ArraySort</code>
+implementation (class <code>\MJS\TopSort\Implementations\ArraySort</code>).</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_loadPlugins"><span class="namespace-wrapper">\Pico::loadPlugins()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_getPlugins"><span class="namespace-wrapper">\Pico::getPlugins()</span></a></dd>
+                                            <dd><a href=""><span class="namespace-wrapper">Marc J. Schmidt&#039;s Topological Sort / Dependency resolver in PHP</span></a></dd>
+                                            <dd><a href=""><span class="namespace-wrapper">\MJS\TopSort\Implementations\ArraySort class</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_loadConfig" name="method_loadConfig" class="anchor"></a>
             <article class="method">
                 <h3 class="protected ">loadConfig()</h3>
@@ -2593,7 +2723,7 @@ However, URL rewriting requires some special configuration of your
 webserver, but this should be &quot;basic work&quot; for any webmaster...</p>
 <p>With Pico 1.0 you had to setup URL rewriting (e.g. using <code>mod_rewrite</code>
 on Apache) in a way that rewritten URLs follow the <code>QUERY_STRING</code>
-principles. Starting with version 1.1, Pico additionally supports the
+principles. Starting with version 2.0, Pico additionally supports the
 <code>REQUEST_URI</code> routing method, what allows you to simply rewrite all
 requests to just <code>index.php</code>. Pico then reads the requested page from
 the <code>REQUEST_URI</code> environment variable provided by the webserver.
@@ -2634,6 +2764,36 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_registerYamlParser" name="method_registerYamlParser" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">registerYamlParser()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">registerYamlParser() : void</pre>
+                <p><em>Registers the Symfony YAML parser</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_getYamlParser"><span class="namespace-wrapper">\Pico::getYamlParser()</span></a></dd>
+                                            <dd><a href="http://symfony.com/doc/current/components/yaml/introduction.html"><span class="namespace-wrapper">Symfony YAML component website</span></a></dd>
+                                            <dd><a href=""><span class="namespace-wrapper">Symfony YAML component on GitHub</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_registerParsedown" name="method_registerParsedown" class="anchor"></a>
             <article class="method">
                 <h3 class="protected ">registerParsedown()</h3>
@@ -2652,6 +2812,9 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
                                                             <dl>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getParsedown"><span class="namespace-wrapper">\Pico::getParsedown()</span></a></dd>
+                                            <dd><a href="http://parsedown.org/"><span class="namespace-wrapper">Parsedown website</span></a></dd>
+                                            <dd><a href=""><span class="namespace-wrapper">Parsedown on GitHub</span></a></dd>
+                                            <dd><a href=""><span class="namespace-wrapper">Parsedown Extra on GitHub</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -2728,6 +2891,16 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
 <td>string</td>
 <td>parsed meta data of the page</td>
 </tr>
+<tr>
+<td>previous_page</td>
+<td>&amp;array</td>
+<td>reference to the previous page</td>
+</tr>
+<tr>
+<td>next_page</td>
+<td>&amp;array</td>
+<td>reference to the next page</td>
+</tr>
 </tbody>
 </table>
 
@@ -2741,6 +2914,7 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
                                                             <dl>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_sortPages"><span class="namespace-wrapper">\Pico::sortPages()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_discoverPageSiblings"><span class="namespace-wrapper">\Pico::discoverPageSiblings()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPages"><span class="namespace-wrapper">\Pico::getPages()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -2781,13 +2955,43 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_discoverPageSiblings" name="method_discoverPageSiblings" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">discoverPageSiblings()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">discoverPageSiblings() : void</pre>
+                <p><em>Walks through the list of all known pages and discovers the previous and
+next page respectively</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_readPages"><span class="namespace-wrapper">\Pico::readPages()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_getPages"><span class="namespace-wrapper">\Pico::getPages()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_discoverCurrentPage" name="method_discoverCurrentPage" class="anchor"></a>
             <article class="method">
                 <h3 class="protected ">discoverCurrentPage()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">discoverCurrentPage() : void</pre>
-                <p><em>Walks through the list of known pages and discovers the requested page
-as well as the previous and next page relative to it</em></p>
+                <p><em>Discovers the page data of the requested page as well as the previous
+and next page relative to it</em></p>
                 
 
                 
@@ -2831,6 +3035,8 @@ as well as Pico's <a href="../classes/PicoTwigExtension.html">PicoTwigExtension<
                                                             <dl>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getTwig"><span class="namespace-wrapper">\Pico::getTwig()</span></a></dd>
+                                            <dd><a href="http://twig.sensiolabs.org/"><span class="namespace-wrapper">Twig website</span></a></dd>
+                                            <dd><a href=""><span class="namespace-wrapper">Twig on GitHub</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -2998,7 +3204,7 @@ provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on November 26th, 2016 at 15:49.
+                    on December 12th, 2016 at 15:39.
                 </section>
             </section>
         </section>
