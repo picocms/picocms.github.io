@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">26</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">27</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-643977436"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-742745881"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-643977436" class="accordion-body collapse in">
+            <div id="namespace-742745881" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -1428,11 +1428,11 @@ rely on it. For more information see <a href="../classes/PicoPluginInterface.htm
                 <pre class="signature" style="margin-right: 54px;">setConfig(array  <span class="argument">$config</span>) : void</pre>
                 <p><em>Sets Pico&#039;s config before calling Pico::run()</em></p>
                 <p>This method allows you to modify Pico's config without creating a
-{@path &quot;config/config.php&quot;} or changing some of its variables before
+{@path &quot;config/config.yml&quot;} or changing some of its variables before
 Pico starts processing.</p>
 <p>You can call this method between <a href="../classes/Pico.html#method___construct">Pico::__construct()</a> and
 <a href="../classes/Pico.html#method_run">Pico::run()</a> only. Options set with this method cannot be
-overwritten by {@path &quot;config/config.php&quot;}.</p>
+overwritten by {@path &quot;config/config.yml&quot;}.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
@@ -2758,14 +2758,14 @@ implementation (class <code>\MJS\TopSort\Implementations\ArraySort</code>).</p>
                 <h3 class="protected ">loadConfig()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">loadConfig() : void</pre>
-                <p><em>Loads the config.php and any *.config.php from Pico::$configDir</em></p>
-                <p>After loading the {@path &quot;config/config.php&quot;}, Pico proceeds with any
-existing <code>config/*.config.php</code> in alphabetical order. The file order is
-crucial: Config values which has been set already, cannot be overwritten
-by a succeeding file. This is also true for arrays, i.e. when specifying
-<code>$config['test'] = array('foo' =&gt; 'bar')</code> in <code>config/a.config.php</code> and
-<code>$config['test'] = array('baz' =&gt; 42)</code> in <code>config/b.config.php</code>,
-<code>$config['test']['baz']</code> will be undefined!</p>
+                <p><em>Loads the config.yml and any other *.yml from Pico::$configDir</em></p>
+                <p>After loading {@path &quot;config/config.yml&quot;}, Pico proceeds with any other
+existing <code>config/*.yml</code> file in alphabetical order. The file order is
+crucial: Config values which have been set already, cannot be
+overwritten by a succeeding file. This is also true for arrays, i.e.
+when specifying <code>test: { foo: bar }</code> in <code>config/a.yml</code> and
+<code>test: { baz: 42 }</code> in <code>config/b.yml</code>, <code>{{ config.test.baz }}</code> will be
+undefined!</p>
 
                 
                 
@@ -3250,7 +3250,7 @@ provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on February 5th, 2017 at 21:47.
+                    on February 5th, 2017 at 23:08.
                 </section>
             </section>
         </section>
