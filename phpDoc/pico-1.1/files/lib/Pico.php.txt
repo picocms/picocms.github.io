@@ -156,7 +156,7 @@ class Pico
     /**
      * Symfony YAML instance used for meta header parsing
      *
-     * @see Pico::registerYamlParser()
+     * @see Pico::getYamlParser()
      * @var \Symfony\Component\Yaml\Parser|null
      */
     protected $yamlParser;
@@ -236,10 +236,18 @@ class Pico
     /**
      * Variables passed to the twig template
      *
-     * @see Pico::getTwigVariables
+     * @see Pico::getTwigVariables()
      * @var array|null
      */
     protected $twigVariables;
+
+    /**
+     * Name of the Twig template to render
+     *
+     * @see Pico::getTwigTemplate()
+     * @var string|null
+     */
+    protected $twigTemplate;
 
     /**
      * Constructs a new Pico instance
@@ -359,10 +367,10 @@ class Pico
 
         $this->triggerEvent('onContentLoaded', array(&$this->rawContent));
 
-        // parse file meta
+        // register YAML parser
         $this->triggerEvent('onYamlParserRegistration');
-        $this->registerYamlParser();
 
+        // parse file meta
         $this->metaHeaders = $this->getMetaHeaders();
         $this->triggerEvent('onMetaHeaders', array(&$this->metaHeaders));
 
@@ -372,7 +380,6 @@ class Pico
 
         // register parsedown
         $this->triggerEvent('onParsedownRegistration');
-        $this->registerParsedown();
 
         // parse file content
         $this->triggerEvent('onContentParsing', array(&$this->rawContent));
@@ -404,20 +411,10 @@ class Pico
 
         // render template
         $this->twigVariables = $this->getTwigVariables();
-        if (!empty($this->meta['template'])) {
-            $templateName = $this->meta['template'];
-        } else {
-            $templateName = 'index';
-        }
-        if (file_exists($this->getThemesDir() . $this->getConfig('theme') . '/' . $templateName . '.twig')) {
-            $templateName .= '.twig';
-        } else {
-            $templateName .= '.html';
-        }
+        $this->twigTemplate = $this->getTwigTemplate();
+        $this->triggerEvent('onPageRendering', array(&$this->twig, &$this->twigVariables, &$this->twigTemplate));
 
-        $this->triggerEvent('onPageRendering', array(&$this->twig, &$this->twigVariables, &$templateName));
-
-        $output = $this->twig->render($templateName, $this->twigVariables);
+        $output = $this->twig->render($this->twigTemplate, $this->twigVariables);
         $this->triggerEvent('onPageRendered', array(&$output));
 
         return $output;
@@ -671,25 +668,26 @@ class Pico
      */
     protected function loadConfig()
     {
-        // scope isolated require()
-        $includeClosure = function ($configFile) {
-            require($configFile);
-            return (isset($config) && is_array($config)) ? $config : array();
+        // load config closure
+        $yamlParser = $this->getYamlParser();
+        $loadConfigClosure = function ($configFile) use ($yamlParser) {
+            $yaml = file_get_contents($configFile);
+            $config = $yamlParser->parse($yaml);
+            return is_array($config) ? $config : array();
         };
-        if (PHP_VERSION_ID >= 50400) {
-            $includeClosure = $includeClosure->bindTo(null);
-        }
 
-        // load main config file (config/config.php)
+        // load main config file (config/config.yml)
         $this->config = is_array($this->config) ? $this->config : array();
-        if (file_exists($this->getConfigDir() . 'config.php')) {
-            $this->config += $includeClosure($this->getConfigDir() . 'config.php');
+        if (file_exists($this->getConfigDir() . 'config.yml')) {
+            $this->config += $loadConfigClosure($this->getConfigDir() . 'config.yml');
         }
 
-        // merge $config of config/*.config.php files
-        $configFiles = $this->getFilesGlob($this->getConfigDir() . '?*.config.php');
+        // merge $config of config/*.yml files
+        $configFiles = $this->getFilesGlob($this->getConfigDir() . '*.yml');
         foreach ($configFiles as $configFile) {
-            $this->config += $includeClosure($configFile);
+            if ($configFile !== 'config.yml') {
+                $this->config += $loadConfigClosure($configFile);
+            }
         }
 
         // merge default config
@@ -697,15 +695,16 @@ class Pico
             'site_title' => 'Pico',
             'base_url' => '',
             'rewrite_url' => null,
+            'timezone' => null,
             'theme' => 'default',
-            'theme_url' => '',
+            'theme_url' => null,
+            'twig_config' => null,
             'date_format' => '%D %T',
-            'twig_config' => array('cache' => false, 'autoescape' => false, 'debug' => false),
             'pages_order_by' => 'alpha',
             'pages_order' => 'asc',
             'content_dir' => null,
             'content_ext' => '.md',
-            'timezone' => ''
+            'content_config' => null
         );
 
         if (!$this->config['base_url']) {
@@ -716,6 +715,29 @@ class Pico
 
         if ($this->config['rewrite_url'] === null) {
             $this->config['rewrite_url'] = $this->isUrlRewritingEnabled();
+        }
+
+        if (!$this->config['timezone']) {
+            // explicitly set a default timezone to prevent a E_NOTICE
+            // when no timezone is set; the `date_default_timezone_get()`
+            // function always returns a timezone, at least UTC
+            $this->config['timezone'] = @date_default_timezone_get();
+        }
+        date_default_timezone_set($this->config['timezone']);
+
+        if (!$this->config['theme_url']) {
+            $this->config['theme_url'] = $this->getBaseThemeUrl();
+        } elseif (preg_match('#^[A-Za-z][A-Za-z0-9+\-.]*://#', $this->config['theme_url'])) {
+            $this->config['theme_url'] = rtrim($this->config['theme_url'], '/') . '/';
+        } else {
+            $this->config['theme_url'] = $this->getBaseUrl() . rtrim($this->config['theme_url'], '/') . '/';
+        }
+
+        $defaultTwigConfig = array('cache' => false, 'autoescape' => false, 'debug' => false);
+        if (!is_array($this->config['twig_config'])) {
+            $this->config['twig_config'] = $defaultTwigConfig;
+        } else {
+            $this->config['twig_config'] += $defaultTwigConfig;
         }
 
         if (!$this->config['content_dir']) {
@@ -729,21 +751,12 @@ class Pico
             $this->config['content_dir'] = $this->getAbsolutePath($this->config['content_dir']);
         }
 
-        if (!$this->config['theme_url']) {
-            $this->config['theme_url'] = $this->getBaseThemeUrl();
-        } elseif (preg_match('#^[A-Za-z][A-Za-z0-9+\-.]*://#', $this->config['theme_url'])) {
-            $this->config['theme_url'] = rtrim($this->config['theme_url'], '/') . '/';
+        $defaultContentConfig = array('extra' => true, 'breaks' => false, 'escape' => false, 'auto_urls' => true);
+        if (!is_array($this->config['content_config'])) {
+            $this->config['content_config'] = $defaultContentConfig;
         } else {
-            $this->config['theme_url'] = $this->getBaseUrl() . rtrim($this->config['theme_url'], '/') . '/';
+            $this->config['content_config'] += $defaultContentConfig;
         }
-
-        if (!$this->config['timezone']) {
-            // explicitly set a default timezone to prevent a E_NOTICE
-            // when no timezone is set; the `date_default_timezone_get()`
-            // function always returns a timezone, at least UTC
-            $this->config['timezone'] = @date_default_timezone_get();
-        }
-        date_default_timezone_set($this->config['timezone']);
     }
 
     /**
@@ -1037,27 +1050,16 @@ class Pico
     }
 
     /**
-     * Registers the Symfony YAML parser
-     *
-     * @see    Pico::getYamlParser()
-     * @see    http://symfony.com/doc/current/components/yaml/introduction.html
-     *     Symfony YAML component website
-     * @see    https://github.com/symfony/yaml Symfony YAML component on GitHub
-     * @return void
-     */
-    protected function registerYamlParser()
-    {
-        $this->yamlParser = new \Symfony\Component\Yaml\Parser();
-    }
-
-    /**
      * Returns the Symfony YAML parser
      *
-     * @see    Pico::registerYamlParser()
-     * @return \Symfony\Component\Yaml\Parser|null Symfony YAML parser
+     * @return \Symfony\Component\Yaml\Parser Symfony YAML parser
      */
     public function getYamlParser()
     {
+        if ($this->yamlParser === null) {
+            $this->yamlParser = new \Symfony\Component\Yaml\Parser();
+        }
+
         return $this->yamlParser;
     }
 
@@ -1084,7 +1086,7 @@ class Pico
         $pattern = "/^(\/(\*)|---)[[:blank:]]*(?:\r)?\n"
             . "(?:(.*?)(?:\r)?\n)?(?(2)\*\/|---)[[:blank:]]*(?:(?:\r)?\n|$)/s";
         if (preg_match($pattern, $rawContent, $rawMetaMatches) && isset($rawMetaMatches[3])) {
-            $meta = $this->yamlParser->parse($rawMetaMatches[3]);
+            $meta = $this->getYamlParser()->parse($rawMetaMatches[3]);
 
             if ($meta !== null) {
                 // the parser may return a string for non-YAML 1-liners
@@ -1145,28 +1147,21 @@ class Pico
     }
 
     /**
-     * Registers the Parsedown Extra markdown parser
-     *
-     * @see    Pico::getParsedown()
-     * @see    http://parsedown.org/ Parsedown website
-     * @see    https://github.com/erusev/parsedown Parsedown on GitHub
-     * @see    https://github.com/erusev/parsedown-extra
-     *     Parsedown Extra on GitHub
-     * @return void
-     */
-    protected function registerParsedown()
-    {
-        $this->parsedown = new ParsedownExtra();
-    }
-
-    /**
      * Returns the Parsedown Extra markdown parser
      *
-     * @see    Pico::registerParsedown()
-     * @return ParsedownExtra|null Parsedown Extra markdown parser
+     * @return ParsedownExtra Parsedown Extra markdown parser
      */
     public function getParsedown()
     {
+        if ($this->parsedown === null) {
+            $className = $this->config['content_config']['extra'] ? 'ParsedownExtra' : 'Parsedown';
+            $this->parsedown = new $className();
+
+            $this->parsedown->setBreaksEnabled((bool) $this->config['content_config']['breaks']);
+            $this->parsedown->setMarkupEscaped((bool) $this->config['content_config']['escape']);
+            $this->parsedown->setUrlsLinked((bool) $this->config['content_config']['auto_urls']);
+        }
+
         return $this->parsedown;
     }
 
@@ -1232,11 +1227,7 @@ class Pico
      */
     public function parseFileContent($content)
     {
-        if ($this->parsedown === null) {
-            throw new LogicException("Unable to parse file contents: Parsedown instance wasn't registered yet");
-        }
-
-        return $this->parsedown->text($content);
+        return $this->getParsedown()->text($content);
     }
 
     /**
@@ -1361,8 +1352,8 @@ class Pico
     protected function sortPages()
     {
         // sort pages
-        $order = $this->getConfig('pages_order');
-        $orderBy = $this->getConfig('pages_order_by');
+        $order = strtolower($this->getConfig('pages_order'));
+        $orderBy = strtolower($this->getConfig('pages_order_by'));
 
         if (($orderBy !== 'date') && ($orderBy !== 'alpha')) {
             return;
@@ -1528,6 +1519,11 @@ class Pico
      */
     protected function registerTwig()
     {
+        if ($this->twig !== null) {
+            // nothing to do
+            return;
+        }
+
         $twigLoader = new Twig_Loader_Filesystem($this->getThemesDir() . $this->getConfig('theme'));
         $this->twig = new Twig_Environment($twigLoader, $this->getConfig('twig_config'));
         $this->twig->addExtension(new Twig_Extension_Debug());
@@ -1559,6 +1555,10 @@ class Pico
      */
     public function getTwig()
     {
+        if ($this->twig === null) {
+            $this->registerTwig();
+        }
+
         return $this->twig;
     }
 
@@ -1591,6 +1591,28 @@ class Pico
             'next_page' => $this->nextPage,
             'version' => static::VERSION
         );
+    }
+
+    /**
+     * Returns the name of the Twig template to render
+     *
+     * @return string template name
+     */
+    protected function getTwigTemplate()
+    {
+        if ($this->twigTemplate !== null) {
+            return $this->twigTemplate;
+        }
+
+        $templateName = $this->meta['template'] ?: 'index';
+
+        if (file_exists($this->getThemesDir() . $this->getConfig('theme') . '/' . $templateName . '.twig')) {
+            $templateName .= '.twig';
+        } else {
+            $templateName .= '.html';
+        }
+
+        return $templateName;
     }
 
     /**
