@@ -48,7 +48,9 @@ If you are upgrading your Pico installation, please read our [Upgrading][] guide
 
 The best way to get yourself a copy of Pico is to download the [Latest Release][] from our GitHub Page.  This pre-bundled release comes with all the dependencies necessary for Pico to run.  The only system requirement of your webserver is that it's running **at least PHP 5.3 or newer**.
 
-Once you have the latest release, simply upload all the extracted files to the `httpdocs` directory (e.g. `/var/www/html`) of your server.  If you are using Apache, make sure you upload our included `.htaccess` file for a worry-free configuration.  **Please Note**: Depending on your OS (specifically Mac and Linux), after you've extracted the files, `.htaccess` may appear hidden by your file manager.
+Once you have the latest release, simply upload all the extracted files to the `httpdocs` directory (e.g. `/var/www/html`) of your server.  If you are using Apache, make sure you upload our included `.htaccess` file for a worry-free configuration.  **Please Note**: Depending on your OS (specifically Linux and macOS), after you've extracted the files, `.htaccess` may appear hidden by your file manager.
+
+* Include download button?
 
 ### Developer Instructions
 
@@ -148,7 +150,7 @@ So, we've shown you everything you need to setup Pico on your server.  Now it's 
 [Packagist.org]: http://packagist.org/packages/picocms/pico
 [ModRewrite]: https://httpd.apache.org/docs/current/mod/mod_rewrite.html
 [NginxConfig]: {{ site.github.url }}/in-depth/nginx/
-[NginxPHP]: {{ site.github.url }}/in-depth/nginx/#php-configuration
+[NginxPHP]: {{ site.github.url }}/docs/nginx/#php-configuration
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/config/config.php.template
 
