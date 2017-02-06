@@ -141,7 +141,7 @@ Other interesting options you may want to configure include theme, date format, 
 
 So, we've shown you everything you need to setup Pico on your server.  Now it's time for the fun stuff.  In the next guide, you'll learn how to create some content.  Click through to proceed to the next article.
 
-<p class="aligncenter" markdown="1"><a href="{{ site.github.url }}/in-depth/creating-content" class="button">Creating Content</a></p>
+<p class="aligncenter" markdown="1"><a href="{{ site.github.url }}/docs/creating-content" class="button">Creating Content</a></p>
 
 
 [Upgrading]: {{ site.github.url }}/in-depth/upgrade/
@@ -158,7 +158,7 @@ So, we've shown you everything you need to setup Pico on your server.  Now it's 
 
 * Need to figure out how to make this button work using Markdown...
 
-[NextGuide]: {{ site.github.url }}/in-depth/creating-content
+[NextGuide]: {{ site.github.url }}/docs/creating-content
 <p class="aligncenter" markdown="1"> [Creating Content][NextGuide]{.button} </p>
 
 ---
