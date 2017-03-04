@@ -3,15 +3,24 @@
 
     <meta charset="utf-8" />
     <title>Redirecting…</title>
-    <link href="{{ page.redirect }}" rel="canonical" />
-    <meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
+
+    {% if page.redirect %}
+        {% capture redirect %}{{ site.github.url }}{{ page.redirect.to }}{% endcapture %}
+    {% elsif page.redirect_to %}
+        {% assign redirect = page.redirect_to %}
+    {% else %}
+        {% assign redirect = site.github.url %}
+    {% endif %}
+
+    <link href="{{ redirect }}" rel="canonical" />
+    <meta http-equiv="refresh" content="0; url={{ redirect }}" />
 
 </head>
 <body class="redirect-layout">
 
     <h1>Redirecting…</h1>
-    <a href="{{ page.redirect }}">Click here if you are not redirected.</a>
-    <script type="text/javascript">window.location = {{ page.redirect|jsonify }};</script>
+    <a href="{{ redirect }}">Click here if you are not redirected.</a>
+    <script type="text/javascript">window.location = {{ redirect|jsonify }};</script>
 
     {{ content }}
 
