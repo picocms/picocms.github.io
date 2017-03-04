@@ -6,8 +6,8 @@
 
     {% if page.redirect %}
         {% capture redirect %}{{ site.github.url }}{{ page.redirect.to }}{% endcapture %}
-    {% elsif page.redirect_to %}
-        {% assign redirect = page.redirect_to %}
+    {% elsif page.redirect_target %}
+        {% assign redirect = page.redirect_target %}
     {% else %}
         {% assign redirect = site.github.url %}
     {% endif %}
