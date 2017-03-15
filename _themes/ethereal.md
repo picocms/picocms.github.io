@@ -8,12 +8,12 @@ description: Let yourself drift away.
 link: https://github.com/BesrourMS/ethereal
 images:
   - themes/images/fullsize/ethereal.jpg
-  - themes/images/fullsize/dimension_content.jpg
-  - themes/images/fullsize/dimension_images.jpg
+  - themes/images/fullsize/ethereal_content.jpg
+  - themes/images/fullsize/ethereal_images.jpg
   - themes/images/fullsize/ethereal_contact.jpg
 info:
   Ported By: "[BesrourMS](https://github.com/BesrourMS)"
-  Original By: "[html5up.net](https://html5up.net/ethereal)"
+  Original By: "[HTML5 UP!](https://html5up.net/ethereal)"
   License: "[Creative Commons Attribution 3.0](https://html5up.net/license)"
 ---
 

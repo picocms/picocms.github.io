@@ -10,7 +10,7 @@ images:
   - themes/images/fullsize/identity.jpg
 info:
   Ported By: "[BesrourMS](https://github.com/BesrourMS)"
-  Original By: "[html5up.net](https://html5up.net/identity)"
+  Original By: "[HTML5 UP!](https://html5up.net/identity)"
   License: "[Creative Commons Attribution 3.0](https://html5up.net/license)"
 ---
 
