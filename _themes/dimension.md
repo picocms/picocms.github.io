@@ -12,7 +12,7 @@ images:
   - themes/images/fullsize/dimension_contact.jpg
 info:
   Ported By: "[BesrourMS](https://github.com/BesrourMS)"
-  Original By: "[html5up.net](https://html5up.net/dimension)"
+  Original By: "[HTML5 UP!](https://html5up.net/dimension)"
   License: "[Creative Commons Attribution 3.0](https://html5up.net/license)"
 ---
 

@@ -2,7 +2,7 @@
 heading: Ampia
 categories:
   - utility
-description: <strong>Instant</strong>ly get <strong>AMP</strong>ed!
+description: Instantly get AMPed!
 link: https://github.com/bigicoin/PicoAmpia
 info:
   By: "[bigicoin](https://github.com/bigicoin)"
