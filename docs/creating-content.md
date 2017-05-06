@@ -102,7 +102,7 @@ Template: index
 
 Simple, huh?  And it gets better too.  These are all the variables that Pico supports by default, but none of them are *required* for your page to work.  The only "required" item on the list above is "Title", because Pico's Default Theme uses the page Title in order to link to it.
 
-Each of these metadata fields are utilized by your Pico theme. Some themes may add or require additional fields in order to function.  We'll go into that in more detail about these when we discuss [Theming and Customization][Theming].  For now, stick with Title, Description, Author, and Date, as these are things most pages should probably have.
+Each of these metadata fields are utilized by your Pico theme. Some themes may add or require additional fields in order to function.  We'll go into that in more detail about these when we discuss [Theming with Twig][Theming].  For now, stick with Title, Description, Author, and Date, as these are things most pages should probably have.
 
 ### Markdown - Because Why Mark *Up*?
 
@@ -157,13 +157,23 @@ In the meantime, see what you can do with the current version.  You'll find that
 
 Check out our [Cookbook][] for some tips and code snippets that will help you use Pico for [blogging][CookbookBlogging].
 
+---
+
+## Up Next...
+
+You've installed Pico and now you've created a simple page or two.  What now?  Well, Pico's default theme is a little sparse.  It's not really meant to be used in production.  The default theme is more of a platform for you to customize to meet your own needs.
+
+How do you do this though?  That's what our next guide will cover.  You'll learn how to customize Pico using the powerful template engine, Twig.  Click through to proceed to the next article.  We'll see you there.
+
+<p class="aligncenter" markdown="1"><a href="{{ site.github.url }}/docs/theming-with-twig" class="button">Theming with Twig</a></p>
+
 [InlineReadme]: {{ site.gh_project_url }}/blob/master/content-sample/index.md
 [YAML]: https://en.wikipedia.org/wiki/YAML
 [Markdown]: http://daringfireball.net/projects/markdown/syntax
 [MarkdownExtra]: https://michelf.ca/projects/php-markdown/extra/
 [Cookbook]: {{ site.github.url }}/cookbook/
 [CookbookBlogging]: {{ site.github.url }}/cookbook/#BloggingWithPico
-[Theming]: {{ site.github.url }}/docs/theming
+[Theming]: {{ site.github.url }}/docs/theming-with-twig
 
 {% comment %}
 
