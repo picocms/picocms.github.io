@@ -13,14 +13,14 @@ toc:
     all-about-urls: All About URLs
   yaml-and-markdown:
     _title: YAML and Markdown
-    yaml---yay--a-metadata-lesson: YAML - Yay, A Metadata Lesson
-    markdown---Because-why-mark--up--: Markdown - Because Why Mark *Up*?
+    yaml---yay-a-metadata-lesson: YAML - Yay, A Metadata Lesson
+    markdown---because-why-mark-up: Markdown - Because Why Mark *Up*?
     variable-variables: Variable Variables
-  let-s-get-started:
+  lets-get-started:
     _title: Let's Get Started
     somewhere-to-land: Somewhere to Land
     404-heading-not-found: 404 Heading Not Found
-    images--downloads--and-other-assets: Images, Downloads, and Other Assets
+    images-downloads-and-other-assets: Images, Downloads, and Other Assets
     to-blog-or-not-to-blog: To Blog or Not to Blog
 nav-url: /docs/
 
