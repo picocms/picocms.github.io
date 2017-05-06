@@ -163,7 +163,7 @@ Check out our [Cookbook][] for some tips and code snippets that will help you us
 [MarkdownExtra]: https://michelf.ca/projects/php-markdown/extra/
 [Cookbook]: {{ site.github.url }}/cookbook/
 [CookbookBlogging]: {{ site.github.url }}/cookbook/#BloggingWithPico
-[Theming]: {{ site.github.url }/docs/theming
+[Theming]: {{ site.github.url }}/docs/theming
 
 {% comment %}
 
