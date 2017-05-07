@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1326336704"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1397245873"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1326336704" class="accordion-body collapse in">
+            <div id="namespace-1397245873" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -211,6 +211,7 @@ Simply remove the events you don't need and add your own logic.</p>
                                                                     <a href="../classes/DummyPlugin.html#method_onContentPrepared" class="">onContentPrepared()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onContentParsed" class="">onContentParsed()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onPagesLoading" class="">onPagesLoading()</a><br />
+                                                                    <a href="../classes/DummyPlugin.html#method_onSinglePageLoading" class="">onSinglePageLoading()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onSinglePageLoaded" class="">onSinglePageLoaded()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onPagesLoaded" class="">onPagesLoaded()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onTwigRegistration" class="">onTwigRegistration()</a><br />
@@ -254,8 +255,7 @@ Simply remove the events you don't need and add your own logic.</p>
                     </section>
                 </div>
                 <aside class="span4 detailsbar">
-                                                                <span class="label label-info">final</span>
-                    
+                                        
                     
                     <dl>
                         <dt>File</dt>
@@ -321,8 +321,9 @@ Simply remove the events you don't need and add your own logic.</p>
             <article class="property">
                 <h3 class="protected ">$enabled</h3>
                 <pre class="signature">$enabled : boolean</pre>
-                <p><em>This plugin is enabled by default?</em></p>
-                
+                <p><em>This plugin is disabled by default</em></p>
+                <p>If you want to enable your plugin by default, simply remove this class
+property.</p>
 
                                 <h4>Type</h4>
                 boolean
@@ -377,6 +378,8 @@ Simply remove the events you don't need and add your own logic.</p>
                 <pre class="signature">$dependsOn : array&lt;mixed,string&gt;</pre>
                 <p><em>This plugin depends on .</em></p>
                 <p>..</p>
+<p>If your plugin doesn't depend on any other plugin, remove this class
+property.</p>
 
                                 <h4>Type</h4>
                 array&lt;mixed,string&gt;
@@ -1343,6 +1346,45 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                                             <dl>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_readPages"><span class="namespace-wrapper">\Pico::readPages()</span></a></dd>
+                                            <dd><a href="../classes/DummyPlugin.html#method_onSinglePageLoading"><span class="namespace-wrapper">\DummyPlugin::onSinglePageLoading()</span></a></dd>
+                                            <dd><a href="../classes/DummyPlugin.html#method_onSinglePageLoaded"><span class="namespace-wrapper">\DummyPlugin::onSinglePageLoaded()</span></a></dd>
+                                            <dd><a href="../classes/DummyPlugin.html#method_onPagesLoaded"><span class="namespace-wrapper">\DummyPlugin::onPagesLoaded()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onSinglePageLoading" name="method_onSinglePageLoading" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onSinglePageLoading()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onSinglePageLoading(  <span class="argument">$id</span>) : void</pre>
+                <p><em>Triggered before Pico loads a single page</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$id </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_readPages"><span class="namespace-wrapper">\Pico::readPages()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onSinglePageLoaded"><span class="namespace-wrapper">\DummyPlugin::onSinglePageLoaded()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onPagesLoaded"><span class="namespace-wrapper">\DummyPlugin::onPagesLoaded()</span></a></dd>
                                                                 </dl>
@@ -1360,7 +1402,7 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                 <h3 class="public ">onSinglePageLoaded()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">onSinglePageLoaded(array  <span class="argument">$pageData</span>) : void</pre>
-                <p><em>Triggered when Pico reads a single page from the list of all known pages</em></p>
+                <p><em>Triggered when Pico loads a single page</em></p>
                 <p>The <code>$pageData</code> parameter consists of the following values:</p>
 <table>
 <thead>
@@ -1423,6 +1465,7 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
 </tr>
 </tbody>
 </table>
+<p>Set <code>$pageData</code> to <code>null</code> to remove this page from the pages array.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
@@ -1789,7 +1832,7 @@ plugin's config array if no config name was supplied</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on May 1st, 2017 at 22:24.
+                    on May 7th, 2017 at 12:22.
                 </section>
             </section>
         </section>
