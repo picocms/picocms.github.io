@@ -4,7 +4,7 @@ thumbnail: themes/images/thumbnails/hold.jpg
 categories:
   - portfolio
 description: Showcase your portfolio.
-link: https://github.com/BesrourMS/magazine
+link: https://github.com/BesrourMS/hold
 images:
   - themes/images/fullsize/hold.jpg
 info:
