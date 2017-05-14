@@ -163,20 +163,6 @@ class DummyPlugin extends AbstractPicoPlugin
     }
 
     /**
-     * Triggered when Pico reads its known meta header fields
-     *
-     * @see    Pico::getMetaHeaders()
-     * @param  string[] &$headers list of known meta header
-     *     fields; the array value specifies the YAML key to search for, the
-     *     array key is later used to access the found value
-     * @return void
-     */
-    public function onMetaHeaders(array &$headers)
-    {
-        // your code
-    }
-
-    /**
      * Triggered before Pico parses the meta header
      *
      * @see    Pico::parseFileMeta()
@@ -246,6 +232,7 @@ class DummyPlugin extends AbstractPicoPlugin
      *
      * @see    Pico::readPages()
      * @see    DummyPlugin::onSinglePageLoading()
+     * @see    DummyPlugin::onSinglePageContent()
      * @see    DummyPlugin::onSinglePageLoaded()
      * @see    DummyPlugin::onPagesDiscovered()
      * @see    DummyPlugin::onPagesLoaded()
@@ -261,6 +248,7 @@ class DummyPlugin extends AbstractPicoPlugin
      *
      * Set `$id` to `null` to remove this page from the pages array.
      *
+     * @see    DummyPlugin::onSinglePageContent()
      * @see    DummyPlugin::onSinglePageLoaded()
      * @see    DummyPlugin::onPagesDiscovered()
      * @see    DummyPlugin::onPagesLoaded()
@@ -268,6 +256,25 @@ class DummyPlugin extends AbstractPicoPlugin
      * @return void
      */
     public function onSinglePageLoading(&$id)
+    {
+        // your code
+    }
+
+    /**
+     * Triggered when Pico loads the raw contents of a single page
+     *
+     * Please note that this event isn't triggered when the currently processed
+     * page is the requested page. The reason for this exception is that the
+     * raw contents of this page were loaded already.
+     *
+     * @see    DummyPlugin::onSinglePageLoaded()
+     * @see    DummyPlugin::onPagesDiscovered()
+     * @see    DummyPlugin::onPagesLoaded()
+     * @param  string $id          relative path to the content file
+     * @param  string &$rawContent raw file contents
+     * @return void
+     */
+    public function onSinglePageContent($id, &$rawContent)
     {
         // your code
     }
@@ -292,6 +299,9 @@ class DummyPlugin extends AbstractPicoPlugin
      * | meta           | string  | parsed meta data of the page               |
      * | previous_page  | &array  | reference to the previous page             |
      * | next_page      | &array  | reference to the next page                 |
+     *
+     * Please note that the `previous_page` and `next_page` keys won't be
+     * available until the `onCurrentPageDiscovered` event was triggered.
      *
      * Set `$pageData` to `null` to remove this page from the pages array.
      *
@@ -383,6 +393,20 @@ class DummyPlugin extends AbstractPicoPlugin
      * @return void
      */
     public function onPageRendered(&$output)
+    {
+        // your code
+    }
+
+    /**
+     * Triggered when Pico reads its known meta header fields
+     *
+     * @see    Pico::getMetaHeaders()
+     * @param  string[] &$headers list of known meta header
+     *     fields; the array value specifies the YAML key to search for, the
+     *     array key is later used to access the found value
+     * @return void
+     */
+    public function onMetaHeaders(array &$headers)
     {
         // your code
     }

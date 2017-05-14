@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1188308153"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-42847433"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1188308153" class="accordion-body collapse in">
+            <div id="namespace-42847433" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -266,7 +266,6 @@ released under the MIT license.</li>
                                                                     <a href="../classes/Pico.html#method_sortPages" class="">sortPages()</a><br />
                                                                     <a href="../classes/Pico.html#method_discoverPageSiblings" class="">discoverPageSiblings()</a><br />
                                                                     <a href="../classes/Pico.html#method_discoverCurrentPage" class="">discoverCurrentPage()</a><br />
-                                                                    <a href="../classes/Pico.html#method_registerTwig" class="">registerTwig()</a><br />
                                                                     <a href="../classes/Pico.html#method_getTwigVariables" class="">getTwigVariables()</a><br />
                                                                     <a href="../classes/Pico.html#method_getTwigTemplate" class="">getTwigTemplate()</a><br />
                                                                     <a href="../classes/Pico.html#method_filterVariable" class="">filterVariable()</a><br />
@@ -1883,7 +1882,8 @@ up from the directory the requested file is in</em></p>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getMetaHeaders() : array&lt;mixed,string&gt;</pre>
                 <p><em>Returns known meta headers</em></p>
-                
+                <p>This method triggers the <code>onMetaHeaders</code> event when the known meta
+headers weren't assembled yet.</p>
 
                 
                 
@@ -2301,8 +2301,11 @@ e.g. removing the meta header and replacing %base_url%</em></p>
                 <h3 class="public ">getTwig()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getTwig() : \Twig_Environment|null</pre>
-                <p><em>Returns the twig template engine</em></p>
-                
+                <p><em>Returns the Twig template engine</em></p>
+                <p>This method triggers the <code>onTwigRegistered</code> event when the Twig template
+engine wasn't initiated yet. When initiating Twig, this method also
+registers Pico's core Twig filters <code>link</code> and <code>content</code> as well as
+Pico's <a href="../classes/PicoTwigExtension.html">\PicoTwigExtension</a> Twig extension.</p>
 
                 
                 
@@ -2316,7 +2319,9 @@ e.g. removing the meta header and replacing %base_url%</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="../classes/Pico.html#method_registerTwig"><span class="namespace-wrapper">\Pico::registerTwig()</span></a></dd>
+                                                                <dd><a href="../classes/Pico.html#method_getTwig"><span class="namespace-wrapper">\Pico::getTwig()</span></a></dd>
+                                            <dd><a href="http://twig.sensiolabs.org/"><span class="namespace-wrapper">Twig website</span></a></dd>
+                                            <dd><a href=""><span class="namespace-wrapper">Twig on GitHub</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -3051,8 +3056,8 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
 </tbody>
 </table>
 <p>Please note that the <code>previous_page</code> and <code>next_page</code> keys won't be
-available until the <code>onPagesLoaded</code> event (<a href="../classes/Pico.html#method_sortPages">\Pico::sortPages()</a>)
-was triggered.</p>
+available until the <code>onCurrentPageDiscovered</code> event
+(<a href="../classes/Pico.html#method_discoverPageSiblings">\Pico::discoverPageSiblings()</a>) was triggered.</p>
 
                 
                 
@@ -3156,39 +3161,6 @@ and next page relative to it</em></p>
                                                                 <dd><a href="../classes/Pico.html#method_getCurrentPage"><span class="namespace-wrapper">\Pico::getCurrentPage()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPreviousPage"><span class="namespace-wrapper">\Pico::getPreviousPage()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getNextPage"><span class="namespace-wrapper">\Pico::getNextPage()</span></a></dd>
-                                                                </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_registerTwig" name="method_registerTwig" class="anchor"></a>
-            <article class="method">
-                <h3 class="protected ">registerTwig()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">registerTwig() : void</pre>
-                <p><em>Registers the Twig template engine</em></p>
-                <p>This method also registers Pico's core Twig filters <code>link</code> and <code>content</code>
-as well as Pico's <a href="../classes/PicoTwigExtension.html">\PicoTwigExtension</a> Twig extension.</p>
-<p>This method triggers the <code>onTwigRegistered</code> event when the Twig template
-engine wasn't initiated yet.</p>
-
-                
-                
-                				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/Pico.html#method_getTwig"><span class="namespace-wrapper">\Pico::getTwig()</span></a></dd>
-                                            <dd><a href="http://twig.sensiolabs.org/"><span class="namespace-wrapper">Twig website</span></a></dd>
-                                            <dd><a href=""><span class="namespace-wrapper">Twig on GitHub</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -3385,7 +3357,7 @@ provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on May 13th, 2017 at 16:21.
+                    on May 14th, 2017 at 00:32.
                 </section>
             </section>
         </section>
