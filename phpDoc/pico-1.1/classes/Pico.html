@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-708666285"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1312415471"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-708666285" class="accordion-body collapse in">
+            <div id="namespace-1312415471" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -259,6 +259,8 @@ released under the MIT license.</li>
                         <section class="row-fluid protected">
                             <section class="span4">
                                                                     <a href="../classes/Pico.html#method_loadPlugins" class="">loadPlugins()</a><br />
+                                                                    <a href="../classes/Pico.html#method_loadLocalPlugins" class="">loadLocalPlugins()</a><br />
+                                                                    <a href="../classes/Pico.html#method_loadComposerPlugins" class="">loadComposerPlugins()</a><br />
                                                                     <a href="../classes/Pico.html#method_sortPlugins" class="">sortPlugins()</a><br />
                                                                     <a href="../classes/Pico.html#method_loadConfig" class="">loadConfig()</a><br />
                                                                     <a href="../classes/Pico.html#method_evaluateRequestUrl" class="">evaluateRequestUrl()</a><br />
@@ -2749,7 +2751,7 @@ Pico::SORT_NONE to leave the result unsorted</p></td>
 Please note that \PicoDeprecated also triggers custom events on
 plugins using older API versions, thus you can safely use this method
 to trigger custom events on all loaded plugins, no matter what API
-version - the event will be triggered in any case</p>
+version - the event will be triggered in any case.</p>
 <p>You MUST NOT trigger events of Pico's core with a plugin!</p>
 
                                     <h4>Parameters</h4>
@@ -2792,22 +2794,10 @@ version - the event will be triggered in any case</p>
                 <h3 class="protected ">loadPlugins()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">loadPlugins() : void</pre>
-                <p><em>Loads plugins from Pico::$pluginsDir in alphabetical order</em></p>
-                <p>Pico tries to load plugins from <code>&lt;plugin name&gt;/&lt;plugin name&gt;.php</code> and
-<code>&lt;plugin name&gt;.php</code> only. Plugin names are treated case insensitive.
-Pico will throw a RuntimeException if it can't load a plugin.</p>
-<p>Plugin files MAY be prefixed by a number (e.g. 00-PicoDeprecated.php)
-to indicate their processing order. Plugins without a prefix will be
-loaded last. If you want to use a prefix, you MUST NOT use the reserved
-prefixes <code>00</code> to <code>09</code>. Prefixes are completely optional, however, you
-SHOULD take the following prefix classification into consideration:</p>
-<ul>
-<li>10 to 19: Reserved</li>
-<li>20 to 39: Low level code helper plugins</li>
-<li>40 to 59: Plugins manipulating routing or the pages array</li>
-<li>60 to 79: Plugins hooking into template or markdown parsing</li>
-<li>80 to 99: Plugins using the <code>onPageRendered</code> event</li>
-</ul>
+                <p><em>Loads plugins from vendor/pico-plugin.php and Pico::$pluginsDir</em></p>
+                <p>See <a href="../classes/Pico.html#method_loadLocalPlugins">\Pico::loadLocalPlugins()</a> for details about plugins installed
+to <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>, and <a href="../classes/Pico.html#method_loadComposerPlugins">\Pico::loadComposerPlugins()</a> for
+details about plugins installed using <code>composer</code>.</p>
 <p>Please note that Pico will change the processing order when needed to
 incorporate plugin dependencies. See <a href="../classes/Pico.html#method_sortPlugins">\Pico::sortPlugins()</a> for
 details.</p>
@@ -2829,6 +2819,87 @@ details.</p>
                                                                 <dd><a href="../classes/Pico.html#method_loadPlugin"><span class="namespace-wrapper">\Pico::loadPlugin()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPlugin"><span class="namespace-wrapper">\Pico::getPlugin()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPlugins"><span class="namespace-wrapper">\Pico::getPlugins()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_loadLocalPlugins" name="method_loadLocalPlugins" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">loadLocalPlugins()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadLocalPlugins() : void</pre>
+                <p><em>Loads plugins from Pico::$pluginsDir in alphabetical order</em></p>
+                <p>Pico tries to load plugins from <code>&lt;plugin name&gt;/&lt;plugin name&gt;.php</code> and
+<code>&lt;plugin name&gt;.php</code> only. Plugin names are treated case insensitive.
+Pico will throw a RuntimeException if it can't load a plugin.</p>
+<p>Plugin files MAY be prefixed by a number (e.g. 00-PicoDeprecated.php)
+to indicate their processing order. Plugins without a prefix will be
+loaded last. If you want to use a prefix, you MUST NOT use the reserved
+prefixes <code>00</code> to <code>09</code>. Prefixes are completely optional, however, you
+SHOULD take the following prefix classification into consideration:</p>
+<ul>
+<li>10 to 19: Reserved</li>
+<li>20 to 39: Low level code helper plugins</li>
+<li>40 to 59: Plugins manipulating routing or the pages array</li>
+<li>60 to 79: Plugins hooking into template or markdown parsing</li>
+<li>80 to 99: Plugins using the <code>onPageRendered</code> event</li>
+</ul>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\RuntimeException</dt>
+                            <dd><p>thrown when a plugin couldn't be loaded</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_loadPlugins"><span class="namespace-wrapper">\Pico::loadPlugins()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_loadComposerPlugins"><span class="namespace-wrapper">\Pico::loadComposerPlugins()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_loadComposerPlugins" name="method_loadComposerPlugins" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">loadComposerPlugins()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadComposerPlugins() : void</pre>
+                <p><em>Loads plugins from vendor/pico-plugin.php</em></p>
+                <p>This method loads all plugins installed using <code>composer</code> and Pico's
+<code>picocms/pico-composer</code> installer by reading the <code>pico-plugin.php</code> in
+composer's <code>vendor</code> dir. Using composer enables plugin developers to
+load multiple plugins and their dependencies using a single composer
+package.</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_loadPlugins"><span class="namespace-wrapper">\Pico::loadPlugins()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_loadLocalPlugins"><span class="namespace-wrapper">\Pico::loadLocalPlugins()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -3357,7 +3428,7 @@ provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on June 13th, 2017 at 23:50.
+                    on June 14th, 2017 at 15:17.
                 </section>
             </section>
         </section>
