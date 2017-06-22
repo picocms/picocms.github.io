@@ -44,7 +44,9 @@ class PicoPageTreePlugin extends AbstractPicoPlugin
             {% for page in tree[parent] %}
                 <li>
                     <a href="{{ page.url }}">{{ page.title }}</a>
-                    {{ macros.rnav(tree, page.id) }}
+
+                    {% set sub = page.id|slice(-6) == "/index" ? page.id|slice(0, -6) : page.id %}
+                    {{ macros.rnav(tree, sub) }}
                 </li>
             {% endfor %}
         </ul>
