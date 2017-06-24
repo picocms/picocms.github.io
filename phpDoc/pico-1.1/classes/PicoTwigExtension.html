@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1073282632"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1771207878"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1073282632" class="accordion-body collapse in">
+            <div id="namespace-1771207878" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -485,7 +485,7 @@
             <article class="method">
                 <h3 class="public ">markdownFilter()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">markdownFilter(string  <span class="argument">$markdown</span>) : string</pre>
+                <pre class="signature" style="margin-right: 54px;">markdownFilter(string  <span class="argument">$markdown</span>, array  <span class="argument">$meta = array()</span>) : string</pre>
                 <p><em>Parses a markdown string to HTML</em></p>
                 <p>This method is registered as the Twig <code>markdown</code> filter. You can use it
 to e.g. parse a meta variable (<code>{{ meta.description|markdown }}</code>).
@@ -499,6 +499,11 @@ instead, what ensures the proper preparation of the contents.</p>
                                 <td>$markdown </td>
                                 <td><p>markdown to parse</p></td>
                             </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$meta </td>
+                                <td><p>meta data to use for %meta.*% replacement</p></td>
+                            </tr>
                                             </table>
                 
                 
@@ -511,7 +516,10 @@ instead, what ensures the proper preparation of the contents.</p>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_substituteFileContent"><span class="namespace-wrapper">\Pico::substituteFileContent()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_parseFileContent"><span class="namespace-wrapper">\Pico::parseFileContent()</span></a></dd>
+                                                                </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -719,7 +727,7 @@ value or NULL when the given key or key path didn't match</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on June 20th, 2017 at 21:37.
+                    on June 24th, 2017 at 12:04.
                 </section>
             </section>
         </section>

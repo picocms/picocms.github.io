@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-585869433"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-138481187"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-585869433" class="accordion-body collapse in">
+            <div id="namespace-138481187" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -226,6 +226,7 @@ released under the MIT license.</li>
                                                                     <a href="../classes/Pico.html#method_getFileMeta" class="">getFileMeta()</a><br />
                                                                     <a href="../classes/Pico.html#method_getParsedown" class="">getParsedown()</a><br />
                                                                     <a href="../classes/Pico.html#method_prepareFileContent" class="">prepareFileContent()</a><br />
+                                                                    <a href="../classes/Pico.html#method_substituteFileContent" class="">substituteFileContent()</a><br />
                                                                     <a href="../classes/Pico.html#method_parseFileContent" class="">parseFileContent()</a><br />
                                                                     <a href="../classes/Pico.html#method_getFileContent" class="">getFileContent()</a><br />
                                                                     <a href="../classes/Pico.html#method_getPages" class="">getPages()</a><br />
@@ -2062,8 +2063,9 @@ Parsedown Extra parser wasn't initiated yet.</p>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">prepareFileContent(string  <span class="argument">$rawContent</span>, array  <span class="argument">$meta</span>) : string</pre>
                 <p><em>Applies some static preparations to the raw contents of a page,
-e.g. removing the meta header and replacing %base_url%</em></p>
-                
+e.g. removing the meta header and replacing %.</em></p>
+                <p>..% placehodlers</p>
+<p>This method calls the <a href="../classes/Pico.html#method_substituteFileContent">\Pico::substituteFileContent()</a> method.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
@@ -2082,7 +2084,7 @@ e.g. removing the meta header and replacing %base_url%</em></p>
                 
                                     <h4>Returns</h4>
                     string
-                                            &mdash; <p>contents prepared for parsing</p>
+                                            &mdash; <p>prepared Markdown contents</p>
                                     				
                             </article>
         </div>
@@ -2090,9 +2092,52 @@ e.g. removing the meta header and replacing %base_url%</em></p>
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
                                                                                             <dt>See also</dt>
-                                                                <dd><a href="../classes/Pico.html#method_parseFileContent"><span class="namespace-wrapper">\Pico::parseFileContent()</span></a></dd>
+                                                                <dd><a href="../classes/Pico.html#method_substituteFileContent"><span class="namespace-wrapper">\Pico::substituteFileContent()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_parseFileContent"><span class="namespace-wrapper">\Pico::parseFileContent()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getFileContent"><span class="namespace-wrapper">\Pico::getFileContent()</span></a></dd>
                                                                 </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_substituteFileContent" name="method_substituteFileContent" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">substituteFileContent()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">substituteFileContent(string  <span class="argument">$markdown</span>, array  <span class="argument">$meta = array()</span>) : string</pre>
+                <p><em>Replaces all %.</em></p>
+                <p>..% placeholders in a page's contents</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$markdown </td>
+                                <td><p>Markdown contents of a page</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$meta </td>
+                                <td><p>meta data to use for %meta.*% replacement</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>substituted Markdown contents</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -2106,7 +2151,7 @@ e.g. removing the meta header and replacing %base_url%</em></p>
             <article class="method">
                 <h3 class="public ">parseFileContent()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">parseFileContent(string  <span class="argument">$content</span>) : string</pre>
+                <pre class="signature" style="margin-right: 54px;">parseFileContent(string  <span class="argument">$markdown</span>) : string</pre>
                 <p><em>Parses the contents of a page using ParsedownExtra</em></p>
                 
 
@@ -2114,8 +2159,8 @@ e.g. removing the meta header and replacing %base_url%</em></p>
                     <table class="table table-condensed table-hover">
                                                     <tr>
                                 <td>string</td>
-                                <td>$content </td>
-                                <td><p>raw contents of a page (Markdown)</p></td>
+                                <td>$markdown </td>
+                                <td><p>Markdown contents of a page</p></td>
                             </tr>
                                             </table>
                 
@@ -2131,6 +2176,7 @@ e.g. removing the meta header and replacing %base_url%</em></p>
                                                             <dl>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_prepareFileContent"><span class="namespace-wrapper">\Pico::prepareFileContent()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_substituteFileContent"><span class="namespace-wrapper">\Pico::substituteFileContent()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getFileContent"><span class="namespace-wrapper">\Pico::getFileContent()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -2163,6 +2209,7 @@ e.g. removing the meta header and replacing %base_url%</em></p>
                                                             <dl>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_prepareFileContent"><span class="namespace-wrapper">\Pico::prepareFileContent()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_substituteFileContent"><span class="namespace-wrapper">\Pico::substituteFileContent()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_parseFileContent"><span class="namespace-wrapper">\Pico::parseFileContent()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -3428,7 +3475,7 @@ provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on June 20th, 2017 at 21:37.
+                    on June 24th, 2017 at 12:04.
                 </section>
             </section>
         </section>
