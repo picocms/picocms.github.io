@@ -6,7 +6,7 @@ categories:
 description: A place for your mental clutter.
 link: https://github.com/alan-luo/clutter
 images:
-  - themes/images/thumbnails/clutter.jpg
+  - themes/images/fullsize/clutter.jpg
 info:
   By: "[Alan Luo](http://alanluo.com)"
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
