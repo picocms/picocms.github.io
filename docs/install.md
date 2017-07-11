@@ -9,7 +9,6 @@ toc:
   design-themes: Design Themes
   code-plugins: Code Plugins
 nav-url: /docs/
-nav: 3
 ---
 
 <i class="icon-terminal big-icon"></i>

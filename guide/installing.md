@@ -15,7 +15,6 @@ toc:
     nginx: Nginx
   configuring-pico: Configuring Pico
 nav-url: /guide/
-nav: 4
 galleries:
   standalone_1:
     style: magnify

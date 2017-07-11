@@ -23,7 +23,6 @@ toc:
     images-downloads-and-other-assets: Images, Downloads, and Other Assets
     to-blog-or-not-to-blog: To Blog or Not to Blog
 nav-url: /guide/
-nav: 4
 ---
 
 ## Simple But Elegant Content Management
