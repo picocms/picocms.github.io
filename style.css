@@ -3019,3 +3019,6 @@ h4:hover .learn-more, h5:hover .learn-more, h6:hover .learn-more {
     color: #ff6760;
     font-size: 75%;
 }
+.big-icon {
+  font-size: 150px;
+}

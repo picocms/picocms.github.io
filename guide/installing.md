@@ -14,7 +14,8 @@ toc:
     apache: Apache
     nginx: Nginx
   configuring-pico: Configuring Pico
-nav-url: /docs/
+nav-url: /guide/
+nav: 4
 galleries:
   standalone_1:
     style: magnify
@@ -141,7 +142,7 @@ Other interesting options you may want to configure include theme, date format, 
 
 So, we've shown you everything you need to setup Pico on your server.  Now it's time for the fun stuff.  In the next guide, you'll learn how to create some content.  Click through to proceed to the next article.
 
-<p class="aligncenter" markdown="1"><a href="{{ site.github.url }}/docs/creating-content" class="button">Creating Content</a></p>
+<p class="aligncenter" markdown="1"><a href="{{ site.github.url }}/guide/creating-content" class="button">Creating Content</a></p>
 
 
 [Upgrading]: {{ site.github.url }}/in-depth/upgrade/
@@ -150,7 +151,7 @@ So, we've shown you everything you need to setup Pico on your server.  Now it's 
 [Packagist.org]: http://packagist.org/packages/picocms/pico
 [ModRewrite]: https://httpd.apache.org/docs/current/mod/mod_rewrite.html
 [NginxConfig]: {{ site.github.url }}/in-depth/nginx/
-[NginxPHP]: {{ site.github.url }}/docs/nginx/#php-configuration
+[NginxPHP]: {{ site.github.url }}/in-depth/nginx/#php-configuration
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/config/config.php.template
 

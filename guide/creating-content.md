@@ -22,8 +22,8 @@ toc:
     404-heading-not-found: 404 Heading Not Found
     images-downloads-and-other-assets: Images, Downloads, and Other Assets
     to-blog-or-not-to-blog: To Blog or Not to Blog
-nav-url: /docs/
-
+nav-url: /guide/
+nav: 4
 ---
 
 ## Simple But Elegant Content Management
@@ -165,7 +165,7 @@ You've installed Pico and now you've created a simple page or two.  What now?  W
 
 How do you do this though?  That's what our next guide will cover.  You'll learn how to customize Pico using the powerful template engine, Twig.  Click through to proceed to the next article.  We'll see you there.
 
-<p class="aligncenter" markdown="1"><a href="{{ site.github.url }}/docs/theming-with-twig" class="button">Theming with Twig</a></p>
+<p class="aligncenter" markdown="1"><a href="{{ site.github.url }}/guide/theming-with-twig" class="button">Theming with Twig</a></p>
 
 [InlineReadme]: {{ site.gh_project_url }}/blob/master/content-sample/index.md
 [YAML]: https://en.wikipedia.org/wiki/YAML
@@ -173,7 +173,7 @@ How do you do this though?  That's what our next guide will cover.  You'll learn
 [MarkdownExtra]: https://michelf.ca/projects/php-markdown/extra/
 [Cookbook]: {{ site.github.url }}/cookbook/
 [CookbookBlogging]: {{ site.github.url }}/cookbook/#BloggingWithPico
-[Theming]: {{ site.github.url }}/docs/theming-with-twig
+[Theming]: {{ site.github.url }}/guide/theming-with-twig
 
 {% comment %}
 
