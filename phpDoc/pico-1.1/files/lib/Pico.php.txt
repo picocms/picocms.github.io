@@ -1552,7 +1552,7 @@ class Pico
         } elseif ($orderBy === 'date') {
             // sort by date
             uasort($this->pages, function ($a, $b) use ($alphaSortClosure, $order) {
-                if ($a['hidden'] || $b['hidden']) {
+                if ($a['hidden'] xor $b['hidden']) {
                     return $alphaSortClosure($a, $b);
                 }
 
