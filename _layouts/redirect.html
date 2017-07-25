@@ -5,7 +5,7 @@
     <title>Redirecting…</title>
 
     {% if page.redirect %}
-        {% capture redirect %}{{ site.github.url }}{{ page.redirect.to }}{% endcapture %}
+        {% assign redirect = page.redirect.to %}
     {% elsif page.redirect_target %}
         {% assign redirect = page.redirect_target %}
     {% else %}
