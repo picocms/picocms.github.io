@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-945705301"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1973534837"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-945705301" class="accordion-body collapse in">
+            <div id="namespace-1973534837" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -767,7 +767,7 @@ This parameter is optional and defaults to false.</p></td>
             <article class="method">
                 <h3 class="public ">getPluginConfig()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getPluginConfig(string  <span class="argument">$configName = null</span>) : mixed</pre>
+                <pre class="signature" style="margin-right: 54px;">getPluginConfig(string  <span class="argument">$configName = null</span>, mixed  <span class="argument">$default = null</span>) : mixed</pre>
                 <p><em>Returns either the value of the specified plugin config variable or
 the config array</em></p>
                 
@@ -779,14 +779,22 @@ the config array</em></p>
                                 <td>$configName </td>
                                 <td><p>optional name of a config variable</p></td>
                             </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$default </td>
+                                <td><p>optional default value to return when the
+named config variable doesn't exist</p></td>
+                            </tr>
                                             </table>
                 
                 
                                     <h4>Returns</h4>
                     mixed
-                                            &mdash; <p>returns either the value of the named plugin
-config variable, null if the config variable doesn't exist or the
-plugin's config array if no config name was supplied</p>
+                                            &mdash; <p>if no name of a config variable has been
+supplied, the plugin's config array is returned; otherwise it
+returns either the value of the named config variable, or, if the
+named config variable doesn't exist, the provided default value
+or NULL</p>
                                     				
                             </article>
         </div>
@@ -2190,7 +2198,7 @@ aren't compatible</p></dd>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on August 3rd, 2017 at 20:24.
+                    on August 4th, 2017 at 22:25.
                 </section>
             </section>
         </section>
