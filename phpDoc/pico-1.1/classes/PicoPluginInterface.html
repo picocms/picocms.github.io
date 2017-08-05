@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1633867073"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-216170914"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1633867073" class="accordion-body collapse in">
+            <div id="namespace-216170914" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -171,17 +171,11 @@
                     <p>For a list of supported events see <a href="../classes/DummyPlugin.html">\DummyPlugin</a>; you can use
 <a href="../classes/DummyPlugin.html">\DummyPlugin</a> as template for new plugins. For a list of deprecated
 events see \PicoDeprecated.</p>
-<p>You SHOULD NOT use deprecated events when implementing this interface.
-Deprecated events are triggered by the \PicoDeprecated plugin, if
-plugins which don't implement this interface are loaded. You can take
-advantage from this behaviour if you want to do something only when old
-plugins are loaded. Consequently the old events are never triggered when
-your plugin is implementing this interface and no old plugins are present.</p>
-<p>If you're developing a new plugin, you MUST implement this interface. If
-you're the developer of an old plugin, it is STRONGLY RECOMMENDED to use
-the events introduced in Pico 1.0 when releasing a new version of your
-plugin. If you want to use any of the new events, you MUST implement
-this interface and update all other events you use.</p>
+<p>If you're developing a new plugin, you MUST both implement this interface
+and define the class constant <code>API_VERSION</code>. You SHOULD always use the
+API version of Pico's latest milestone when releasing a plugin. If you're
+developing a new version of an existing plugin, it is strongly recommended
+to update your plugin to use Pico's latest API version.</p>
 
                     <section id="summary">
                         <h2>Summary</h2>
@@ -601,7 +595,7 @@ This parameter is optional and defaults to false.</p></td>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on August 4th, 2017 at 22:25.
+                    on August 5th, 2017 at 00:56.
                 </section>
             </section>
         </section>
