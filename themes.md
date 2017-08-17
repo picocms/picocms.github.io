@@ -27,5 +27,5 @@ You can even [contribute][Contribute] your own theme to the community and we'll 
 We appreciate any and all contributions, whether you've created something original or ported an existing HTML theme (license permitting), we'd love to see it!
 
 [Contribute]: {{ site.github.url }}/docs/#contribute
-[Wiki]: {{ site.gh_project_url }}/wiki/Pico-Plugins
+[Wiki]: {{ site.gh_project_url }}/wiki/Pico-Themes
 [SubmissionGuidelines]: {{ site.github.url }}/in-depth/submission_guidelines
