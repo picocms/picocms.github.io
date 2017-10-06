@@ -1,6 +1,6 @@
 ---
 heading: Generallax
-thumbnail: themes/images/thumbnails/generallax.jpg
+thumbnail: themes/images/thumbnails/generallax.png
 categories:
   - Portfolio
   - Single Page
@@ -16,4 +16,4 @@ info:
 
 This is the Generallax Theme for Pico by Shane Zentz.
 
-The Generallax Theme is based on/ported from a plain php/css theme that I created from scratch.  Generallax is simply intended as a boilerplate or starter template, in which the user would (and should) modify the CSS and images to suit their tastes and desires. 
+The Generallax Theme is based on/ported from a plain php/css theme that I created from scratch.  Generallax is simply intended as a boilerplate or starter template, in which the user would (and should) modify the CSS and images to suit their tastes and desires.
