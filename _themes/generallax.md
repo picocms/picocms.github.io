@@ -1,13 +1,13 @@
 ---
-heading: Generallax Theme by Shane Zentz
-thumbnail: /_themes/images/thumbnails/generallax.jpg
+heading: Generallax
+thumbnail: themes/images/thumbnails/generallax.jpg
 categories:
   - Portfolio
   - Single Page
-description: The Generallax Theme by Shane Zentz
+description: The Generallax Theme
 link: https://github.com/shane-zentz/Generallax4Pico
 images:
-  - /_themes/images/thumbnails/generallax.png
+  - themes/images/thumbnails/generallax.png
 
 info:
   By: "[Shane Zentz](https://github.com/shane-zentz)"
