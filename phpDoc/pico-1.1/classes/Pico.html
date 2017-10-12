@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-330859065"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1459088369"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-330859065" class="accordion-body collapse in">
+            <div id="namespace-1459088369" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -237,6 +237,7 @@ released under the MIT license.</li>
                                                                     <a href="../classes/Pico.html#method_getBaseUrl" class="">getBaseUrl()</a><br />
                                                                     <a href="../classes/Pico.html#method_isUrlRewritingEnabled" class="">isUrlRewritingEnabled()</a><br />
                                                                     <a href="../classes/Pico.html#method_getPageUrl" class="">getPageUrl()</a><br />
+                                                                    <a href="../classes/Pico.html#method_getPageId" class="">getPageId()</a><br />
                                                                     <a href="../classes/Pico.html#method_getBaseThemeUrl" class="">getBaseThemeUrl()</a><br />
                                                                     <a href="../classes/Pico.html#method_getUrlParameter" class="">getUrlParameter()</a><br />
                                                                     <a href="../classes/Pico.html#method_getFormParameter" class="">getFormParameter()</a><br />
@@ -260,8 +261,8 @@ released under the MIT license.</li>
                         <section class="row-fluid protected">
                             <section class="span4">
                                                                     <a href="../classes/Pico.html#method_loadPlugins" class="">loadPlugins()</a><br />
-                                                                    <a href="../classes/Pico.html#method_loadLocalPlugins" class="">loadLocalPlugins()</a><br />
                                                                     <a href="../classes/Pico.html#method_loadComposerPlugins" class="">loadComposerPlugins()</a><br />
+                                                                    <a href="../classes/Pico.html#method_loadLocalPlugins" class="">loadLocalPlugins()</a><br />
                                                                     <a href="../classes/Pico.html#method_sortPlugins" class="">sortPlugins()</a><br />
                                                                     <a href="../classes/Pico.html#method_loadConfig" class="">loadConfig()</a><br />
                                                                     <a href="../classes/Pico.html#method_evaluateRequestUrl" class="">evaluateRequestUrl()</a><br />
@@ -702,12 +703,12 @@ released under the MIT license.</li>
             <a id="property_nativePlugins" name="property_nativePlugins" class="anchor"></a>
             <article class="property">
                 <h3 class="protected ">$nativePlugins</h3>
-                <pre class="signature">$nativePlugins : array&lt;mixed,object&gt;</pre>
+                <pre class="signature">$nativePlugins : array&lt;mixed,\PicoPluginInterface&gt;</pre>
                 <p><em>List of loaded plugins using the current API version</em></p>
                 
 
                                 <h4>Type</h4>
-                array&lt;mixed,object&gt;
+                array&lt;mixed,<a href="../classes/PicoPluginInterface.html">\PicoPluginInterface</a>&gt;
                                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2498,6 +2499,43 @@ then passing TRUE (default) leads to removing this path component</p></td>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_getPageId" name="method_getPageId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPageId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPageId(string  <span class="argument">$path</span>) : string|null</pre>
+                <p><em>Returns the page ID of a given content file</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$path </td>
+                                <td><p>path to the content file</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string|null
+                                            &mdash; <p>either the corresponding page ID or null</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_getBaseThemeUrl" name="method_getBaseThemeUrl" class="anchor"></a>
             <article class="method">
                 <h3 class="public ">getBaseThemeUrl()</h3>
@@ -2849,9 +2887,12 @@ version - the event will be triggered in any case.</p>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">loadPlugins() : void</pre>
                 <p><em>Loads plugins from vendor/pico-plugin.php and Pico::$pluginsDir</em></p>
-                <p>See <a href="../classes/Pico.html#method_loadLocalPlugins">\Pico::loadLocalPlugins()</a> for details about plugins installed
-to <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>, and <a href="../classes/Pico.html#method_loadComposerPlugins">\Pico::loadComposerPlugins()</a> for
-details about plugins installed using <code>composer</code>.</p>
+                <p>See <a href="../classes/Pico.html#method_loadComposerPlugins">\Pico::loadComposerPlugins()</a> for details about plugins loaded
+from <code>vendor/pico-plugin.php</code> (i.e. plugins that were installed using
+<code>composer</code>), and <a href="../classes/Pico.html#method_loadLocalPlugins">\Pico::loadLocalPlugins()</a> for details about
+plugins installed to <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>.</p>
+<p>Pico always loads plugins from <code>vendor/pico-plugin.php</code> first and
+ignores conflicting plugins in <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>.</p>
 <p>Please note that Pico will change the processing order when needed to
 incorporate plugin dependencies. See <a href="../classes/Pico.html#method_sortPlugins">\Pico::sortPlugins()</a> for
 details.</p>
@@ -2883,6 +2924,37 @@ details.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_loadComposerPlugins" name="method_loadComposerPlugins" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">loadComposerPlugins()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">loadComposerPlugins() : void</pre>
+                <p><em>Loads plugins from vendor/pico-plugin.php</em></p>
+                <p>This method loads all plugins installed using <code>composer</code> and Pico's
+<code>picocms/pico-installer</code> installer by reading the <code>pico-plugin.php</code> in
+composer's <code>vendor</code> dir.</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_loadPlugins"><span class="namespace-wrapper">\Pico::loadPlugins()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_loadLocalPlugins"><span class="namespace-wrapper">\Pico::loadLocalPlugins()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_loadLocalPlugins" name="method_loadLocalPlugins" class="anchor"></a>
             <article class="method">
                 <h3 class="protected ">loadLocalPlugins()</h3>
@@ -2892,7 +2964,7 @@ details.</p>
                 <p>Pico tries to load plugins from <code>&lt;plugin name&gt;/&lt;plugin name&gt;.php</code> and
 <code>&lt;plugin name&gt;.php</code> only. Plugin names are treated case insensitive.
 Pico will throw a RuntimeException if it can't load a plugin.</p>
-<p>Plugin files MAY be prefixed by a number (e.g. 00-PicoDeprecated.php)
+<p>Plugin files MAY be prefixed by a number (e.g. <code>00-PicoDeprecated.php</code>)
 to indicate their processing order. Plugins without a prefix will be
 loaded last. If you want to use a prefix, you MUST NOT use the reserved
 prefixes <code>00</code> to <code>09</code>. Prefixes are completely optional, however, you
@@ -2921,39 +2993,6 @@ SHOULD take the following prefix classification into consideration:</p>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_loadPlugins"><span class="namespace-wrapper">\Pico::loadPlugins()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_loadComposerPlugins"><span class="namespace-wrapper">\Pico::loadComposerPlugins()</span></a></dd>
-                                                                </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_loadComposerPlugins" name="method_loadComposerPlugins" class="anchor"></a>
-            <article class="method">
-                <h3 class="protected ">loadComposerPlugins()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">loadComposerPlugins() : void</pre>
-                <p><em>Loads plugins from vendor/pico-plugin.php</em></p>
-                <p>This method loads all plugins installed using <code>composer</code> and Pico's
-<code>picocms/pico-composer</code> installer by reading the <code>pico-plugin.php</code> in
-composer's <code>vendor</code> dir. Using composer enables plugin developers to
-load multiple plugins and their dependencies using a single composer
-package.</p>
-
-                
-                
-                				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/Pico.html#method_loadPlugins"><span class="namespace-wrapper">\Pico::loadPlugins()</span></a></dd>
-                                            <dd><a href="../classes/Pico.html#method_loadLocalPlugins"><span class="namespace-wrapper">\Pico::loadLocalPlugins()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -3482,7 +3521,7 @@ provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on August 5th, 2017 at 00:56.
+                    on October 12th, 2017 at 13:21.
                 </section>
             </section>
         </section>

@@ -131,7 +131,7 @@ class Pico
     /**
      * List of loaded plugins using the current API version
      *
-     * @var object[]
+     * @var PicoPluginInterface[]
      */
     protected $nativePlugins = array();
 
@@ -444,9 +444,13 @@ class Pico
     /**
      * Loads plugins from vendor/pico-plugin.php and Pico::$pluginsDir
      *
-     * See {@see Pico::loadLocalPlugins()} for details about plugins installed
-     * to {@see Pico::$pluginsDir}, and {@see Pico::loadComposerPlugins()} for
-     * details about plugins installed using `composer`.
+     * See {@see Pico::loadComposerPlugins()} for details about plugins loaded
+     * from `vendor/pico-plugin.php` (i.e. plugins that were installed using
+     * `composer`), and {@see Pico::loadLocalPlugins()} for details about
+     * plugins installed to {@see Pico::$pluginsDir}.
+     *
+     * Pico always loads plugins from `vendor/pico-plugin.php` first and
+     * ignores conflicting plugins in {@see Pico::$pluginsDir}.
      *
      * Please note that Pico will change the processing order when needed to
      * incorporate plugin dependencies. See {@see Pico::sortPlugins()} for
@@ -460,108 +464,16 @@ class Pico
      */
     protected function loadPlugins()
     {
-        $this->loadLocalPlugins();
         $this->loadComposerPlugins();
-    }
-
-    /**
-     * Loads plugins from Pico::$pluginsDir in alphabetical order
-     *
-     * Pico tries to load plugins from `<plugin name>/<plugin name>.php` and
-     * `<plugin name>.php` only. Plugin names are treated case insensitive.
-     * Pico will throw a RuntimeException if it can't load a plugin.
-     *
-     * Plugin files MAY be prefixed by a number (e.g. 00-PicoDeprecated.php)
-     * to indicate their processing order. Plugins without a prefix will be
-     * loaded last. If you want to use a prefix, you MUST NOT use the reserved
-     * prefixes `00` to `09`. Prefixes are completely optional, however, you
-     * SHOULD take the following prefix classification into consideration:
-     * - 10 to 19: Reserved
-     * - 20 to 39: Low level code helper plugins
-     * - 40 to 59: Plugins manipulating routing or the pages array
-     * - 60 to 79: Plugins hooking into template or markdown parsing
-     * - 80 to 99: Plugins using the `onPageRendered` event
-     *
-     * @see    Pico::loadPlugins()
-     * @see    Pico::loadComposerPlugins()
-     * @return void
-     * @throws RuntimeException thrown when a plugin couldn't be loaded
-     */
-    protected function loadLocalPlugins()
-    {
-        $pluginFiles = array();
-        $files = scandir($this->getPluginsDir());
-        if ($files !== false) {
-            foreach ($files as $file) {
-                if ($file[0] === '.') {
-                    continue;
-                }
-
-                if (is_dir($this->getPluginsDir() . $file)) {
-                    $className = preg_replace('/^[0-9]+-/', '', $file);
-
-                    $subdirFiles = $this->getFilesGlob($this->getPluginsDir() . $file . '/?*.php', self::SORT_NONE);
-                    foreach ($subdirFiles as $subdirFile) {
-                        $subdirFile = basename($subdirFile, '.php');
-                        if (strcasecmp($className, $subdirFile) === 0) {
-                            $pluginFiles[$className] = $file . '/' . $subdirFile . '.php';
-                        }
-                    }
-
-                    if (!isset($pluginFiles[$className])) {
-                        throw new RuntimeException(
-                            "Unable to load plugin '" . $className . "' from "
-                            . "'" . $file . "/" . $className . ".php': File not found"
-                        );
-                    }
-                } elseif (substr($file, -4) === '.php') {
-                    $className = preg_replace('/^[0-9]+-/', '', substr($file, 0, -4));
-                    $pluginFiles[$className] = $file;
-                }
-            }
-        }
-
-        // scope isolated require()
-        $includeClosure = function ($pluginFile) {
-            require($pluginFile);
-        };
-        if (PHP_VERSION_ID >= 50400) {
-            $includeClosure = $includeClosure->bindTo(null);
-        }
-
-        foreach ($pluginFiles as $className => $pluginFile) {
-            $includeClosure($this->getPluginsDir() . $pluginFile);
-
-            if (class_exists($className, false)) {
-                // class name and file name can differ regarding case sensitivity
-                $plugin = new $className($this);
-                $className = get_class($plugin);
-
-                if (isset($this->plugins[$className])) {
-                    continue;
-                }
-
-                $this->plugins[$className] = $plugin;
-
-                if ($plugin instanceof PicoPluginInterface) {
-                    if (defined($className . '::API_VERSION') && ($className::API_VERSION >= static::API_VERSION)) {
-                        $this->nativePlugins[$className] = $plugin;
-                    }
-                }
-            } else {
-                throw new RuntimeException("Unable to load plugin '" . $className . "' from '" . $pluginFile . "'");
-            }
-        }
+        $this->loadLocalPlugins();
     }
 
     /**
      * Loads plugins from vendor/pico-plugin.php
      *
      * This method loads all plugins installed using `composer` and Pico's
-     * `picocms/pico-composer` installer by reading the `pico-plugin.php` in
-     * composer's `vendor` dir. Using composer enables plugin developers to
-     * load multiple plugins and their dependencies using a single composer
-     * package.
+     * `picocms/pico-installer` installer by reading the `pico-plugin.php` in
+     * composer's `vendor` dir.
      *
      * @see    Pico::loadPlugins()
      * @see    Pico::loadLocalPlugins()
@@ -581,6 +493,96 @@ class Pico
         foreach ($composerPlugins as $package => $classNames) {
             foreach ($classNames as $className) {
                 $plugin = new $className($this);
+                $className = get_class($plugin);
+
+                if (isset($this->plugins[$className])) {
+                    continue;
+                }
+
+                if (!($plugin instanceof PicoPluginInterface)) {
+                    throw new RuntimeException(
+                        "Unable to load plugin '" . $className . "' via 'vendor/pico-plugin.php': "
+                        . "Plugins installed by composer must implement 'PicoPluginInterface'"
+                    );
+                }
+
+                $this->plugins[$className] = $plugin;
+
+                if (defined($className . '::API_VERSION') && ($className::API_VERSION >= static::API_VERSION)) {
+                    $this->nativePlugins[$className] = $plugin;
+                }
+            }
+        }
+    }
+
+    /**
+     * Loads plugins from Pico::$pluginsDir in alphabetical order
+     *
+     * Pico tries to load plugins from `<plugin name>/<plugin name>.php` and
+     * `<plugin name>.php` only. Plugin names are treated case insensitive.
+     * Pico will throw a RuntimeException if it can't load a plugin.
+     *
+     * Plugin files MAY be prefixed by a number (e.g. `00-PicoDeprecated.php`)
+     * to indicate their processing order. Plugins without a prefix will be
+     * loaded last. If you want to use a prefix, you MUST NOT use the reserved
+     * prefixes `00` to `09`. Prefixes are completely optional, however, you
+     * SHOULD take the following prefix classification into consideration:
+     * - 10 to 19: Reserved
+     * - 20 to 39: Low level code helper plugins
+     * - 40 to 59: Plugins manipulating routing or the pages array
+     * - 60 to 79: Plugins hooking into template or markdown parsing
+     * - 80 to 99: Plugins using the `onPageRendered` event
+     *
+     * @see    Pico::loadPlugins()
+     * @see    Pico::loadComposerPlugins()
+     * @return void
+     * @throws RuntimeException thrown when a plugin couldn't be loaded
+     */
+    protected function loadLocalPlugins()
+    {
+        // scope isolated require()
+        $includeClosure = function ($pluginFile) {
+            require($pluginFile);
+        };
+        if (PHP_VERSION_ID >= 50400) {
+            $includeClosure = $includeClosure->bindTo(null);
+        }
+
+        $pluginFiles = array();
+        $files = scandir($this->getPluginsDir()) ?: array();
+        foreach ($files as $file) {
+            if ($file[0] === '.') {
+                continue;
+            }
+
+            $className = $pluginFile = null;
+            if (is_dir($this->getPluginsDir() . $file)) {
+                $className = preg_replace('/^[0-9]+-/', '', $file);
+                $pluginFile = $file . '/' . $className . '.php';
+
+                if (!file_exists($this->getPluginsDir() . $pluginFile)) {
+                    throw new RuntimeException(
+                        "Unable to load plugin '" . $className . "' from '" . $pluginFile . "': File not found"
+                    );
+                }
+            } elseif (substr($file, -4) === '.php') {
+                $className = preg_replace('/^[0-9]+-/', '', substr($file, 0, -4));
+                $pluginFile = $file;
+            } else {
+                throw new RuntimeException("Unable to load plugin from '" . $file . "': Not a valid plugin file");
+            }
+
+            if (isset($this->plugins[$className])) {
+                continue;
+            }
+
+            $includeClosure($this->getPluginsDir() . $pluginFile);
+
+            if (class_exists($className, false)) {
+                // class name and file name can differ regarding case sensitivity
+                $plugin = new $className($this);
+                $className = get_class($plugin);
+
                 $this->plugins[$className] = $plugin;
 
                 if ($plugin instanceof PicoPluginInterface) {
@@ -588,6 +590,10 @@ class Pico
                         $this->nativePlugins[$className] = $plugin;
                     }
                 }
+            } else {
+                throw new RuntimeException(
+                    "Unable to load plugin '" . $className . "' from '" . $pluginFile . "': Plugin class not found"
+                );
             }
         }
     }
@@ -634,6 +640,7 @@ class Pico
         }
 
         $className = get_class($plugin);
+
         if (!($plugin instanceof PicoPluginInterface)) {
             throw new RuntimeException(
                 "Unable to load plugin '" . $className . "': "
@@ -649,7 +656,7 @@ class Pico
 
         // trigger onPluginManuallyLoaded event
         // the event is also called on the newly loaded plugin, allowing you to distinguish manual and auto loading
-        $this->triggerEvent('onPluginManuallyLoaded', array($this->plugins[$className]));
+        $this->triggerEvent('onPluginManuallyLoaded', array($plugin));
 
         return $plugin;
     }
@@ -685,9 +692,17 @@ class Pico
     protected function sortPlugins()
     {
         $plugins = $this->plugins;
+        $nativePlugins = $this->nativePlugins;
         $sortedPlugins = array();
         $visitedPlugins = array();
-        $visitPlugin = function ($plugin) use ($plugins, &$sortedPlugins, &$visitedPlugins, &$visitPlugin) {
+
+        $visitPlugin = function ($plugin) use (
+            $plugins,
+            $nativePlugins,
+            &$sortedPlugins,
+            &$visitedPlugins,
+            &$visitPlugin
+        ) {
             $pluginName = get_class($plugin);
 
             // skip already visited plugins and ignore circular dependencies
@@ -698,7 +713,7 @@ class Pico
                 if ($plugin instanceof PicoPluginInterface) {
                     $dependencies = $plugin->getDependencies();
                 }
-                if (!isset($this->nativePlugins[$pluginName])) {
+                if (!isset($nativePlugins[$pluginName])) {
                     $dependencies[] = 'PicoDeprecated';
                 }
 
@@ -1649,17 +1664,8 @@ class Pico
      */
     protected function discoverCurrentPage()
     {
-        $contentDir = $this->getConfig('content_dir');
-        $contentDirLength = strlen($contentDir);
-
-        // the requested file is not in the regular content directory, therefore its ID
-        // isn't specified and it's impossible to determine the current page automatically
-        if (substr($this->requestFile, 0, $contentDirLength) !== $contentDir) {
-            return;
-        }
-
-        $currentPageId = substr($this->requestFile, $contentDirLength, -strlen($this->getConfig('content_ext')));
-        if (isset($this->pages[$currentPageId])) {
+        $currentPageId = $this->getPageId($this->requestFile);
+        if ($currentPageId && isset($this->pages[$currentPageId])) {
             $this->currentPage = &$this->pages[$currentPageId];
             $this->previousPage = &$this->pages[$currentPageId]['previous_page'];
             $this->nextPage = &$this->pages[$currentPageId]['next_page'];
@@ -1901,6 +1907,30 @@ class Pico
         } else {
             return $this->getBaseUrl() . implode('/', array_map('rawurlencode', explode('/', $page))) . $queryData;
         }
+    }
+
+    /**
+     * Returns the page ID of a given content file
+     *
+     * @param  string      $path path to the content file
+     * @return string|null       either the corresponding page ID or null
+     */
+    public function getPageId($path)
+    {
+        $contentDir = $this->getConfig('content_dir');
+        $contentDirLength = strlen($contentDir);
+
+        $contentExt = $this->getConfig('content_ext');
+        $contentExtLength = strlen($contentExt);
+
+        if (substr($path, 0, $contentDirLength) !== $contentDir) {
+            return null;
+        }
+        if (substr($path, -$contentExtLength) !== $contentExt) {
+            return null;
+        }
+
+        return substr($path, $contentDirLength, -$contentExtLength) ?: null;
     }
 
     /**
@@ -2150,7 +2180,7 @@ class Pico
     public function getAbsolutePath($path)
     {
         if (DIRECTORY_SEPARATOR === '\\') {
-            if (preg_match('/^([a-zA-Z]:\\\\|\\\\\\\\)/', $path) !== 1) {
+            if (preg_match('/^(?>[a-zA-Z]:\\\\|\\\\\\\\)/', $path) !== 1) {
                 $path = $this->getRootDir() . $path;
             }
         } else {
