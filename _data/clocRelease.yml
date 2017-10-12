@@ -1,0 +1,40 @@
+PHP:
+  nFiles: 10
+  blank: 273
+  comment: 1464
+  code: 1247
+Markdown:
+  nFiles: 8
+  blank: 194
+  comment: 0
+  code: 757
+CSS:
+  nFiles: 2
+  blank: 49
+  comment: 43
+  code: 299
+Twig:
+  nFiles: 1
+  blank: 7
+  comment: 0
+  code: 49
+JSON:
+  nFiles: 1
+  blank: 0
+  comment: 0
+  code: 44
+Apache config:
+  nFiles: 1
+  blank: 2
+  comment: 3
+  code: 12
+Javascript:
+  nFiles: 1
+  blank: 0
+  comment: 3
+  code: 1
+SUM:
+  blank: 525
+  code: 2409
+  comment: 1513
+  nFiles: 24

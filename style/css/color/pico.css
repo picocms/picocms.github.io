@@ -130,7 +130,7 @@ ul.contact-info li i {
 .meter > span {
     background-color: #2EAE9B;
 }
-.pricing .plan h4 span {
+.amount {
     color: #2EAE9B;
 }
 .portfolio-detail-view .closebutton:hover,

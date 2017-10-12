@@ -1,0 +1,54 @@
+<div class="table-responsive">
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 100%;">Language</th>
+                <th class="nowrap">Number of files</th>
+                <th class="nowrap">Blank lines</th>
+                <th class="nowrap">Comment lines</th>
+                <th class="nowrap">Code lines</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cloc %}
+                {% if item[0] != "SUM" %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td class="align-right nowrap">{{ item[1].nFiles }}</td>
+                        <td class="align-right nowrap">{{ item[1].blank }}</td>
+                        <td class="align-right nowrap">{{ item[1].comment }}</td>
+                        <td class="align-right nowrap">{{ item[1].code }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td></td>
+                        <td class="nowrap">
+                            <span class="amount small">
+                                <span>#</span>
+                                {{ item[1].nFiles }}
+                            </span>
+                        </td>
+                        <td class="nowrap">
+                            <span class="amount small">
+                                <span>#</span>
+                                {{ item[1].blank }}
+                            </span>
+                        </td>
+                        <td class="nowrap">
+                            <span class="amount small">
+                                <span>#</span>
+                                {{ item[1].comment }}
+                            </span>
+                        </td>
+                        <td class="nowrap">
+                            <span class="amount">
+                                <span>#</span>
+                                {{ item[1].code }}
+                            </span>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
