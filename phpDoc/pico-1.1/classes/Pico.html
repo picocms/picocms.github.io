@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1459088369"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-235425257"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1459088369" class="accordion-body collapse in">
+            <div id="namespace-235425257" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -283,6 +283,7 @@ released under the MIT license.</li>
                                                                     <a href="../classes/Pico.html#property_locked" class="">$locked</a><br />
                                                                     <a href="../classes/Pico.html#property_plugins" class="">$plugins</a><br />
                                                                     <a href="../classes/Pico.html#property_nativePlugins" class="">$nativePlugins</a><br />
+                                                                    <a href="../classes/Pico.html#property_enableLocalPlugins" class="">$enableLocalPlugins</a><br />
                                                                     <a href="../classes/Pico.html#property_config" class="">$config</a><br />
                                                                     <a href="../classes/Pico.html#property_requestUrl" class="">$requestUrl</a><br />
                                                                     <a href="../classes/Pico.html#property_requestFile" class="">$requestFile</a><br />
@@ -715,6 +716,33 @@ released under the MIT license.</li>
             <h1><i class="icon-arrow-down"></i></h1>
                         <dl>
                                                             </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_enableLocalPlugins" name="property_enableLocalPlugins" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$enableLocalPlugins</h3>
+                <pre class="signature">$enableLocalPlugins : boolean</pre>
+                <p><em>Boolean indicating whether Pico loads plugins from the filesystem</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_loadPlugins"><span class="namespace-wrapper">\Pico::loadPlugins()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_loadLocalPlugins"><span class="namespace-wrapper">\Pico::loadLocalPlugins()</span></a></dd>
+                                                                </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1177,7 +1205,7 @@ released under the MIT license.</li>
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$rootDir</span>, string  <span class="argument">$configDir</span>, string  <span class="argument">$pluginsDir</span>, string  <span class="argument">$themesDir</span>) </pre>
+                <pre class="signature" style="margin-right: 54px;">__construct(string  <span class="argument">$rootDir</span>, string  <span class="argument">$configDir</span>, string  <span class="argument">$pluginsDir</span>, string  <span class="argument">$themesDir</span>, boolean  <span class="argument">$enableLocalPlugins = true</span>) </pre>
                 <p><em>Constructs a new Pico instance</em></p>
                 <p>To carry out all the processing in Pico, call <a href="../classes/Pico.html#method_run">\Pico::run()</a>.</p>
 
@@ -1186,22 +1214,28 @@ released under the MIT license.</li>
                                                     <tr>
                                 <td>string</td>
                                 <td>$rootDir </td>
-                                <td><p>root directory of this Pico instance</p></td>
+                                <td><p>root dir of this Pico instance</p></td>
                             </tr>
                                                     <tr>
                                 <td>string</td>
                                 <td>$configDir </td>
-                                <td><p>config directory of this Pico instance</p></td>
+                                <td><p>config dir of this Pico instance</p></td>
                             </tr>
                                                     <tr>
                                 <td>string</td>
                                 <td>$pluginsDir </td>
-                                <td><p>plugins directory of this Pico instance</p></td>
+                                <td><p>plugins dir of this Pico instance</p></td>
                             </tr>
                                                     <tr>
                                 <td>string</td>
                                 <td>$themesDir </td>
-                                <td><p>themes directory of this Pico instance</p></td>
+                                <td><p>themes dir of this Pico instance</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$enableLocalPlugins </td>
+                                <td><p>enables (TRUE; default) or disables
+(FALSE) loading plugins from the filesystem</p></td>
                             </tr>
                                             </table>
                 
@@ -2425,14 +2459,14 @@ HTTP Host Header Injection attacks (e.g. when generating emails).</p>
                 <h3 class="public ">isUrlRewritingEnabled()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">isUrlRewritingEnabled() : boolean</pre>
-                <p><em>Returns true if URL rewriting is enabled</em></p>
+                <p><em>Returns TRUE if URL rewriting is enabled</em></p>
                 
 
                 
                 
                                     <h4>Returns</h4>
                     boolean
-                                            &mdash; <p>true if URL rewriting is enabled, false otherwise</p>
+                                            &mdash; <p>TRUE if URL rewriting is enabled, FALSE otherwise</p>
                                     				
                             </article>
         </div>
@@ -2519,7 +2553,7 @@ then passing TRUE (default) leads to removing this path component</p></td>
                 
                                     <h4>Returns</h4>
                     string|null
-                                            &mdash; <p>either the corresponding page ID or null</p>
+                                            &mdash; <p>either the corresponding page ID or NULL</p>
                                     				
                             </article>
         </div>
@@ -2890,7 +2924,9 @@ version - the event will be triggered in any case.</p>
                 <p>See <a href="../classes/Pico.html#method_loadComposerPlugins">\Pico::loadComposerPlugins()</a> for details about plugins loaded
 from <code>vendor/pico-plugin.php</code> (i.e. plugins that were installed using
 <code>composer</code>), and <a href="../classes/Pico.html#method_loadLocalPlugins">\Pico::loadLocalPlugins()</a> for details about
-plugins installed to <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>.</p>
+plugins installed to <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>. Pico loads plugins from
+the filesystem only if <a href="../classes/Pico.html#property_enableLocalPlugins">\Pico::$enableLocalPlugins</a> is set to TRUE
+(this is the default).</p>
 <p>Pico always loads plugins from <code>vendor/pico-plugin.php</code> first and
 ignores conflicting plugins in <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>.</p>
 <p>Please note that Pico will change the processing order when needed to
@@ -2928,15 +2964,26 @@ details.</p>
             <article class="method">
                 <h3 class="protected ">loadComposerPlugins()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">loadComposerPlugins() : void</pre>
+                <pre class="signature" style="margin-right: 54px;">loadComposerPlugins(array&lt;mixed,string&gt;  <span class="argument">$pluginBlacklist = array()</span>) : array&lt;mixed,string&gt;</pre>
                 <p><em>Loads plugins from vendor/pico-plugin.php</em></p>
                 <p>This method loads all plugins installed using <code>composer</code> and Pico's
 <code>picocms/pico-installer</code> installer by reading the <code>pico-plugin.php</code> in
 composer's <code>vendor</code> dir.</p>
 
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array&lt;mixed,string&gt;</td>
+                                <td>$pluginBlacklist </td>
+                                <td><p>class names of plugins not to load</p></td>
+                            </tr>
+                                            </table>
                 
                 
-                				
+                                    <h4>Returns</h4>
+                    array&lt;mixed,string&gt;
+                                            &mdash; <p>installer names of the loaded plugins</p>
+                                    				
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2959,7 +3006,7 @@ composer's <code>vendor</code> dir.</p>
             <article class="method">
                 <h3 class="protected ">loadLocalPlugins()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">loadLocalPlugins() : void</pre>
+                <pre class="signature" style="margin-right: 54px;">loadLocalPlugins(array&lt;mixed,string&gt;  <span class="argument">$pluginBlacklist = array()</span>) : void</pre>
                 <p><em>Loads plugins from Pico::$pluginsDir in alphabetical order</em></p>
                 <p>Pico tries to load plugins from <code>&lt;plugin name&gt;/&lt;plugin name&gt;.php</code> and
 <code>&lt;plugin name&gt;.php</code> only. Plugin names are treated case insensitive.
@@ -2977,6 +3024,14 @@ SHOULD take the following prefix classification into consideration:</p>
 <li>80 to 99: Plugins using the <code>onPageRendered</code> event</li>
 </ul>
 
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array&lt;mixed,string&gt;</td>
+                                <td>$pluginBlacklist </td>
+                                <td><p>class names of plugins not to load</p></td>
+                            </tr>
+                                            </table>
                 
                                     <h4>Throws</h4>
                     <dl>
@@ -3521,7 +3576,7 @@ provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on October 12th, 2017 at 13:21.
+                    on October 13th, 2017 at 19:08.
                 </section>
             </section>
         </section>
