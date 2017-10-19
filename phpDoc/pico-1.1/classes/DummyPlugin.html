@@ -106,7 +106,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">27</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">21</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-688896824"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1537970517"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-688896824" class="accordion-body collapse in">
+            <div id="namespace-1537970517" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -623,23 +623,23 @@ property.</p>
                                                     <tr>
                                 <td>boolean</td>
                                 <td>$enabled </td>
-                                <td><p>enable (true) or disable (false) this plugin</p></td>
+                                <td><p>enable (TRUE) or disable (FALSE) this plugin</p></td>
                             </tr>
                                                     <tr>
                                 <td>boolean</td>
                                 <td>$recursive </td>
-                                <td><p>when true, enable or disable recursively
+                                <td><p>when TRUE, enable or disable recursively.
 In other words, if you enable a plugin, all required plugins are
 enabled, too. When disabling a plugin, all depending plugins are
 disabled likewise. Recursive operations are only performed as long
 as a plugin wasn't enabled/disabled manually. This parameter is
-optional and defaults to true.</p></td>
+optional and defaults to TRUE.</p></td>
                             </tr>
                                                     <tr>
                                 <td>boolean</td>
                                 <td>$auto </td>
-                                <td><p>enable or disable to fulfill a dependency
-This parameter is optional and defaults to false.</p></td>
+                                <td><p>enable or disable to fulfill a dependency. This
+parameter is optional and defaults to FALSE.</p></td>
                             </tr>
                                             </table>
                 
@@ -669,14 +669,14 @@ This parameter is optional and defaults to false.</p></td>
                 <h3 class="public ">isEnabled()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">isEnabled() : boolean</pre>
-                <p><em>Returns true if this plugin is enabled, false otherwise</em></p>
+                <p><em>Returns TRUE if this plugin is enabled, FALSE otherwise</em></p>
                 
 
                 
                 
                                     <h4>Returns</h4>
                     boolean
-                                            &mdash; <p>plugin is enabled (true) or disabled (false)</p>
+                                            &mdash; <p>plugin is enabled (TRUE) or disabled (FALSE)</p>
                                     				
                             </article>
         </div>
@@ -702,14 +702,14 @@ This parameter is optional and defaults to false.</p></td>
                 <h3 class="public ">isStatusChanged()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">isStatusChanged() : boolean</pre>
-                <p><em>Returns true if the plugin was ever enabled/disabled manually</em></p>
+                <p><em>Returns TRUE if the plugin was ever enabled/disabled manually</em></p>
                 
 
                 
                 
                                     <h4>Returns</h4>
                     boolean
-                                            &mdash; <p>plugin is in its default state (true), false otherwise</p>
+                                            &mdash; <p>plugin is in its default state (TRUE), FALSE otherwise</p>
                                     				
                             </article>
         </div>
@@ -790,11 +790,10 @@ named config variable doesn't exist</p></td>
                 
                                     <h4>Returns</h4>
                     mixed
-                                            &mdash; <p>if no name of a config variable has been
-supplied, the plugin's config array is returned; otherwise it
-returns either the value of the named config variable, or, if the
-named config variable doesn't exist, the provided default value
-or NULL</p>
+                                            &mdash; <p>if no name of a config variable has been supplied, the
+plugin's config array is returned; otherwise it returns either the
+value of the named config variable, or, if the named config variable
+doesn't exist, the provided default value or NULL</p>
                                     				
                             </article>
         </div>
@@ -1113,18 +1112,10 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
             <article class="method">
                 <h3 class="public ">onContentLoading()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onContentLoading(  <span class="argument">$file</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onContentLoading() : void</pre>
                 <p><em>Triggered before Pico reads the contents of the file to serve</em></p>
                 
 
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td></td>
-                                <td>$file </td>
-                                <td></td>
-                            </tr>
-                                            </table>
                 
                 
                 				
@@ -1150,18 +1141,10 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
             <article class="method">
                 <h3 class="public ">on404ContentLoading()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">on404ContentLoading(  <span class="argument">$file</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">on404ContentLoading() : void</pre>
                 <p><em>Triggered before Pico reads the contents of a 404 file</em></p>
                 
 
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td></td>
-                                <td>$file </td>
-                                <td></td>
-                            </tr>
-                                            </table>
                 
                 
                 				
@@ -1261,23 +1244,10 @@ case when necessary.</p>
             <article class="method">
                 <h3 class="public ">onMetaParsing()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onMetaParsing(  <span class="argument">$rawContent</span>, array  <span class="argument">$headers</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onMetaParsing() : void</pre>
                 <p><em>Triggered before Pico parses the meta header</em></p>
                 
 
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td></td>
-                                <td>$rawContent </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td>array</td>
-                                <td>$headers </td>
-                                <td></td>
-                            </tr>
-                                            </table>
                 
                 
                 				
@@ -1339,18 +1309,10 @@ case when necessary.</p>
             <article class="method">
                 <h3 class="public ">onContentParsing()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onContentParsing(  <span class="argument">$rawContent</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onContentParsing() : void</pre>
                 <p><em>Triggered before Pico parses the pages content</em></p>
                 
 
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td></td>
-                                <td>$rawContent </td>
-                                <td></td>
-                            </tr>
-                                            </table>
                 
                 
                 				
@@ -1483,16 +1445,26 @@ case when necessary.</p>
             <article class="method">
                 <h3 class="public ">onSinglePageLoading()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onSinglePageLoading(  <span class="argument">$id</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onSinglePageLoading(string  <span class="argument">$id</span>, boolean|null  <span class="argument">$skipPage</span>) : void</pre>
                 <p><em>Triggered before Pico loads a single page</em></p>
-                <p>Set <code>$id</code> to <code>null</code> to remove this page from the pages array.</p>
+                <p>Set the <code>$skipFile</code> parameter to TRUE to remove this page from the pages
+array. Pico usually passes NULL by default, unless it is a conflicting
+page (i.e. <code>content/sub.md</code>, but there's also a <code>content/sub/index.md</code>),
+then it passes TRUE. Don't change this value incautiously if it isn't
+NULL! Someone likely set it to TRUE or FALSE on purpose...</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$id </td>
-                                <td></td>
+                                <td><p>relative path to the content file</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean|null</td>
+                                <td>$skipPage </td>
+                                <td><p>set this to TRUE to remove this page from the
+pages array, otherwise leave it unchanged</p></td>
                             </tr>
                                             </table>
                 
@@ -1621,7 +1593,7 @@ raw contents of this page were loaded already.</p>
 </tr>
 <tr>
 <td>hidden</td>
-<td>boolean</td>
+<td>bool</td>
 <td>this page shouldn't be visible to the user</td>
 </tr>
 <tr>
@@ -1648,7 +1620,7 @@ raw contents of this page were loaded already.</p>
 </table>
 <p>Please note that the <code>previous_page</code> and <code>next_page</code> keys won't be
 available until the <code>onCurrentPageDiscovered</code> event was triggered.</p>
-<p>Set <code>$pageData</code> to <code>null</code> to remove this page from the pages array.</p>
+<p>Set <code>$pageData</code> to NULL to remove this page from the pages array.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
@@ -2129,8 +2101,8 @@ newer API versions, what defaults to &quot;no&quot; by default.</p>
                                     <h4>Throws</h4>
                     <dl>
                                                     <dt>\RuntimeException</dt>
-                            <dd><p>thrown when the plugin's and Pico's API
-aren't compatible</p></dd>
+                            <dd><p>thrown when the plugin's and Pico's API aren't
+compatible</p></dd>
                                                                     </dl>
                 
                 				
@@ -2198,7 +2170,7 @@ aren't compatible</p></dd>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on October 13th, 2017 at 19:08.
+                    on October 19th, 2017 at 20:19.
                 </section>
             </section>
         </section>

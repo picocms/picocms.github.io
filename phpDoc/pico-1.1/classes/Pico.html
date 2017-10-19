@@ -106,7 +106,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">27</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">21</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-235425257"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1508016124"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-235425257" class="accordion-body collapse in">
+            <div id="namespace-1508016124" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -1415,7 +1415,7 @@ the rendered contents.</p>
                                     <h4>Throws</h4>
                     <dl>
                                                     <dt>\Exception</dt>
-                            <dd><p>thrown when a not recoverable error occurs</p></dd>
+                            <dd><p>thrown when a irrecoverable error occurs</p></dd>
                                                                     </dl>
                 
                                     <h4>Returns</h4>
@@ -1472,8 +1472,7 @@ plugin to instantiate or a plugin instance</p></td>
                                     <h4>Throws</h4>
                     <dl>
                                                     <dt>\RuntimeException</dt>
-                            <dd><p>thrown when a plugin couldn't
-be loaded</p></dd>
+                            <dd><p>thrown when a plugin couldn't be loaded</p></dd>
                                                                     </dl>
                 
                                     <h4>Returns</h4>
@@ -1650,10 +1649,10 @@ named config variable doesn't exist</p></td>
                 
                                     <h4>Returns</h4>
                     mixed
-                                            &mdash; <p>if no name of a config variable has been
-supplied, the config array is returned; otherwise it returns either
-the value of the named config variable, or, if the named config
-variable doesn't exist, the provided default value or NULL</p>
+                                            &mdash; <p>if no name of a config variable has been supplied, the
+config array is returned; otherwise it returns either the value of
+the named config variable, or, if the named config variable doesn't
+exist, the provided default value or NULL</p>
                                     				
                             </article>
         </div>
@@ -1760,7 +1759,7 @@ with Pico!</p>
                 
                                     <h4>Returns</h4>
                     string|null
-                                            &mdash; <p>file path</p>
+                                            &mdash; <p>file pat</p>
                                     				
                             </article>
         </div>
@@ -1934,8 +1933,8 @@ headers weren't assembled yet.</p>
                 
                                     <h4>Returns</h4>
                     array&lt;mixed,string&gt;
-                                            &mdash; <p>known meta headers; the array value specifies the
-YAML key to search for, the array key is later used to access the
+                                            &mdash; <p>known meta headers; the array key specifies the YAML
+key to search for, the array value is later used to access the
 found value</p>
                                     				
                             </article>
@@ -2640,17 +2639,17 @@ array to be used by the filter or a scalar default value</p></td>
                                                     <tr>
                                 <td>integer|string|array&lt;mixed,integer&gt;|array&lt;mixed,string&gt;</td>
                                 <td>$flags </td>
-                                <td><p>flags and flag strings to
-be used by the filter</p></td>
+                                <td><p>flags and flag strings to be
+used by the filter</p></td>
                             </tr>
                                             </table>
                 
                 
                                     <h4>Returns</h4>
                     mixed
-                                            &mdash; <p>either the filtered data,
-FALSE if the filter fails, or NULL if the URL GET parameter doesn't
-exist and no default value is given</p>
+                                            &mdash; <p>either the filtered data, FALSE if the filter fails, or
+NULL if the URL GET parameter doesn't exist and no default value is
+given</p>
                                     				
                             </article>
         </div>
@@ -2701,17 +2700,17 @@ array to be used by the filter or a scalar default value</p></td>
                                                     <tr>
                                 <td>integer|string|array&lt;mixed,integer&gt;|array&lt;mixed,string&gt;</td>
                                 <td>$flags </td>
-                                <td><p>flags and flag strings to
-be used by the filter</p></td>
+                                <td><p>flags and flag strings to be
+used by the filter</p></td>
                             </tr>
                                             </table>
                 
                 
                                     <h4>Returns</h4>
                     mixed
-                                            &mdash; <p>either the filtered data,
-FALSE if the filter fails, or NULL if the HTTP POST parameter
-doesn't exist and no default value is given</p>
+                                            &mdash; <p>either the filtered data, FALSE if the filter fails, or
+NULL if the HTTP POST parameter doesn't exist and no default value
+is given</p>
                                     				
                             </article>
         </div>
@@ -3249,7 +3248,7 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
 </tr>
 <tr>
 <td>hidden</td>
-<td>boolean</td>
+<td>bool</td>
 <td>this page shouldn't be visible to the user</td>
 </tr>
 <tr>
@@ -3275,8 +3274,8 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
 </tbody>
 </table>
 <p>Please note that the <code>previous_page</code> and <code>next_page</code> keys won't be
-available until the <code>onCurrentPageDiscovered</code> event
-(<a href="../classes/Pico.html#method_discoverPageSiblings">\Pico::discoverPageSiblings()</a>) was triggered.</p>
+available until the <code>onCurrentPageDiscovered</code> event was triggered
+(<a href="../classes/Pico.html#method_discoverPageSiblings">\Pico::discoverPageSiblings()</a>).</p>
 
                 
                 
@@ -3503,12 +3502,11 @@ and flag strings (optional)</p></td>
                 
                                     <h4>Returns</h4>
                     mixed
-                                            &mdash; <p>with a validation filter,
-the method either returns the validated value or, provided that the
-value wasn't valid, the given default value or FALSE; with a
-sanitization filter, the method returns the sanitized value; if no
-value (i.e. NULL) was given, the method always returns either the
-provided default value or NULL</p>
+                                            &mdash; <p>with a validation filter, the method either returns the
+validated value or, provided that the value wasn't valid, the given
+default value or FALSE; with a sanitization filter, the method
+returns the sanitized value; if no value (i.e. NULL) was given, the
+method always returns either the provided default value or NULL</p>
                                     				
                             </article>
         </div>
@@ -3576,7 +3574,7 @@ provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on October 13th, 2017 at 19:08.
+                    on October 19th, 2017 at 20:19.
                 </section>
             </section>
         </section>
