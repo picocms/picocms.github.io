@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1605642827"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-226947106"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1605642827" class="accordion-body collapse in">
+            <div id="namespace-226947106" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -233,6 +233,7 @@ released under the MIT license.</li>
                                                                     <a href="../classes/Pico.html#method_getCurrentPage" class="">getCurrentPage()</a><br />
                                                                     <a href="../classes/Pico.html#method_getPreviousPage" class="">getPreviousPage()</a><br />
                                                                     <a href="../classes/Pico.html#method_getNextPage" class="">getNextPage()</a><br />
+                                                                    <a href="../classes/Pico.html#method_getPageTree" class="">getPageTree()</a><br />
                                                                     <a href="../classes/Pico.html#method_getTwig" class="">getTwig()</a><br />
                                                                     <a href="../classes/Pico.html#method_getBaseUrl" class="">getBaseUrl()</a><br />
                                                                     <a href="../classes/Pico.html#method_isUrlRewritingEnabled" class="">isUrlRewritingEnabled()</a><br />
@@ -270,6 +271,7 @@ released under the MIT license.</li>
                                                                     <a href="../classes/Pico.html#method_sortPages" class="">sortPages()</a><br />
                                                                     <a href="../classes/Pico.html#method_discoverPageSiblings" class="">discoverPageSiblings()</a><br />
                                                                     <a href="../classes/Pico.html#method_discoverCurrentPage" class="">discoverCurrentPage()</a><br />
+                                                                    <a href="../classes/Pico.html#method_buildPageTree" class="">buildPageTree()</a><br />
                                                                     <a href="../classes/Pico.html#method_getTwigVariables" class="">getTwigVariables()</a><br />
                                                                     <a href="../classes/Pico.html#method_getTwigTemplate" class="">getTwigTemplate()</a><br />
                                                                     <a href="../classes/Pico.html#method_filterVariable" class="">filterVariable()</a><br />
@@ -298,6 +300,7 @@ released under the MIT license.</li>
                                                                     <a href="../classes/Pico.html#property_currentPage" class="">$currentPage</a><br />
                                                                     <a href="../classes/Pico.html#property_previousPage" class="">$previousPage</a><br />
                                                                     <a href="../classes/Pico.html#property_nextPage" class="">$nextPage</a><br />
+                                                                    <a href="../classes/Pico.html#property_pageTree" class="">$pageTree</a><br />
                                                                     <a href="../classes/Pico.html#property_twig" class="">$twig</a><br />
                                                                     <a href="../classes/Pico.html#property_twigVariables" class="">$twigVariables</a><br />
                                                                     <a href="../classes/Pico.html#property_twigTemplate" class="">$twigTemplate</a><br />
@@ -1106,6 +1109,32 @@ released under the MIT license.</li>
                         <dl>
                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getNextPage"><span class="namespace-wrapper">\Pico::getNextPage()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_pageTree" name="property_pageTree" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$pageTree</h3>
+                <pre class="signature">$pageTree : array&lt;mixed,array&gt;|null</pre>
+                <p><em>Tree structure of known pages</em></p>
+                
+
+                                <h4>Type</h4>
+                array&lt;mixed,array&gt;|null
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_getPageTree"><span class="namespace-wrapper">\Pico::getPageTree()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -2386,6 +2415,37 @@ e.g. removing the meta header and replacing %.</em></p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_getPageTree" name="method_getPageTree" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPageTree()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPageTree() : array&lt;mixed,array&gt;|null</pre>
+                <p><em>Returns a tree structure of known pages</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array&lt;mixed,array&gt;|null
+                                            &mdash; <p>the tree structure of all pages</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_buildPageTree"><span class="namespace-wrapper">\Pico::buildPageTree()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_getTwig" name="method_getTwig" class="anchor"></a>
             <article class="method">
                 <h3 class="public ">getTwig()</h3>
@@ -3271,11 +3331,18 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
 <td>&amp;array</td>
 <td>reference to the next page</td>
 </tr>
+<tr>
+<td>tree_node</td>
+<td>&amp;array</td>
+<td>reference to the page's tree node</td>
+</tr>
 </tbody>
 </table>
-<p>Please note that the <code>previous_page</code> and <code>next_page</code> keys won't be
-available until the <code>onCurrentPageDiscovered</code> event was triggered
-(<a href="../classes/Pico.html#method_discoverPageSiblings">\Pico::discoverPageSiblings()</a>).</p>
+<p>Please note that the <code>previous_page</code> and <code>next_page</code> keys aren't
+available until the <code>onCurrentPageDiscovered</code> event is triggered
+(<a href="../classes/Pico.html#method_discoverPageSiblings">\Pico::discoverPageSiblings()</a>). The <code>tree_node</code> key isn't
+available until the <code>onPageTreeBuilt</code> event is triggered
+(<a href="../classes/Pico.html#method_buildPageTree">\Pico::buildPageTree()</a>).</p>
 
                 
                 
@@ -3379,6 +3446,62 @@ and next page relative to it</em></p>
                                                                 <dd><a href="../classes/Pico.html#method_getCurrentPage"><span class="namespace-wrapper">\Pico::getCurrentPage()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPreviousPage"><span class="namespace-wrapper">\Pico::getPreviousPage()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getNextPage"><span class="namespace-wrapper">\Pico::getNextPage()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_buildPageTree" name="method_buildPageTree" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">buildPageTree()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">buildPageTree() : void</pre>
+                <p><em>Builds a tree structure containing all known pages</em></p>
+                <p>Pico's page tree is a list of all the tree's branches (no matter the
+depth). Thus, by iterating a array element, you get the nodes of a given
+branch. All leaf nodes do represent a page, but inner nodes may or may
+not represent a page (e.g. if there's a <code>sub/page.md</code>, but neither a
+<code>sub/index.md</code> nor a <code>sub.md</code>, the inner node <code>sub</code>, that is the parent
+of the <code>sub/page</code> node, represents no page itself).</p>
+<p>A page's file path describes its node's path in the tree (e.g. the page
+<code>sub/page.md</code> is represented by the <code>sub/page</code> node, thus a child of the
+<code>sub</code> node and a element of the <code>sub</code> branch). However, the index page
+of a folder (e.g. <code>sub/index.md</code>), is <em>not</em> a node of the <code>sub</code> branch,
+but rather of the <code>/</code> branch. The page's node is not <code>sub/index</code>, but
+<code>sub</code>. If two pages are described by the same node (e.g. if both a
+<code>sub/index.md</code> and a <code>sub.md</code> exist), the index page takes precedence.
+Pico's main index page (i.e. <code>index.md</code>) is represented by the tree's
+root node <code>/</code> and a special case: it is the only node of the `` (i.e.
+the empty string) branch.</p>
+<p>A node is represented by an array with the keys <code>id</code>, <code>page</code> and
+<code>children</code>. The <code>id</code> key contains a string with the node's name. If the
+node represents a page, the <code>page</code> key is a reference to the page's
+data array. If the node is a inner node, the <code>children</code> key is a
+reference to its matching branch (i.e. a list of the node's children).
+The order of a node's children matches the order in Pico's pages array.</p>
+<p>If you want to walk the whole page tree, start with the tree's root node
+at <code>$pageTree[""]["/"]</code>. The root node's <code>children</code> key is a reference
+to the <code>/</code> branch at <code>$pageTree["/"]</code>, that is a list of the root node's
+direct child nodes and their siblings.</p>
+<p>You MUST NOT iterate the page tree itself (i.e. the list of the tree's
+branches), its order is undefined and the array will be replaced by a
+non-iterable data structure with Pico 3.0.</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_getPageTree"><span class="namespace-wrapper">\Pico::getPageTree()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -3574,7 +3697,7 @@ method always returns either the provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on November 5th, 2017 at 17:35.
+                    on November 18th, 2017 at 17:43.
                 </section>
             </section>
         </section>
