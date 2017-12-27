@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-353237209"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-343020956"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-353237209" class="accordion-body collapse in">
+            <div id="namespace-343020956" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -401,14 +401,16 @@ parameter is optional and defaults to FALSE.</p></td>
             <article class="method">
                 <h3 class="public ">isEnabled()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">isEnabled() : boolean</pre>
-                <p><em>Returns TRUE if this plugin is enabled, FALSE otherwise</em></p>
-                
+                <pre class="signature" style="margin-right: 54px;">isEnabled() : boolean|null</pre>
+                <p><em>Returns a boolean indicating whether this plugin is enabled or not</em></p>
+                <p>You musn't rely on the return value when Pico's <code>onConfigLoaded</code> event
+wasn't triggered on all plugins yet. This method might even return NULL
+then. The plugin's status might change later.</p>
 
                 
                 
                                     <h4>Returns</h4>
-                    boolean
+                    boolean|null
                                             &mdash; <p>plugin is enabled (TRUE) or disabled (FALSE)</p>
                                     				
                             </article>
@@ -595,7 +597,7 @@ parameter is optional and defaults to FALSE.</p></td>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on November 25th, 2017 at 21:03.
+                    on December 27th, 2017 at 21:07.
                 </section>
             </section>
         </section>

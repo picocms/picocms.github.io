@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1294938623"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2102473067"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1294938623" class="accordion-body collapse in">
+            <div id="namespace-2102473067" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -358,13 +358,26 @@ Simply remove the events you don't need and add your own logic.</p>
             <a id="property_enabled" name="property_enabled" class="anchor"></a>
             <article class="property">
                 <h3 class="protected ">$enabled</h3>
-                <pre class="signature">$enabled : boolean</pre>
+                <pre class="signature">$enabled : boolean|null</pre>
                 <p><em>This plugin is disabled by default</em></p>
-                <p>If you want to enable your plugin by default, simply remove this class
-property.</p>
+                <p>Usually you should remove this class property (or set it to NULL) to
+leave the decision whether this plugin should be enabled or disabled by
+default up to Pico. If all the plugin's dependenies are fulfilled (see
+\self::$dependsOn), Pico enables the plugin by default. Otherwise
+the plugin is silently disabled.</p>
+<p>If this plugin should never be disabled <em>silently</em> (e.g. when dealing
+with security-relevant stuff like access control, or similar), set this
+to TRUE. If Pico can't fulfill all the plugin's dependencies, it will
+throw an RuntimeException.</p>
+<p>If this plugin rather does some &quot;crazy stuff&quot; a user should really be
+aware of before using it, you can set this to FALSE. The user will then
+have to enable the plugin manually. However, if another plugin depends
+on this plugin, it might get enabled silently nevertheless.</p>
+<p>No matter what, the user can always explicitly enable or disable this
+plugin in Pico's config.</p>
 
                                 <h4>Type</h4>
-                boolean
+                boolean|null
                                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -669,14 +682,16 @@ parameter is optional and defaults to FALSE.</p></td>
             <article class="method">
                 <h3 class="public ">isEnabled()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">isEnabled() : boolean</pre>
-                <p><em>Returns TRUE if this plugin is enabled, FALSE otherwise</em></p>
-                
+                <pre class="signature" style="margin-right: 54px;">isEnabled() : boolean|null</pre>
+                <p><em>Returns a boolean indicating whether this plugin is enabled or not</em></p>
+                <p>You musn't rely on the return value when Pico's <code>onConfigLoaded</code> event
+wasn't triggered on all plugins yet. This method might even return NULL
+then. The plugin's status might change later.</p>
 
                 
                 
                                     <h4>Returns</h4>
-                    boolean
+                    boolean|null
                                             &mdash; <p>plugin is enabled (TRUE) or disabled (FALSE)</p>
                                     				
                             </article>
@@ -2141,7 +2156,7 @@ compatible</p></dd>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on November 25th, 2017 at 21:03.
+                    on December 27th, 2017 at 21:07.
                 </section>
             </section>
         </section>

@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1972377751"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1436258644"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1972377751" class="accordion-body collapse in">
+            <div id="namespace-1436258644" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -2132,10 +2132,9 @@ Parsedown Extra parser wasn't initiated yet.</p>
                 <h3 class="public ">prepareFileContent()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">prepareFileContent(string  <span class="argument">$rawContent</span>, array  <span class="argument">$meta</span>) : string</pre>
-                <p><em>Applies some static preparations to the raw contents of a page,
-e.g. removing the meta header and replacing %.</em></p>
-                <p>..% placehodlers</p>
-<p>This method calls the <a href="../classes/Pico.html#method_substituteFileContent">\Pico::substituteFileContent()</a> method.</p>
+                <p><em>Applies some static preparations to the raw contents of a page</em></p>
+                <p>This method removes the meta header and replaces <code>%...%</code> placeholders
+by calling the <a href="../classes/Pico.html#method_substituteFileContent">\Pico::substituteFileContent()</a> method.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
@@ -2454,8 +2453,8 @@ e.g. removing the meta header and replacing %.</em></p>
                 <p><em>Returns the Twig template engine</em></p>
                 <p>This method triggers the <code>onTwigRegistered</code> event when the Twig template
 engine wasn't initiated yet. When initiating Twig, this method also
-registers Pico's core Twig filters <code>link</code> and <code>content</code> as well as
-Pico's <a href="../classes/PicoTwigExtension.html">\PicoTwigExtension</a> Twig extension.</p>
+registers Pico's core Twig filter <code>content</code> as well as Pico's
+<a href="../classes/PicoTwigExtension.html">\PicoTwigExtension</a> Twig extension.</p>
 
                 
                 
@@ -2549,14 +2548,14 @@ HTTP Host Header Injection attacks (e.g. when generating emails).</p>
                 <pre class="signature" style="margin-right: 54px;">getPageUrl(string  <span class="argument">$page</span>, array|string  <span class="argument">$queryData = null</span>, boolean  <span class="argument">$dropIndex = true</span>) : string</pre>
                 <p><em>Returns the URL to a given page</em></p>
                 <p>This method can be used in Twig templates by applying the <code>link</code> filter
-to a string representing a page identifier.</p>
+to a string representing a page ID.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
                                 <td>string</td>
                                 <td>$page </td>
-                                <td><p>identifier of the page to link to</p></td>
+                                <td><p>ID of the page to link to</p></td>
                             </tr>
                                                     <tr>
                                 <td>array|string</td>
@@ -2567,8 +2566,8 @@ create a URL-encoded query string from, or a already encoded string</p></td>
                                                     <tr>
                                 <td>boolean</td>
                                 <td>$dropIndex </td>
-                                <td><p>when the last path component is &quot;index&quot;,
-then passing TRUE (default) leads to removing this path component</p></td>
+                                <td><p>if the last path component is &quot;index&quot;,
+passing TRUE (default) leads to removing this path component</p></td>
                             </tr>
                                             </table>
                 
@@ -2982,12 +2981,15 @@ version - the event will be triggered in any case.</p>
                 <p><em>Loads plugins from vendor/pico-plugin.php and Pico::$pluginsDir</em></p>
                 <p>See <a href="../classes/Pico.html#method_loadComposerPlugins">\Pico::loadComposerPlugins()</a> for details about plugins loaded
 from <code>vendor/pico-plugin.php</code> (i.e. plugins that were installed using
-<code>composer</code>), and <a href="../classes/Pico.html#method_loadLocalPlugins">\Pico::loadLocalPlugins()</a> for details about
-plugins installed to <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>. Pico loads plugins from
-the filesystem only if <a href="../classes/Pico.html#property_enableLocalPlugins">\Pico::$enableLocalPlugins</a> is set to TRUE
+composer), and <a href="../classes/Pico.html#method_loadLocalPlugins">\Pico::loadLocalPlugins()</a> for details about plugins
+installed to <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>. Pico loads plugins from the
+filesystem only if <a href="../classes/Pico.html#property_enableLocalPlugins">\Pico::$enableLocalPlugins</a> is set to TRUE
 (this is the default).</p>
 <p>Pico always loads plugins from <code>vendor/pico-plugin.php</code> first and
 ignores conflicting plugins in <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>.</p>
+<p>The official PicoDeprecated plugin must be loaded when plugins that use
+an older API version than Pico's API version (<a href="../classes/Pico.html#constant_API_VERSION">\Pico::API_VERSION</a>)
+are loaded.</p>
 <p>Please note that Pico will change the processing order when needed to
 incorporate plugin dependencies. See <a href="../classes/Pico.html#method_sortPlugins">\Pico::sortPlugins()</a> for
 details.</p>
@@ -3025,9 +3027,9 @@ details.</p>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">loadComposerPlugins(array&lt;mixed,string&gt;  <span class="argument">$pluginBlacklist = array()</span>) : array&lt;mixed,string&gt;</pre>
                 <p><em>Loads plugins from vendor/pico-plugin.php</em></p>
-                <p>This method loads all plugins installed using <code>composer</code> and Pico's
-<code>picocms/pico-installer</code> installer by reading the <code>pico-plugin.php</code> in
-composer's <code>vendor</code> dir.</p>
+                <p>This method loads all plugins installed using composer and Pico's
+<code>picocms/composer-installer</code> installer by reading the <code>pico-plugin.php</code>
+in composer's <code>vendor</code> dir.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
@@ -3293,7 +3295,7 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
 </tr>
 <tr>
 <td>time</td>
-<td>string</td>
+<td>int</td>
 <td>timestamp derived from the Date header</td>
 </tr>
 <tr>
@@ -3309,7 +3311,7 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
 <tr>
 <td>hidden</td>
 <td>bool</td>
-<td>this page shouldn't be visible to the user</td>
+<td>this page shouldn't be visible</td>
 </tr>
 <tr>
 <td>raw_content</td>
@@ -3318,30 +3320,30 @@ Pico interprets <code>someBooleanParam</code> as name of the requested page. Use
 </tr>
 <tr>
 <td>meta</td>
-<td>string</td>
+<td>string[]</td>
 <td>parsed meta data of the page</td>
 </tr>
 <tr>
 <td>previous_page</td>
-<td>&amp;array</td>
+<td>&amp;array[]</td>
 <td>reference to the previous page</td>
 </tr>
 <tr>
 <td>next_page</td>
-<td>&amp;array</td>
+<td>&amp;array[]</td>
 <td>reference to the next page</td>
 </tr>
 <tr>
 <td>tree_node</td>
-<td>&amp;array</td>
+<td>&amp;array[]</td>
 <td>reference to the page's tree node</td>
 </tr>
 </tbody>
 </table>
-<p>Please note that the <code>previous_page</code> and <code>next_page</code> keys aren't
-available until the <code>onCurrentPageDiscovered</code> event is triggered
-(<a href="../classes/Pico.html#method_discoverPageSiblings">\Pico::discoverPageSiblings()</a>). The <code>tree_node</code> key isn't
-available until the <code>onPageTreeBuilt</code> event is triggered
+<p>Please note that the <code>previous_page</code> and <code>next_page</code> keys don't
+exist until the <code>onCurrentPageDiscovered</code> event is triggered
+(<a href="../classes/Pico.html#method_discoverPageSiblings">\Pico::discoverPageSiblings()</a>). The <code>tree_node</code> key doesn't
+exit until the <code>onPageTreeBuilt</code> event is triggered
 (<a href="../classes/Pico.html#method_buildPageTree">\Pico::buildPageTree()</a>).</p>
 
                 
@@ -3485,9 +3487,10 @@ data array. If the node is a inner node, the <code>children</code> key is a
 reference to its matching branch (i.e. a list of the node's children).
 The order of a node's children matches the order in Pico's pages array.</p>
 <p>If you want to walk the whole page tree, start with the tree's root node
-at <code>$pageTree[""]["/"]</code>. The root node's <code>children</code> key is a reference
-to the <code>/</code> branch at <code>$pageTree["/"]</code>, that is a list of the root node's
-direct child nodes and their siblings.</p>
+at <code>$pageTree[""]["/"]</code>, or rather, use <code>$pages["index"]["tree_node"]</code>.
+The root node's <code>children</code> key is a reference to the <code>/</code> branch at
+<code>$pageTree["/"]</code>, that is a list of the root node's direct child nodes
+and their siblings.</p>
 <p>You MUST NOT iterate the page tree itself (i.e. the list of the tree's
 branches), its order is undefined and the array will be replaced by a
 non-iterable data structure with Pico 3.0.</p>
@@ -3697,7 +3700,7 @@ method always returns either the provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on November 25th, 2017 at 21:03.
+                    on December 27th, 2017 at 21:07.
                 </section>
             </section>
         </section>
