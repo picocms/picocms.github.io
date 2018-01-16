@@ -84,7 +84,7 @@ If you want to use Pico as a blogging software, you probably want to do somethin
         Put all your blog articles in a separate <code>blog</code> folder in your <code>content</code> directory. All these articles should have both a <code>Date</code> and <code>Template</code> meta header, the latter with e.g. <code>blog-post</code> as value (see Step 2).
     </li>
     <li>
-        Create a new Twig template called <code>blog-post.twig</code> (this must match the <code>Template</code> meta header from Step 1) in your theme directory. This template probably isn't very different from your default <code>index.twig</code>, it specifies ow your article pages will look like.
+        Create a new Twig template called <code>blog-post.twig</code> (this must match the <code>Template</code> meta header from Step 1) in your theme directory. This template probably isn't very different from your default <code>index.twig</code>, it specifies how your article pages will look like.
     </li>
     <li>
         Create a <code>blog.md</code> in your <code>content</code> folder and set its <code>Template</code> meta header to e.g. <code>blog</code>. Also create a <code>blog.twig</code> in your theme directory. This template will show a list of your articles, so you probably want to do something like this:
