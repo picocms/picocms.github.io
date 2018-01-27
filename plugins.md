@@ -14,9 +14,10 @@ redirect_from:
 portfolio:
   view: card
   categories:
-    admin: Administration
+    admin: Admin
+    official: Official
+    theming: Theming
     utility: Utility
-    theming: Theming Extensions
   defaultThumbnail: plugins/images/thumbnails/plugin.png
   defaultImage: plugins/images/fullsize/plugin.svg
 ---

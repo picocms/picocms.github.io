@@ -1,6 +1,7 @@
 ---
 heading: Robots
 categories:
+  - official
   - utility
 description: Add a robots.txt and sitemap.xml to your website.
 link: https://github.com/PhrozenByte/pico-robots

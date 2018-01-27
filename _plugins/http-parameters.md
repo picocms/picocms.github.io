@@ -1,6 +1,7 @@
 ---
 heading: HTTP Parameters
 categories:
+  - official
   - utility
 description: GET and POST things!
 link: https://github.com/PhrozenByte/pico-http-params
