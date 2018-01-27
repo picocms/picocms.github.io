@@ -4,7 +4,7 @@ toc:
         _title: Customization
         themes: Themes
         plugins: Plugins
-nav: 5
+nav: 4
 ---
 
 ## Customization

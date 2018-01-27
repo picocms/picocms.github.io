@@ -5,7 +5,7 @@ toc:
         url-rewriting: URL Rewriting
         apache: Apache
         nginx: Nginx
-nav: 6
+nav: 5
 ---
 
 ## Config

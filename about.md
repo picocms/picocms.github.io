@@ -247,7 +247,7 @@ Ready to try Pico for yourself?  Head on over to our [Download][] page to get yo
 [DocsThemes]: {{ site.github.url }}/docs#themes
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [Download]: {{ site.github.url }}/download/
-[Contribute]: {{ site.github.url }}/docs/#contribute
+[Contribute]: {{ site.github.url }}/docs/#contributing
 [License]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/LICENSE.md
 
 [Themes]: {{ site.github.url }}/themes

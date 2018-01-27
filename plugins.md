@@ -34,6 +34,6 @@ You can even [contribute][Contribute] your own plugin to the community and we'll
 
 We appreciate any and all contributions, whether you've created something new or restored an obsolete plugin, we'd love to see it!
 
-[Contribute]: {{ site.github.url }}/docs/#contribute
+[Contribute]: {{ site.github.url }}/docs/#contributing
 [Wiki]: {{ site.gh_project_url }}/wiki/Pico-Plugins
 [SubmissionGuidelines]: {{ site.github.url }}/in-depth/submission_guidelines
