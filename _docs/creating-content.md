@@ -11,9 +11,9 @@ nav: 3
 
 Pico is a flat file CMS. This means there is no administration backend or database to deal with. You simply create `.md` files in the `content` folder and those files become your pages. For example, creating a file called `index.md` will make it show as your main landing page.
 
-When you install Pico, it comes with a `content-sample` folder. Inside this folder is a sample website that will display until you add your own content. You should create your own `content` folder in Pico's root directory and place your files there. No configuration is required, Pico will automatically use the `content` folder if it exists.
+When you install Pico, it comes with a `content-sample` folder. Inside this folder is a sample website that will display until you add your own content. Simply add some `.md` files to your `content` folder in Pico's root directory. No configuration is required, Pico will automatically use the `content` folder as soon as you create your own `index.md`.
 
-If you create a folder within the content folder (e.g. `content/sub`) and put an `index.md` inside it, you can access that folder at the URL `http://example.com/?sub`. If you want another page within the sub folder, simply create a text file with the corresponding name and you will be able to access it (e.g. `content/sub/page.md` is accessible from the URL `http://example.com/?sub/page`). Below we've shown some examples of locations and their corresponding URLs:
+If you create a folder within the content directory (e.g. `content/sub`) and put an `index.md` inside it, you can access that folder at the URL `http://example.com/?sub`. If you want another page within the sub folder, simply create a text file with the corresponding name and you will be able to access it (e.g. `content/sub/page.md` is accessible from the URL `http://example.com/?sub/page`). Below we've shown some examples of locations and their corresponding URLs:
 
 <table style="width: 100%; max-width: 40em;">
     <thead>
@@ -48,7 +48,7 @@ If you create a folder within the content folder (e.g. `content/sub`) and put an
 
 If a file cannot be found, the file `content/404.md` will be shown. You can add `404.md` files to any directory. So, for example, if you wanted to use a special error page for your blog, you could simply create `content/blog/404.md`.
 
-As a common practice, we recommend you to separate your contents and assets (like images, downloads, etc.). We even deny access to your `content` directory by default. If you want to use some assets (e.g. a image) in one of your content files, you should create an `assets` folder in Pico's root directory and upload your assets there. You can then access them in your markdown using `%base_url%/assets/` for example: `![Image Title](%base_url%/assets/image.png)`
+As a common practice, we recommend you to separate your contents and assets (like images, downloads, etc.). We even deny access to your `content` directory by default. If you want to use some assets (e.g. a image) in one of your content files, you should create an `assets` folder in Pico's root directory and upload your assets there. You can then access them in your Markdown using `%base_url%/assets/` for example: `![Image Title](%base_url%/assets/image.png)`
 
 ### Text File Markup
 
@@ -60,12 +60,12 @@ At the top of text files you can place a block comment and specify certain meta 
 Title: Welcome
 Description: This description will go in the meta description tag
 Author: Joe Bloggs
-Date: 2013/01/01
+Date: 2001-04-25
 Robots: noindex,nofollow
 Template: index
 ---</code></pre>
 
-These values will be contained in the `{% raw %}{{ meta }}{% endraw %}` variable in themes (see below).
+These values will be contained in the `{% raw %}{{ meta }}{% endraw %}` variable in themes (see below). Meta headers sometimes have a special meaning: For instance, Pico not only passes through the `Date` meta header, but rather evaluates it to really "understand" when this page was created. This comes into play when you want to sort your pages not just alphabetically, but by date. Another example is the `Template` meta header: It controls what Twig template Pico uses to display this page (e.g. if you add `Template: blog`, Pico uses `blog.twig`).
 
 There are also certain variables that you can use in your text files:
 
@@ -79,6 +79,7 @@ There are also certain variables that you can use in your text files:
 Pico is not blogging software - but makes it very easy for you to use it as a blog. You can find many plugins out there implementing typical blogging features like authentication, tagging, pagination and social plugins. See the below Plugins section for details.
 
 If you want to use Pico as a blogging software, you probably want to do something like the following:
+
 <ol>
     <li>
         Put all your blog articles in a separate <code>blog</code> folder in your <code>content</code> directory. All these articles should have both a <code>Date</code> and <code>Template</code> meta header, the latter with e.g. <code>blog-post</code> as value (see Step 2).
@@ -90,7 +91,7 @@ If you want to use Pico as a blogging software, you probably want to do somethin
         Create a <code>blog.md</code> in your <code>content</code> folder and set its <code>Template</code> meta header to e.g. <code>blog</code>. Also create a <code>blog.twig</code> in your theme directory. This template will show a list of your articles, so you probably want to do something like this:
 
         {% raw %}<pre><code>{% for page in pages|sort_by("time")|reverse %}
-    {% if page.id starts with &quot;blog/&quot; %}
+    {% if page.id starts with &quot;blog/&quot; and not page.hidden %}
         &lt;div class=&quot;post&quot;&gt;
             &lt;h3&gt;&lt;a href=&quot;{{ page.url }}&quot;&gt;{{ page.title }}&lt;/a&gt;&lt;/h3&gt;
             &lt;p class=&quot;date&quot;&gt;{{ page.date_formatted }}&lt;/p&gt;
