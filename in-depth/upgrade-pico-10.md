@@ -18,9 +18,6 @@ toc:
     notes-for-plugin-developers: Notes for plugin developers
 nav-url: /docs/
 gh_release: v1.0.0
-redirect_from:
-    - /upgrade/index.html
-    - /upgrade.html
 ---
 
 With the release of Pico 1.0 we did a complete code refactoring, overhauled the plugin system, fixed countless bugs and problems, created compatibility to any web server and massively enhanced documentation. Making Pico extremely simple, faster, and more flexible than ever. Best of all, it's completely backwards compatible!
@@ -107,11 +104,11 @@ The new `PicoDeprecated` plugin ensures backward compatibility to Pico 0.9 and o
 
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [Issues]: {{ site.gh_project_url }}/issues
-[UpgradeDetailsThemes]: {{ site.github.url }}/in-depth/upgrade/#how-to-upgrade-a-custom-theme
-[UpgradeDetailsPageContent]: {{ site.github.url }}/in-depth/upgrade/#drop-of--pagecontent--and-the-new-picoparsepagescontent-plugin
-[UpgradeDetailsPageExcerpt]: {{ site.github.url }}/in-depth/upgrade/#drop-of--pageexcerpt--and-the-new-picoexcerpt-plugin
-[UpgradeDetailsRoutingSystem]: {{ site.github.url }}/in-depth/upgrade/#routing-system
-[UpgradeDetailsRoutingSystemThemes]: {{ site.github.url }}/in-depth/upgrade/#routing-system-1
+[UpgradeDetailsThemes]: #how-to-upgrade-a-custom-theme
+[UpgradeDetailsPageContent]: #drop-of--pagecontent--and-the-new-picoparsepagescontent-plugin
+[UpgradeDetailsPageExcerpt]: #drop-of--pageexcerpt--and-the-new-picoexcerpt-plugin
+[UpgradeDetailsRoutingSystem]: #routing-system
+[UpgradeDetailsRoutingSystemThemes]: #routing-system-1
 [Changelog]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/CHANGELOG.md
 [PicoGetPageUrl]: {{ site.github.url }}/phpDoc/{{ page.gh_release }}/classes/Pico.html#method_getPageUrl
 [RewriteFile]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/.htaccess#L7
