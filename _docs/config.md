@@ -36,6 +36,21 @@ location /pico/ {
 }
 ```
 
+#### Lighttpd
+
+Pico runs smoothly on Lighttpd. You can use the following configuration to enable URL rewriting (lines `6` to `9`) and denying access to Pico's internal files (lines `1` to `4`). Make sure to adjust the path (`/pico` on lines `2`, `3` and `7`) to match your installation directory, and let Pico know about available URL rewriting by setting `rewrite_url: true` in your `config/config.yml`. The configuration below should provide the *bare minimum* you need for Pico.
+
+```
+url.rewrite-once = (
+    "^/pico/(config|content|vendor|composer\.(json|lock|phar))(/|$)" => "/pico/index.php",
+    "^/pico/(.+/)?\.(?!well-known(/|$))" => "/pico/index.php"
+)
+
+url.rewrite-if-not-file = (
+    "^/pico(/|$)" => "/pico/index.php"
+)
+```
+
 [ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/config/config.yml.template
 [ModRewrite]: https://httpd.apache.org/docs/current/mod/mod_rewrite.html
 [NginxConfig]: {{ site.github.url }}/in-depth/nginx/
