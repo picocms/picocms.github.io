@@ -15,7 +15,11 @@ This is all Greek to you? Don't worry, you don't have to spend time on these tec
 
 ### Themes
 
-You can create themes for your Pico installation in the `themes` folder. Check out the default theme for an example. Pico uses [Twig][] for template rendering. You can select your theme by setting the `$config['theme']` option in `config/config.php` to the name of your theme folder.
+You can create themes for your Pico installation in the `themes` folder. Check out the default theme for an example. Pico uses [Twig][] for template rendering. You can select your theme by setting the `$config['theme']` option in `config/config.php` to the name of your theme folder. 
+
+To call assets from your themes folder you should use `{{ theme_url }}`. For instance a CSS sheet, `<link rel="stylesheet" href="{{ theme_url }}/example.css" type="text/css" />` would be added to the current themes `index.twig` file and then your styles would go within `example.css` making sure to place it within the same folder. This same technique can be used for calling other assets such as Javascript files.
+
+If you wish to add styles to a specific element, and not site wide, you can do this by using inline CSS. Inline CSS works by applying the style inline within the HTML. `<h1>Hello World</h1>` could be coloured red for only that element by adding in the inline CSS that follows: `<h1 style="color:red;">Hello World</h1>`.
 
 All themes must include an `index.twig` (or `index.html`) file to define the HTML structure of the theme. Below are the Twig variables that are available to use in your theme. Please note that paths (e.g. `{% raw %}{{ base_dir }}{% endraw %}`) and URLs (e.g. `{% raw %}{{ base_url }}{% endraw %}`) don't have a trailing slash.
 
