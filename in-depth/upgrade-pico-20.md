@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Upgrade
+title: Upgrade to Pico 2.0
 headline: Upgrade Pico 1.0 to Pico 2.0
 description: Let us take you on a journey to Pico's next evolutionary stage!
 toc:
@@ -43,9 +43,16 @@ Just take a look at the `config/config.yml.template` and create your own config 
 
 Please note that Pico loads config files in a special way you should be aware of. First of all it loads the main config file `config/config.yml`, and then any other `*.yml` file in Pico's `config` dir in alphabetical order. The file order is crucial: Configiguration values which have been set already, cannot be overwritten by a succeeding file. For example, if you set `site_title: Pico` in `config/a.yml` and `site_title: My awesome site!` in `config/b.yml`, your site title will be "Pico".
 
+## Amazing new features for theme developers
+
+Theme developers have always been a subject close to our hearts, and with Pico 2.0 we make them more powerful than ever before. Sure, we love Pico's plugin system, but let's face it: PHP isn't as easy as Twig. Thus we introduce two amazing new features, allowing theme developers to do things only plugin developers could do before: Accessing HTTP GET and HTTP POST parameters, and accessing pages using a tree structure.
+
+Starting with Pico 2.0 you can use the `url_param` and `form_param` Twig functions to access HTTP GET (i.e. a URL's query string like `?some-variable=my-value`) and HTTP POST (i.e. data of a submitted form) parameters. This allows you to implement things like pagination, tags and categories, dynamic pages, and even more - with pure Twig! Simply head over to our [introductory page for accessing HTTP parameters][FeaturesHttpParams] for details.
+
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [Issues]: {{ site.gh_project_url }}/issues
 [Install]: {{ site.github.url }}/docs/#install
 [UpgradeConfig]: #use-yaml-files-to-configure-pico
 [UpgradeThemes]: #amazing-new-features-for-theme-developers
 [UpgradePlugins]: #use-picos-next-generation-plugin-system
+[FeaturesHttpParams]: {{ site.github.url }}/in-depth/features/http-params/
