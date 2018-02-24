@@ -49,6 +49,8 @@ Theme developers have always been a subject close to our hearts, and with Pico 2
 
 Starting with Pico 2.0 you can use the `url_param` and `form_param` Twig functions to access HTTP GET (i.e. a URL's query string like `?some-variable=my-value`) and HTTP POST (i.e. data of a submitted form) parameters. This allows you to implement things like pagination, tags and categories, dynamic pages, and even more - with pure Twig! Simply head over to our [introductory page for accessing HTTP parameters][FeaturesHttpParams] for details.
 
+The second major improvement for theme developers is the introduction of page trees. Did you ever wanted to use dropdowns for your page navigation? Well, this wasn't that easy before... But no longer! Starting with Pico 2.0 you can use Pico's built-in page tree to implement awesome new features like recursive menus. The page tree even makes things like iterating through just a page's direct child pages way easier. Just head over to our [page tree documentation][FeaturesPageTree] for details.
+
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [Issues]: {{ site.gh_project_url }}/issues
 [Install]: {{ site.github.url }}/docs/#install
@@ -56,3 +58,4 @@ Starting with Pico 2.0 you can use the `url_param` and `form_param` Twig functio
 [UpgradeThemes]: #amazing-new-features-for-theme-developers
 [UpgradePlugins]: #use-picos-next-generation-plugin-system
 [FeaturesHttpParams]: {{ site.github.url }}/in-depth/features/http-params/
+[FeaturesPageTree]: {{ site.github.url }}/in-depth/features/page-tree/
