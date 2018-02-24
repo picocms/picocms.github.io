@@ -2,15 +2,21 @@
 toc:
     config:
         _title: Config
-        url-rewriting: URL Rewriting
-        apache: Apache
-        nginx: Nginx
+        url-rewriting:
+            _title: URL Rewriting
+            apache: Apache
+            nginx: Nginx
+            lighttpd: Lighttpd
 nav: 5
 ---
 
 ## Config
 
-You can override the default Pico settings (and add your own custom settings) by editing `config/config.yml` in the Pico directory. For a brief overview of the available settings and their defaults see [`config/config.yml.template`][ConfigTemplate]. To override a setting, simply copy the line from `config/config.yml.template` to `config/config.yml` and set your custom value. Pico will read all `*.yml` files in the `config/` dir, thus you can even use a distinct settings file to configure your custom theme (e.g. `config/my_theme.yml`).
+Configuring Pico really is stupidly simple: Just create a `config/config.yml` to override the default Pico settings (and add your own custom settings). Take a look at the [`config/config.yml.template`][ConfigTemplate] for a brief overview of the available settings and their defaults. To override a setting, simply copy the line from `config/config.yml.template` to `config/config.yml` and set your custom value.
+
+But we didn't stop there. Rather than having just a single config file, you can use a arbitrary number of config files. Simply create a `.yml` file in Pico's `config` dir and you're good to go. This allows you to add some structure to your configuration, like a separate config file for your theme (`config/my_theme.yml`).
+
+Please note that Pico loads config files in a special way you should be aware of. First of all it loads the main config file `config/config.yml`, and then any other `*.yml` file in Pico's `config` dir in alphabetical order. The file order is crucial: Configiguration values which have been set already, cannot be overwritten by a succeeding file. For example, if you set `site_title: Pico` in `config/a.yml` and `site_title: My awesome site!` in `config/b.yml`, your site title will be "Pico".
 
 ### URL Rewriting
 
