@@ -7,6 +7,7 @@ toc:
     api: API
     examples: Examples
 nav-url: /docs/
+gh_release: v2.0.0
 ---
 
 Starting with Pico 2.0 you can access HTTP GET (i.e. a URL's query string like `?some-variable=my-value`) and HTTP POST (i.e. data of a submitted form) parameters in Twig templates using the `url_param` resp. `form_param` functions. This makes developing awesome themes for your Pico website easier than ever before. Naturally we also expose this API to our plugin developers - so if you're a plugin developer stay where you are. 😊
@@ -33,7 +34,7 @@ As a plugin developer you can use the `Pico::getUrlParameter()` method to access
 
 ## API
 
-The `Pico::getUrlParameter()` function resp. the `url_param` Twig function and the `Pico::getFormParameter()` function resp. the `form_param` Twig function all accept the following parameters:
+The [`Pico::getUrlParameter()` method]({{ site.github.url }}/phpDoc/{{ page.gh_release }}/classes/Pico.html#method_getUrlParameter) resp. the `url_param` Twig function and the [`Pico::getFormParameter()` method]({{ site.github.url }}/phpDoc/{{ page.gh_release }}/classes/Pico.html#method_getFormParameter) resp. the `form_param` Twig function all accept the following parameters:
 
 | Variable Type | Parameter Name | Description |
 | ------------- | -------------- | ----------- |
