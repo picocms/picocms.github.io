@@ -57,17 +57,17 @@ For a complete list of all available filters refer to the documentation of [PHP'
 
 Pass the boolean HTTP GET parameter `expand` to expand a details section in your template:
 
-```twig
+{% highlight html %}{% raw %}
 <a href="{{ current_page.id|link('expand=yes') }}">Learn more...</a>
 
 {% if url_param('expand', 'boolean') %}
     You're learning more right now! Isn't that great!?
 {% endif %}
-```
+{% endraw %}{% endhighlight %}
 
 Ask a user about "the answer" using a HTML form and store his decision in the Twig variable `the_answer`. Use a [regular expression](https://en.wikipedia.org/wiki/Regular_expression) to allow just values that are actually present in the HTML form.
 
-```twig
+{% highlight html %}{% raw %}
 <form action="" method="POST">
     <label for="the_answer">What is the answer?</label>
     <select id="the_answer" name="the_answer">
@@ -80,11 +80,11 @@ Ask a user about "the answer" using a HTML form and store his decision in the Tw
 </form>
 
 {% set the_answer = form_param('the_answer', 'validate_regexp', { 'regexp': '/^(band|42|what)$/' }) %}
-```
+{% endraw %}{% endhighlight %}
 
 Ask a user how much cat pictures he makes a year and claim that his amount is either sad or not impressive at all. Use the Twig variable `amount` and let the parameter default to `0`. Use the `FILTER_VALIDATE_FLOAT` (`float`) filter, but tweak its behaviour by passing the `FILTER_FLAG_ALLOW_THOUSAND` flag - this allows the user to enter their amount with a thousand separator (e.g. `12,345.00`).
 
-```twig
+{% highlight html %}{% raw %}
 <form action="" method="GET">
     <label for="amount">How much cat pictures do you make a year?</label>
     <input id="amount" name="amount" type="text" />
@@ -99,4 +99,4 @@ Ask a user how much cat pictures he makes a year and claim that his amount is ei
         Impressive... Not! I make {{ amount * 2 }} cat pictures a year!
     {% endif %}
 {% endif %}
-```
+{% endraw %}{% endhighlight %}

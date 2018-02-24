@@ -54,7 +54,7 @@ But what can I do with Pico's page tree? Probably the most common task is to bui
 
 Implementing this using a [Twig macro](https://twig.symfony.com/doc/1.x/tags/macro.html) is pretty straight forward:
 
-```twig
+{% highlight html %}{% raw %}
 {% macro tree(parent) %}
     {% import _self as utils %}
     {% for child in parent.children %}
@@ -79,6 +79,6 @@ Implementing this using a [Twig macro](https://twig.symfony.com/doc/1.x/tags/mac
     {% import _self as utils %}
     {{ utils.tree(pages["index"].tree_node) }}
 </ul>
-```
+{% endraw %}{% endhighlight %}
 
 Although Pico's page tree primarily targets theme developers, plugin developers can benefit from the page tree, too. As for Twig you can access a page's tree node using the `tree_node` key in the page's data array (e.g. `$pageData['tree_node']`). As always, there's an event to access (and modify) Pico's page tree: the `onPageTreeBuilt(array &$pageTree)` event is triggered right after the `onCurrentPageDiscovered` event. You can later access the page tree using the [`Pico::getPageTree()` method]({{ site.github.url }}/phpDoc/{{ page.gh_release }}/classes/Pico.html#method_getPageTree), but don't forget about execution order: You can't access the page tree during the `onPagesDiscovered` event because it wasn't built yet. However, this also means that you can add pages to Pico's pages array during the `onPagesDiscovered` event and they will automatically appear in the page tree later. But how does the `$pageTree` array look like? It's a list of all the tree's branches (no matter the depth). Refer to the phpDoc class docs of the [`Pico::buildPageTree()` method]({{ site.github.url }}/phpDoc/{{ page.gh_release }}/classes/Pico.html#method_buildPageTree) for details.
