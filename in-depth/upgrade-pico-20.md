@@ -5,6 +5,9 @@ headline: Upgrade Pico 1.0 to Pico 2.0
 description: Let us take you on a journey to Pico's next evolutionary stage!
 toc:
     upgrading-to-pico-20: Upgrading to Pico 2.0
+    use-yaml-files-to-configure-pico: Use YAML files to configure Pico
+    amazing-new-features-for-theme-developers: Amazing new features for theme developers
+    use-picos-next-generation-plugin-system: Use Pico's next generation plugin system
 nav-url: /docs/
 gh_release: v2.0.0
 redirect_from:

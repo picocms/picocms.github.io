@@ -3,9 +3,6 @@ layout: docs
 title: Accessing HTTP parameters | Pico Features
 headline: Accessing HTTP parameters
 description: Did you ever wanted to access HTTP GET and HTTP POST parameters in your theme?
-toc:
-    api: API
-    examples: Examples
 nav-url: /docs/
 gh_release: v2.0.0
 ---
@@ -15,13 +12,13 @@ Starting with Pico 2.0 you can access HTTP GET (i.e. a URL's query string like `
 Pico's HTTP parameters feature basically wraps around [PHP's `filter_var()` function](https://secure.php.net/manual/en/function.filter-var.php). Here's a excerpt from PHP's documentation about the [filter extension](https://secure.php.net/manual/en/intro.filter.php):
 
 > This extension filters data by either validating or sanitizing it. This is especially useful when the data source contains unknown (or foreign) data, like user supplied input. For example, this data may come from an HTML form.
->
+> 
 > There are two main types of filtering: validation and sanitization.
->
+> 
 > [Validation](https://php.net/manual/en/filter.filters.validate.php) is used to validate or check if the data meets certain qualifications. For example, passing in `FILTER_VALIDATE_EMAIL` will determine if the data is a valid email address, but will not change the data itself.
->
+> 
 > [Sanitization](https://php.net/manual/en/filter.filters.sanitize.php) will sanitize the data, so it may alter it by removing undesired characters. For example, passing in `FILTER_SANITIZE_EMAIL` will remove characters that are inappropriate for an email address to contain. That said, it does not validate the data.
->
+> 
 > Flags are optionally used with both validation and sanitization to tweak behaviour according to need. For example, passing in `FILTER_FLAG_PATH_REQUIRED` while filtering an URL will require a path (like `/foo` in `http://example.org/foo`) to be present.
 
 <small>– [Copyright](https://secure.php.net/manual/en/copyright.php) © 1997-2016 [The PHP Documentation Group](https://secure.php.net/credits.php), released under the [Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/) license</small>
