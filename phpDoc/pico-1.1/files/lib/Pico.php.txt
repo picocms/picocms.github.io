@@ -49,7 +49,7 @@ class Pico
      *
      * @var string
      */
-    const VERSION = '2.0.0-beta.1';
+    const VERSION = '2.0.0-beta.3';
 
     /**
      * Pico version ID
@@ -770,12 +770,14 @@ class Pico
         $plugins = $this->plugins;
         $nativePlugins = $this->nativePlugins;
         $sortedPlugins = array();
+        $sortedNativePlugins = array();
         $visitedPlugins = array();
 
         $visitPlugin = function ($plugin) use (
             $plugins,
             $nativePlugins,
             &$sortedPlugins,
+            &$sortedNativePlugins,
             &$visitedPlugins,
             &$visitPlugin
         ) {
@@ -802,6 +804,9 @@ class Pico
                 }
 
                 $sortedPlugins[$pluginName] = $plugin;
+                if (isset($nativePlugins[$pluginName])) {
+                    $sortedNativePlugins[$pluginName] = $plugin;
+                }
             }
         };
 
@@ -814,6 +819,7 @@ class Pico
         }
 
         $this->plugins = $sortedPlugins;
+        $this->nativePlugins = $sortedNativePlugins;
     }
 
     /**
@@ -1387,12 +1393,12 @@ class Pico
     }
 
     /**
-     * Returns the Parsedown Extra markdown parser
+     * Returns the Parsedown markdown parser
      *
      * This method triggers the `onParsedownRegistered` event when the
-     * Parsedown Extra parser wasn't initiated yet.
+     * Parsedown markdown parser wasn't initiated yet.
      *
-     * @return ParsedownExtra Parsedown Extra markdown parser
+     * @return Parsedown Parsedown markdown parser
      */
     public function getParsedown()
     {
