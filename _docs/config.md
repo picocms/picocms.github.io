@@ -24,7 +24,7 @@ Pico's default URLs (e.g. http://example.com/pico/?sub/page) already are very us
 
 #### Apache
 
-If you're using the Apache web server, URL rewriting should be enabled automatically. If you get an error message from your web server, please make sure to enable the [`mod_rewrite` module][ModRewrite]. Assuming rewritten URLs work, but Pico still shows no rewritten URLs, force URL rewriting by setting `rewrite_url: true` in your `config/config.yml`.
+If you're using the Apache web server, URL rewriting should be enabled automatically. If URL rewriting doesn't work, please make sure to enable the [`mod_rewrite` module][ModRewrite] and to enable `.htaccess` overrides. You might have to set the [`AllowOverride` directive][AllowOverride] to `AllowOverride All` in your virtual host config file or global `httpd.conf`/`apache.conf`. Assuming rewritten URLs work, but Pico still shows no rewritten URLs, force URL rewriting by setting `rewrite_url: true` in your `config/config.yml`. If you rather get a `500 Internal Server Error` no matter what you do, try removing the `Options` directive from Pico's `.htaccess` file (it's the last line).
 
 #### Nginx [Learn more…][NginxConfig]{:.learn-more}
 {:#nginx}
@@ -59,5 +59,6 @@ url.rewrite-if-not-file = (
 
 [ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/config/config.yml.template
 [ModRewrite]: https://httpd.apache.org/docs/current/mod/mod_rewrite.html
+[AllowOverride]: https://httpd.apache.org/docs/current/mod/core.html#allowoverride
 [NginxConfig]: {{ site.github.url }}/in-depth/nginx/
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
