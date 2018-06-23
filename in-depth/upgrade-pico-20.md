@@ -6,6 +6,7 @@ description: Let us take you on a journey to Pico's next evolutionary stage!
 toc:
     upgrading-to-pico-20: Upgrading to Pico 2.0
     use-yaml-files-to-configure-pico: Use YAML files to configure Pico
+    pico-and-composer-a-perfect-match: Pico and Composer, a perfect match
     amazing-new-features-for-theme-developers: Amazing new features for theme developers
     use-picos-next-generation-plugin-system: Use Pico's next generation plugin system
     everything-else-that-was-happening: Everything else that was happening...
@@ -28,7 +29,7 @@ Do you remember when you installed Pico? It was ingeniously simple, wasn't it? U
 
 1. **Create a backup of your Pico installation.** You will need the files later!
 
-2. Empty your installation directory and [install Pico just ordinarily][Install]. Don't forget about uploading hidden files like `.htaccess`!
+2. Empty your installation directory and [install Pico just ordinarily][Install]. We recommend installing Pico using Composer whenever possible. Trust us, you won't regret it when it comes to upgrading Pico! For more information about Composer, refer to the ["Pico and Composer, a perfect match" section][UpgradeComposer] below. If you don't want to use Composer, please don't forget about uploading hidden files like `.htaccess`.
 
 3. Copy `config/config.php` from your backup to your new Pico installation. It's not strictly necessary, but we highly recommend you to convert your PHP config file to a YAML config file (i.e. `config/config.yml`). Please refer to the ["Use YAML files to configure Pico" section][UpgradeConfig] below for more details.
 
@@ -36,7 +37,7 @@ Do you remember when you installed Pico? It was ingeniously simple, wasn't it? U
 
 5. If applicable, copy the folder of your custom theme within the backed `themes` directory to your Pico installation. We made various improvements to Pico's theme system, but the most important change (because it might break your theme) is that Pico now requires Twig templates to use the `.twig` file extension. So, if your custom theme still uses `.html` file extensions (like `index.html`), rename all templates to `*.twig`. If your theme uses includes (e.g. `{%raw %}{% include "header.html" %}{% endraw %}`), you must change the file extension there as well. Naturally this isn't the only change, but none of them is strictly necessary, though highly recommended. So, please refer to the ["Amazing new features for theme developers" section][UpgradeThemes] below for more details. If you're using a 3rd-party theme, make sure to check whether there's a new version available. If you encounter any problems, please refer to the theme developer - the theme might need to be updated to work with Pico 2.0.
 
-6. Provided that you're using plugins, copy all of your plugins from the backed `plugins` directory to your Pico installation. Don't copy the outdated files `00-PicoDeprecated.php`, `01-PicoParsePagesContent.php`, `02-PicoExcerpt.php` and `DummyPlugin.php`. Pico 2.0 heavily improves the plugin system and unfortunately also introduces some backwards-incompatible changes. The most important change is that Pico no longer tries to interpret any file in the `plugins` directory as plugin, but this also means that it might ignore a plugin or stumble over a superfluous file. If all of your plugins consist of just a single file (i.e. `plugins/<plugin name>.php`), you're likely good to go. However, if you're copying folders to your `plugins` directory, please note that Pico now only interprets `plugins/<plugin name>/<plugin name>.php` as plugin. So make sure to check whether there are updates available for the plugins you use. If one of your plugins stops working after upgrading to Pico 2.0, please refer to the plugin developer - the plugin needs to be updated. Please refer to the ["Use Pico's next generation plugin system" section][UpgradePlugins] below for more details.
+6. Provided that you're using plugins, copy all of your plugins from the backed `plugins` directory to your Pico installation. Don't copy the outdated files `00-PicoDeprecated.php`, `01-PicoParsePagesContent.php`, `02-PicoExcerpt.php` and `DummyPlugin.php`. Pico 2.0 heavily improves the plugin system and unfortunately also introduces some backwards-incompatible changes. The most important change is that Pico no longer tries to interpret any file in the `plugins` directory as plugin, but this also means that it might ignore a plugin or stumble over a superfluous file. If all of your plugins consist of just a single file (i.e. `plugins/<plugin name>.php`), you're likely good to go. However, if you're copying folders to your `plugins` directory, please note that Pico now only interprets `plugins/<plugin name>/<plugin name>.php` as plugin. So make sure to check whether there are updates available for the plugins you use. You might want to take the opportunity to switch to Composer, it makes keeping your plugins up-to-date way easier. Please refer to the ["Pico and Composer, a perfect match" section][UpgradeComposer] below for more details. If one of your plugins stops working after upgrading to Pico 2.0, please refer to the plugin developer - the plugin needs to be updated. You want to know more about the improvements in Pico's plugin system? Just refer to the ["Use Pico's next generation plugin system" section][UpgradePlugins] below.
 
 ## Use YAML files to configure Pico
 
@@ -47,6 +48,16 @@ For this reason we're happy to anounce YAML config files! As a Pico user you kno
 Just take a look at the `config/config.yml.template` and create your own config file `config/config.yml`. Even though we still support the old PHP config file (`config/config.php`), we highly recommend you to replace it by a appropiate `config/config.yml`. We will likely drop support of `config/config.php` in Pico's next major release.
 
 Please note that Pico loads config files in a special way you should be aware of. First of all it loads the main config file `config/config.yml`, and then any other `*.yml` file in Pico's `config` dir in alphabetical order. The file order is crucial: Configiguration values which have been set already, cannot be overwritten by a succeeding file. For example, if you set `site_title: Pico` in `config/a.yml` and `site_title: My awesome site!` in `config/b.yml`, your site title will be "Pico".
+
+## Pico and Composer, a perfect match
+
+We're pleased to announce that we've incorporated [Composer][] in our work flow, allowing you to benefit from Composer's amazing functionality. We've used Composer from the beginning to resolve Pico's dependencies (e.g. Twig and Symfony's YAML parser), however, this didn't really affect the average Pico user. We as developers love Composer, it was therefore obvious to think about how we could let you, the user, benefit from Composer - and we think we don't promise too much when we say that it worked out great! Composer allows you to install and update both Pico itself, as well as plugins and themes with just a single command.
+
+Starting with Pico 2.0 you can (but are not required to!) use Composer to manage your Pico installation. The only thing you need is Shell access to your webserver. You don't have Shell access to your webserver? Don't despair, you can still use Pico's pre-bundled release, and install plugins and themes the same way as with Pico 1.0. However, if you have Shell access to your webserver, we recommend you to use Composer to manage your Pico installation. Trust us, you won't regret it when it comes to upgrading Pico!
+
+Installing a new plugin or theme is just a single command away. If you want to install e.g. Pico's official [File Prefixes plugin][PicoFilePrefixes], you just have to run `composer require phrozenbyte/pico-file-prefixes` - that's it! You later want to update Pico and all your plugins? Simply run `composer update`.
+
+You're a plugin or themes developer, and you want to let your users benefit from this amazing new feature? It's [`picocms/composer-installer`][PicoComposerInstaller] that is responsible for installing plugins and themes. Just add `{ "type": "pico-plugin" }` or `{ "type": "pico-theme" }` to your `composer.json`, and you're ready to go. Please refer to the installer's `README.md` for more info.
 
 ## Amazing new features for theme developers
 
@@ -104,6 +115,7 @@ Pico 2.0 also introduces some more smaller improvements and changes:
 [Issues]: {{ site.gh_project_url }}/issues
 [Install]: {{ site.github.url }}/docs/#install
 [UpgradeConfig]: #use-yaml-files-to-configure-pico
+[UpgradeComposer]: #pico-and-composer-a-perfect-match
 [UpgradeThemes]: #amazing-new-features-for-theme-developers
 [UpgradePlugins]: #use-picos-next-generation-plugin-system
 [UpgradeDevs]: #developer-news
@@ -112,4 +124,7 @@ Pico 2.0 also introduces some more smaller improvements and changes:
 [PicoTheme]: https://github.com/picocms/pico-theme
 [PicoDeprecated]: https://github.com/picocms/pico-deprecated
 [UrlRewriting]: {{ site.github.url }}/docs/#url-rewriting
+[PicoComposerInstaller]: https://github.com/picocms/composer-installer
+[PicoFilePrefixes]: https://github.com/PhrozenByte/pico-file-prefixes
+[Composer]: https://getcomposer.org/
 [UnixTimestamp]: https://en.wikipedia.org/wiki/Unix_timestamp
