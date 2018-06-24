@@ -114,7 +114,7 @@ But that's not all! Pico 2.0 allows you to configure Parsedown and change how yo
 Pico 2.0 also introduces some more smaller improvements and changes:
 
 * You can now explicitly specify the `date_formatted` (a formatted date string) and `time` (a [Unix timestamp][UnixTimestamp]) meta headers in a page's YAML Front Matter
-* As announced earlier, Pico 2.0 drops the `PicoParsePagesContent` (use the `content` Twig filter instead, e.g. `{% raw %}{{ "sub/page"|content }}{% endraw %}`) and `PicoExcerpt` (use the `description` meta header instead, e.g. `{% raw %}{{ meta.description }}{% endraw %}` in Twig templates or `%meta.description%` in Markdown files) plugins
+* As announced earlier, Pico 2.0 drops the [`PicoParsePagesContent`][PicoParsePagesContent] (use the `content` Twig filter instead, e.g. `{% raw %}{{ "sub/page"|content }}{% endraw %}`) and [`PicoExcerpt`][PicoExcerpt] (use the `description` meta header instead, e.g. `{% raw %}{{ meta.description }}{% endraw %}` in Twig templates or `%meta.description%` in Markdown files) plugins
 * Pico now uses the relative path between `index.php` and `Pico::$themesDir` when guessing Pico's theme URL
 * Pico's `.htaccess` file for Apache webservers now includes a directive to deny access to all "dot files" (i.e. files beginning with a `.`, e.g. the `.git` directory) by default; you should update your webserver config if you use another webserver
 * Pico's default installation now includes empty `assets` and `content` directories
@@ -237,21 +237,27 @@ If you have a question about one of the new features of Pico 2.0, please check o
 [UpgradeThemes]: #amazing-new-features-for-theme-developers
 [UpgradePlugins]: #use-picos-next-generation-plugin-system
 [UpgradeDevs]: #developer-news
+
 [Install]: {{ site.github.url }}/docs/#install
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [UrlRewriting]: {{ site.github.url }}/docs/#url-rewriting
 [FeaturesHttpParams]: {{ site.github.url }}/in-depth/features/http-params/
 [FeaturesPageTree]: {{ site.github.url }}/in-depth/features/page-tree/
+
 [PicoComposer]: https://github.com/picocms/pico-composer
 [PicoTheme]: https://github.com/picocms/pico-theme
 [PicoDeprecated]: https://github.com/picocms/pico-deprecated
 [PicoComposerInstaller]: https://github.com/picocms/composer-installer
+[PicoParsePagesContent]: https://github.com/PhrozenByte/pico-parse-pages-content
+[PicoExcerpt]: https://github.com/PhrozenByte/pico-excerpt
 [PicoFilePrefixes]: https://github.com/PhrozenByte/pico-file-prefixes
+
 [ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/config/config.yml.template
 [Changelog]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/CHANGELOG.md
 [License]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/LICENSE.md
 [DCO]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/CONTRIBUTING.md#developer-certificate-of-origin
 [Issues]: {{ site.gh_project_url }}/issues
+
 [Composer]: https://getcomposer.org/
 [UnixTimestamp]: https://en.wikipedia.org/wiki/Unix_timestamp
 [REUSE]: https://reuse.software/
