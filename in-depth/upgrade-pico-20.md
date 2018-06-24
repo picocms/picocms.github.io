@@ -9,7 +9,7 @@ toc:
     pico-and-composer-a-perfect-match: Pico and Composer, a perfect match
     amazing-new-features-for-theme-developers: Amazing new features for theme developers
     use-picos-next-generation-plugin-system: Use Pico's next generation plugin system
-    everything-else-that-was-happening: Everything else that was happening...
+    everything-else-that-was-happening: Everything else that was happening…
     developer-news: Developer News
 nav-url: /docs/
 gh_release: v2.0.0
@@ -39,15 +39,21 @@ Do you remember when you installed Pico? It was ingeniously simple, wasn't it? U
 
 6. Provided that you're using plugins, copy all of your plugins from the backed `plugins` directory to your Pico installation. Don't copy the outdated files `00-PicoDeprecated.php`, `01-PicoParsePagesContent.php`, `02-PicoExcerpt.php` and `DummyPlugin.php`. Pico 2.0 heavily improves the plugin system and unfortunately also introduces some backwards-incompatible changes. The most important change is that Pico no longer tries to interpret any file in the `plugins` directory as plugin, but this also means that it might ignore a plugin or stumble over a superfluous file. If all of your plugins consist of just a single file (i.e. `plugins/<plugin name>.php`), you're likely good to go. However, if you're copying folders to your `plugins` directory, please note that Pico now only interprets `plugins/<plugin name>/<plugin name>.php` as plugin. So make sure to check whether there are updates available for the plugins you use. You might want to take the opportunity to switch to Composer, it makes keeping your plugins up-to-date way easier. Please refer to the ["Pico and Composer, a perfect match" section][UpgradeComposer] below for more details. If one of your plugins stops working after upgrading to Pico 2.0, please refer to the plugin developer - the plugin needs to be updated. You want to know more about the improvements in Pico's plugin system? Just refer to the ["Use Pico's next generation plugin system" section][UpgradePlugins] below.
 
+Please take the opportunity to check whether your webserver is proberly configured, and access to Pico's internal files and dirs is denied. Just refer to the ["URL Rewriting" section in the docs][UrlRewriting]. By following the instructions, you will not just enable URL rewriting, but also deny access to Pico's internal files and dirs. Please note that you should configure your webserver slightly different for Pico 2.0 than for Pico 1.0, so you should update your webserver config no matter what.
+
+That's the *bare minimum* you need to know when upgrading to Pico 2.0. However, there's way more to know. Thus we highly recommend you to keep reading, the things you'll learn, will not disappoint you!
+
 ## Use YAML files to configure Pico
 
-Configuring Pico is now easier than ever before. Up to this point, Pico used a regular PHP file, the programming language Pico is written in, for its configuration (`config/config.php`). However, dealing with PHP isn't "stupidly simple", especially for non-developers: It has some pretty strict and unapparent syntax rules, and just the slightest typo results in a PHP error and breaking your whole website. That's not what we want!
+Configuring Pico is now easier than ever before. Up to this point, Pico used a regular PHP file, the programming language Pico is written in, for its config (`config/config.php`). However, dealing with PHP isn't "stupidly simple", especially for non-developers: It has some pretty strict and unapparent syntax rules, and just the slightest typo results in a PHP error and breaking your whole website. That's not what we want!
 
-For this reason we're happy to anounce YAML config files! As a Pico user you know YAML from the YAML header of your content files, thus it was the obvious choice. But we didn't stop there. Rather than having just a single config file, you can now use a arbitrary number of config files. Simply create a `.yml` file in Pico's `config` dir and you're good to go. This allows you to add some structure to your configuration, like a separate config file for your theme (`config/my_theme.yml`).
+For this reason we're happy to anounce YAML config files! As a Pico user you know YAML from the YAML header of your content files, thus it was the obvious choice. But we didn't stop there. Rather than having just a single config file, you can now use a arbitrary number of config files. Simply create a `.yml` file in Pico's `config` dir and you're good to go. This allows you to add some structure to your config, like a separate config file for your theme (`config/my_theme.yml`).
 
-Just take a look at the `config/config.yml.template` and create your own config file `config/config.yml`. Even though we still support the old PHP config file (`config/config.php`), we highly recommend you to replace it by a appropiate `config/config.yml`. We will likely drop support of `config/config.php` in Pico's next major release.
+Just take a look at the [`config/config.yml.template`][ConfigTemplate] and create your own config file `config/config.yml`. Even though we still support the old PHP config file (`config/config.php`), we highly recommend you to replace it by a appropiate `config/config.yml`. We will likely drop support of `config/config.php` in Pico's next major release.
 
 Please note that Pico loads config files in a special way you should be aware of. First of all it loads the main config file `config/config.yml`, and then any other `*.yml` file in Pico's `config` dir in alphabetical order. The file order is crucial: Configiguration values which have been set already, cannot be overwritten by a succeeding file. For example, if you set `site_title: Pico` in `config/a.yml` and `site_title: My awesome site!` in `config/b.yml`, your site title will be "Pico".
+
+Since YAML files are plain text files, users might read your Pico config by navigating to `https://example.com/pico/config/config.yml`. This is no problem in the first place, but might get a problem if you use plugins that require you to store security-relevant data in the config (like credentials). Thus you should *always* make sure to configure your webserver to deny access to Pico's `config` dir. Just refer to the ["URL Rewriting" section in the docs][UrlRewriting]. By following the instructions, you will not just enable URL rewriting, but also deny access to Pico's `config` dir.
 
 ## Pico and Composer, a perfect match
 
@@ -69,7 +75,7 @@ The second major improvement for theme developers is the introduction of page tr
 
 Besides adding amazing new features we always strive for improving Pico's existing features. One of our main goals for Pico 2.0 was to improve consistency. The only backwards-incompatible change that affects theme developers is that Pico now requires all Twig templates to use the `.twig` file extension. This change allows a way better integration of plugins and themes: Many plugins generate HTML markup that is hard-coded into the plugin's PHP source code. This isn't a very flexible approach, so we rather recommend plugin developers to create small Twig template to parse the HTML markup. Using a a consistent file extension now allows you, the theme developer, to overwrite a plugin's Twig template. If you're still using the `.html` file extension, you don't have to do more than just change all file extensions to `.twig`. If your theme uses includes (e.g. `{%raw %}{% include "header.html" %}{% endraw %}`), you must change the file extension there as well.
 
-Another very important change is the way Pico handles YAML meta headers: Starting with Pico 2.0 we no longer lower a meta header's key unsolicited. If a user adds `SomeKey: value` to a page's meta data, you must use `{% raw %}{{ meta["SomeKey"] }}{% endraw %}` (rather than `{% raw %}{{ meta["somkey"] }}{% endraw %}` as of Pico 1.0) to access the meta header's value. There will be a transitional phase in which we preserve backwards compatibility with Pico's official `PicoDeprecated` plugin: With Pico 2.0 you can access a meta header like `SomeKey: value` through both `{% raw %}{{ meta["SomeKey"] }}{% endraw %}` (recommended) and `{% raw %}{{ meta["somkey"] }}{% endraw %}` (deprecated). However, please note that this transitional phase will end with Pico's next major release (i.e. Pico 3.0).
+Another very important change is the way how Pico handles YAML meta headers: Starting with Pico 2.0 we no longer lower a meta header's key unsolicited. If a user adds `SomeKey: value` to a page's meta data, you must use `{% raw %}{{ meta["SomeKey"] }}{% endraw %}` (rather than `{% raw %}{{ meta["somkey"] }}{% endraw %}` as of Pico 1.0) to access the meta header's value. Pico furthermore no longer compares meta headers case insensitive - this caused to many confusion in the past. There will be a transitional phase in which we preserve backwards compatibility with Pico's official `PicoDeprecated` plugin: With Pico 2.0 you can access a meta header like `SomeKey: value` through both `{% raw %}{{ meta["SomeKey"] }}{% endraw %}` (recommended) and `{% raw %}{{ meta["somkey"] }}{% endraw %}` (deprecated). However, please note that this transitional phase will end with Pico's next major release (i.e. Pico 3.0).
 
 Besides the bigger new features, Pico 2.0 introduces some more smaller improvements and changes:
 
@@ -89,7 +95,7 @@ The second major change to Pico's plugin system is in which order plugins are ex
 
 That's the important stuff for any Pico user. If you're one of our splendid plugin developers, please refer to the ["Developer News" section][UpgradeDevs] below for a complete list of all improvements.
 
-## Everything else that was happening...
+## Everything else that was happening…
 
 But wait, there's more than that! There's a pretty big number of other important changes to Pico. First of all, we've updated our dependencies. Pico 2.0 now depends on Twig 1.35, Symfony YAML 2.8 and Parsedown 1.6.
 
@@ -111,20 +117,21 @@ Pico 2.0 also introduces some more smaller improvements and changes:
 * Pico's `.htaccess` file for Apache webservers now includes a directive to deny access to all "dot files" (i.e. files beginning with a `.`, e.g. the `.git` directory) by default; you should update your webserver config if you use another webserver
 * Pico's official `PicoDeprecated` plugin is no longer maintained in Pico's core repository, but the [`picocms/pico-deprecated` repository][PicoDeprecated]
 
-[GettingHelp]: {{ site.github.url }}/docs/#getting-help
-[Issues]: {{ site.gh_project_url }}/issues
-[Install]: {{ site.github.url }}/docs/#install
 [UpgradeConfig]: #use-yaml-files-to-configure-pico
 [UpgradeComposer]: #pico-and-composer-a-perfect-match
 [UpgradeThemes]: #amazing-new-features-for-theme-developers
 [UpgradePlugins]: #use-picos-next-generation-plugin-system
 [UpgradeDevs]: #developer-news
+[Install]: {{ site.github.url }}/docs/#install
+[GettingHelp]: {{ site.github.url }}/docs/#getting-help
+[UrlRewriting]: {{ site.github.url }}/docs/#url-rewriting
 [FeaturesHttpParams]: {{ site.github.url }}/in-depth/features/http-params/
 [FeaturesPageTree]: {{ site.github.url }}/in-depth/features/page-tree/
 [PicoTheme]: https://github.com/picocms/pico-theme
 [PicoDeprecated]: https://github.com/picocms/pico-deprecated
-[UrlRewriting]: {{ site.github.url }}/docs/#url-rewriting
 [PicoComposerInstaller]: https://github.com/picocms/composer-installer
 [PicoFilePrefixes]: https://github.com/PhrozenByte/pico-file-prefixes
+[Issues]: {{ site.gh_project_url }}/issues
 [Composer]: https://getcomposer.org/
 [UnixTimestamp]: https://en.wikipedia.org/wiki/Unix_timestamp
+[ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/config/config.yml.template
