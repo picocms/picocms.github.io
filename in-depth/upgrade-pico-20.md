@@ -121,7 +121,113 @@ Pico 2.0 also introduces some more smaller improvements and changes:
 
 We've learned much today about a great number of new features and the possibilities they will open up, but that's not all! There are many more improvements and changes that don't affect the average Pico user, but developers. Below you will find all changes that weren't mentioned and explained in detail above. It's a extract of Pico's [`CHANGELOG.md`][Changelog]. Please note that changes that break backwards compatibility (BC) are marked with an `!` (exclamation mark). This doesn't include changes for which BC is preserved by Pico's official [`PicoDeprecated` plugin][PicoDeprecated].
 
+Starting with Pico 2.0 we follow the best practices for license information of the [REUSE Initiative][REUSE]. For this reason we've added license and copyright headers (Pico is released under the [MIT license][License]) to all of Pico's relevant files. Pico is furthermore adopting the [Developer Certificate of Origin][DCO] (DCO) used by serveral other major Open Source projects. By contributing to Pico, you accept and agree to the terms and conditions of both the MIT license and the DCO for your present and future contributions submitted to Pico.
+
 If you have a question about one of the new features of Pico 2.0, please check out the ["Getting Help" section][GettingHelp] of the docs and don't be afraid to open a new [Issue][Issues] on GitHub. For a complete list of what we have changed with Pico 2.0, please refer to our [`CHANGELOG.md`][Changelog].
+
+<div class="toggle">
+<h4 class="title">Pico events</h4>
+<div class="togglebox">
+<div markdown="1">
+
+```
+* [New] Add Pico API versioning for plugins (see `Pico::API_VERSION` constant);
+        Pico now triggers events on plugins using the latest API version only
+        ("native" plugins), `PicoDeprecated` takes care of all other plugins;
+        as a result, old plugin's always depend on `PicoDeprecated` now
+* [New] Add `onPluginManuallyLoaded` event (see `Pico::loadPlugin()` method)
+* [New] Add `onYamlParserRegistered` event (see `Pico::getYamlParser()` method)
+* [New] Add `onSinglePageLoading` event, allowing one to skip a page
+* [New] Add `onSinglePageContent` event
+* [Changed] ! Don't pass `$plugins` parameter to `onPluginsLoaded` event by
+            reference anymore; use `Pico::loadPlugin()` instead
+* [Changed] Overhaul page discovery events: add `onPagesDiscovered` event which
+            is triggered right before `Pico::$pages` is sorted and move the
+            `$currentPage`, `$previousPage` and `$nextPage` parameters of the
+            `onPagesLoaded` event to the new `onCurrentPageDiscovered` event
+* [Changed] Move the `$twig` parameter of the `onPageRendering` event to the
+            `onTwigRegistered` event, replacing the `onTwigRegistration` event
+* [Changed] Unify the `onParsedownRegistration` event by renaming it to
+            `onParsedownRegistered` and add the `$parsedown` parameter
+* [Changed] ! The events `onYamlParserRegistered`, `onParsedownRegistered`,
+            `onTwigRegistered` and `onMetaHeaders` are no longer part of Pico's
+            event flow and are now triggered on demand and just once
+* [Removed] Remove superfluous parameters of various events to reduce Pico's
+            error-proneness (plugins hopefully interfere with each other less)
+```
+
+</div>
+</div>
+</div>
+
+<div class="toggle">
+<h4 class="title">Pico API</h4>
+<div class="togglebox">
+<div markdown="1">
+
+```
+* [New] Add public `Pico::getVendorDir()` method, returning Pico's installation
+        directory (i.e. `/var/www/pico/vendor/picocms/pico`); don't confuse
+        this with composer's `vendor/` dir!
+* [New] Add public `Pico::loadPlugin()` method and the corresponding
+        `onPluginManuallyLoaded` event
+* [New] Add public `Pico::resolveFilePath()` method (replaces the protected
+        `Pico::discoverRequestFile()` method)
+* [New] Add public `Pico::is404Content()` method
+* [New] Add public `Pico::getYamlParser()` method and the corresponding
+        `onYamlParserRegistered` event
+* [New] Add public `Pico::substituteFileContent()` method
+* [New] Add public `Pico::getPageId()` method
+* [New] Add public `Pico::getBaseThemeUrl()` method
+* [New] Add public `Pico::getFilesGlob()` method
+* [New] Add public `AbstractPicoPlugin::getPluginConfig()` method
+* [New] Add `$enableLocalPlugins` parameter to `Pico::__construct()` to allow
+        website developers to disable local plugin discovery by scanning the
+        `plugins/` dir (i.e. load plugins from `vendor/pico-plugin.php` only)
+* [New] Add `$default` parameter to `Pico::getConfig()` method
+* [Changed] Change method visibility of `Pico::getFiles()` to public
+* [Changed] Change method visibility of `Pico::triggerEvent()` to public;
+            at first glance this method triggers events on native plugins only,
+            however, `PicoDeprecated` takes care of triggering events for other
+            plugins, thus you can use this method to trigger (custom) events on
+            all plugins; never use it to trigger Pico core events!
+```
+
+</div>
+</div>
+</div>
+
+<div class="toggle">
+<h4 class="title">Miscellaneous</h4>
+<div class="togglebox">
+<div markdown="1">
+
+```
+* [New] Improve release & build process and move most build tools to the new
+        `picocms/ci-tools` repo, allowing them to be used by other projects
+* [New] Add Pico version constants (`Pico::VERSION` and `Pico::VERSION_ID`),
+        and add a `version` Twig variable and `%version%` Markdown placeholder
+* [New] Add a theme and plugin installer for composer; Pico now additionally
+        uses the new `vendor/pico-plugin.php` file to discover plugins
+        installed by composer and loads them using composer's autoloader;
+        see the `picocms/composer-installer` repo for more details; Pico
+        loads plugins installed by composer first and ignores conflicting
+        plugins in Pico's `plugins/` dir
+* [Changed] ! Disallow running the same Pico instance multiple times by
+            throwing a `RuntimeException` when calling `Pico::run()`
+* [Changed] ! Throw a `RuntimeException` when non-native plugins are loaded,
+            but Pico's `PicoDeprecated` plugin is not loaded
+* [Changed] Flip registered meta headers array, so that the array key is used
+            to search for a meta value and the array value is used to store the
+            found meta value (previously it was the other way round)
+* [Changed] ! Change `AbstractPicoPlugin::$enabled`'s behavior: setting it to
+            TRUE now leads to throwing a `RuntimeException` when the plugin's
+            dependencies aren't fulfilled; use NULL to maintain old behavior
+```
+
+</div>
+</div>
+</div>
 
 [UpgradeConfig]: #use-yaml-files-to-configure-pico
 [UpgradeComposer]: #pico-and-composer-a-perfect-match
@@ -139,6 +245,9 @@ If you have a question about one of the new features of Pico 2.0, please check o
 [PicoFilePrefixes]: https://github.com/PhrozenByte/pico-file-prefixes
 [ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/config/config.yml.template
 [Changelog]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/CHANGELOG.md
+[License]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/LICENSE.md
+[DCO]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/CONTRIBUTING.md#developer-certificate-of-origin
 [Issues]: {{ site.gh_project_url }}/issues
 [Composer]: https://getcomposer.org/
 [UnixTimestamp]: https://en.wikipedia.org/wiki/Unix_timestamp
+[REUSE]: https://reuse.software/
