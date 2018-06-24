@@ -12,7 +12,7 @@ images:
   - themes/images/fullsize/freelancer-modal.png
 info:
   Ported By: "[Simon McDougall](http://sjmcdougall.com)"
-  Original By: "[Start Bootstrap](http://startbootstrap.com/template-overviews/freelancer/)"
+  Original By: "[Start Bootstrap](https://startbootstrap.com/template-overviews/freelancer/)"
   License: "[The MIT License](https://github.com/smcdougall/startbootstrap-freelancer-pico/blob/master/LICENSE)"
 ---
 

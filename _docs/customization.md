@@ -60,7 +60,7 @@ Pages can be used like the following:
 
 Additional to Twigs extensive list of filters, functions and tags, Pico also provides some useful additional filters to make theming easier.
 
-* Pass the unique ID of a page to the `link` filter to return the page's URL (e.g. `{% raw %}{{ "sub/page"|link }}{% endraw %}` gets `http://example.com/?sub/page`).
+* Pass the unique ID of a page to the `link` filter to return the page's URL (e.g. `{% raw %}{{ "sub/page"|link }}{% endraw %}` gets `https://example.com/pico/?sub/page`).
 * To get the parsed contents of a page, pass its unique ID to the `content` filter (e.g. `{% raw %}{{ "sub/page"|content }}{% endraw %}`).
 * You can parse any Markdown string using the `markdown` filter (e.g. you can use Markdown in the `description` meta variable and later parse it in your theme using `{% raw %}{{ meta.description|markdown }}{% endraw %}`).
 * Arrays can be sorted by one of its keys using the `sort_by` filter (e.g. `{% raw %}{% for page in pages|sort_by([ 'meta', 'nav' ]) %}...{% endfor %}{% endraw %}` iterates through all pages, ordered by the `nav` meta header; please note the `[ 'meta', 'nav' ]` part of the example, it instructs Pico to sort by `page.meta.nav`).
@@ -84,7 +84,7 @@ Plugins which were written to work with Pico 1.0 and later can be enabled and di
 
 You're a plugin developer? We love you guys! You can find tons of information about how to develop plugins at [{{ site.github.url }}/development/][PluginDocs]. If you've developed a plugin before and want to upgrade it to Pico 2.0, refer to the [upgrade section of the docs][PluginUpgrade].
 
-[Twig]: http://twig.sensiolabs.org/documentation
+[Twig]: https://twig.sensiolabs.org/documentation
 [UnixTimestamp]: https://en.wikipedia.org/wiki/Unix_timestamp
 [WikiThemes]: {{ site.gh_project_url }}/wiki/Pico-Themes
 [WikiPlugins]: {{ site.gh_project_url }}/wiki/Pico-Plugins

@@ -9,11 +9,11 @@ Technology
 ----------
 
 * GitHub Pages
-    - [Jekyll](http://jekyllrb.com/)
+    - [Jekyll](https://jekyllrb.com/)
 * Theme
     - [Webpaint](http://themes.iki-bir.com/webpaint/multipage/full/) theme by [elemis](http://iki-bir.com)
 * Analytics
-    - [Clicky Analytics](http://getclicky.com)
+    - [Clicky Analytics](https://getclicky.com)
 
 Contact
 -------

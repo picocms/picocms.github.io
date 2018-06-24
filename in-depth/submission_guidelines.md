@@ -162,7 +162,7 @@ images:
 info:
   By: "[The Octocat](https://github.com/octocat)"
 #  Ported By: "[The Octocat](https://github.com/octocat)"
-#  Original By: "[Someone Else](http://example.com/)"
+#  Original By: "[Someone Else](https://example.com/)"
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
 ---
 

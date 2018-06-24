@@ -9,8 +9,8 @@ images:
   - themes/images/fullsize/launcher.jpg
 info:
   Ported By: "[BesrourMS](https://github.com/BesrourMS)"
-  Original By: "[GetTemplates.co](http://gettemplates.co/preview/?item=launcher-free-website-template-using-bootstrap-for-coming-soon-page)"
-  License: "[Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by/3.0/)"
+  Original By: "[GetTemplates.co](https://gettemplates.co/preview/?item=launcher-free-website-template-using-bootstrap-for-coming-soon-page)"
+  License: "[Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)"
 ---
 
 Launcher theme from GetTemplates.co, ported to Pico.

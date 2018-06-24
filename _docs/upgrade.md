@@ -45,7 +45,7 @@ $ php composer.phar update
 ```
 
 [Composer]: https://getcomposer.org/
-[SemVer]: http://semver.org
+[SemVer]: https://semver.org/
 [HelpUpgrade]: {{ site.github.url }}/in-depth/upgrade/
 [LatestRelease]: {{ site.gh_project_url }}/releases/latest
 [PicoGit]: {{ site.gh_project_url }}

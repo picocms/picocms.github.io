@@ -58,6 +58,6 @@ $ php composer.phar install
 [Composer]: https://getcomposer.org/
 [LatestRelease]: {{ site.gh_project_url }}/releases/latest
 [PicoGit]: {{ site.gh_project_url }}
-[PicoPackagist]: http://packagist.org/packages/picocms/pico
-[PicoComposerPackagist]: http://packagist.org/packages/picocms/pico-composer
-[Packagist]: http://packagist.org/
+[PicoPackagist]: https://packagist.org/packages/picocms/pico
+[PicoComposerPackagist]: https://packagist.org/packages/picocms/pico-composer
+[Packagist]: https://packagist.org/

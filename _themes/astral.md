@@ -13,7 +13,7 @@ images:
 info:
   Ported By: "[Simon McDougall](http://sjmcdougall.com)"
   Original By: "[HTML5 UP!](https://html5up.net/astral)"
-  License: "[Creative Commons Attribution 3.0](http://creativecommons.org/licenses/by/3.0/)"
+  License: "[Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)"
 ---
 
 Astral theme from HTML5 UP!, ported to Pico.

@@ -9,7 +9,7 @@ images:
   - themes/images/fullsize/simple_sidebar.png
 info:
   Ported By: "[dmelo](https://github.com/dmelo)"
-  Original By: "[Start Bootstrap](http://startbootstrap.com/template-overviews/simple-sidebar/)"
+  Original By: "[Start Bootstrap](https://startbootstrap.com/template-overviews/simple-sidebar/)"
   License: "[The MIT License](https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)"
 ---
 

@@ -41,7 +41,7 @@ For a complete list of what we have changed with Pico 1.0, please refer to our [
 
 ### Additional information
 
-Pico 1.0 introduces a brand new routing system that is now compatible to any webserver. Even URL rewriting has become optional. If you don't use the `.htaccess` file provided by Pico, you must update your rewriting rules to let the webserver rewrite internal links correctly. URLs like `http://example.com/pico/sub/page` must now be rewritten to `/pico/?sub/page`. Please refer to Pico's [`.htaccess` file][RewriteFile] and the [corresponding section in the docs][RewriteDocs].
+Pico 1.0 introduces a brand new routing system that is now compatible to any webserver. Even URL rewriting has become optional. If you don't use the `.htaccess` file provided by Pico, you must update your rewriting rules to let the webserver rewrite internal links correctly. URLs like `https://example.com/pico/sub/page` must now be rewritten to `/pico/?sub/page`. Please refer to Pico's [`.htaccess` file][RewriteFile] and the [corresponding section in the docs][RewriteDocs].
 
 A potential source of problems for users with custom themes is the removal of `{% raw %}{{ page.content }}{% endraw %}` and `{% raw %}{{ page.excerpt }}{% endraw %}`. As long as you use old plugins, the newly introduced `PicoDeprecated` plugin ensures the further availability of these variables. However, this plugin won't get enabled when all of your plugins were updated to Pico 1.0. Furthermore we will drop the auto provision of `{% raw %}{{ page.content }}{% endraw %}` and `{% raw %}{{ page.excerpt }}{% endraw %}` with Pico 1.1. If you're using one of these variables in your theme, we highly recommend you to take the steps described in the ["Drop of `{% raw %}{{ page.content }}{% endraw %}`"][UpgradeDetailsPageContent] and ["Drop of `{% raw %}{{ page.excerpt }}{% endraw %}`"][UpgradeDetailsPageExcerpt] sections below.
 
@@ -66,7 +66,7 @@ Please note that plugins or themes, which haven't been updated to Pico 1.0 yet, 
 
 With Pico 1.0 we removed some empty `index.html` files, whose object was to prevent directory listing. However, directory listing doesn't address the security concerns in whole. Our `.htaccess` file already tries to achieve this automatically, nevertheless you should ensure that your webserver (especially when you're not using Apache) is configured as recommended.
 
-Please make sure directory listing is disabled and users cannot browse to the `config`, `content`, `content-sample`, `lib` and `vendor` directories. Try it yourself by browsing to both your `lib` directory (e.g. `http://example.com/pico/lib/`) and `lib/Pico.php` file (e.g. `http://example.com/pico/lib/Pico.php`) - your webserver should either report `404 Not Found` or `403 Forbidden`.
+Please make sure directory listing is disabled and users cannot browse to the `config`, `content`, `content-sample`, `lib` and `vendor` directories. Try it yourself by browsing to both your `lib` directory (e.g. `https://example.com/pico/lib/`) and `lib/Pico.php` file (e.g. `https://example.com/pico/lib/Pico.php`) - your webserver should either report `404 Not Found` or `403 Forbidden`.
 
 If you were previously hosting assets (images, downloads, etc.) inside your content directory, we recommend you to move them to a dedicated `assets` folder in Pico's root directory. Don't forget to update your links accordingly.
 
@@ -113,8 +113,8 @@ The new `PicoDeprecated` plugin ensures backward compatibility to Pico 0.9 and o
 [PicoGetPageUrl]: {{ site.github.url }}/phpDoc/{{ page.gh_release }}/classes/Pico.html#method_getPageUrl
 [RewriteFile]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/.htaccess#L7
 [RewriteDocs]: {{ site.github.url }}/docs/#url-rewriting
-[Symfony]: http://symfony.com/
-[SymfonyYAML]: http://symfony.com/doc/current/components/yaml/introduction.html
+[Symfony]: https://symfony.com/
+[SymfonyYAML]: https://symfony.com/doc/current/components/yaml/introduction.html
 [UpgradeInstructions]: {{ site.github.url }}/docs/#upgrade
 [InstallInstructions]: {{ site.github.url }}/docs/#install
 [PluginDev]: {{ site.github.url }}/development/

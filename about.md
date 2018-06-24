@@ -97,12 +97,12 @@ galleries:
         fullsize: /style/images/docs/about/fullsize/simpletwo.png
       -
         heading: Magazine
-        description: "[Magazine](http://freehtml5.co/preview/?item=magazine-free-html5-bootstrap-template) theme from [FreeHTML5.co](http://freehtml5.co/), [ported to Pico](https://github.com/BesrourMS/magazine)."
+        description: "[Magazine](https://freehtml5.co/preview/?item=magazine-free-html5-bootstrap-template) theme from [FreeHTML5.co](https://freehtml5.co/), [ported to Pico](https://github.com/BesrourMS/magazine)."
         thumbnail: /style/images/docs/about/thumbnails/magazine.jpg
         fullsize: /style/images/docs/about/fullsize/magazine.jpg
       -
         heading: Clean Blog
-        description: "[Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/) theme from [Start Bootstrap](http://startbootstrap.com/), [ported to Pico](https://github.com/BesrourMS/clean-blog)."
+        description: "[Clean Blog](https://startbootstrap.com/template-overviews/clean-blog/) theme from [Start Bootstrap](https://startbootstrap.com/), [ported to Pico](https://github.com/BesrourMS/clean-blog)."
         thumbnail: /style/images/docs/about/thumbnails/clean_blog.jpg
         fullsize: /style/images/docs/about/fullsize/clean_blog.jpg
 ---
@@ -135,7 +135,7 @@ There really isn't much more to say about it.  The beauty of Pico is in its simp
 
 ## Web Pages Without HTML
 
-Writing HTML is annoying.  Traditionally, if you wanted to build a web page, you had no choice but to fumble around with HTML.  Every paragraph of your site would be contained in a <code><strong>&lt;p&gt;</strong>paragraph tag<strong>&lt;/p&gt;</strong></code>, links would have an <code><strong>&lt;a&nbsp;href="http://example.com"&gt;</strong>anchor tag<strong>&lt;/a&gt;</strong></code> wrapped around them, and lists would require a heck of a lot of <code><strong>&lt;li&gt;</strong>list item tags<strong>&lt;/li&gt;</strong></code>, a pair around each item.  If you've written a traditional HTML page before, you know how this can be a tedious, repetitive, and error-prone process.
+Writing HTML is annoying.  Traditionally, if you wanted to build a web page, you had no choice but to fumble around with HTML.  Every paragraph of your site would be contained in a <code><strong>&lt;p&gt;</strong>paragraph tag<strong>&lt;/p&gt;</strong></code>, links would have an <code><strong>&lt;a&nbsp;href="https://example.com"&gt;</strong>anchor tag<strong>&lt;/a&gt;</strong></code> wrapped around them, and lists would require a heck of a lot of <code><strong>&lt;li&gt;</strong>list item tags<strong>&lt;/li&gt;</strong></code>, a pair around each item.  If you've written a traditional HTML page before, you know how this can be a tedious, repetitive, and error-prone process.
 
 That's where a CMS comes in, allowing you the freedom to write a page the same way you'd write any other document.  The CMS handles the heavy lifting of formatting of your page to be compatible with the web.
 
@@ -260,8 +260,8 @@ Ready to try Pico for yourself?  Head on over to our [Download][] page to get yo
 [Markdown]: https://daringfireball.net/projects/markdown/basics
 [MarkdownSyntax]: https://daringfireball.net/projects/markdown/syntax
 [MarkdownExtra]: https://michelf.ca/projects/php-markdown/extra/
-[Twig]: http://twig.sensiolabs.org/
-[TwigDocs]: http://twig.sensiolabs.org/documentation
+[Twig]: https://twig.sensiolabs.org/
+[TwigDocs]: https://twig.sensiolabs.org/documentation
 [YAML]: https://en.wikipedia.org/wiki/YAML
 [Hooking]: https://en.wikipedia.org/wiki/Hooking
 [DraftsPluginExample]: {{ site.github.url }}/plugins/drafts-example/

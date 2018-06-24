@@ -8,7 +8,7 @@ link: https://github.com/alan-luo/clutter
 images:
   - themes/images/fullsize/clutter.jpg
 info:
-  By: "[Alan Luo](http://alanluo.com)"
+  By: "[Alan Luo](https://alanluo.com)"
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
 ---
 

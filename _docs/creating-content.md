@@ -13,7 +13,7 @@ Pico is a flat file CMS. This means there is no administration backend or databa
 
 When you install Pico, it comes with a `content-sample` folder. Inside this folder is a sample website that will display until you add your own content. Simply add some `.md` files to your `content` folder in Pico's root directory. No configuration is required, Pico will automatically use the `content` folder as soon as you create your own `index.md`.
 
-If you create a folder within the content directory (e.g. `content/sub`) and put an `index.md` inside it, you can access that folder at the URL `http://example.com/?sub`. If you want another page within the sub folder, simply create a text file with the corresponding name and you will be able to access it (e.g. `content/sub/page.md` is accessible from the URL `http://example.com/?sub/page`). Below we've shown some examples of locations and their corresponding URLs:
+If you create a folder within the content directory (e.g. `content/sub`) and put an `index.md` inside it, you can access that folder at the URL `https://example.com/pico/?sub`. If you want another page within the sub folder, simply create a text file with the corresponding name and you will be able to access it (e.g. `content/sub/page.md` is accessible from the URL `https://example.com/pico/?sub/page`). Below we've shown some examples of locations and their corresponding URLs:
 
 <table style="width: 100%; max-width: 40em;">
     <thead>
@@ -105,6 +105,6 @@ If you want to use Pico as a blogging software, you probably want to do somethin
     </li>
 </ol>
 
-[Markdown]: http://daringfireball.net/projects/markdown/syntax
+[Markdown]: https://daringfireball.net/projects/markdown/syntax
 [MarkdownExtra]: https://michelf.ca/projects/php-markdown/extra/
 [YAML]: https://en.wikipedia.org/wiki/YAML

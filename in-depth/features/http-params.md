@@ -19,7 +19,7 @@ Pico's HTTP parameters feature basically wraps around [PHP's `filter_var()` func
 > 
 > [Sanitization](https://php.net/manual/en/filter.filters.sanitize.php) will sanitize the data, so it may alter it by removing undesired characters. For example, passing in `FILTER_SANITIZE_EMAIL` will remove characters that are inappropriate for an email address to contain. That said, it does not validate the data.
 > 
-> Flags are optionally used with both validation and sanitization to tweak behaviour according to need. For example, passing in `FILTER_FLAG_PATH_REQUIRED` while filtering an URL will require a path (like `/foo` in `http://example.org/foo`) to be present.
+> Flags are optionally used with both validation and sanitization to tweak behaviour according to need. For example, passing in `FILTER_FLAG_PATH_REQUIRED` while filtering an URL will require a path (like `/foo` in `https://example.org/foo`) to be present.
 
 <small>– [Copyright](https://secure.php.net/manual/en/copyright.php) © 1997-2016 [The PHP Documentation Group](https://secure.php.net/credits.php), released under the [Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/) license</small>
 

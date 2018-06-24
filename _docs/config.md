@@ -22,7 +22,7 @@ Since YAML files are plain text files, users might read your Pico config by navi
 
 ### URL Rewriting
 
-Pico's default URLs (e.g. http://example.com/pico/?sub/page) already are very user-friendly. Additionally, Pico offers you a URL rewrite feature to make URLs even more user-friendly (e.g. http://example.com/pico/sub/page).
+Pico's default URLs (e.g. https://example.com/pico/?sub/page) already are very user-friendly. Additionally, Pico offers you a URL rewrite feature to make URLs even more user-friendly (e.g. https://example.com/pico/sub/page).
 
 #### Apache
 
