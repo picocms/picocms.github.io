@@ -117,6 +117,12 @@ Pico 2.0 also introduces some more smaller improvements and changes:
 * Pico's `.htaccess` file for Apache webservers now includes a directive to deny access to all "dot files" (i.e. files beginning with a `.`, e.g. the `.git` directory) by default; you should update your webserver config if you use another webserver
 * Pico's official `PicoDeprecated` plugin is no longer maintained in Pico's core repository, but the [`picocms/pico-deprecated` repository][PicoDeprecated]
 
+## Developer News
+
+We've learned much today about a great number of new features and the possibilities they will open up, but that's not all! There are many more improvements and changes that don't affect the average Pico user, but developers. Below you will find all changes that weren't mentioned and explained in detail above. It's a extract of Pico's [`CHANGELOG.md`][Changelog]. Please note that changes that break backwards compatibility (BC) are marked with an `!` (exclamation mark). This doesn't include changes for which BC is preserved by Pico's official [`PicoDeprecated` plugin][PicoDeprecated].
+
+If you have a question about one of the new features of Pico 2.0, please check out the ["Getting Help" section][GettingHelp] of the docs and don't be afraid to open a new [Issue][Issues] on GitHub. For a complete list of what we have changed with Pico 2.0, please refer to our [`CHANGELOG.md`][Changelog].
+
 [UpgradeConfig]: #use-yaml-files-to-configure-pico
 [UpgradeComposer]: #pico-and-composer-a-perfect-match
 [UpgradeThemes]: #amazing-new-features-for-theme-developers
@@ -131,7 +137,8 @@ Pico 2.0 also introduces some more smaller improvements and changes:
 [PicoDeprecated]: https://github.com/picocms/pico-deprecated
 [PicoComposerInstaller]: https://github.com/picocms/composer-installer
 [PicoFilePrefixes]: https://github.com/PhrozenByte/pico-file-prefixes
+[ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/config/config.yml.template
+[Changelog]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/CHANGELOG.md
 [Issues]: {{ site.gh_project_url }}/issues
 [Composer]: https://getcomposer.org/
 [UnixTimestamp]: https://en.wikipedia.org/wiki/Unix_timestamp
-[ConfigTemplate]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/config/config.yml.template
