@@ -1,5 +1,5 @@
 ---
-nav: 4
+nav: 3
 ---
 
 ## Changelog

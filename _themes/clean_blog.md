@@ -9,7 +9,7 @@ images:
   - themes/images/fullsize/clean_blog.jpg
 info:
   Ported By: "[BesrourMS](https://github.com/BesrourMS)"
-  Original By: "[Start Bootstrap](http://startbootstrap.com/template-overviews/clean-blog/)"
+  Original By: "[Start Bootstrap](https://startbootstrap.com/template-overviews/clean-blog/)"
   License: "[The MIT License](https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/LICENSE)"
 ---
 

@@ -907,6 +907,7 @@ ul.contact-info li i {
     padding-left: 1px;
     display: inline-block;
     text-align: center;
+    font-style: normal;
     -webkit-transition: all 200ms ease-in;
     -o-transition: all 200ms ease-in;
     -moz-transition: all 200ms ease-in;
@@ -920,6 +921,9 @@ ul.contact-info li i {
 	.social a i {
 	    padding-left: 0
 	}
+}
+.social .icon-bountysource {
+    background-color: #33ccff;
 }
 .social .icon-s-rss {
     padding-top: 3px
@@ -3060,4 +3064,8 @@ h1:hover .learn-more, h2:hover .learn-more, h3:hover .learn-more,
 h4:hover .learn-more, h5:hover .learn-more, h6:hover .learn-more {
     color: #ff6760;
     font-size: 75%;
+}
+.icon-bountysource:before {
+    content: '$';
+    font-weight: bold !important;
 }
