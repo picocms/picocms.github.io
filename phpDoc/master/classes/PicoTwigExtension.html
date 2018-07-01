@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>Pico 1.0 API Documentation (master branch)</title>
+    <title>Pico 2.0 API Documentation (master branch)</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
 
@@ -83,7 +83,7 @@
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-ellipsis-vertical"></i>
             </a>
-            <a class="brand" href="../index.html">Pico 1.0 API Documentation (master branch)</a>
+            <a class="brand" href="../index.html">Pico 2.0 API Documentation (master branch)</a>
 
             <div class="nav-collapse">
                 <ul class="nav pull-right">
@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">27</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">19</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">1</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-799745021"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1475590301"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-799745021" class="accordion-body collapse in">
+            <div id="namespace-1475590301" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -190,10 +190,13 @@
                                                                     <a href="../classes/PicoTwigExtension.html#method_getPico" class="">getPico()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_getName" class="">getName()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_getFilters" class="">getFilters()</a><br />
+                                                                    <a href="../classes/PicoTwigExtension.html#method_getFunctions" class="">getFunctions()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_markdownFilter" class="">markdownFilter()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_mapFilter" class="">mapFilter()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_sortByFilter" class="">sortByFilter()</a><br />
                                                                     <a href="../classes/PicoTwigExtension.html#method_getKeyOfVar" class="">getKeyOfVar()</a><br />
+                                                                    <a href="../classes/PicoTwigExtension.html#method_urlParamFunction" class="">urlParamFunction()</a><br />
+                                                                    <a href="../classes/PicoTwigExtension.html#method_formParamFunction" class="">formParamFunction()</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No public properties found</em>
@@ -368,7 +371,7 @@
                 
                                     <h4>Returns</h4>
                     <a href="../classes/Pico.html">\Pico</a>
-                                            &mdash; <p>the extensions instance of Pico</p>
+                                            &mdash; <p>the extension's instance of Pico</p>
                                     				
                             </article>
         </div>
@@ -423,7 +426,7 @@
                 <h3 class="public ">getFilters()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getFilters() : array&lt;mixed,\Twig_SimpleFilter&gt;</pre>
-                <p><em>Returns the Twig filters markdown, map and sort_by</em></p>
+                <p><em>Returns a list of Pico-specific Twig filters</em></p>
                 
 
                 
@@ -449,11 +452,42 @@
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_getFunctions" name="method_getFunctions" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getFunctions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFunctions() : array&lt;mixed,\Twig_SimpleFunction&gt;</pre>
+                <p><em>Returns a list of Pico-specific Twig functions</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array&lt;mixed,\Twig_SimpleFunction&gt;
+                                            &mdash; <p>array of Pico's Twig functions</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href=""><span class="namespace-wrapper">\Twig_ExtensionInterface::getFunctions()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_markdownFilter" name="method_markdownFilter" class="anchor"></a>
             <article class="method">
                 <h3 class="public ">markdownFilter()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">markdownFilter(string  <span class="argument">$markdown</span>) : string</pre>
+                <pre class="signature" style="margin-right: 54px;">markdownFilter(string  <span class="argument">$markdown</span>, array  <span class="argument">$meta = array()</span>) : string</pre>
                 <p><em>Parses a markdown string to HTML</em></p>
                 <p>This method is registered as the Twig <code>markdown</code> filter. You can use it
 to e.g. parse a meta variable (<code>{{ meta.description|markdown }}</code>).
@@ -467,6 +501,11 @@ instead, what ensures the proper preparation of the contents.</p>
                                 <td>$markdown </td>
                                 <td><p>markdown to parse</p></td>
                             </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$meta </td>
+                                <td><p>meta data to use for %meta.*% replacement</p></td>
+                            </tr>
                                             </table>
                 
                 
@@ -479,7 +518,10 @@ instead, what ensures the proper preparation of the contents.</p>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_substituteFileContent"><span class="namespace-wrapper">\Pico::substituteFileContent()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_parseFileContent"><span class="namespace-wrapper">\Pico::parseFileContent()</span></a></dd>
+                                                                </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -542,10 +584,9 @@ $item['foo']['bar'] values)</p></td>
                 <p><em>Sorts an array by one of its keys or a arbitrary deep sub-key</em></p>
                 <p>This method is registered as the Twig <code>sort_by</code> filter. You can use this
 filter to e.g. sort the pages array by a arbitrary meta value. Calling
-<code>{{ pages|sort_by("meta:nav"|split(":")) }}</code> returns all pages sorted by
-the meta value <code>nav</code>. Please note the <code>"meta:nav"|split(":")</code> part of
-the example. The sorting algorithm will never assume equality of two
-values, it will then fall back to the original order. The result is
+<code>{{ pages|sort_by([ "meta", "nav" ]) }}</code> returns all pages sorted by the
+meta value <code>nav</code>. The sorting algorithm will never assume equality of
+two values, it will then fall back to the original order. The result is
 always sorted in ascending order, apply Twigs <code>reverse</code> filter to
 achieve a descending order.</p>
 
@@ -568,8 +609,9 @@ will sort $var by $item['foo']['bar'])</p></td>
                                 <td>$fallback </td>
                                 <td><p>specify what to do with items
 which don't contain the specified sort key; use &quot;bottom&quot; (default)
-to move those items to the end of the sorted array, &quot;top&quot; to rank
-them first, or &quot;keep&quot; to keep the original order of those items</p></td>
+to move these items to the end of the sorted array, &quot;top&quot; to rank
+them first, &quot;keep&quot; to keep the original order, or &quot;remove&quot; to remove
+these items</p></td>
                             </tr>
                                             </table>
                 
@@ -621,8 +663,8 @@ the method will return $var['foo']['bar']) specifying the value</p></td>
                 
                                     <h4>Returns</h4>
                     mixed
-                                            &mdash; <p>the requested
-value or NULL when the given key or key path didn't match</p>
+                                            &mdash; <p>the requested value or NULL when the given key or key path
+didn't match</p>
                                     				
                             </article>
         </div>
@@ -631,6 +673,124 @@ value or NULL when the given key or key path didn't match</p>
                             <span class="label label-info">static</span>
                                                             <dl>
                                                                             </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_urlParamFunction" name="method_urlParamFunction" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">urlParamFunction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">urlParamFunction(string  <span class="argument">$name</span>, integer|string  <span class="argument">$filter = &#039;&#039;</span>, mixed|array  <span class="argument">$options = null</span>, integer|string|array&lt;mixed,integer&gt;|array&lt;mixed,string&gt;  <span class="argument">$flags = null</span>) : mixed</pre>
+                <p><em>Filters a URL GET parameter with a specified filter</em></p>
+                <p>The Twig function disallows the use of the <code>callback</code> filter.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name </td>
+                                <td><p>name of the URL GET parameter
+to filter</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer|string</td>
+                                <td>$filter </td>
+                                <td><p>the filter to apply</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed|array</td>
+                                <td>$options </td>
+                                <td><p>either a associative options
+array to be used by the filter or a scalar default value</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer|string|array&lt;mixed,integer&gt;|array&lt;mixed,string&gt;</td>
+                                <td>$flags </td>
+                                <td><p>flags and flag strings to be
+used by the filter</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                            &mdash; <p>either the filtered data, FALSE if the filter fails, or
+NULL if the URL GET parameter doesn't exist and no default value is
+given</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_getUrlParameter"><span class="namespace-wrapper">\Pico::getUrlParameter()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_formParamFunction" name="method_formParamFunction" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">formParamFunction()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">formParamFunction(string  <span class="argument">$name</span>, integer|string  <span class="argument">$filter = &#039;&#039;</span>, mixed|array  <span class="argument">$options = null</span>, integer|string|array&lt;mixed,integer&gt;|array&lt;mixed,string&gt;  <span class="argument">$flags = null</span>) : mixed</pre>
+                <p><em>Filters a HTTP POST parameter with a specified filter</em></p>
+                <p>The Twig function disallows the use of the <code>callback</code> filter.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name </td>
+                                <td><p>name of the HTTP POST
+parameter to filter</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer|string</td>
+                                <td>$filter </td>
+                                <td><p>the filter to apply</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed|array</td>
+                                <td>$options </td>
+                                <td><p>either a associative options
+array to be used by the filter or a scalar default value</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer|string|array&lt;mixed,integer&gt;|array&lt;mixed,string&gt;</td>
+                                <td>$flags </td>
+                                <td><p>flags and flag strings to be
+used by the filter</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                            &mdash; <p>either the filtered data, FALSE if the filter fails, or
+NULL if the HTTP POST parameter doesn't exist and no default value
+is given</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_getFormParameter"><span class="namespace-wrapper">\Pico::getFormParameter()</span></a></dd>
+                                                                </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -687,7 +847,7 @@ value or NULL when the given key or key path didn't match</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on July 25th, 2017 at 12:48.
+                    on July 1st, 2018 at 15:54.
                 </section>
             </section>
         </section>
