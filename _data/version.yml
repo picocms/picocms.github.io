@@ -1,9 +1,10 @@
-full: 1.0.6
-name: 1.0.6
-milestone: 1.0
-id: 10006
-major: 1
+full: 2.0.0
+name: 2.0.0
+milestone: 2.0
+stability: stable
+id: 20000
+major: 2
 minor: 0
-patch: 6
+patch: 0
 suffix: 
 build: 
