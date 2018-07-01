@@ -22,16 +22,16 @@ Since YAML files are plain text files, users might read your Pico config by navi
 
 ### URL Rewriting
 
-Pico's default URLs (e.g. https://example.com/pico/?sub/page) already are very user-friendly. Additionally, Pico offers you a URL rewrite feature to make URLs even more user-friendly (e.g. https://example.com/pico/sub/page).
+Pico's default URLs (e.g. https://example.com/pico/?sub/page) already are very user-friendly. Additionally, Pico offers you a URL rewrite feature to make URLs even more user-friendly (e.g. https://example.com/pico/sub/page). Below you'll find some basic info about how to configure your webserver proberly to enable URL rewriting. For additional assistance, please refer to the ["Getting Help" section][GettingHelp] below.
 
 #### Apache
 
-If you're using the Apache web server, URL rewriting should be enabled automatically. If URL rewriting doesn't work, please make sure to enable the [`mod_rewrite` module][ModRewrite] and to enable `.htaccess` overrides. You might have to set the [`AllowOverride` directive][AllowOverride] to `AllowOverride All` in your virtual host config file or global `httpd.conf`/`apache.conf`. Assuming rewritten URLs work, but Pico still shows no rewritten URLs, force URL rewriting by setting `rewrite_url: true` in your `config/config.yml`. If you rather get a `500 Internal Server Error` no matter what you do, try removing the `Options` directive from Pico's `.htaccess` file (it's the last line).
+If you're using the Apache web server, URL rewriting should be enabled automatically. If URL rewriting doesn't work (you're getting `404 Not Found` error messages from Apache), please make sure to enable the [`mod_rewrite` module][ModRewrite] and to enable `.htaccess` overrides. You might have to set the [`AllowOverride` directive][AllowOverride] to `AllowOverride All` in your virtual host config file or global `httpd.conf`/`apache.conf`. Assuming rewritten URLs work, but Pico still shows no rewritten URLs, force URL rewriting by setting `rewrite_url: true` in your `config/config.yml`. If you rather get a `500 Internal Server Error` no matter what you do, try removing the `Options` directive from Pico's `.htaccess` file (it's the last line).
 
 #### Nginx [Learn more…][NginxConfig]{:.learn-more}
 {:#nginx}
 
-If you're using Nginx, you can use the following config to enable URL rewriting (lines `5` to `8`) and denying access to Pico's internal files (lines `1` to `3`). You'll need to adjust the path (`/pico` on lines `1`, `2`, `5` and `7`) to match your installation directory. Additionally, you'll need to enable URL rewriting by setting `rewrite_url: true` in your `config/config.yml`. The Nginx config should provide the *bare minimum* you need for Pico. Nginx is a very extensive subject. If you have any trouble, please read through our [Nginx config docs][NginxConfig]. For additional assistance, please refer to the ["Getting Help" section][GettingHelp] below.
+If you're using Nginx, you can use the following config to enable URL rewriting (lines `5` to `8`) and denying access to Pico's internal files (lines `1` to `3`). You'll need to adjust the path (`/pico` on lines `1`, `2`, `5` and `7`) to match your installation directory. Additionally, you'll need to enable URL rewriting by setting `rewrite_url: true` in your `config/config.yml`. The Nginx config should provide the *bare minimum* you need for Pico. Nginx is a very extensive subject. If you have any trouble, please read through our [Nginx config docs][NginxConfig].
 
 ```
 location ~ ^/pico/((config|content|vendor|composer\.(json|lock|phar))(/|$)|(.+/)?\.(?!well-known(/|$))) {
