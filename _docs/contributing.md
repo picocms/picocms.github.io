@@ -16,6 +16,8 @@ You want to contribute to Pico? We really appreciate that! You can help make Pic
 
 By contributing to Pico, you accept and agree to the *Developer Certificate of Origin* for your present and future contributions submitted to Pico. Please refer to the ["Developer Certificate of Origin" section in our `CONTRIBUTING.md`][ContributionGuidelinesDCO].
 
+You don't have time to contribute code to Pico, but still want to "stand a coffee" for the ones who do? You can contribute monetary to Pico using [Bountysource][], a crowd funding website that focuses on individual issues and feature requests. Just refer to the ["Bounties and Fundraisers" section][BountysourceDocs] below for more info.
+
 [Issues]: {{ site.gh_project_url }}/issues
 [PullRequests]: {{ site.gh_project_url }}/pulls
 [PullRequestsWebsite]: {{ site.gh_pages_url }}/pulls
@@ -33,3 +35,5 @@ By contributing to Pico, you accept and agree to the *Developer Certificate of O
 [EditDevDocs]: {{ site.gh_pages_url }}/tree/{{ site.gh_pages_branch }}/_development
 [GitHub]: {{ site.gh_project_url }}
 [GitHubWebsite]: {{ site.gh_pages_url }}
+[Bountysource]: https://www.bountysource.com/teams/picocms
+[BountysourceDocs]: {{ site.github.url }}/docs/#bounties-and-fundraisers
