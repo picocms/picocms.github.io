@@ -7,7 +7,7 @@ nav-url: /docs/
 gh_release: v2.0.0
 ---
 
-Did you ever wanted to use a dropdown for your page navigation? It never was that easy! Starting with Pico 2.0 you can access a page's tree node using the `tree_node` element of the page data array (e.g. `{{ current_page.tree_node }}`). But first you've to understand how Pico's page tree is built up. A picture is worth a thousand words, so before we start explaining the details here's a simple example of how a page tree looks in practice. Just think of the following Markdown files in your `content` directory:
+Did you ever wanted to use a dropdown for your page navigation? It never was that easy! Starting with Pico 2.0 you can access a page's tree node using the `tree_node` element of the page data array (e.g. `{% raw %}{{ current_page.tree_node }}{% endraw %}`). But first you've to understand how Pico's page tree is built up. A picture is worth a thousand words, so before we start explaining the details here's a simple example of how a page tree looks in practice. Just think of the following Markdown files in your `content` directory:
 
 ```
 content/
@@ -39,7 +39,7 @@ Let's take a look at this. The first thing we've to explain is the terminology: 
 
 You should always keep this in mind when working with Pico's page tree. If you access a tree node, you get an array with the keys `id`, `page` and `children`. The `id` key contains a string with the node's name. If the node represents a page, the `page` key is a reference to the page's data array. If the node is a inner node, the `children` key is a list of the node's child nodes. The order of a node's children matches the order in Pico's pages array.
 
-You can access a page's tree node using the `tree_node` key in the page's data array. So, to access the root node, use `{{ pages["index"].tree_node }}`. To access the current page's tree node, use `{{ current_page.tree_node }}`.
+You can access a page's tree node using the `tree_node` key in the page's data array. So, to access the root node, use `{% raw %}{{ pages["index"].tree_node }}{% endraw %}`. To access the current page's tree node, use `{% raw %}{{ current_page.tree_node }}{% endraw %}`.
 
 But what can I do with Pico's page tree? Probably the most common task is to build a recursive page navigation like the following:
 
