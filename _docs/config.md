@@ -35,7 +35,7 @@ If you're using Nginx, you can use the following config to enable URL rewriting 
 
 ```
 location ~ ^/pico/((config|content|vendor|composer\.(json|lock|phar))(/|$)|(.+/)?\.(?!well-known(/|$))) {
-    try_files /pico/index.php$is_args$args;
+    try_files /pico/index.php$is_args$args =404;
 }
 
 location /pico/ {

@@ -58,7 +58,7 @@ You should always use the following rule in the Nginx config of your Pico site:
 
 ```
 location ~ ^/((config|content|vendor|composer\.(json|lock|phar))(/|$)|(.+/)?\.(?!well-known(/|$))) {
-	try_files /index.php$is_args$args;
+	try_files /index.php$is_args$args =404;
 }
 ```
 
@@ -68,7 +68,7 @@ In order to keep configuration simple, the above example assumes that you've ins
 
 ```
 location ~ ^/pico/((config|content|vendor|composer\.(json|lock|phar))(/|$)|(.+/)?\.(?!well-known(/|$))) {
-	try_files /pico/index.php$is_args$args;
+	try_files /pico/index.php$is_args$args =404;
 }
 ```
 
@@ -135,7 +135,7 @@ server {
 	index index.php;
 
 	location ~ ^/((config|content|vendor|composer\.(json|lock|phar))(/|$)|(.+/)?\.(?!well-known(/|$))) {
-		try_files /index.php$is_args$args;
+		try_files /index.php$is_args$args =404;
 	}
 
 	location ~ \.php$ {
