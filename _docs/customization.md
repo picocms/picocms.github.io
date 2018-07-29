@@ -94,11 +94,11 @@ You're a plugin developer? We love you guys! You can find tons of information ab
 [Twig]: https://twig.sensiolabs.org/documentation
 [UnixTimestamp]: https://en.wikipedia.org/wiki/Unix_timestamp
 [Composer]: https://getcomposer.org/
+[FeaturesHttpParams]: {{ site.github.url }}/in-depth/features/http-params/
+[FeaturesPageTree]: {{ site.github.url }}/in-depth/features/page-tree/
 [WikiThemes]: {{ site.gh_project_url }}/wiki/Pico-Themes
 [WikiPlugins]: {{ site.gh_project_url }}/wiki/Pico-Plugins
 [OfficialPlugins]: {{ site.github.url }}/plugins/
 [OfficialThemes]: {{ site.github.url }}/themes/
 [PluginDocs]: {{ site.github.url }}/development/
 [PluginUpgrade]: {{ site.github.url }}/development/#upgrade
-[FeaturesHttpParams]: {{ site.github.url }}/in-depth/features/http-params/
-[FeaturesPageTree]: {{ site.github.url }}/in-depth/features/page-tree/
