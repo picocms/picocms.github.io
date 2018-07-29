@@ -11,7 +11,7 @@ nav: 3
 
 Pico is a flat file CMS. This means there is no administration backend or database to deal with. You simply create `.md` files in the `content` folder and those files become your pages. For example, creating a file called `index.md` will make it show as your main landing page.
 
-When you install Pico, it comes with a `content-sample` folder. Inside this folder is a sample website that will display until you add your own content. Simply add some `.md` files to your `content` folder in Pico's root directory. No configuration is required, Pico will automatically use the `content` folder as soon as you create your own `index.md`.
+When you install Pico, it comes with some sample contents that will display until you add your own content. Simply add some `.md` files to your `content` folder in Pico's root directory. No configuration is required, Pico will automatically use the `content` folder as soon as you create your own `index.md`. Just check out [Pico's sample contents][SampleContents] for an example!
 
 If you create a folder within the content directory (e.g. `content/sub`) and put an `index.md` inside it, you can access that folder at the URL `https://example.com/pico/?sub`. If you want another page within the sub folder, simply create a text file with the corresponding name and you will be able to access it (e.g. `content/sub/page.md` is accessible from the URL `https://example.com/pico/?sub/page`). Below we've shown some examples of locations and their corresponding URLs:
 
@@ -48,6 +48,8 @@ If you create a folder within the content directory (e.g. `content/sub`) and put
 
 If a file cannot be found, the file `content/404.md` will be shown. You can add `404.md` files to any directory. So, for example, if you wanted to use a special error page for your blog, you could simply create `content/blog/404.md`.
 
+Pico strictly separates contents of your website (the Markdown files in your `content` directory) and how these contents should be displayed (the Twig templates in your `themes` directory). However, not every file in your `content` directory might actually be a distinct page. For example, some themes (including Pico's default theme) use some special "hidden" file to manage meta data (like `_meta.md` in Pico's sample contents). Some other themes use a `_footer.md` to represent the contents of the website's footer. The common point is the `_`: all files and directories prefixed by a `_` in your `content` directory are hidden. These pages can't be accessed from a web browser, Pico will show a 404 error page instead.
+
 As a common practice, we recommend you to separate your contents and assets (like images, downloads, etc.). We even deny access to your `content` directory by default. If you want to use some assets (e.g. a image) in one of your content files, you should create an `assets` folder in Pico's root directory and upload your assets there. You can then access them in your Markdown using `%base_url%/assets/` for example: `![Image Title](%base_url%/assets/image.png)`
 
 ### Text File Markup
@@ -72,6 +74,7 @@ There are also certain variables that you can use in your text files:
 * `%site_title%` - The title of your Pico site
 * `%base_url%` - The URL to your Pico site; internal links can be specified using `%base_url%?sub/page`
 * `%theme_url%` - The URL to the currently used theme
+* `%version%` - Pico's current version string (e.g. `2.0.0`)
 * `%meta.*%` - Access any meta variable of the current page, e.g. `%meta.author%` is replaced with `Joe Bloggs`
 
 ### Blogging
@@ -105,6 +108,7 @@ If you want to use Pico as a blogging software, you probably want to do somethin
     </li>
 </ol>
 
+[SampleContents]: {{ site.gh_project_url }}/tree/{{ site.gh_project_branch }}/content-sample
 [Markdown]: https://daringfireball.net/projects/markdown/syntax
 [MarkdownExtra]: https://michelf.ca/projects/php-markdown/extra/
 [YAML]: https://en.wikipedia.org/wiki/YAML
