@@ -64,7 +64,9 @@ Pages can be used like the following:
 
 Besides using the `{% raw %}{{ pages }}{% endraw %}` list, you can also access pages using Pico's page tree. The page tree allows you to iterate through Pico's pages using a tree structure, so you can e.g. iterate just a page's direct children. It allows you to build recursive menus (like dropdowns) and to filter pages more easily. Just head over to Pico's [page tree documentation][FeaturesPageTree] for details.
 
-Additional to Twigs extensive list of filters, functions and tags, Pico also provides some useful additional filters to make theming easier.
+To call assets from your theme, use `{% raw %}{{ theme_url }}{% endraw %}`. For instance, to include the CSS file `themes/my_theme/example.css`, add `{% raw %}<link rel="stylesheet" href="{{ theme_url }}/example.css" type="text/css" />{% endraw %}` to your `index.twig`. This works for arbitrary files in your theme's folder, including images and JavaScript files.
+
+Additional to Twig's extensive list of filters, functions and tags, Pico also provides some useful additional filters to make theming easier.
 
 * Pass the unique ID of a page to the `link` filter to return the page's URL (e.g. `{% raw %}{{ "sub/page"|link }}{% endraw %}` gets `https://example.com/pico/?sub/page`).
 * To get the parsed contents of a page, pass its unique ID to the `content` filter (e.g. `{% raw %}{{ "sub/page"|content }}{% endraw %}`).

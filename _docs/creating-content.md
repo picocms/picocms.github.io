@@ -69,6 +69,8 @@ Template: index
 
 These values will be contained in the `{% raw %}{{ meta }}{% endraw %}` variable in themes (see below). Meta headers sometimes have a special meaning: For instance, Pico not only passes through the `Date` meta header, but rather evaluates it to really "understand" when this page was created. This comes into play when you want to sort your pages not just alphabetically, but by date. Another example is the `Template` meta header: It controls what Twig template Pico uses to display this page (e.g. if you add `Template: blog`, Pico uses `blog.twig`).
 
+In an attempt to separate contents and styling, we recommend you to not use inline CSS in your Markdown files. You should rather add appropriate CSS classes to your theme. For example, you might want to add some CSS classes to your theme to rule how much of the available space a image should use (e.g. `img.small { width: 80%; }`). You can then use these CSS classes in your Markdown files, for example: `![Image Title](%base_url%/assets/image.png) {.small}`
+
 There are also certain variables that you can use in your text files:
 
 * `%site_title%` - The title of your Pico site
