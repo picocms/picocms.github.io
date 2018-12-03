@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-300932048"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1691876594"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-300932048" class="accordion-body collapse in">
+            <div id="namespace-1691876594" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -966,12 +966,12 @@ released under the MIT license.</li>
             <a id="property_parsedown" name="property_parsedown" class="anchor"></a>
             <article class="property">
                 <h3 class="protected ">$parsedown</h3>
-                <pre class="signature">$parsedown : \ParsedownExtra|null</pre>
+                <pre class="signature">$parsedown : \Parsedown|null</pre>
                 <p><em>Parsedown Extra instance used for markdown parsing</em></p>
                 
 
                                 <h4>Type</h4>
-                \ParsedownExtra|null
+                \Parsedown|null
                                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2019,10 +2019,10 @@ YAML parser wasn't initiated yet.</p>
                 <p><em>Parses the file meta from raw file contents</em></p>
                 <p>Meta data MUST start on the first line of the file, either opened and
 closed by <code>---</code> or C-style block comments (deprecated). The headers are
-parsed by the YAML component of the Symfony project, keys are lowered.
-If you're a plugin developer, you MUST register new headers during the
-<code>onMetaHeaders</code> event first. The implicit availability of headers is
-for users and pure (!) theme developers ONLY.</p>
+parsed by the YAML component of the Symfony project. If you're a plugin
+developer, you MUST register new headers during the <code>onMetaHeaders</code>
+event first. The implicit availability of headers is for users and
+pure (!) theme developers ONLY.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
@@ -2545,7 +2545,7 @@ HTTP Host Header Injection attacks (e.g. when generating emails).</p>
             <article class="method">
                 <h3 class="public ">getPageUrl()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getPageUrl(string  <span class="argument">$page</span>, array|string  <span class="argument">$queryData = null</span>, boolean  <span class="argument">$dropIndex = true</span>) : string</pre>
+                <pre class="signature" style="margin-right: 54px;">getPageUrl(string  <span class="argument">$page</span>, array|string|null  <span class="argument">$queryData = null</span>, boolean  <span class="argument">$dropIndex = true</span>) : string</pre>
                 <p><em>Returns the URL to a given page</em></p>
                 <p>This method can be used in Twig templates by applying the <code>link</code> filter
 to a string representing a page ID.</p>
@@ -2558,16 +2558,16 @@ to a string representing a page ID.</p>
                                 <td><p>ID of the page to link to</p></td>
                             </tr>
                                                     <tr>
-                                <td>array|string</td>
+                                <td>array|string|null</td>
                                 <td>$queryData </td>
-                                <td><p>either an array containing properties to
+                                <td><p>either an array of properties to
 create a URL-encoded query string from, or a already encoded string</p></td>
                             </tr>
                                                     <tr>
                                 <td>boolean</td>
                                 <td>$dropIndex </td>
-                                <td><p>if the last path component is &quot;index&quot;,
-passing TRUE (default) leads to removing this path component</p></td>
+                                <td><p>if the last path component is
+&quot;index&quot;, passing TRUE (default) will remove this path component</p></td>
                             </tr>
                                             </table>
                 
@@ -3700,7 +3700,7 @@ method always returns either the provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on September 9th, 2018 at 23:59.
+                    on December 3rd, 2018 at 11:28.
                 </section>
             </section>
         </section>
