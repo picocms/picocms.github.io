@@ -5,6 +5,9 @@ toc:
         ive-used-composer-to-install-pico: Using Composer
         ive-used-a-pre-bundled-release-to-install-pico: Using a pre-bundled release
         im-a-developer: I'm a developer
+components:
+    PicoTheme: https://github.com/picocms/pico-theme
+    PicoDeprecated: https://github.com/picocms/pico-deprecated
 nav: 2
 ---
 
@@ -37,11 +40,13 @@ That's it! Now that Pico is up-to-date, you need to update all plugins and theme
 
 ### I'm a developer
 
-As a developer you should be up-to-date already... 😉 For the sake of completeness, if you want to upgrade Pico, simply open a shell and navigate to Pico's install directory within the `httpdocs` directory (e.g. `/var/www/html/pico`) of your server. Then pull the latest commits from [Pico's Git repository][PicoGit] and let Composer update your dependencies:
+As a developer you should know how to stay up-to-date... 😉 For the sake of completeness, if you want to upgrade Pico, simply open a shell and navigate to Pico's development workspace (e.g. `/var/www/html/pico`). Then pull the latest commits from the Git repositories of [Pico's core][PicoGit], [Pico's default theme][PicoThemeGit] and the [`PicoDeprecated` plugin][PicoDeprecatedGit]. Let Composer update your dependencies and you're ready to go.
 
 ```shell
-$ git pull
-$ php composer.phar update
+$ git -C components/pico pull
+$ git -C components/pico-theme pull
+$ git -C components/pico-deprecated pull
+$ php composer.phar --working-dir=workspace update
 ```
 
 [Composer]: https://getcomposer.org/
@@ -49,3 +54,5 @@ $ php composer.phar update
 [HelpUpgrade]: {{ site.github.url }}/in-depth/upgrade/
 [LatestRelease]: {{ site.gh_project_url }}/releases/latest
 [PicoGit]: {{ site.gh_project_url }}
+[PicoThemeGit]: {{ page.components.PicoTheme }}
+[PicoDeprecatedGit]: {{ page.components.PicoDeprecated }}

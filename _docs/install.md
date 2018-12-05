@@ -5,6 +5,10 @@ toc:
         i-want-to-use-composer: Using Composer
         i-want-to-use-a-pre-bundled-release: Using a pre-bundled release
         im-a-developer: I'm a developer
+components:
+    PicoTheme: https://github.com/picocms/pico-theme
+    PicoDeprecated: https://github.com/picocms/pico-deprecated
+    PicoComposer: https://github.com/picocms/pico-composer
 nav: 1
 ---
 
@@ -20,16 +24,16 @@ Starting with Pico 2.0 we recommend installing Pico using Composer whenever poss
 
 #### Step 1
 
-Open a shell and navigate to the desired install directory of Pico within the `httpdocs` directory (e.g. `/var/www/html`) of your server. Download Composer and run it with the `create-project` option:
+Open a shell and navigate to the `httpdocs` directory (e.g. `/var/www/html`) of your server. Download Composer and run it with the `create-project` option to install it to the desired directory (e.g. `/var/www/html/pico`):
 
 ```shell
 $ curl -sSL https://getcomposer.org/installer | php
-$ php composer.phar create-project picocms/pico-composer .
+$ php composer.phar create-project picocms/pico-composer pico
 ```
 
 #### Step 2
 
-What second step? There's no second step. That's it! Open your favorite web browser and navigate to your brand new, stupidly simple, blazing fast, flat file CMS! Pico's default contents will explain how to create your own contents. 😊
+What second step? There's no second step. That's it! Open your favorite web browser and navigate to your brand new, stupidly simple, blazing fast, flat file CMS! Pico's sample contents will explain how to create your own contents. 😊
 
 ### I want to use a pre-bundled release
 
@@ -37,27 +41,83 @@ Do you know the feeling: You want to install a new website, so you upload all fi
 
 #### Step 1
 
-[Download the latest Pico release][LatestRelease] and upload all files to the `httpdocs` directory (e.g. `/var/www/html`) of your server.
+[Download the latest Pico release][LatestRelease] and upload all files to the desired install directory of Pico within the `httpdocs` directory (e.g. `/var/www/html/pico`) of your server.
 
 #### Step 2
 
-Okay, here's the catch: There's no catch. That's it! Open your favorite web browser and navigate to your brand new, stupidly simple, blazing fast, flat file CMS! Pico's default contents will explain how to create your own contents. 😊
+Okay, here's the catch: There's no catch. That's it! Open your favorite web browser and navigate to your brand new, stupidly simple, blazing fast, flat file CMS! Pico's sample contents will explain how to create your own contents. 😊
 
 ### I'm a developer
 
-So, you're one of these amazing folks making all of this possible? We love you guys! As a developer we recommend you to clone [Pico's Git repository][PicoGit] and use Composer to install its dependencies. You can find both [Pico][PicoPackagist] and [Pico's Composer starter project][PicoComposerPackagist] on [Packagist.org][Packagist]. Using Pico's Git repository is different from using one of the installation methods elucidated above, because it uses Pico as the Composer root package. Furthermore it gives you the current development version of Pico, what is likely *unstable* and *not ready for production use*!
+So, you're one of these amazing folks making all of this possible? We love you guys! As a developer we recommend you to clone [Pico's Git repository][PicoGit] as well as the Git repositories of [Pico's default theme][PicoThemeGit] and the [`PicoDeprecated` plugin][PicoDeprecatedGit]. You can set up your workspace using [Pico's Composer starter project][PicoComposerGit] and include all of Pico's components using local packages.
 
-Open a shell and navigate to the desired install directory of Pico within the `httpdocs` directory (e.g. `/var/www/html`) of your server. You can now clone Pico's Git repository, download Composer and install Pico's dependencies as follows:
+Using Pico's Git repositories is different from using one of the installation methods elucidated above. It gives you the current development version of Pico, what is likely *unstable* and *not ready for production use*!
 
-```shell
-$ git clone {{ site.gh_project_url }}.git .
-$ curl -sSL https://getcomposer.org/installer | php
-$ php composer.phar install
-```
+1. Open a shell and navigate to the desired directory of Pico's development workspace within the `httpdocs` directory (e.g. `/var/www/html/pico`) of your server. Download and extract Pico's Composer starter project into the `workspace` directory:
+
+    ```shell
+    $ curl -sSL {{ page.components.PicoComposer }}/archive/master.tar.gz | tar xz
+    $ mv pico-composer-master workspace
+    ```
+
+2. Clone the Git repositories of all Pico components (Pico's core, Pico's default theme and the `PicoDeprecated` plugin) into the `components` directory:
+
+    ```shell
+    $ mkdir components
+    $ git clone {{ site.gh_project_url }}.git components/pico
+    $ git clone {{ page.components.PicoTheme }}.git components/pico-theme
+    $ git clone {{ page.components.PicoDeprecated }}.git components/pico-deprecated
+    ```
+
+3. Instruct Composer to use the local Git repositories as replacement for the `picocms/pico` (Pico's core), `picocms/pico-theme` (Pico's default theme) and `picocms/pico-deprecated` (the `PicoDeprecated` plugin) packages. Update the `composer.json` of your development workspace (i.e. `workspace/composer.json`) accordingly:
+
+    ```json
+    {
+        "repositories": [
+            {
+                "type": "path",
+                "url": "../components/pico",
+                "options": { "symlink": true }
+            },
+            {
+                "type": "path",
+                "url": "../components/pico-theme",
+                "options": { "symlink": true }
+            },
+            {
+                "type": "path",
+                "url": "../components/pico-deprecated",
+                "options": { "symlink": true }
+            }
+        ],
+        "require": {
+            "picocms/pico": "dev-master",
+            "picocms/pico-theme": "dev-master",
+            "picocms/pico-deprecated": "dev-master",
+            "picocms/composer-installer": "^1.0"
+        }
+    }
+    ```
+
+4. Download Composer and run it with the `install` option:
+
+    ```shell
+    $ curl -sSL https://getcomposer.org/installer | php
+    $ php composer.phar --working-dir=workspace install
+    ```
+
+You can now open your web browser and navigate to Pico's development workspace. All changes you make to Pico's components will automatically be reflected in the development workspace.
+
+By the way, you can also find all of Pico's components on [Packagist.org][Packagist]: [Pico's core][PicoPackagist], [Pico's default theme][PicoThemePackagist], the [`PicoDeprecated` plugin][PicoDeprecatedPackagist] and [Pico's Composer starter project][PicoComposerPackagist].
 
 [Composer]: https://getcomposer.org/
 [LatestRelease]: {{ site.gh_project_url }}/releases/latest
 [PicoGit]: {{ site.gh_project_url }}
-[PicoPackagist]: https://packagist.org/packages/picocms/pico
-[PicoComposerPackagist]: https://packagist.org/packages/picocms/pico-composer
+[PicoThemeGit]: {{ page.components.PicoTheme }}
+[PicoDeprecatedGit]: {{ page.components.PicoDeprecated }}
+[PicoComposerGit]: {{ page.components.PicoComposer }}
 [Packagist]: https://packagist.org/
+[PicoPackagist]: https://packagist.org/packages/picocms/pico
+[PicoThemePackagist]: https://packagist.org/packages/picocms/pico-theme
+[PicoDeprecatedPackagist]: https://packagist.org/packages/picocms/pico-deprecated
+[PicoComposerPackagist]: https://packagist.org/packages/picocms/pico-composer
