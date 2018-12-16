@@ -87,13 +87,13 @@ If you want to use Pico as a blogging software, you probably want to do somethin
 
 <ol>
     <li>
-        Put all your blog articles in a separate <code>blog</code> folder in your <code>content</code> directory. All these articles should have both a <code>Date</code> and <code>Template</code> meta header, the latter with e.g. <code>blog-post</code> as value (see Step 2).
+        Put all your blog articles in a separate <code>blog</code> folder in your <code>content</code> directory. All these articles should have a <code>Date</code> meta header.
     </li>
     <li>
-        Create a new Twig template called <code>blog-post.twig</code> (this must match the <code>Template</code> meta header from Step 1) in your theme directory. This template probably isn't very different from your default <code>index.twig</code>, it specifies how your article pages will look like.
+        Create a <code>blog.md</code> or <code>blog/index.md</code> in your <code>content</code> directory. Add <code>Template: blog-index</code> to the YAML header of this page. It will later show a list of all your blog articles (see step 3).
     </li>
     <li>
-        Create a <code>blog.md</code> in your <code>content</code> folder and set its <code>Template</code> meta header to e.g. <code>blog</code>. Also create a <code>blog.twig</code> in your theme directory. This template will show a list of your articles, so you probably want to do something like this:
+        Create the new Twig template <code>blog-index.twig</code> (the file name must match the <code>Template</code> meta header from Step 2) in your theme directory. This template probably isn't very different from your default <code>index.twig</code> (i.e. copy <code>index.twig</code>), it will create a list of all your blog articles. Add the following Twig snippet to <code>blog-index.twig</code> near <code>{% raw %}{{ content }}{% endraw %}</code>:
 
         {% raw %}<pre><code>{% for page in pages|sort_by("time")|reverse %}
     {% if page.id starts with &quot;blog/&quot; and not page.hidden %}
@@ -104,9 +104,6 @@ If you want to use Pico as a blogging software, you probably want to do somethin
         &lt;/div&gt;
     {% endif %}
 {% endfor %}</code></pre>{% endraw %}
-    </li>
-    <li>
-        Make sure to exclude blog articles from your page navigation. You can achieve this by adding <code>{&#37; if not (page.id starts with "blog/") &#37;}...{&#37; endif &#37;}</code> to the navigation loop (<code>{&#37; for page in pages &#37;}...{&#37; endfor &#37;}</code>) in your theme's <code>index.twig</code>.
     </li>
 </ol>
 
