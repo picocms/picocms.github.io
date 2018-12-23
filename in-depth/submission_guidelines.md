@@ -149,16 +149,16 @@ The following code block is a template for your submission's `.md` file.  Copy a
 ```
 ---
 heading: My Theme or Plugin
-thumbnail: /_themes/images/thumbnails/my_theme_or_plugin.jpg
+thumbnail: themes/images/thumbnails/my_theme_or_plugin.jpg
 categories:
   - category1
   - category2
 description: A short description for the hover text.
 link: https://github.com/octocat/Spoon-Knife
 images:
-  - /_themes/images/thumbnails/my_theme_or_plugin.jpg
-#  - /_themes/images/thumbnails/my_theme_or_plugin-2.jpg
-#  - /_themes/images/thumbnails/my_theme_or_plugin-3.jpg
+  - themes/images/thumbnails/my_theme_or_plugin.jpg
+#  - themes/images/thumbnails/my_theme_or_plugin-2.jpg
+#  - themes/images/thumbnails/my_theme_or_plugin-3.jpg
 info:
   By: "[The Octocat](https://github.com/octocat)"
 #  Ported By: "[The Octocat](https://github.com/octocat)"
