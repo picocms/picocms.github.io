@@ -1,14 +1,14 @@
 ---
 heading: Gallery
-thumbnail: /_themes/images/thumbnails/theme-1.png
+thumbnail: themes/images/thumbnails/gallery.png
 categories:
   - portfolio
-description: A responsive theme with a cool background images
+description: A responsive theme with cool background images.
 link: https://github.com/northivanastan/picocms-gallery
 images:
-  - /_themes/images/thumbnails/gallery.png
+  - themes/images/fullsize/gallery.jpg
 info:
-  By: "Ivan Stanton"
+  By: "[Ivan Stanton](https://github.com/northivanastan)"
   License: "[CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)"
 ---
 
