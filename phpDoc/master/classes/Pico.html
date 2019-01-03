@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-245324445"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-30716766"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-245324445" class="accordion-body collapse in">
+            <div id="namespace-30716766" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -174,7 +174,7 @@
 website as simple as editing text files.</li>
 <li>Blazing Fast: Pico is seriously lightweight and doesn't
 use a database, making it super fast.</li>
-<li>No Database: Pico is a &quot;flat file&quot; CMS, meaning no
+<li>No Database: Pico is a "flat file" CMS, meaning no
 database woes, no MySQL queries, nothing.</li>
 <li>Markdown Formatting: Edit your website in your favourite
 text editor using simple Markdown formatting.</li>
@@ -1611,11 +1611,11 @@ rely on it. For more information see <a href="../classes/PicoPluginInterface.htm
                 <pre class="signature" style="margin-right: 54px;">setConfig(array  <span class="argument">$config</span>) : void</pre>
                 <p><em>Sets Pico&#039;s config before calling Pico::run()</em></p>
                 <p>This method allows you to modify Pico's config without creating a
-{@path &quot;config/config.yml&quot;} or changing some of its variables before
+{@path "config/config.yml"} or changing some of its variables before
 Pico starts processing.</p>
 <p>You can call this method between <a href="../classes/Pico.html#method___construct">\Pico::__construct()</a> and
 <a href="../classes/Pico.html#method_run">\Pico::run()</a> only. Options set with this method cannot be
-overwritten by {@path &quot;config/config.yml&quot;}.</p>
+overwritten by {@path "config/config.yml"}.</p>
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
@@ -2567,7 +2567,7 @@ create a URL-encoded query string from, or a already encoded string</p></td>
                                 <td>boolean</td>
                                 <td>$dropIndex </td>
                                 <td><p>if the last path component is
-&quot;index&quot;, passing TRUE (default) will remove this path component</p></td>
+"index", passing TRUE (default) will remove this path component</p></td>
                             </tr>
                                             </table>
                 
@@ -2635,7 +2635,7 @@ create a URL-encoded query string from, or a already encoded string</p></td>
                 <pre class="signature" style="margin-right: 54px;">getBaseThemeUrl() : string</pre>
                 <p><em>Returns the URL of the themes folder of this Pico instance</em></p>
                 <p>We assume that the themes folder is a arbitrary deep sub folder of the
-script's base path (i.e. the directory {@path &quot;index.php&quot;} is in resp.
+script's base path (i.e. the directory {@path "index.php"} is in resp.
 the <code>httpdocs</code> directory). Usually the script's base path is identical
 to <a href="../classes/Pico.html#property_rootDir">\Pico::$rootDir</a>, but this may aberrate when Pico got installed
 as a composer dependency. However, ultimately it allows us to use
@@ -3169,7 +3169,7 @@ implementation (class <code>\MJS\TopSort\Implementations\ArraySort</code>).</p>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">loadConfig() : void</pre>
                 <p><em>Loads the config.yml and any other *.yml from Pico::$configDir</em></p>
-                <p>After loading {@path &quot;config/config.yml&quot;}, Pico proceeds with any other
+                <p>After loading {@path "config/config.yml"}, Pico proceeds with any other
 existing <code>config/*.yml</code> file in alphabetical order. The file order is
 crucial: Config values which have been set already, cannot be
 overwritten by a succeeding file. This is also true for arrays, i.e.
@@ -3208,7 +3208,7 @@ undefined!</p>
 to support SEO-like URLs out-of-the-box with any webserver. You can
 still setup URL rewriting to basically remove the <code>?</code> from URLs.
 However, URL rewriting requires some special configuration of your
-webserver, but this should be &quot;basic work&quot; for any webmaster...</p>
+webserver, but this should be "basic work" for any webmaster...</p>
 <p>With Pico 1.0 you had to setup URL rewriting (e.g. using <code>mod_rewrite</code>
 on Apache) in a way that rewritten URLs follow the <code>QUERY_STRING</code>
 principles. Starting with version 2.0, Pico additionally supports the
@@ -3619,7 +3619,7 @@ value is NULL (optional)</p></td>
                                 <td>$flags </td>
                                 <td><p>either a bitwise disjunction
 of flags or a string with the significant part of a flag constant
-(the constant name is the result of &quot;FILTER<em>FLAG</em>&quot; and the given
+(the constant name is the result of "FILTER<em>FLAG</em>" and the given
 string in ASCII-only uppercase); you may also pass an array of flags
 and flag strings (optional)</p></td>
                             </tr>
@@ -3700,7 +3700,7 @@ method always returns either the provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 17th, 2018 at 15:09.
+                    on January 3rd, 2019 at 01:31.
                 </section>
             </section>
         </section>
