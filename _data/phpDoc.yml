@@ -78,3 +78,7 @@
   type: version
   title: Pico 2.0.5-beta.1
   last_update: 1546519072
+- id: pico-2.1
+  type: branch
+  title: <code>pico-2.1</code> branch
+  last_update: 1568289175
