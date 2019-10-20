@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1568262798"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-641172335"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1568262798" class="accordion-body collapse in">
+            <div id="namespace-641172335" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -200,6 +200,8 @@ Simply remove the events you don't need and add your own logic.</p>
                                                                     <a href="../classes/DummyPlugin.html#method_onPluginsLoaded" class="">onPluginsLoaded()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onPluginManuallyLoaded" class="">onPluginManuallyLoaded()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onConfigLoaded" class="">onConfigLoaded()</a><br />
+                                                                    <a href="../classes/DummyPlugin.html#method_onThemeLoading" class="">onThemeLoading()</a><br />
+                                                                    <a href="../classes/DummyPlugin.html#method_onThemeLoaded" class="">onThemeLoaded()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onRequestUrl" class="">onRequestUrl()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onRequestFile" class="">onRequestFile()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onContentLoading" class="">onContentLoading()</a><br />
@@ -1035,6 +1037,91 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                                                 <dd><a href="../classes/Pico.html#method_getConfig"><span class="namespace-wrapper">\Pico::getConfig()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getBaseUrl"><span class="namespace-wrapper">\Pico::getBaseUrl()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_isUrlRewritingEnabled"><span class="namespace-wrapper">\Pico::isUrlRewritingEnabled()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onThemeLoading" name="method_onThemeLoading" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onThemeLoading()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onThemeLoading(  <span class="argument">$theme</span>) </pre>
+                <p><em>Triggered before Pico loads its theme</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$theme </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_loadTheme"><span class="namespace-wrapper">\Pico::loadTheme()</span></a></dd>
+                                            <dd><a href="../classes/DummyPlugin.html#method_onThemeLoaded"><span class="namespace-wrapper">\DummyPlugin::onThemeLoaded()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onThemeLoaded" name="method_onThemeLoaded" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onThemeLoaded()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onThemeLoaded(string  <span class="argument">$theme</span>, integer  <span class="argument">$themeApiVersion</span>, array  <span class="argument">$themeConfig</span>) </pre>
+                <p><em>Triggered after Pico loaded its theme</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$theme </td>
+                                <td><p>name of current theme</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$themeApiVersion </td>
+                                <td><p>API version of the theme</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$themeConfig </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/DummyPlugin.html#method_onThemeLoading"><span class="namespace-wrapper">\DummyPlugin::onThemeLoading()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_getTheme"><span class="namespace-wrapper">\Pico::getTheme()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_getThemeApiVersion"><span class="namespace-wrapper">\Pico::getThemeApiVersion()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -2174,7 +2261,7 @@ compatible</p></dd>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on September 12th, 2019 at 12:11.
+                    on October 20th, 2019 at 14:02.
                 </section>
             </section>
         </section>
