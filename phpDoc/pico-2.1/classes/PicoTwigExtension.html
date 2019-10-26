@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1644384465"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-2053998366"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1644384465" class="accordion-body collapse in">
+            <div id="namespace-2053998366" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -488,7 +488,7 @@
             <article class="method">
                 <h3 class="public ">markdownFilter()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">markdownFilter(string  <span class="argument">$markdown</span>, array  <span class="argument">$meta = array()</span>) : string</pre>
+                <pre class="signature" style="margin-right: 54px;">markdownFilter(string  <span class="argument">$markdown</span>, array  <span class="argument">$meta = array()</span>, boolean  <span class="argument">$singleLine = false</span>) : string</pre>
                 <p><em>Parses a markdown string to HTML</em></p>
                 <p>This method is registered as the Twig <code>markdown</code> filter. You can use it
 to e.g. parse a meta variable (<code>{{ meta.description|markdown }}</code>).
@@ -506,6 +506,11 @@ instead, what ensures the proper preparation of the contents.</p>
                                 <td>array</td>
                                 <td>$meta </td>
                                 <td><p>meta data to use for %meta.*% replacement</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$singleLine </td>
+                                <td><p>whether to parse just a single line of markup</p></td>
                             </tr>
                                             </table>
                 
@@ -966,7 +971,7 @@ given number of branches before returning pages; defaults to 1</p></td>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on October 20th, 2019 at 17:23.
+                    on October 26th, 2019 at 09:40.
                 </section>
             </section>
         </section>
