@@ -16,44 +16,44 @@ galleries:
         description: Create simple, secure, shareable and amazingly powerful websites with just a few clicks!
         style: carousel-box
         images:
-        -
-            heading: Manage your websites
-            description: Managing your websites can't be easier - all in one place!
-            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/list_websites.png
-            fullsize: /style/images/docs/upgrade-pico-21/fullsize/list_websites.png
-        -
-            heading: Create new websites
-            description: Creating a new personal website is just a few clicks away.
-            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/new_website.png
-            fullsize: /style/images/docs/upgrade-pico-21/fullsize/new_website.png
-        -
-            heading: Example website
-            description: Pico CMS for Nextcloud utilized the brand new Pico 2.1.
-            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/website.png
-            fullsize: /style/images/docs/upgrade-pico-21/fullsize/website.png
-        -
-            heading: Manage custom themes
-            description: Add custom themes for greater individuality and style.
-            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom_themes.png
-            fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom_themes.png
-        -
-            heading: Manage custom plugins
-            description: Add custom plugins to reach for Pico's full potential.
-            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom_plugins.png
-            fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom_plugins.png
-        -
-            heading: Manage custom templates
-            description: Make it easier for users to create new websites.
-            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom_templates.png
-            fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom_templates.png
+            -
+                heading: Manage your websites
+                description: Managing your websites can't be easier - all in one place!
+                thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/list_websites.png
+                fullsize: /style/images/docs/upgrade-pico-21/fullsize/list_websites.png
+            -
+                heading: Create new websites
+                description: Creating a new personal website is just a few clicks away.
+                thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/new_website.png
+                fullsize: /style/images/docs/upgrade-pico-21/fullsize/new_website.png
+            -
+                heading: Example website
+                description: Pico CMS for Nextcloud utilized the brand new Pico 2.1.
+                thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/website.png
+                fullsize: /style/images/docs/upgrade-pico-21/fullsize/website.png
+            -
+                heading: Manage custom themes
+                description: Add custom themes for greater individuality and style.
+                thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom_themes.png
+                fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom_themes.png
+            -
+                heading: Manage custom plugins
+                description: Add custom plugins to reach for Pico's full potential.
+                thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom_plugins.png
+                fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom_plugins.png
+            -
+                heading: Manage custom templates
+                description: Make it easier for users to create new websites.
+                thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom_templates.png
+                fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom_templates.png
     logo:
         style: magnify
         images:
             -
                 heading: Pico's new logo
                 description: It's stupidly simple, isn't it?
-                thumbnail: /logo.svg
-                fullsize: /logo.svg
+                thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/logo.png
+                fullsize: /style/images/docs/upgrade-pico-21/fullsize/logo.png
                 styles: "float: right; margin-left: 2em; border: 1px solid #CCC;"
 gh_release: v2.1.0
 redirect_from:
