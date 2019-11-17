@@ -13,10 +13,6 @@ toc:
     developer-news: Developer News
 nav-url: /docs/
 gh_release: v2.0.0
-redirect_from:
-    - /in-depth/upgrade/index.html
-    - /upgrade/index.html
-    - /upgrade.html
 ---
 
 We are not exaggerating, when we say that Pico 2.0 is the next evolutionary stage of Pico! From routing, over Pico's plugin and theme system, to cutting of "old habbits" - there's basically not a single aspect of Pico we didn't improve. Making Pico simpler, faster, and more flexible than ever before! Best of all, there are no major breaks in backwards compatibility.
