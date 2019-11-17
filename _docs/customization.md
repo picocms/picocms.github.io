@@ -2,7 +2,10 @@
 toc:
     customization:
         _title: Customization
-        themes: Themes
+        themes:
+            _title: Themes
+            dealing-with-pages: Dealing with pages
+            twig-filters-and-functions: Twig filters and functions
         plugins: Plugins
 nav: 4
 ---
@@ -47,7 +50,7 @@ Below are the Twig variables that are available to use in themes. Please note th
 
 To call assets from your theme, use `{% raw %}{{ theme_url }}{% endraw %}`. For instance, to include the CSS file `themes/my_theme/example.css`, add `{% raw %}<link rel="stylesheet" href="{{ theme_url }}/example.css" type="text/css" />{% endraw %}` to your `index.twig`. This works for arbitrary files in your theme's folder, including images and JavaScript files.
 
-Please note that Twig escapes HTML in all strings before outputting them. So for example, if you add `headline: My <strong>favorite</strong> color` to the YAML header of your page and output it using `{% raw %}{{ meta.headline }}{% endraw %}`, you'll end up seeing `My <strong>favorite</strong> color` - yes, including the markup! To actually get it parsed, you must use `{% raw %}{{ meta.headline|raw }}{% endraw %}` (resulting in the expected <code>My **favorite** color</code>). Notable exceptions to this are Pico's `content` variable (e.g. `{% raw %}{{ content }}{% endraw %}`), Pico's `content` filter (e.g. `{% raw %}{{ "sub/page"|content }}{% endraw %}`), and Pico's `markdown` filter, they all are marked as HTML safe.
+Please note that Twig escapes HTML in all strings before outputting them. So for example, if you add `headline: My <strong>favorite</strong> color` to the YAML header of a page and output it using `{% raw %}{{ meta.headline }}{% endraw %}`, you'll end up seeing `My <strong>favorite</strong> color` - yes, including the markup! To actually get it parsed, you must use `{% raw %}{{ meta.headline|raw }}{% endraw %}` (resulting in the expected <code>My <strong>favorite</strong> color</code>). Notable exceptions to this are Pico's `content` variable (e.g. `{% raw %}{{ content }}{% endraw %}`), Pico's `content` filter (e.g. `{% raw %}{{ "sub/page"|content }}{% endraw %}`), and Pico's `markdown` filter, they all are marked as HTML safe.
 
 #### Dealing with pages
 
@@ -85,7 +88,7 @@ The `pages()` function is very powerful and also allows you to return not just a
 Additional to [Twig][]'s extensive list of filters, functions and tags, Pico also provides some useful additional filters and functions to make theming even easier.
 
 * Pass the unique ID of a page to the `link` filter to return the page's URL (e.g. `{% raw %}{{ "sub/page"|link }}{% endraw %}` gets `https://example.com/pico/?sub/page`).
-* You can replace URL placeholders (like `%base_url%`) in arbitrary strings using the `url` filter. This is helpful together with meta variables, e.g. if you add `image: %assets_url%/stock.jpg` to the YAML header of your page, `{% raw %}{{ meta.image|url }}{% endraw %}` will return `%assets_url%/stock.jpg`.
+* You can replace URL placeholders (like `%base_url%`) in arbitrary strings using the `url` filter. This is helpful together with meta variables, e.g. if you add `image: %assets_url%/stock.jpg` to the YAML header of a page, `{% raw %}{{ meta.image|url }}{% endraw %}` will return `https://example.com/pico/assets/stock.jpg`.
 * To get the parsed contents of a page, pass its unique ID to the `content` filter (e.g. `{% raw %}{{ "sub/page"|content }}{% endraw %}`).
 * You can parse any Markdown string using the `markdown` filter. For example, you might use Markdown in the `description` meta variable and later parse it in your theme using `{% raw %}{{ meta.description|markdown }}{% endraw %}`. You can also pass meta data as parameter to replace `%meta.*%` placeholders (e.g. `{% raw %}{{ "Written by *%meta.author%*"|markdown(meta) }}{% endraw %}` yields "Written by *John Doe*"). However, please note that all contents will be wrapped inside HTML paragraph elements (i.e. `<p>…</p>`). If you want to parse just a single line of Markdown markup, pass the `singleLine` param to the `markdown` filter (e.g. `{% raw %}{{ "This really is a *single* line"|markdown(singleLine=true) }}{% endraw %}`).
 * Arrays can be sorted by one of its keys using the `sort_by` filter (e.g. `{% raw %}{% for page in pages|sort_by([ 'meta', 'nav' ]) %}...{% endfor %}{% endraw %}` iterates through all pages, ordered by the `nav` meta header; please note the `[ 'meta', 'nav' ]` part of the example, it instructs Pico to sort by `page.meta.nav`). Items which couldn't be sorted are moved to the bottom of the array; you can specify `bottom` (move items to bottom; default), `top` (move items to top), `keep` (keep original order) or `remove` (remove items) as second parameter to change this behavior.
