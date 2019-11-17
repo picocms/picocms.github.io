@@ -32,10 +32,20 @@ galleries:
             thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/website.png
             fullsize: /style/images/docs/upgrade-pico-21/fullsize/website.png
         -
-            heading: Custom themes, plugins and templates
-            description: Add custom themes and plugins for greater individuality and reach for Pico's full potential.
-            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom.png
-            fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom.png
+            heading: Manage custom themes
+            description: Add custom themes for greater individuality and style.
+            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom_themes.png
+            fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom_themes.png
+        -
+            heading: Manage custom plugins
+            description: Add custom plugins to reach for Pico's full potential.
+            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom_plugins.png
+            fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom_plugins.png
+        -
+            heading: Manage custom templates
+            description: Make it easier for users to create new websites.
+            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom_templates.png
+            fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom_templates.png
     logo:
         style: magnify
         images:
