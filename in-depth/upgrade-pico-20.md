@@ -11,6 +11,9 @@ toc:
     use-picos-next-generation-plugin-system: Use Pico's next generation plugin system
     everything-else-that-was-happening: Everything else that was happening…
     developer-news: Developer News
+more:
+    /in-depth/upgrade-pico-10: Upgrade to Pico 1.0
+    /in-depth/upgrade-pico-21: Upgrade to Pico 2.1
 nav-url: /docs/
 gh_release: v2.0.0
 ---

@@ -9,7 +9,10 @@ toc:
     use-picos-next-generation-themes: Use Pico's next generation themes
     everything-else-that-was-happening: Everything else that was happening…
     developer-news: Developer News
-nav-url: /docs/
+more:
+    /in-depth/upgrade-pico-10: Upgrade to Pico 1.0
+    /in-depth/upgrade-pico-20: Upgrade to Pico 2.0
+
 galleries:
     nextcloud:
         headline: Pico CMS for Nextcloud
@@ -55,6 +58,8 @@ galleries:
                 thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/logo.png
                 fullsize: /style/images/docs/upgrade-pico-21/fullsize/logo.png
                 styles: "float: right; margin-left: 2em; border: 1px solid #CCC;"
+
+nav-url: /docs/
 gh_release: v2.1.0
 redirect_from:
     - /in-depth/upgrade/index.html

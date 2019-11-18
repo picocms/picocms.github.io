@@ -16,6 +16,9 @@ toc:
         drop-of--pagecontent--and-the-new-picoparsepagescontent-plugin: Drop of `{{ page.content }}`
         drop-of--pageexcerpt--and-the-new-picoexcerpt-plugin: Drop of `{{ page.excerpt }}`
     notes-for-plugin-developers: Notes for plugin developers
+more:
+    /in-depth/upgrade-pico-20: Upgrade to Pico 2.0
+    /in-depth/upgrade-pico-21: Upgrade to Pico 2.1
 nav-url: /docs/
 gh_release: v1.0.0
 ---
