@@ -142,7 +142,9 @@ For convenience we are introducing some new config variables. You can now manual
 
 Starting with Pico 2.1 we're using [Parsedown][] v1.8 and [Parsedown Extra][ParsedownExtra] v0.8. Unfortunately both are still in beta (even though they are in beta for a very long time now). Parsedown's previous stable releases had some know issues which were fixed in the current beta releases. Both beta releases appear to be as stable as their respective previous stable release, thus we made the decision that using these beta releases is reasonable. However, it's very important to note that some behavior changed.
 
-Pico's default theme now includes a `theme.md`. It shows that pages can be hidden in the main menu, but more importantly it aids theme development. The sample page shows basically every format that is possible with Markdown, so if you want to develop or just test a custom theme, simply navigate to `theme.md` and check whether all examples show decent.
+Pico's sample contents now includes a `theme.md`. It shows that pages can be hidden in the main menu, but more importantly it aids theme development. The sample page shows basically every format that is possible with Markdown, so if you want to develop or just test a custom theme, simply navigate to `theme.md` and check whether all examples show decent.
+
+[Pico's default theme][PicoTheme] was upgraded to use API version 3 and all of Pico's latest improvements regarding its themes system. Apart from that you probably won't notice any difference. Another thing you very likely won't even notice is that we've completely refactored Pico's official [`PicoDeprecated` plugin][PicoDeprecated]. It's installed by default and is responsible for maintaining backwards compatibility of newer Pico releases with old plugins and themes. To put it simple: `PicoDeprecated` is the reason why you can still use plugins and themes written for Pico 0.8. We upgraded the plugin to use API version 3, but more importantly we split up the its functionality into multiple compatibility plugins. `PicoDeprecated` compatibility plugins are responsible for maintaining compatibility to a particular API version and are loaded on demand only. So for example, if you install a plugin using API version 1, `PicoDeprecated` will load its compatibility plugin for plugins using API version 1. There are two compatibility plugins per API version, one for plugins and one for themes. `PicoDeprecated` even allows 3rd-party plugin developers to load their own compatibility plugins.
 
 ## Developer News
 
@@ -255,15 +257,15 @@ If you have a question about one of the new features of Pico 2.1, please check o
 [UpgradePico20]: {{ site.github.url }}/in-depth/upgrade-pico-20
 [LatestRelease]: {{ site.gh_project_url }}/releases/latest
 [UrlRewriting]: {{ site.github.url }}/docs/#url-rewriting
-[PicoDeprecated]: https://github.com/picocms/pico-deprecated
 
 [PicoThemeConfig]: https://github.com/picocms/pico-theme/blob/{{ page.gh_release }}/pico-theme.yml
 [FeaturesPageTree]: {{ site.github.url }}/in-depth/features/page-tree/
 [FeaturesPagesFunction]: {{ site.github.url }}/in-depth/features/pages-function/
-
 [LogoCredits]: https://github.com/type76
-
 [Changelog]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/CHANGELOG.md
+
+[PicoTheme]: https://github.com/picocms/pico-theme
+[PicoDeprecated]: https://github.com/picocms/pico-deprecated
 
 [Composer]: https://getcomposer.org/
 [Twig]: https://twig.symfony.com/
