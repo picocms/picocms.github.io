@@ -24,9 +24,9 @@
                     </p>
                     <ul>
                         {% for item in page.more %}
-                            <a href="{{ site.github.url }}{{ item[0] }}">
+                            <li><a href="{{ site.github.url }}{{ item[0] }}">
                                 {{ item[1] | markdownify | remove: '<p>' | remove: '</p>' }}
-                            </a>
+                            </a></li>
                         {% endfor %}
                     </ul>
                 {% endcapture %}

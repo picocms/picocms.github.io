@@ -3048,8 +3048,12 @@ td:not(:last-child), th:not(:last-child) {       border-right: 0 none; }
     font-size: 30px;
     font-weight: bold;
 }
+.related-pages,
+.github-edit {
+    padding-top: 10px;
+}
 .related-pages > p {
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 .page-appendix {
     margin: 0 auto;
