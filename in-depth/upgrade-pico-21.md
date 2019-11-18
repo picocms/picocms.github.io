@@ -14,6 +14,15 @@ more:
     /in-depth/upgrade-pico-20: Upgrade to Pico 2.0
 
 galleries:
+    logo:
+        style: magnify
+        images:
+            -
+                heading: Pico's new logo
+                description: It's stupidly simple, isn't it?
+                thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/logo.png
+                fullsize: /style/images/docs/upgrade-pico-21/fullsize/logo.png
+                styles: "float: right; margin-left: 2em; border: 1px solid #CCC;"
     nextcloud:
         headline: Pico CMS for Nextcloud
         description: Create simple, secure, shareable and amazingly powerful websites with just a few clicks!
@@ -49,15 +58,6 @@ galleries:
                 description: Make it easier for users to create new websites.
                 thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom_templates.png
                 fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom_templates.png
-    logo:
-        style: magnify
-        images:
-            -
-                heading: Pico's new logo
-                description: It's stupidly simple, isn't it?
-                thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/logo.png
-                fullsize: /style/images/docs/upgrade-pico-21/fullsize/logo.png
-                styles: "float: right; margin-left: 2em; border: 1px solid #CCC;"
 
 nav-url: /docs/
 gh_release: v2.1.0
@@ -67,7 +67,11 @@ redirect_from:
     - /upgrade.html
 ---
 
+{% include gallery.html gallery='logo' %}
+
 Pico 2.1 is a minor release - but minor doesn't mean it's not powerful! We took over development of the [Pico CMS for Nextcloud][UpgradeNextcloudApp] project and are happy to introduce [API versioning for themes][UpgradeThemes]. Making Pico simpler, faster, and more flexible than ever before! Best of all, it's completely backwards compatible!
+
+Pico now has an official logo! A picture is worth a thousand words and thanks to [@type76][LogoCredits] and his amazing work, we can finally convey Pico's idea of creating websites using a single picture: Stupidly simple and blazing fast, making the web easy!
 
 If you have a question about one of the new features of Pico 2.1, the upgrade process, or about Pico in general, please check out the ["Getting Help" section][GettingHelp] of the docs and don't be afraid to open a new [Issue][Issues] on GitHub.
 
@@ -133,10 +137,6 @@ Equally important is Pico's new `pages()` Twig function. It replaces the raw usa
 As with basically all Pico releases, we also improved some of Pico's Twig filters and functions. Themes can now use the new `url` Twig filter. It allows you to replace URL placeholders (like `%base_url%`) in arbitrary strings. This is helpful together with meta variables, e.g. if you add `image: %assets_url%/stock.jpg` to the YAML header of a page, `{% raw %}{{ meta.image|url }}{% endraw %}` will return `https://example.com/pico/assets/stock.jpg`. Pico's `markdown` Twig filter now supports parsing a single line of Markdown. `{% raw %}{{ "Written by *John Doe*"|markdown() }}{% endraw %}` will return `<p>Written by <strong>John Doe</strong></p>`. If you want to get rid of the HTML paragraphs (i.e. `<p>…</p>`) simply pass the `singleLine` param to the `markdown` filter (e.g. `{% raw %}{{ "Written by *John Doe*"|markdown(singleLine=true) }}{% endraw %}`).
 
 ## Everything else that was happening…
-
-{% include gallery.html gallery='logo' %}
-
-Pico now has an official logo! A picture is worth a thousand words and thanks to [@type76][LogoCredits] and his amazing work, we can finally convey Pico's idea of creating websites using a single picture: Stupidly simple and blazing fast, making the web easy!
 
 For convenience we are introducing some new config variables with Pico 2.1. You can now manually specify the URLs to your `themes` (config `themes_url`; previously named `theme_url`), `plugins` (config `plugins_url`) and `assets` (config `assets_url`) directories. You can furthermore use these variables in both your Markdown files (using the placeholders `%themes_url%`, `%plugins_url%` and `%assets_url%`), in Pico's new `url` Twig filter (using the same placeholders), and in your Twig templates (using the Twig variables `{% raw %}{{ themes_url }}{% endraw %}`, `{% raw %}{ plugins_url }}{% endraw %}` and `{% raw %}{{ assets_url }}{% endraw %}`). Speaking of placeholders in your Markdown files: You can now use the `%config.*%` placeholders in your Markdown files to access your scalar config variables in Pico's `config/config.yml` (e.g. `%config.my_custom_setting%`).
 
