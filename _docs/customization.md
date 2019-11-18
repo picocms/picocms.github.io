@@ -54,7 +54,7 @@ Please note that Twig escapes HTML in all strings before outputting them. So for
 
 #### Dealing with pages
 
-There are several ways to access Pico's pages list. You can access the current page's data using the `current_page` variable, or use the `prev_page` and/or `next_page` variables to access the respective previous/next page in Pico's pages list. But more importantly there's the `pages` function. No matter how you access a page, it will always consist of the following data:
+There are several ways to access Pico's pages list. You can access the current page's data using the `current_page` variable, or use the `prev_page` and/or `next_page` variables to access the respective previous/next page in Pico's pages list. But more importantly there's the `pages()` function. No matter how you access a page, it will always consist of the following data:
 
 * `{% raw %}{{ id }}{% endraw %}` - The relative path to the content file (unique ID)
 * `{% raw %}{{ url }}{% endraw %}` - The URL to the page
@@ -81,7 +81,7 @@ Pico's `pages()` function is the best way to access all of your site's pages. It
     {% endfor %}
 &lt;/section&gt;</code></pre>{% endraw %}
 
-The `pages()` function is very powerful and also allows you to return not just a page's child pages by passing the `depth`, `depthOffset` and `offset` params. For example, if you pass `pages(depthOffset=-1)`, the list will also include Pico's main index page (i.e. `content/index.md`). This one is commonly used to create a theme's main navigation. If you want to learn more, head over to Pico's complete [`pages` function documentation][FeaturesPagesFunction].
+The `pages()` function is very powerful and also allows you to return not just a page's child pages by passing the `depth`, `depthOffset` and `offset` params. For example, if you pass `pages(depthOffset=-1)`, the list will also include Pico's main index page (i.e. `content/index.md`). This one is commonly used to create a theme's main navigation. If you want to learn more, head over to Pico's complete [`pages()` function documentation][FeaturesPagesFunction].
 
 #### Twig filters and functions
 

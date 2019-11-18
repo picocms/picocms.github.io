@@ -123,6 +123,8 @@ Starting with Pico 2.1 there's API versioning for themes! All themes should now 
 
 Another very important change is that we now switched Twig's `autoescape` feature on by default. It causes Twig to escape all HTML markup before outputting a variable. So for example, if you add `headline: My <strong>favorite</strong> color` to the YAML header of a page and output it using `{% raw %}{{ meta.headline }}{% endraw %}`, you'll end up seeing `My <strong>favorite</strong> color` - yes, including the markup! To actually get it parsed, you must use `{% raw %}{{ meta.headline|raw }}{% endraw %}` (resulting in the expected <code>My <strong>favorite</strong> color</code>). Notable exceptions to this are Pico's `content` variable (e.g. `{% raw %}{{ content }}{% endraw %}`), Pico's `content` filter (e.g. `{% raw %}{{ "sub/page"|content }}{% endraw %}`), and Pico's `markdown` filter, they all are marked as HTML safe.
 
+Equally important is Pico's new `pages()` Twig function. It replaces the raw usage of Pico's `pages` variable and should be used to access Pico's pages array. Starting with Pico 3.0 we will even deprecate the use of the `pages` variable. Even though the usage of the new `pages()` Twig function (e.g. `{% raw %}{% for page in pages() %}…{% endfor %}{% endraw %}`) looks very similar to Pico's `pages` variable, it actually utilizes [Pico's page tree][FeaturesPageTree]. The function returns all pages of a tree branch. So, for example, calling `pages()` without any parameters returns the pages `page.md` and `sub/index.md`. If you want to return the pages of a specific branch, simply pass the branch's name as parameter (e.g. `pages("sub")` returns the pages `sub/page.md` and `sub/sub/index.md`). Since all page identifiers are valid branch names, you can safely pass any page's ID to Pico's `pages()` function (e.g. `pages(current_page.id)` returns all child pages of the current page). The `pages()` function additionally accepts the `depth`, `depthOffset` and `offset` parameters, allowing you to tweak what is being returned. For example, most themes will use something like `{% raw %}{% for page in pages(depthOffset=-1) %}…{% endfor %}{% endraw %}` for its main menu. Passing `depthOffset = -1` causes Pico's `pages()` function to include the branch's base page. In the given example the function will additionally return `index.md` next to the usual `page.md` and `sub/index.md`. However, using these parameters is rather advanced stuff. Head over to the [in-depth article about Pico's `pages()` function][FeaturesPagesFunction] to learn more.
+
 As with basically all Pico releases, we also improved some of Pico's Twig filters and functions. Themes can now use the new `url` Twig filter. It allows you to replace URL placeholders (like `%base_url%`) in arbitrary strings. This is helpful together with meta variables, e.g. if you add `image: %assets_url%/stock.jpg` to the YAML header of a page, `{% raw %}{{ meta.image|url }}{% endraw %}` will return `https://example.com/pico/assets/stock.jpg`. Pico's `markdown` Twig filter now supports parsing a single line of Markdown. `{% raw %}{{ "Written by *John Doe*"|markdown() }}{% endraw %}` will return `<p>Written by <strong>John Doe</strong></p>`. If you want to get rid of the HTML paragraphs (i.e. `<p>…</p>`) simply pass the `singleLine` param to the `markdown` filter (e.g. `{% raw %}{{ "Written by *John Doe*"|markdown(singleLine=true) }}{% endraw %}`).
 
 ## Everything else that was happening…
@@ -131,13 +133,102 @@ As with basically all Pico releases, we also improved some of Pico's Twig filter
 
 Pico now has an official logo! A picture is worth a thousand words and thanks to [@type76][LogoCredits] and his amazing work we can finally convey Pico's idea of creating websites: Stupidly simple and blazing fast, making the web easy!
 
-For convenience we are introducing some new config variables. You can now manually specify the URLs to your `themes` (config `themes_url`), `plugins` (config `plugins_url`) and `assets` (config `assets_url`) directories. You can furthermore use these variables in both your Markdown files (using the placeholders `%themes_url%`, `%plugins_url%` and `%assets_url%`), in Pico's new `url` Twig filter (using the same placeholders), and in your Twig templates (using the Twig variables `{% raw %}{{ themes_url }}{% endraw %}`, `{% raw %}{ plugins_url }}{% endraw %}` and `{% raw %}{{ assets_url }}{% endraw %}`). Speaking of placeholders in your Markdown files: You can now use the `%config.*%` placeholders in your Markdown files to access your scalar config variables in Pico's `config/config.yml`.
+For convenience we are introducing some new config variables. You can now manually specify the URLs to your `themes` (config `themes_url`; previously named `theme_url`), `plugins` (config `plugins_url`) and `assets` (config `assets_url`) directories. You can furthermore use these variables in both your Markdown files (using the placeholders `%themes_url%`, `%plugins_url%` and `%assets_url%`), in Pico's new `url` Twig filter (using the same placeholders), and in your Twig templates (using the Twig variables `{% raw %}{{ themes_url }}{% endraw %}`, `{% raw %}{ plugins_url }}{% endraw %}` and `{% raw %}{{ assets_url }}{% endraw %}`). Speaking of placeholders in your Markdown files: You can now use the `%config.*%` placeholders in your Markdown files to access your scalar config variables in Pico's `config/config.yml`.
 
 Starting with Pico 2.1 we're using [Parsedown][] v1.8 and [Parsedown Extra][ParsedownExtra] v0.8. Unfortunately both are still in beta (even though they are in beta for a very long time now). Parsedown's previous stable releases had some know issues which were fixed in the current beta releases. Both beta releases appear to be as stable as their respective previous stable release, thus we made the decision that using these beta releases is reasonable. However, it's very important to note that some behavior changed.
 
+Pico's default theme now includes a `theme.md`. It shows that pages can be hidden in the main menu, but more importantly it aids theme development. The sample page shows basically every format that is possible with Markdown, so if you want to develop or just test a custom theme, simply navigate to `theme.md` and check whether all examples show decent.
+
 ## Developer News
 
-For a complete list of what we have changed with Pico 2.1, please refer to our [`CHANGELOG.md`][Changelog].
+Even though Pico 2.1 is a minor release, it's quite a lot, isn't it? There's a great number of new features and possibilities. But that's not all! There are many more improvements and changes that don't affect the average Pico user, but developers. Below you will find a complete, more tech-oriented list of changes. It's a extract of Pico's [`CHANGELOG.md`][Changelog]. Please note that Pico's `CHANGELOG.md` isn't supposed to be read as-is; it's rather an supplement to the actual code changes.
+
+If you have a question about one of the new features of Pico 2.1, please check out the ["Getting Help" section][GettingHelp] of the docs and don't be afraid to open a new [Issue][Issues] on GitHub.
+
+<div class="toggle">
+<h4 class="title">Pico themes</h4>
+<div class="togglebox">
+<div markdown="1">
+
+```
+* [New] Introduce API versioning for themes and support theme-specific configs
+        using the new `pico-theme.yml` in a theme's directory; `pico-theme.yml`
+        allows a theme to influence Pico's Twig config, to register known meta
+        headers and to provide defaults for theme config params
+* [New] Add `pages` Twig function to deal with Pico's page tree; this function
+        replaces the raw usage of Pico's `pages` array in themes
+* [New] Add `url` Twig filter to replace URL placeholders (e.g. `%base_url%`)
+        in strings using the new `Pico::substituteUrl()` method
+* [Changed] Enable Twig's `autoescape` feature by default; outputting a
+            variable now causes Twig to escape HTML markup; Pico's `content`
+            variable is a notable exception, as it is marked as being HTML safe
+* [Changed] Rename `prev_page` Twig variable to `previous_page`
+* [Changed] Mark `markdown` and `content` Twig filters as well as the `content`
+            variable as being HTML safe
+* [Changed] Add `$singleLine` param to `markdown` Twig filter as well as the
+            `Pico::parseFileContent()` method to parse just a single line of
+            Markdown input
+* [Removed] Remove superfluous `base_dir` and `theme_dir` Twig variables
+```
+
+</div>
+</div>
+</div>
+
+<div class="toggle">
+<h4 class="title">Pico API</h4>
+<div class="togglebox">
+<div markdown="1">
+
+```
+* [New] Introduce API version 3
+* [New] Add `onThemeLoading` and `onThemeLoaded` events
+* [New] Add `debug` config param and the `Pico::isDebugModeEnabled()` method,
+        checking the `PICO_DEBUG` environment variable, to enable debugging
+* [New] Add new `Pico::getNormalizedPath()` method to normalize a path; this
+        method should be used to prevent content dir breakouts when dealing
+        with paths provided by user input
+* [New] Add new `Pico::getUrlFromPath()` method to guess a URL from a file path
+* [New] Add new `Pico::getAbsoluteUrl()` method to make a relative URL absolute
+* [Changed] Add `$basePath` and `$endSlash` params to `Pico::getAbsolutePath()`
+* [Changed] Add `AbstractPicoPlugin::configEnabled()` method to check whether
+            a plugin should be enabled or disabled based on Pico's config
+* [Changed] Deprecate the use of `AbstractPicoPlugin::__call()`, use
+            `PicoPluginInterface::getPico()` instead
+* [Changed] Deprecate `Pico::getBaseThemeUrl()`
+* [Changed] Update to Twig 1.36 as last version supporting PHP 5.3, use a
+            Composer-based installation to use a newer Twig version
+* [Removed] Remove `PicoPluginInterface::__construct()`
+```
+
+</div>
+</div>
+</div>
+
+<div class="toggle">
+<h4 class="title">Miscellaneous</h4>
+<div class="togglebox">
+<div markdown="1">
+
+```
+* [New] Add `assets_dir`, `assets_url` and `plugins_url` config params
+* [New] Add `%config.*%` Markdown placeholders for scalar config params and the
+        `%assets_url%`, `%themes_url%` and `%plugins_url%` placeholders
+* [New] Add `assets_url`, `themes_url` and `plugins_url` Twig variables
+* [New] Add `content-sample/theme.md` for theme testing purposes
+* [New] #505: Create pre-built `.zip` release archives
+* [Fixed] #461: Proberly handle content files with a UTF-8 BOM
+* [Changed] Rename `theme_url` config param to `themes_url`; the `theme_url`
+            Twig variable and Markdown placeholder are kept unchanged
+* [Changed] Update to Parsedown Extra 0.8 and Parsedown 1.8 (both still beta)
+* [Changed] Replace various `file_exists` calls with proper `is_file` calls
+* [Changed] Refactor release & build system
+* [Changed] Improve Pico docs and PHP class docs
+```
+
+</div>
+</div>
+</div>
 
 [UpgradeNextcloudApp]: #pico-cms-for-nextcloud
 [UpgradeThemes]: #use-picos-next-generation-themes
@@ -162,6 +253,8 @@ For a complete list of what we have changed with Pico 2.1, please refer to our [
 [PicoDeprecated]: https://github.com/picocms/pico-deprecated
 
 [PicoThemeConfig]: https://github.com/picocms/pico-theme/blob/{{ page.gh_release }}/pico-theme.yml
+[FeaturesPageTree]: {{ site.github.url }}/in-depth/features/page-tree/
+[FeaturesPagesFunction]: {{ site.github.url }}/in-depth/features/pages-function/
 
 [LogoCredits]: https://github.com/type76
 
