@@ -310,6 +310,10 @@ ol li {
     padding: 0 0 0 1em;
     margin: 0 0 0 -1em;
 }
+ul li:last-child > p:last-child,
+ol li:last-child > p:last-child {
+    padding-bottom: 0;
+}
 ul li:before {
     float: left;
     display: block;

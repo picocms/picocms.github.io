@@ -10,6 +10,41 @@ toc:
     everything-else-that-was-happening: Everything else that was happening…
     developer-news: Developer News
 nav-url: /docs/
+galleries:
+    nextcloud:
+        headline: Pico CMS for Nextcloud
+        description: Create simple, secure, shareable and amazingly powerful websites with just a few clicks!
+        style: carousel-box
+        images:
+        -
+            heading: Manage your websites
+            description: Managing your websites can't be easier - all in one place!
+            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/list_websites.png
+            fullsize: /style/images/docs/upgrade-pico-21/fullsize/list_websites.png
+        -
+            heading: Create new websites
+            description: Creating a new personal website is just a few clicks away.
+            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/new_website.png
+            fullsize: /style/images/docs/upgrade-pico-21/fullsize/new_website.png
+        -
+            heading: Example website
+            description: Pico CMS for Nextcloud utilized the brand new Pico 2.1.
+            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/website.png
+            fullsize: /style/images/docs/upgrade-pico-21/fullsize/website.png
+        -
+            heading: Custom themes, plugins and templates
+            description: Add custom themes and plugins for greater individuality and reach for Pico's full potential.
+            thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/custom.png
+            fullsize: /style/images/docs/upgrade-pico-21/fullsize/custom.png
+    logo:
+        style: magnify
+        images:
+            -
+                heading: Pico's new logo
+                description: It's stupidly simple, isn't it?
+                thumbnail: /logo.svg
+                fullsize: /logo.svg
+                styles: "float: right; margin-left: 2em; border: 1px solid #CCC;"
 gh_release: v2.1.0
 redirect_from:
     - /in-depth/upgrade/index.html
@@ -17,7 +52,7 @@ redirect_from:
     - /upgrade.html
 ---
 
-Pico 2.1 is a minor release - but minor doesn't mean it's not powerful! We took over development of the [Pico CMS for Nextcloud](#pico-cms-for-nextcloud) project and are happy to introduce [API versioning for themes](#use-picos-next-generation-themes). Making Pico simpler, faster, and more flexible than ever before! Best of all, it's completely backwards compatible!
+Pico 2.1 is a minor release - but minor doesn't mean it's not powerful! We took over development of the [Pico CMS for Nextcloud][UpgradeNextcloudApp] project and are happy to introduce [API versioning for themes][UpgradeThemes]. Making Pico simpler, faster, and more flexible than ever before! Best of all, it's completely backwards compatible!
 
 If you have a question about one of the new features of Pico 2.1, the upgrade process, or about Pico in general, please check out the ["Getting Help" section][GettingHelp] of the docs and don't be afraid to open a new [Issue][Issues] on GitHub.
 
@@ -31,6 +66,8 @@ With Pico 2.1 we took over development of the [Pico CMS for Nextcloud][Nextcloud
 * Build a knowledge base and let the smart ones among your colleagues help out
 
 Pico CMS for Nextcloud allows your users to create and manage their own websites. Nextcloud is a very powerful collaboration platform, including WYSIWYG ("What you see is what you get") editors for Markdown. You can sync your website's sources with all your devices and even share access with others for collaborative editing. Creating private websites with limited access is possible, too.
+
+{% include gallery.html gallery='nextcloud' %}
 
 Pico CMS for Nextcloud gives you everything you would expect from a extremely powerful admin interface for Pico. Just give it a try!
 
@@ -64,9 +101,40 @@ Pico 2.1 is a minor release, making the upgrade process as easy as replacing jus
 
 3. Check all your custom plugins and themes whether there are updates available and follow the provided upgrade instructions to upgrade them. Pico 2.1 introduces the new API version 3 for both plugins and themes. However, Pico 2.1 is fully backwards-compatible to Pico 2.0 (using API version 2). This is achieved by Pico's official [`PicoDeprecated` plugin][PicoDeprecated]. The `PicoDeprecated` plugin is installed by default, so usually you don't have to do anything. However, if you've removed `PicoDeprecated` from your Pico installation, make sure to either upgrade all your plugins and themes to the latest API version 3, or install `PicoDeprecated` by following the plugin's install instructions.
 
+4. Starting with Pico 2.1 we rely on [Parsedown][] v1.8 and [Parsedown Extra][ParsedownExtra] v0.8 to parse your Markdown files. The latest versions of Parsedown fix some known issues, but also change some behaviour to better match the Markdown standards. Due to this you might experience minor issues with your content files. These cases should be very rare and are caused by non-standard markup, but they exist. Thus you should check your content files for parsing issues after upgrading to Pico 2.1. Refer to the ["Everything else that was happening…" section below][UpgradeMisc] for more info.
+
 Please take the opportunity to check whether your webserver is proberly configured, and access to Pico's internal files and directories is denied. Just refer to the ["URL Rewriting" section in the docs][UrlRewriting]. By following the instructions, you will not just enable URL rewriting, but also deny access to Pico's internal files and directories.
 
-That's the *bare minimum* you need to know when upgrading to Pico 2.1. However, there's way more to know. Thus we highly recommend you to keep reading, the things you'll learn, will not disappoint you! For a complete list of what we have changed with Pico 2.1, please refer to our [`CHANGELOG.md`][Changelog].
+That's the *bare minimum* you need to know when upgrading to Pico 2.1. However, there's way more to know. Thus we highly recommend you to keep reading, the things you'll learn, will not disappoint you!
+
+## Use Pico's next generation themes
+
+Starting with Pico 2.1 there's API versioning for themes! All themes should now include a `pico-theme.yml`; just refer to the [`pico-theme.yml` of Pico's default theme][PicoThemeConfig] for an example. `pico-theme.yml` allows you to specify the theme's API version, to tweak Pico's default [Twig][] config, to register custom meta headers and to introduce arbitrary theme config variables.
+
+Another very important change is that we now switched Twig's `autoescape` feature on by default. It causes Twig to escape all HTML markup before outputting a variable. So for example, if you add `headline: My <strong>favorite</strong> color` to the YAML header of a page and output it using `{% raw %}{{ meta.headline }}{% endraw %}`, you'll end up seeing `My <strong>favorite</strong> color` - yes, including the markup! To actually get it parsed, you must use `{% raw %}{{ meta.headline|raw }}{% endraw %}` (resulting in the expected <code>My <strong>favorite</strong> color</code>). Notable exceptions to this are Pico's `content` variable (e.g. `{% raw %}{{ content }}{% endraw %}`), Pico's `content` filter (e.g. `{% raw %}{{ "sub/page"|content }}{% endraw %}`), and Pico's `markdown` filter, they all are marked as HTML safe.
+
+As with basically all Pico releases, we also improved some of Pico's Twig filters and functions. Themes can now use the new `url` Twig filter. It allows you to replace URL placeholders (like `%base_url%`) in arbitrary strings. This is helpful together with meta variables, e.g. if you add `image: %assets_url%/stock.jpg` to the YAML header of a page, `{% raw %}{{ meta.image|url }}{% endraw %}` will return `https://example.com/pico/assets/stock.jpg`. Pico's `markdown` Twig filter now supports parsing a single line of Markdown. `{% raw %}{{ "Written by *John Doe*"|markdown() }}{% endraw %}` will return `<p>Written by <strong>John Doe</strong></p>`. If you want to get rid of the HTML paragraphs (i.e. `<p>…</p>`) simply pass the `singleLine` param to the `markdown` filter (e.g. `{% raw %}{{ "Written by *John Doe*"|markdown(singleLine=true) }}{% endraw %}`).
+
+## Everything else that was happening…
+
+{% include gallery.html gallery='logo' %}
+
+Pico now has an official logo! A picture is worth a thousand words and thanks to [@type76][LogoCredits] and his amazing work we can finally convey Pico's idea of creating websites: Stupidly simple and blazing fast, making the web easy!
+
+For convenience we are introducing some new config variables. You can now manually specify the URLs to your `themes` (config `themes_url`), `plugins` (config `plugins_url`) and `assets` (config `assets_url`) directories. You can furthermore use these variables in both your Markdown files (using the placeholders `%themes_url%`, `%plugins_url%` and `%assets_url%`), in Pico's new `url` Twig filter (using the same placeholders), and in your Twig templates (using the Twig variables `{% raw %}{{ themes_url }}{% endraw %}`, `{{% raw %}{ plugins_url }}{% endraw %}` and `{% raw %}{{ assets_url }}{% endraw %}`). Speaking of placeholders in your Markdown files: You can now use the `%config.*%` placeholders in your Markdown files to access your scalar config variables in Pico's `config/config.yml`.
+
+Starting with Pico 2.1 we're using [Parsedown][] v1.8 and [Parsedown Extra][ParsedownExtra] v0.8. Unfortunately both are still in beta (even though they are in beta for a very long time now). Parsedown's previous stable releases had some know issues which were fixed in the current beta releases. Both beta releases appear to be as stable as their respective previous stable release, thus we made the decision that using these beta releases is reasonable. However, it's very important to note that some behavior changed.
+
+## Developer News
+
+For a complete list of what we have changed with Pico 2.1, please refer to our [`CHANGELOG.md`][Changelog].
+
+[UpgradeNextcloudApp]: #pico-cms-for-nextcloud
+[UpgradeThemes]: #use-picos-next-generation-themes
+[UpgradeMisc]: #everything-else-that-was-happening
+
+[GettingHelp]: {{ site.github.url }}/docs/#getting-help
+[Issues]: {{ site.gh_project_url }}/issues
 
 [Nextcloud]: https://nextcloud.com/
 [NextcloudApp]: https://apps.nextcloud.com/apps/cms_pico
@@ -79,8 +147,17 @@ That's the *bare minimum* you need to know when upgrading to Pico 2.1. However, 
 [Upgrade]: {{ site.github.url }}/docs/#upgrade
 [UpgradePico10]: {{ site.github.url }}/in-depth/upgrade-pico-10
 [UpgradePico20]: {{ site.github.url }}/in-depth/upgrade-pico-20
-[Composer]: https://getcomposer.org/
 [LatestRelease]: {{ site.gh_project_url }}/releases/latest
 [UrlRewriting]: {{ site.github.url }}/docs/#url-rewriting
 [PicoDeprecated]: https://github.com/picocms/pico-deprecated
+
+[PicoThemeConfig]: https://github.com/picocms/pico-theme/blob/{{ page.gh_release }}/pico-theme.yml
+
+[LogoCredits]: https://github.com/type76
+
 [Changelog]: {{ site.gh_project_url }}/blob/{{ page.gh_release }}/CHANGELOG.md
+
+[Composer]: https://getcomposer.org/
+[Twig]: https://twig.symfony.com/
+[Parsedown]: https://parsedown.org/
+[ParsedownExtra]: https://parsedown.org/extra/
