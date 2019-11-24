@@ -20,8 +20,8 @@ galleries:
             -
                 heading: Pico's new logo
                 description: It's stupidly simple, isn't it?
-                thumbnail: /style/images/docs/upgrade-pico-21/thumbnails/logo.png
-                fullsize: /style/images/docs/upgrade-pico-21/fullsize/logo.png
+                thumbnail: /style/images/docs/about/thumbnails/logo.png
+                fullsize: /style/images/docs/about/fullsize/logo.png
                 styles: "float: right; margin-left: 2em; border: 1px solid #CCC;"
     nextcloud:
         headline: Pico CMS for Nextcloud

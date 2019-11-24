@@ -18,17 +18,15 @@ toc:
 nav-url: /about/
 nav: 2
 galleries:
-  standalone:
+  logo:
     style: magnify
     images:
       -
-        heading: Pico's Default Theme
-        description: |
-          It's a bit bare... but that's intentional!<br>
-          The default theme isn't meant for production use, it's actually a template for you to design your own theme around!
-        thumbnail: /style/images/docs/about/thumbnails/default_theme.png
-        fullsize: /style/images/docs/about/fullsize/default_theme.png
-        styles: "float: right; margin-left: 2em; border: 1px solid #CCC; border-top: none;"
+        heading: Pico's official logo
+        description: Stupidly simple and blazing fast, making the web easy.
+        thumbnail: /style/images/docs/about/thumbnails/logo.png
+        fullsize: /style/images/docs/about/fullsize/logo.png
+        styles: "float: right; margin-left: 2em; border: 1px solid #CCC;"
   workflow:
     headline: Pico's Workflow
     description: Creating content with Pico couldn't be simpler!
@@ -81,6 +79,13 @@ galleries:
     style: carousel-box
     images:
       -
+        heading: Pico's Default Theme
+        description: |
+          It's a bit bare... but that's intentional!<br>
+          The default theme isn't meant for production use, it's actually a template for you to design your own theme around!
+        thumbnail: /style/images/docs/about/thumbnails/default_theme.png
+        fullsize: /style/images/docs/about/fullsize/default_theme.png
+      -
         heading: NotePaper
         description: "[NotePaper](http://development.sjmcdougall.com/pico-themes/NotePaper/) - A highly customizable theme, designed exclusively for Pico."
         thumbnail: /style/images/docs/about/thumbnails/notepaper.jpg
@@ -107,9 +112,9 @@ galleries:
         fullsize: /style/images/docs/about/fullsize/clean_blog.jpg
 ---
 
-Pico is a stupidly simple, blazing fast, flat file CMS.  That's definitely a mouthful, what does it even mean?  In the most basic sense, it means that there is no administration backend or database to deal with. You simply create markdown files in the content folder and those files become your pages.  There's *much* more to Pico than that though.
+{% include gallery.html gallery='logo' %}
 
-{% include gallery.html gallery='standalone' %}
+Pico is a stupidly simple, blazing fast, flat file CMS.  That's definitely a mouthful, what does it even mean?  In the most basic sense, it means that there is no administration backend or database to deal with. You simply create markdown files in the content folder and those files become your pages.  There's *much* more to Pico than that though.
 
 Let's get this out of the way: Pico is *not* a turn-key solution.  Pico trades one-click setups and complex management interfaces for blazing speed, flexibility, and a lightweight footprint.  If a little bit of reading and some basic configuration sounds like too much then Pico is probably not for you.
 
