@@ -1,10 +1,10 @@
-full: 2.0.4
-name: 2.0.4
-milestone: 2.0
+full: 2.1.0
+name: 2.1.0
+milestone: 2.1
 stability: stable
-id: 20004
+id: 20100
 major: 2
-minor: 0
-patch: 4
+minor: 1
+patch: 0
 suffix: 
 build: 
