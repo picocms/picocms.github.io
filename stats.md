@@ -19,7 +19,7 @@ nav-url: /docs/
         </thead>
         <tbody>
             {% for item in site.data.cloc %}
-                {% if item[0] != "SUM" %}
+                {% if item[0] != "SUM" and item[0] != "header" %}
                     <tr>
                         <td>{{ item[0] }}</td>
                         <td class="align-right">{{ item[1].nFiles }}</td>
@@ -27,7 +27,7 @@ nav-url: /docs/
                         <td class="align-right">{{ item[1].comment }}</td>
                         <td class="align-right">{{ item[1].code }}</td>
                     </tr>
-                {% else %}
+                {% elsif item[0] == "SUM" %}
                     <tr>
                         <td></td>
                         <td>

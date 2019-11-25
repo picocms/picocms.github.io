@@ -40,6 +40,10 @@ If you create a folder within the content directory (e.g. `content/sub`) and put
             <td>?sub/page</td>
         </tr>
         <tr>
+            <td>content/theme.md</td>
+            <td>?theme (hidden in menu)</td>
+        </tr>
+        <tr>
             <td>content/a/very/long/url.md</td>
             <td>?a/very/long/url</td>
         </tr>
@@ -50,7 +54,7 @@ If a file cannot be found, the file `content/404.md` will be shown. You can add 
 
 Pico strictly separates contents of your website (the Markdown files in your `content` directory) and how these contents should be displayed (the Twig templates in your `themes` directory). However, not every file in your `content` directory might actually be a distinct page. For example, some themes (including Pico's default theme) use some special "hidden" file to manage meta data (like `_meta.md` in Pico's sample contents). Some other themes use a `_footer.md` to represent the contents of the website's footer. The common point is the `_`: all files and directories prefixed by a `_` in your `content` directory are hidden. These pages can't be accessed from a web browser, Pico will show a 404 error page instead.
 
-As a common practice, we recommend you to separate your contents and assets (like images, downloads, etc.). We even deny access to your `content` directory by default. If you want to use some assets (e.g. a image) in one of your content files, you should create an `assets` folder in Pico's root directory and upload your assets there. You can then access them in your Markdown using `%base_url%/assets/` for example: `![Image Title](%base_url%/assets/image.png)`
+As a common practice, we recommend you to separate your contents and assets (like images, downloads, etc.). We even deny access to your `content` directory by default. If you want to use some assets (e.g. a image) in one of your content files, files, use Pico's `assets` folder. You can then access them in your Markdown using the `%assets_url%` placeholder, for example: `![Image Title](%assets_url%/image.png)`
 
 ### Text File Markup
 
@@ -69,15 +73,19 @@ Template: index
 
 These values will be contained in the `{% raw %}{{ meta }}{% endraw %}` variable in themes (see below). Meta headers sometimes have a special meaning: For instance, Pico not only passes through the `Date` meta header, but rather evaluates it to really "understand" when this page was created. This comes into play when you want to sort your pages not just alphabetically, but by date. Another example is the `Template` meta header: It controls what Twig template Pico uses to display this page (e.g. if you add `Template: blog`, Pico uses `blog.twig`).
 
-In an attempt to separate contents and styling, we recommend you to not use inline CSS in your Markdown files. You should rather add appropriate CSS classes to your theme. For example, you might want to add some CSS classes to your theme to rule how much of the available space a image should use (e.g. `img.small { width: 80%; }`). You can then use these CSS classes in your Markdown files, for example: `![Image Title](%base_url%/assets/image.png) {.small}`
+In an attempt to separate contents and styling, we recommend you to not use inline CSS in your Markdown files. You should rather add appropriate CSS classes to your theme. For example, you might want to add some CSS classes to your theme to rule how much of the available space a image should use (e.g. `img.small { width: 80%; }`). You can then use these CSS classes in your Markdown files, for example: `![Image Title](%assets_url%/image.png) {.small}`
 
 There are also certain variables that you can use in your text files:
 
 * `%site_title%` - The title of your Pico site
 * `%base_url%` - The URL to your Pico site; internal links can be specified using `%base_url%?sub/page`
 * `%theme_url%` - The URL to the currently used theme
+* `%assets_url%` - The URL to Pico's `assets` directory
+* `%themes_url%` - The URL to Pico's `themes` directory; don't confuse this with `%theme_url%`
+* `%plugins_url%` - The URL to Pico's `plugins` directory
 * `%version%` - Pico's current version string (e.g. `2.0.0`)
 * `%meta.*%` - Access any meta variable of the current page, e.g. `%meta.author%` is replaced with `Joe Bloggs`
+* `%config.*%` - Access any scalar config variable, e.g. `%config.theme%` is replaced with `default`
 
 ### Blogging
 
@@ -95,14 +103,12 @@ If you want to use Pico as a blogging software, you probably want to do somethin
     <li>
         Create the new Twig template <code>blog-index.twig</code> (the file name must match the <code>Template</code> meta header from Step 2) in your theme directory. This template probably isn't very different from your default <code>index.twig</code> (i.e. copy <code>index.twig</code>), it will create a list of all your blog articles. Add the following Twig snippet to <code>blog-index.twig</code> near <code>{% raw %}{{ content }}{% endraw %}</code>:
 
-        {% raw %}<pre><code>{% for page in pages|sort_by("time")|reverse %}
-    {% if page.id starts with &quot;blog/&quot; and not page.hidden %}
-        &lt;div class=&quot;post&quot;&gt;
-            &lt;h3&gt;&lt;a href=&quot;{{ page.url }}&quot;&gt;{{ page.title }}&lt;/a&gt;&lt;/h3&gt;
-            &lt;p class=&quot;date&quot;&gt;{{ page.date_formatted }}&lt;/p&gt;
-            &lt;p class=&quot;excerpt&quot;&gt;{{ page.description }}&lt;/p&gt;
-        &lt;/div&gt;
-    {% endif %}
+{% raw %}<pre><code>{% for page in pages(&quot;blog&quot;)|sort_by(&quot;time&quot;)|reverse if not page.hidden %}
+    &lt;div class=&quot;post&quot;&gt;
+        &lt;h3&gt;&lt;a href=&quot;{{ page.url }}&quot;&gt;{{ page.title }}&lt;/a&gt;&lt;/h3&gt;
+        &lt;p class=&quot;date&quot;&gt;{{ page.date_formatted }}&lt;/p&gt;
+        &lt;p class=&quot;excerpt&quot;&gt;{{ page.description }}&lt;/p&gt;
+    &lt;/div&gt;
 {% endfor %}</code></pre>{% endraw %}
     </li>
 </ol>

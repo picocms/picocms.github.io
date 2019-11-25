@@ -17,6 +17,20 @@
             <div class="inner">
                 {% include pageHeadline.html %}
 
+                {% capture relatedPagesContent %}
+                    <p>
+                        <strong>You didn't find what you were looking for?</strong>
+                        Check out the following related pages:
+                    </p>
+                    <ul>
+                        {% for item in page.more %}
+                            <li><a href="{{ site.github.url }}{{ item[0] }}">
+                                {{ item[1] | markdownify | remove: '<p>' | remove: '</p>' }}
+                            </a></li>
+                        {% endfor %}
+                    </ul>
+                {% endcapture %}
+
                 {% capture editPageContent %}
                     {% if page.collection %}
                         {% capture editPageUrl %}{{ site.gh_pages_url }}/tree/{{ site.gh_pages_branch }}/_{{ page.collection }}{% endcapture %}
@@ -25,7 +39,7 @@
                     {% endif %}
 
                     <a href="{{ editPageUrl }}" title="Open this documentation on GitHub">
-                        <img src="{{ site.github.url }}/style/images/GitHub-Mark-32px.png" alt="Open this documentation on GitHub" class="github-edit-icon" />
+                        <img src="{{ site.github.url }}/style/images/GitHub-Mark-32px.png" alt="Open this documentation on GitHub" class="page-appendix-icon" />
                     </a>
                     Found a typo? Something is wrong in this documentation? Just <a href="{{ editPageUrl }}">fork and edit</a> it!
                 {% endcapture %}
@@ -91,7 +105,13 @@
                                 {{ tocContent }}
                             </ul>
 
-                            <p>
+                            {% if page.more %}
+                                <div class="related-pages">
+                                    {{ relatedPagesContent }}
+                                </div>
+                            {% endif %}
+
+                            <p class="github-edit">
                                 {{ editPageContent }}
                             </p>
                         </div>
@@ -104,7 +124,13 @@
                             {{ pageContent }}
                         </div>
 
-                        <p class="github-edit">
+                        {% if page.more %}
+                            <div class="page-appendix related-pages">
+                                {{ relatedPagesContent }}
+                            </div>
+                        {% endif %}
+
+                        <p class="page-appendix github-edit">
                             {{ editPageContent }}
                         </p>
                     {% endif %}
@@ -114,7 +140,13 @@
                         {{ content }}
                     </div>
 
-                    <p class="github-edit">
+                    {% if page.more %}
+                        <div class="page-appendix related-pages">
+                            {{ relatedPagesContent }}
+                        </div>
+                    {% endif %}
+
+                    <p class="page-appendix github-edit">
                         {{ editPageContent }}
                     </p>
                 {% endif %}

@@ -310,6 +310,10 @@ ol li {
     padding: 0 0 0 1em;
     margin: 0 0 0 -1em;
 }
+ul li:last-child > p:last-child,
+ol li:last-child > p:last-child {
+    padding-bottom: 0;
+}
 ul li:before {
     float: left;
     display: block;
@@ -3044,11 +3048,18 @@ td:not(:last-child), th:not(:last-child) {       border-right: 0 none; }
     font-size: 30px;
     font-weight: bold;
 }
+.related-pages,
 .github-edit {
+    padding-top: 10px;
+}
+.related-pages > p {
+    padding-bottom: 10px;
+}
+.page-appendix {
     margin: 0 auto;
     max-width: 25em;
 }
-.github-edit-icon {
+.page-appendix-icon {
     float: left;
     margin: 8px 0.5em 0.5em 0;
 }
