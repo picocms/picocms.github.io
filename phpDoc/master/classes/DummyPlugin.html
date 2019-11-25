@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>Pico 2.0 API Documentation (master branch)</title>
+    <title>Pico 2.1 API Documentation (master branch)</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
 
@@ -83,7 +83,7 @@
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-ellipsis-vertical"></i>
             </a>
-            <a class="brand" href="../index.html">Pico 2.0 API Documentation (master branch)</a>
+            <a class="brand" href="../index.html">Pico 2.1 API Documentation (master branch)</a>
 
             <div class="nav-collapse">
                 <ul class="nav pull-right">
@@ -106,7 +106,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">19</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">10</span>
                                 </a>
                             </li>
                             <li>
@@ -116,7 +116,7 @@
                             </li>
                             <li>
                                 <a href="../reports/deprecated.html">
-                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">2</span>
                                 </a>
                             </li>
                         </ul>
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1001851945"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-856107333"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1001851945" class="accordion-body collapse in">
+            <div id="namespace-856107333" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -194,12 +194,14 @@ Simply remove the events you don't need and add your own logic.</p>
                                                                     <a href="../classes/AbstractPicoPlugin.html#method_isStatusChanged" class="">isStatusChanged()</a><br />
                                                                     <a href="../classes/AbstractPicoPlugin.html#method_getPico" class="">getPico()</a><br />
                                                                     <a href="../classes/AbstractPicoPlugin.html#method_getPluginConfig" class="">getPluginConfig()</a><br />
-                                                                    <a href="../classes/AbstractPicoPlugin.html#method___call" class="">__call()</a><br />
+                                                                    <a href="../classes/AbstractPicoPlugin.html#method___call" class="deprecated">__call()</a><br />
                                                                     <a href="../classes/AbstractPicoPlugin.html#method_getDependencies" class="">getDependencies()</a><br />
                                                                     <a href="../classes/AbstractPicoPlugin.html#method_getDependants" class="">getDependants()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onPluginsLoaded" class="">onPluginsLoaded()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onPluginManuallyLoaded" class="">onPluginManuallyLoaded()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onConfigLoaded" class="">onConfigLoaded()</a><br />
+                                                                    <a href="../classes/DummyPlugin.html#method_onThemeLoading" class="">onThemeLoading()</a><br />
+                                                                    <a href="../classes/DummyPlugin.html#method_onThemeLoaded" class="">onThemeLoaded()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onRequestUrl" class="">onRequestUrl()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onRequestFile" class="">onRequestFile()</a><br />
                                                                     <a href="../classes/DummyPlugin.html#method_onContentLoading" class="">onContentLoading()</a><br />
@@ -235,15 +237,18 @@ Simply remove the events you don't need and add your own logic.</p>
                         </section>
                         <section class="row-fluid protected">
                             <section class="span4">
+                                                                    <a href="../classes/AbstractPicoPlugin.html#method_configEnabled" class="">configEnabled()</a><br />
                                                                     <a href="../classes/AbstractPicoPlugin.html#method_checkDependencies" class="">checkDependencies()</a><br />
                                                                     <a href="../classes/AbstractPicoPlugin.html#method_checkDependants" class="">checkDependants()</a><br />
                                                                     <a href="../classes/AbstractPicoPlugin.html#method_checkCompatibility" class="">checkCompatibility()</a><br />
                                                             </section>
                             <section class="span4">
+                                                                    <a href="../classes/AbstractPicoPlugin.html#property_pico" class="">$pico</a><br />
                                                                     <a href="../classes/DummyPlugin.html#property_enabled" class="">$enabled</a><br />
                                                                     <a href="../classes/AbstractPicoPlugin.html#property_statusChanged" class="">$statusChanged</a><br />
                                                                     <a href="../classes/AbstractPicoPlugin.html#property_nativePlugin" class="">$nativePlugin</a><br />
                                                                     <a href="../classes/DummyPlugin.html#property_dependsOn" class="">$dependsOn</a><br />
+                                                                    <a href="../classes/AbstractPicoPlugin.html#property_dependants" class="">$dependants</a><br />
                                                             </section>
                             <section class="span4">
                                 <em>N/A</em>
@@ -254,8 +259,7 @@ Simply remove the events you don't need and add your own logic.</p>
                                                                     <em>No private methods found</em>
                                                             </section>
                             <section class="span4">
-                                                                    <a href="../classes/AbstractPicoPlugin.html#property_pico" class="">$pico</a><br />
-                                                                    <a href="../classes/AbstractPicoPlugin.html#property_dependants" class="">$dependants</a><br />
+                                                                    <em>No private properties found</em>
                                                             </section>
                             <section class="span4">
                                 <em>N/A</em>
@@ -355,6 +359,34 @@ Simply remove the events you don't need and add your own logic.</p>
 
                                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="property_pico" name="property_pico" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$pico</h3>
+                <pre class="signature">$pico : \Pico</pre>
+                <p><em>Current instance of Pico</em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/Pico.html">\Pico</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/PicoPluginInterface.html#method_getPico"><span class="namespace-wrapper">\PicoPluginInterface::getPico()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="property_enabled" name="property_enabled" class="anchor"></a>
             <article class="property">
                 <h3 class="protected ">$enabled</h3>
@@ -363,13 +395,13 @@ Simply remove the events you don't need and add your own logic.</p>
                 <p>Usually you should remove this class property (or set it to NULL) to
 leave the decision whether this plugin should be enabled or disabled by
 default up to Pico. If all the plugin's dependenies are fulfilled (see
-\self::$dependsOn), Pico enables the plugin by default. Otherwise
-the plugin is silently disabled.</p>
+<a href="../classes/DummyPlugin.html#property_dependsOn">\DummyPlugin::$dependsOn</a>), Pico enables the plugin by default.
+Otherwise the plugin is silently disabled.</p>
 <p>If this plugin should never be disabled <em>silently</em> (e.g. when dealing
 with security-relevant stuff like access control, or similar), set this
 to TRUE. If Pico can't fulfill all the plugin's dependencies, it will
 throw an RuntimeException.</p>
-<p>If this plugin rather does some "crazy stuff" a user should really be
+<p>If this plugin rather does some &quot;crazy stuff&quot; a user should really be
 aware of before using it, you can set this to FALSE. The user will then
 have to enable the plugin manually. However, if another plugin depends
 on this plugin, it might get enabled silently nevertheless.</p>
@@ -477,39 +509,11 @@ property.</p>
         </aside>
     </div>
 
-                                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_pico" name="property_pico" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$pico</h3>
-                <pre class="signature">$pico : \Pico</pre>
-                <p><em>Current instance of Pico</em></p>
-                
-
-                                <h4>Type</h4>
-                <a href="../classes/Pico.html">\Pico</a>
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                    <dt>Inherited from</dt>
-                    <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
-                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/PicoPluginInterface.html#method_getPico"><span class="namespace-wrapper">\PicoPluginInterface::getPico()</span></a></dd>
-                                                                </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
                                     <div class="row-fluid">
         <div class="span8 content class">
             <a id="property_dependants" name="property_dependants" class="anchor"></a>
             <article class="property">
-                <h3 class="private ">$dependants</h3>
+                <h3 class="protected ">$dependants</h3>
                 <pre class="signature">$dependants : array&lt;mixed,object&gt;|null</pre>
                 <p><em>List of plugin which depend on this plugin</em></p>
                 
@@ -534,7 +538,7 @@ property.</p>
         </aside>
     </div>
 
-                            
+                                            
                                     <a id="methods" name="methods"></a>
             <div class="row-fluid">
                 <div class="span8 content class"><h2>Methods</h2></div>
@@ -569,9 +573,7 @@ property.</p>
                                                             <dl>
                                                     <dt>Inherited from</dt>
                     <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
-                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/PicoPluginInterface.html#method___construct"><span class="namespace-wrapper">\PicoPluginInterface::__construct()</span></a></dd>
-                                                                </dl>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -585,7 +587,7 @@ property.</p>
             <article class="method">
                 <h3 class="public ">handleEvent()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">handleEvent(string  <span class="argument">$eventName</span>, array  <span class="argument">$params</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">handleEvent(string  <span class="argument">$eventName</span>, array  <span class="argument">$params</span>) </pre>
                 <p><em>Handles a event that was triggered by Pico</em></p>
                 
 
@@ -612,9 +614,7 @@ property.</p>
                                                             <dl>
                                                     <dt>Inherited from</dt>
                     <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
-                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/PicoPluginInterface.html#method_handleEvent"><span class="namespace-wrapper">\PicoPluginInterface::handleEvent()</span></a></dd>
-                                                                </dl>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -628,7 +628,7 @@ property.</p>
             <article class="method">
                 <h3 class="public ">setEnabled()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setEnabled(boolean  <span class="argument">$enabled</span>, boolean  <span class="argument">$recursive = true</span>, boolean  <span class="argument">$auto = false</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">setEnabled(boolean  <span class="argument">$enabled</span>, boolean  <span class="argument">$recursive = true</span>, boolean  <span class="argument">$auto = false</span>) </pre>
                 <p><em>Enables or disables this plugin</em></p>
                 
 
@@ -666,9 +666,7 @@ parameter is optional and defaults to FALSE.</p></td>
                                                             <dl>
                                                     <dt>Inherited from</dt>
                     <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
-                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/PicoPluginInterface.html#method_setEnabled"><span class="namespace-wrapper">\PicoPluginInterface::setEnabled()</span></a></dd>
-                                                                </dl>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -701,9 +699,7 @@ then. The plugin's status might change later.</p>
                                                             <dl>
                                                     <dt>Inherited from</dt>
                     <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
-                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/PicoPluginInterface.html#method_isEnabled"><span class="namespace-wrapper">\PicoPluginInterface::isEnabled()</span></a></dd>
-                                                                </dl>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -734,9 +730,7 @@ then. The plugin's status might change later.</p>
                                                             <dl>
                                                     <dt>Inherited from</dt>
                     <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
-                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/PicoPluginInterface.html#method_isStatusChanged"><span class="namespace-wrapper">\PicoPluginInterface::isStatusChanged()</span></a></dd>
-                                                                </dl>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -751,14 +745,14 @@ then. The plugin's status might change later.</p>
                 <h3 class="public ">getPico()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">getPico() : \Pico</pre>
-                <p><em>Returns the plugins instance of Pico</em></p>
+                <p><em>Returns the plugin&#039;s instance of Pico</em></p>
                 
 
                 
                 
                                     <h4>Returns</h4>
                     <a href="../classes/Pico.html">\Pico</a>
-                                            &mdash; <p>the plugins instance of Pico</p>
+                                            &mdash; <p>the plugin's instance of Pico</p>
                                     				
                             </article>
         </div>
@@ -767,9 +761,7 @@ then. The plugin's status might change later.</p>
                                                             <dl>
                                                     <dt>Inherited from</dt>
                     <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
-                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/PicoPluginInterface.html#method_getPico"><span class="namespace-wrapper">\PicoPluginInterface::getPico()</span></a></dd>
-                                                                </dl>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -830,7 +822,7 @@ doesn't exist, the provided default value or NULL</p>
         <div class="span8 content class">
             <a id="method___call" name="method___call" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">__call()</h3>
+                <h3 class="public deprecated">__call()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">__call(string  <span class="argument">$methodName</span>, array  <span class="argument">$params</span>) : mixed</pre>
                 <p><em>Passes all not satisfiable method calls to Pico</em></p>
@@ -859,11 +851,15 @@ doesn't exist, the provided default value or NULL</p>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
+                                                                <aside class="alert alert-block alert-error">
+                    <h4>Deprecated since 2.1.0</h4>
+                    
+                </aside>
+                        <dl>
                                                     <dt>Inherited from</dt>
                     <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
                                                                             <dt>See also</dt>
-                                                                <dd><a href="../classes/Pico.html"><span class="namespace-wrapper">\Pico</span></a></dd>
+                                                                <dd><a href="../classes/PicoPluginInterface.html#method_getPico"><span class="namespace-wrapper">\PicoPluginInterface::getPico()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -895,9 +891,7 @@ doesn't exist, the provided default value or NULL</p>
                                                             <dl>
                                                     <dt>Inherited from</dt>
                     <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
-                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/PicoPluginInterface.html#method_getDependencies"><span class="namespace-wrapper">\PicoPluginInterface::getDependencies()</span></a></dd>
-                                                                </dl>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -928,9 +922,7 @@ doesn't exist, the provided default value or NULL</p>
                                                             <dl>
                                                     <dt>Inherited from</dt>
                     <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
-                                                                            <dt>See also</dt>
-                                                                <dd><a href="../classes/PicoPluginInterface.html#method_getDependants"><span class="namespace-wrapper">\PicoPluginInterface::getDependants()</span></a></dd>
-                                                                </dl>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -944,7 +936,7 @@ doesn't exist, the provided default value or NULL</p>
             <article class="method">
                 <h3 class="public ">onPluginsLoaded()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onPluginsLoaded(array&lt;mixed,object&gt;  <span class="argument">$plugins</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onPluginsLoaded(array&lt;mixed,object&gt;  <span class="argument">$plugins</span>) </pre>
                 <p><em>Triggered after Pico has loaded all available plugins</em></p>
                 <p>This event is triggered nevertheless the plugin is enabled or not.
 It is NOT guaranteed that plugin dependencies are fulfilled!</p>
@@ -983,7 +975,7 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
             <article class="method">
                 <h3 class="public ">onPluginManuallyLoaded()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onPluginManuallyLoaded(object  <span class="argument">$plugin</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onPluginManuallyLoaded(object  <span class="argument">$plugin</span>) </pre>
                 <p><em>Triggered when Pico manually loads a plugin</em></p>
                 
 
@@ -1021,7 +1013,7 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
             <article class="method">
                 <h3 class="public ">onConfigLoaded()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onConfigLoaded(array  <span class="argument">$config</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onConfigLoaded(array  <span class="argument">$config</span>) </pre>
                 <p><em>Triggered after Pico has read its configuration</em></p>
                 
 
@@ -1044,8 +1036,92 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                                                                             <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getConfig"><span class="namespace-wrapper">\Pico::getConfig()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getBaseUrl"><span class="namespace-wrapper">\Pico::getBaseUrl()</span></a></dd>
-                                            <dd><a href="../classes/Pico.html#method_getBaseThemeUrl"><span class="namespace-wrapper">\Pico::getBaseThemeUrl()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_isUrlRewritingEnabled"><span class="namespace-wrapper">\Pico::isUrlRewritingEnabled()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onThemeLoading" name="method_onThemeLoading" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onThemeLoading()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onThemeLoading(  <span class="argument">$theme</span>) </pre>
+                <p><em>Triggered before Pico loads its theme</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$theme </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html#method_loadTheme"><span class="namespace-wrapper">\Pico::loadTheme()</span></a></dd>
+                                            <dd><a href="../classes/DummyPlugin.html#method_onThemeLoaded"><span class="namespace-wrapper">\DummyPlugin::onThemeLoaded()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_onThemeLoaded" name="method_onThemeLoaded" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">onThemeLoaded()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">onThemeLoaded(string  <span class="argument">$theme</span>, integer  <span class="argument">$themeApiVersion</span>, array  <span class="argument">$themeConfig</span>) </pre>
+                <p><em>Triggered after Pico loaded its theme</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$theme </td>
+                                <td><p>name of current theme</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$themeApiVersion </td>
+                                <td><p>API version of the theme</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$themeConfig </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/DummyPlugin.html#method_onThemeLoading"><span class="namespace-wrapper">\DummyPlugin::onThemeLoading()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_getTheme"><span class="namespace-wrapper">\Pico::getTheme()</span></a></dd>
+                                            <dd><a href="../classes/Pico.html#method_getThemeApiVersion"><span class="namespace-wrapper">\Pico::getThemeApiVersion()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -1060,7 +1136,7 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
             <article class="method">
                 <h3 class="public ">onRequestUrl()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onRequestUrl(  <span class="argument">$url</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onRequestUrl(  <span class="argument">$url</span>) </pre>
                 <p><em>Triggered after Pico has evaluated the request URL</em></p>
                 
 
@@ -1096,7 +1172,7 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
             <article class="method">
                 <h3 class="public ">onRequestFile()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onRequestFile(  <span class="argument">$file</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onRequestFile(  <span class="argument">$file</span>) </pre>
                 <p><em>Triggered after Pico has discovered the content file to serve</em></p>
                 
 
@@ -1133,7 +1209,7 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
             <article class="method">
                 <h3 class="public ">onContentLoading()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onContentLoading() : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onContentLoading() </pre>
                 <p><em>Triggered before Pico reads the contents of the file to serve</em></p>
                 
 
@@ -1162,7 +1238,7 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
             <article class="method">
                 <h3 class="public ">on404ContentLoading()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">on404ContentLoading() : void</pre>
+                <pre class="signature" style="margin-right: 54px;">on404ContentLoading() </pre>
                 <p><em>Triggered before Pico reads the contents of a 404 file</em></p>
                 
 
@@ -1191,7 +1267,7 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
             <article class="method">
                 <h3 class="public ">on404ContentLoaded()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">on404ContentLoaded(  <span class="argument">$rawContent</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">on404ContentLoaded(  <span class="argument">$rawContent</span>) </pre>
                 <p><em>Triggered after Pico has read the contents of the 404 file</em></p>
                 
 
@@ -1229,7 +1305,7 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
             <article class="method">
                 <h3 class="public ">onContentLoaded()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onContentLoaded(  <span class="argument">$rawContent</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onContentLoaded(  <span class="argument">$rawContent</span>) </pre>
                 <p><em>Triggered after Pico has read the contents of the file to serve</em></p>
                 <p>If Pico serves a 404 file, this event is triggered with the raw contents
 of said 404 file. Use \Pico::is404Content() to check for this
@@ -1269,7 +1345,7 @@ case when necessary.</p>
             <article class="method">
                 <h3 class="public ">onMetaParsing()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onMetaParsing() : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onMetaParsing() </pre>
                 <p><em>Triggered before Pico parses the meta header</em></p>
                 
 
@@ -1298,7 +1374,7 @@ case when necessary.</p>
             <article class="method">
                 <h3 class="public ">onMetaParsed()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onMetaParsed(array  <span class="argument">$meta</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onMetaParsed(array  <span class="argument">$meta</span>) </pre>
                 <p><em>Triggered after Pico has parsed the meta header</em></p>
                 
 
@@ -1335,7 +1411,7 @@ case when necessary.</p>
             <article class="method">
                 <h3 class="public ">onContentParsing()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onContentParsing() : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onContentParsing() </pre>
                 <p><em>Triggered before Pico parses the pages content</em></p>
                 
 
@@ -1366,7 +1442,7 @@ case when necessary.</p>
             <article class="method">
                 <h3 class="public ">onContentPrepared()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onContentPrepared(  <span class="argument">$markdown</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onContentPrepared(  <span class="argument">$markdown</span>) </pre>
                 <p><em>Triggered after Pico has prepared the raw file contents for parsing</em></p>
                 
 
@@ -1404,7 +1480,7 @@ case when necessary.</p>
             <article class="method">
                 <h3 class="public ">onContentParsed()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onContentParsed(  <span class="argument">$content</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onContentParsed(  <span class="argument">$content</span>) </pre>
                 <p><em>Triggered after Pico has parsed the contents of the file to serve</em></p>
                 
 
@@ -1442,7 +1518,7 @@ case when necessary.</p>
             <article class="method">
                 <h3 class="public ">onPagesLoading()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onPagesLoading() : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onPagesLoading() </pre>
                 <p><em>Triggered before Pico reads all known pages</em></p>
                 
 
@@ -1471,7 +1547,7 @@ case when necessary.</p>
             <article class="method">
                 <h3 class="public ">onSinglePageLoading()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onSinglePageLoading(string  <span class="argument">$id</span>, boolean|null  <span class="argument">$skipPage</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onSinglePageLoading(string  <span class="argument">$id</span>, boolean|null  <span class="argument">$skipPage</span>) </pre>
                 <p><em>Triggered before Pico loads a single page</em></p>
                 <p>Set the <code>$skipFile</code> parameter to TRUE to remove this page from the pages
 array. Pico usually passes NULL by default, unless it is a conflicting
@@ -1518,7 +1594,7 @@ pages array, otherwise leave it unchanged</p></td>
             <article class="method">
                 <h3 class="public ">onSinglePageContent()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onSinglePageContent(string  <span class="argument">$id</span>,   <span class="argument">$rawContent</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onSinglePageContent(string  <span class="argument">$id</span>,   <span class="argument">$rawContent</span>) </pre>
                 <p><em>Triggered when Pico loads the raw contents of a single page</em></p>
                 <p>Please note that this event isn't triggered when the currently processed
 page is the requested page. The reason for this exception is that the
@@ -1562,7 +1638,7 @@ raw contents of this page were loaded already.</p>
             <article class="method">
                 <h3 class="public ">onSinglePageLoaded()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onSinglePageLoaded(array  <span class="argument">$pageData</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onSinglePageLoaded(array  <span class="argument">$pageData</span>) </pre>
                 <p><em>Triggered when Pico loads a single page</em></p>
                 <p>Please refer to <a href="../classes/Pico.html#method_readPages">\Pico::readPages()</a> for information about the
 structure of a single page's data.</p>
@@ -1600,7 +1676,7 @@ structure of a single page's data.</p>
             <article class="method">
                 <h3 class="public ">onPagesDiscovered()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onPagesDiscovered(array  <span class="argument">$pages</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onPagesDiscovered(array  <span class="argument">$pages</span>) </pre>
                 <p><em>Triggered after Pico has discovered all known pages</em></p>
                 <p>Pico's pages array isn't sorted until the <code>onPagesLoaded</code> event is
 triggered. Please refer to <a href="../classes/Pico.html#method_readPages">\Pico::readPages()</a> for information
@@ -1640,7 +1716,7 @@ page's data.</p>
             <article class="method">
                 <h3 class="public ">onPagesLoaded()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onPagesLoaded(array  <span class="argument">$pages</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onPagesLoaded(array  <span class="argument">$pages</span>) </pre>
                 <p><em>Triggered after Pico has sorted the pages array</em></p>
                 <p>Please refer to <a href="../classes/Pico.html#method_readPages">\Pico::readPages()</a> for information about the
 structure of Pico's pages array and the structure of a single page's
@@ -1680,7 +1756,7 @@ data.</p>
             <article class="method">
                 <h3 class="public ">onCurrentPageDiscovered()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onCurrentPageDiscovered(array  <span class="argument">$currentPage = null</span>, array  <span class="argument">$previousPage = null</span>, array  <span class="argument">$nextPage = null</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onCurrentPageDiscovered(array  <span class="argument">$currentPage = null</span>, array  <span class="argument">$previousPage = null</span>, array  <span class="argument">$nextPage = null</span>) </pre>
                 <p><em>Triggered when Pico discovered the current, previous and next pages</em></p>
                 <p>If Pico isn't serving a regular page, but a plugin's virtual page, there
 will neither be a current, nor previous or next pages. Please refer to
@@ -1731,7 +1807,7 @@ page's data.</p>
             <article class="method">
                 <h3 class="public ">onPageTreeBuilt()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onPageTreeBuilt(array  <span class="argument">$pageTree</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onPageTreeBuilt(array  <span class="argument">$pageTree</span>) </pre>
                 <p><em>Triggered after Pico built the page tree</em></p>
                 <p>Please refer to <a href="../classes/Pico.html#method_buildPageTree">\Pico::buildPageTree()</a> for information about
 the structure of Pico's page tree array.</p>
@@ -1768,7 +1844,7 @@ the structure of Pico's page tree array.</p>
             <article class="method">
                 <h3 class="public ">onPageRendering()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onPageRendering(  <span class="argument">$templateName</span>, array  <span class="argument">$twigVariables</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onPageRendering(  <span class="argument">$templateName</span>, array  <span class="argument">$twigVariables</span>) </pre>
                 <p><em>Triggered before Pico renders the page</em></p>
                 
 
@@ -1809,7 +1885,7 @@ the structure of Pico's page tree array.</p>
             <article class="method">
                 <h3 class="public ">onPageRendered()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onPageRendered(  <span class="argument">$output</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onPageRendered(  <span class="argument">$output</span>) </pre>
                 <p><em>Triggered after Pico has rendered the page</em></p>
                 
 
@@ -1845,7 +1921,7 @@ the structure of Pico's page tree array.</p>
             <article class="method">
                 <h3 class="public ">onMetaHeaders()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onMetaHeaders(array  <span class="argument">$headers</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onMetaHeaders(array  <span class="argument">$headers</span>) </pre>
                 <p><em>Triggered when Pico reads its known meta header fields</em></p>
                 
 
@@ -1881,7 +1957,7 @@ the structure of Pico's page tree array.</p>
             <article class="method">
                 <h3 class="public ">onYamlParserRegistered()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onYamlParserRegistered(\Symfony\Component\Yaml\Parser  <span class="argument">$yamlParser</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onYamlParserRegistered(\Symfony\Component\Yaml\Parser  <span class="argument">$yamlParser</span>) </pre>
                 <p><em>Triggered when Pico registers the YAML parser</em></p>
                 
 
@@ -1917,7 +1993,7 @@ the structure of Pico's page tree array.</p>
             <article class="method">
                 <h3 class="public ">onParsedownRegistered()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onParsedownRegistered(\Parsedown  <span class="argument">$parsedown</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onParsedownRegistered(\Parsedown  <span class="argument">$parsedown</span>) </pre>
                 <p><em>Triggered when Pico registers the Parsedown parser</em></p>
                 
 
@@ -1953,7 +2029,7 @@ the structure of Pico's page tree array.</p>
             <article class="method">
                 <h3 class="public ">onTwigRegistered()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">onTwigRegistered(\Twig_Environment  <span class="argument">$twig</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">onTwigRegistered(\Twig_Environment  <span class="argument">$twig</span>) </pre>
                 <p><em>Triggered when Pico registers the twig template engine</em></p>
                 
 
@@ -1985,11 +2061,39 @@ the structure of Pico's page tree array.</p>
 
                                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_configEnabled" name="method_configEnabled" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">configEnabled()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">configEnabled() </pre>
+                <p><em>Enables or disables this plugin depending on Pico&#039;s config</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/AbstractPicoPlugin.html"><div class="path-wrapper">\AbstractPicoPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_checkDependencies" name="method_checkDependencies" class="anchor"></a>
             <article class="method">
                 <h3 class="protected ">checkDependencies()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">checkDependencies(boolean  <span class="argument">$recursive</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">checkDependencies(boolean  <span class="argument">$recursive</span>) </pre>
                 <p><em>Enables all plugins which this plugin depends on</em></p>
                 
 
@@ -2032,7 +2136,7 @@ the structure of Pico's page tree array.</p>
             <article class="method">
                 <h3 class="protected ">checkDependants()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">checkDependants(boolean  <span class="argument">$recursive</span>) : void</pre>
+                <pre class="signature" style="margin-right: 54px;">checkDependants(boolean  <span class="argument">$recursive</span>) </pre>
                 <p><em>Disables all plugins which depend on this plugin</em></p>
                 
 
@@ -2075,11 +2179,11 @@ the structure of Pico's page tree array.</p>
             <article class="method">
                 <h3 class="protected ">checkCompatibility()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">checkCompatibility() : void</pre>
+                <pre class="signature" style="margin-right: 54px;">checkCompatibility() </pre>
                 <p><em>Checks compatibility with Pico&#039;s API version</em></p>
                 <p>Pico automatically adds a dependency to \PicoDeprecated when the
 plugin's API is older than Pico's API. \PicoDeprecated furthermore
-throws a exception when it can't provide compatibility in such cases.
+throws a exception if it can't provide compatibility in such cases.
 However, we still have to decide whether this plugin is compatible to
 newer API versions, what requires some special (version specific)
 precaution and is therefore usually not the case.</p>
@@ -2157,7 +2261,7 @@ compatible</p></dd>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on January 3rd, 2019 at 01:31.
+                    on November 25th, 2019 at 00:17.
                 </section>
             </section>
         </section>
