@@ -61,6 +61,8 @@ galleries:
 
 {% include portfolio.html portfolio=site.plugins %}
 
+---
+
 ## Pico CMS for Nextcloud
 
 Probably the most powerful Pico "plugin" is [Pico CMS for Nextcloud][NextcloudApp]. To be more precise, Pico CMS for Nextcloud is no plugin, it's an integration, the most powerful integration of Pico into another project ever existed. [Nextcloud][] is a free and open-source collaboration platform for creating and using file hosting services. Pico CMS for Nextcloud fully integrates Pico into Nextcloud and allows one to create simple, secure, shareable and amazingly powerful websites with just a few clicks.
