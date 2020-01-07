@@ -1,15 +1,15 @@
 ---
 heading: TagBlog
-thumbnail: themes/images/thumbnails/TagBlog.png
+thumbnail: themes/images/thumbnails/tagblog.png
 categories:
   - blog
 description: A minimalistic and responsive theme centered around tags.
 link: https://notabug.org/ohnonot/tagblog
 images:
-  - themes/images/fullsize/TagBlog.png
-  - themes/images/fullsize/TagBlog-2.png
+  - themes/images/fullsize/tagblog.png
+  - themes/images/fullsize/tagblog-dark.png
 info:
-  By: "See repository, or: [ohnonot](https://github.com/ohnonot)"
+  By: "[ohnonot](https://notabug.org/ohnonot)"
   License: "[GPL3](https://notabug.org/ohnonot/tagblog/src/master/LICENSE), [MIT](https://notabug.org/ohnonot/tagblog/src/master/res/TableOfContent/LICENSE.md)"
 ---
 
@@ -19,5 +19,5 @@ It is a minimal theme - no javascript, no 3rd-party resources, simple CSS design
 
 Colors can be customised. Two example CSS are included.
 
-It is - was - based on the [NotePaper][np] theme, but has been largely rewritten to focus on the one aspect that was most important to me.  
-It also includes a modified version of the [mcb_TableOfContent][mcbtoc] plugin, which comes with its own separate MIT License.
+It is - was - based on the [NotePaper](https://github.com/mayamcdougall/NotePaper) theme, but has been largely rewritten to focus on the one aspect that was most important to me.  
+It also includes a modified version of the [mcb_TableOfContent](https://github.com/mcbSolutions/Pico-Plugins/tree/master/mcb_TableOfContent)plugin.

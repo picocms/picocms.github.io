@@ -7,7 +7,7 @@ description: Piet would be proud.
 link: https://github.com/codeandmedia/pico_mondrian
 images:
   - themes/images/fullsize/mondrian.png
-  - themes/images/fullsize/mondrian-mobile.png
+  - themes/images/fullsize/mondrian_mobile.png
 info:
   By: "[codeandmedia](https://github.com/codeandmedia)"
   License: "[The MIT License](https://github.com/codeandmedia/pico_mondrian/blob/master/LICENSE)"
