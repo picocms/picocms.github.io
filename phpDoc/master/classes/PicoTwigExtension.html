@@ -24,7 +24,7 @@
     <script type="text/javascript">
     function loadExternalCodeSnippets() {
         Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-            var src = pre.getAttribute('data-src');
+            var src = pre.getAttribute('data-src').replace( /\\/g, '/');
             var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
             var language = 'php';
 
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-543941663"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-229526380"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-543941663" class="accordion-body collapse in">
+            <div id="namespace-229526380" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -250,7 +250,7 @@
                         
                                                                             <dt>See also</dt>
                                                                                         <dd><a href="http://picocms.org"><span class="namespace-wrapper">http://picocms.org</span></a></dd>
-                                                    
+                                                                            
                                                                         </dl>
                     <h2>Tags</h2>
                     <table class="table table-condensed">
@@ -259,7 +259,7 @@
                                 author
                             </th>
                             <td>
-                                                                    <p>Daniel Rudolf</p>
+                                                                                                        <p>Daniel Rudolf</p>
                                                             </td>
                         </tr>
                                             <tr>
@@ -267,7 +267,7 @@
                                 license
                             </th>
                             <td>
-                                                                    <p><a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a> The MIT License</p>
+                                                                                                        <p><a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a> The MIT License</p>
                                                             </td>
                         </tr>
                                             <tr>
@@ -275,7 +275,7 @@
                                 version
                             </th>
                             <td>
-                                                                    
+                                                                    2.1                                    
                                                             </td>
                         </tr>
                                         </table>
@@ -344,13 +344,15 @@
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -373,13 +375,15 @@
                                     <h4>Returns</h4>
                     <a href="../classes/Pico.html">\Pico</a>
                                             &mdash; <p>the extension's instance of Pico</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html"><span class="namespace-wrapper">\Pico</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -404,13 +408,15 @@
                                     <h4>Returns</h4>
                     string
                                             &mdash; <p>the extension name</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href=""><span class="namespace-wrapper">\Twig_ExtensionInterface::getName()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -435,13 +441,15 @@
                                     <h4>Returns</h4>
                     array&lt;mixed,\Twig_SimpleFilter&gt;
                                             &mdash; <p>array of Pico's Twig filters</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href=""><span class="namespace-wrapper">\Twig_ExtensionInterface::getFilters()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -466,13 +474,15 @@
                                     <h4>Returns</h4>
                     array&lt;mixed,\Twig_SimpleFunction&gt;
                                             &mdash; <p>array of Pico's Twig functions</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href=""><span class="namespace-wrapper">\Twig_ExtensionInterface::getFunctions()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -518,13 +528,15 @@ instead, what ensures the proper preparation of the contents.</p>
                                     <h4>Returns</h4>
                     string
                                             &mdash; <p>parsed HTML</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_substituteFileContent"><span class="namespace-wrapper">\Pico::substituteFileContent()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_parseFileContent"><span class="namespace-wrapper">\Pico::parseFileContent()</span></a></dd>
                                                                 </dl>
@@ -571,13 +583,15 @@ $item['foo']['bar'] values)</p></td>
                                     <h4>Returns</h4>
                     array
                                             &mdash; <p>mapped values</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -635,13 +649,15 @@ these items</p></td>
                                     <h4>Returns</h4>
                     array
                                             &mdash; <p>sorted array</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -681,14 +697,16 @@ the method will return $var['foo']['bar']) specifying the value</p></td>
                     mixed
                                             &mdash; <p>the requested value or NULL when the given key or key path
 didn't match</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                             <span class="label label-info">static</span>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -739,13 +757,15 @@ used by the filter</p></td>
                                             &mdash; <p>either the filtered data, FALSE if the filter fails, or
 NULL if the URL GET parameter doesn't exist and no default value is
 given</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getUrlParameter"><span class="namespace-wrapper">\Pico::getUrlParameter()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -798,13 +818,15 @@ used by the filter</p></td>
                                             &mdash; <p>either the filtered data, FALSE if the filter fails, or
 NULL if the HTTP POST parameter doesn't exist and no default value
 is given</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getFormParameter"><span class="namespace-wrapper">\Pico::getFormParameter()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -908,13 +930,15 @@ given number of branches before returning pages; defaults to 1</p></td>
                                     <h4>Returns</h4>
                     array&lt;mixed,array&gt;
                                             &mdash; <p>the data of the matched pages</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoTwigExtension.html"><div class="path-wrapper">\PicoTwigExtension</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -971,7 +995,7 @@ given number of branches before returning pages; defaults to 1</p></td>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 31st, 2019 at 15:39.
+                    on March 29th, 2020 at 12:42.
                 </section>
             </section>
         </section>

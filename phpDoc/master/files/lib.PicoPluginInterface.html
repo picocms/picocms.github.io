@@ -24,7 +24,7 @@
         <script type="text/javascript">
         function loadExternalCodeSnippets() {
             Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-                var src = pre.getAttribute('data-src');
+                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
                 var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
                 var language = 'php';
 
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1555948328"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1164352759"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1555948328" class="accordion-body collapse in">
+            <div id="namespace-1164352759" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -250,7 +250,7 @@ License-Filename: LICENSE</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 31st, 2019 at 15:39.
+                    on March 29th, 2020 at 12:42.
                 </section>
             </section>
         </section>
