@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-255640901"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-481755853"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-255640901" class="accordion-body collapse in">
+            <div id="namespace-481755853" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -397,7 +397,7 @@ released under the MIT license.</li>
             <a id="constant_VERSION" name="constant_VERSION" class="anchor"></a>
             <article id="constant_VERSION" class="constant">
                 <h3 class="">VERSION</h3>
-                <pre class="signature">VERSION = &#039;2.1.1&#039; : string</pre>
+                <pre class="signature">VERSION = &#039;2.1.2&#039; : string</pre>
                 <p><em>Pico version</em></p>
                 
             </article>
@@ -418,7 +418,7 @@ released under the MIT license.</li>
             <a id="constant_VERSION_ID" name="constant_VERSION_ID" class="anchor"></a>
             <article id="constant_VERSION_ID" class="constant">
                 <h3 class="">VERSION_ID</h3>
-                <pre class="signature">VERSION_ID = 20101 : integer</pre>
+                <pre class="signature">VERSION_ID = 20102 : integer</pre>
                 <p><em>Pico version ID</em></p>
                 
             </article>
@@ -2988,7 +2988,7 @@ e.g. <code>{{ "%base_url%?sub/page"|url }}</code>.</p>
                 <p>We assume that the given path is a arbitrary deep sub folder of the
 script's base path (i.e. the directory {@path &quot;index.php&quot;} is in resp.
 the <code>httpdocs</code> directory). If this isn't the case, we check whether it's
-a sub folder of \Pico::$rootDir (what is often identical to the
+a sub folder of <a href="../classes/Pico.html#property_rootDir">\Pico::$rootDir</a> (what is often identical to the
 script's base path). If this isn't the case either, we fall back to
 the basename of the given folder. This whole process ultimately allows
 us to use <a href="../classes/Pico.html#method_getBaseUrl">\Pico::getBaseUrl()</a> as origin for the URL.</p>
@@ -3474,11 +3474,11 @@ version - the event will be triggered in any case.</p>
                 <p>See <a href="../classes/Pico.html#method_loadComposerPlugins">\Pico::loadComposerPlugins()</a> for details about plugins loaded
 from <code>vendor/pico-plugin.php</code> (i.e. plugins that were installed using
 composer), and <a href="../classes/Pico.html#method_loadLocalPlugins">\Pico::loadLocalPlugins()</a> for details about plugins
-installed to \Pico::$pluginsDir. Pico loads plugins from the
-filesystem only if \Pico::$enableLocalPlugins is set to TRUE
+installed to <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>. Pico loads plugins from the
+filesystem only if <a href="../classes/Pico.html#property_enableLocalPlugins">\Pico::$enableLocalPlugins</a> is set to TRUE
 (this is the default).</p>
 <p>Pico always loads plugins from <code>vendor/pico-plugin.php</code> first and
-ignores conflicting plugins in \Pico::$pluginsDir.</p>
+ignores conflicting plugins in <a href="../classes/Pico.html#property_pluginsDir">\Pico::$pluginsDir</a>.</p>
 <p>The official PicoDeprecated plugin must be loaded when plugins that use
 an older API version than Pico's API version (<a href="../classes/Pico.html#constant_API_VERSION">\Pico::API_VERSION</a>)
 are loaded.</p>
@@ -4255,7 +4255,7 @@ method always returns either the provided default value or NULL</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on April 10th, 2020 at 21:21.
+                    on April 10th, 2020 at 21:34.
                 </section>
             </section>
         </section>
