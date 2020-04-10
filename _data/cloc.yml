@@ -1,12 +1,12 @@
 header : 
   cloc_url           : github.com/AlDanial/cloc
   cloc_version       : 1.84
-  elapsed_seconds    : 0.028656005859375
+  elapsed_seconds    : 0.0286960601806641
   n_files            : 5
   n_lines            : 3767
-  files_per_second   : 174.483493077742
-  lines_per_second   : 131455.863684771
-  report_file        : /tmp/tmp.NcDRTSPCKm
+  files_per_second   : 174.239946826188
+  lines_per_second   : 131272.37593885
+  report_file        : /tmp/tmp.WQoFeOW1Og
 'PHP' :
   nFiles: 5
   blank: 378
