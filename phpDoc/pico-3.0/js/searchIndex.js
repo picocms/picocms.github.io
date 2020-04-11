@@ -1726,60 +1726,60 @@ Search.appendIndex(
             "summary": "Current\u0020instance\u0020of\u0020Pico",
             "url": "../classes/picocms-Pico-TwigExtension.html#property_pico"
         },                {
-            "fqsen": "\\composerRequiref817bf3519f00d9c72fa828d02a1d637\u0028\u0029",
-            "name": "composerRequiref817bf3519f00d9c72fa828d02a1d637",
+            "fqsen": "\\composerRequired70cf649c6729e26205357ae92cc6898\u0028\u0029",
+            "name": "composerRequired70cf649c6729e26205357ae92cc6898",
             "summary": "",
-            "url": "../namespaces/default.html#function_composerRequiref817bf3519f00d9c72fa828d02a1d637"
+            "url": "../namespaces/default.html#function_composerRequired70cf649c6729e26205357ae92cc6898"
         },                {
-            "fqsen": "\\ComposerAutoloaderInitf817bf3519f00d9c72fa828d02a1d637",
-            "name": "ComposerAutoloaderInitf817bf3519f00d9c72fa828d02a1d637",
+            "fqsen": "\\ComposerAutoloaderInitd70cf649c6729e26205357ae92cc6898",
+            "name": "ComposerAutoloaderInitd70cf649c6729e26205357ae92cc6898",
             "summary": "",
-            "url": "../classes/ComposerAutoloaderInitf817bf3519f00d9c72fa828d02a1d637.html"
+            "url": "../classes/ComposerAutoloaderInitd70cf649c6729e26205357ae92cc6898.html"
         },                {
-            "fqsen": "\\ComposerAutoloaderInitf817bf3519f00d9c72fa828d02a1d637\u003A\u003AloadClassLoader\u0028\u0029",
+            "fqsen": "\\ComposerAutoloaderInitd70cf649c6729e26205357ae92cc6898\u003A\u003AloadClassLoader\u0028\u0029",
             "name": "loadClassLoader",
             "summary": "",
-            "url": "../classes/ComposerAutoloaderInitf817bf3519f00d9c72fa828d02a1d637.html#method_loadClassLoader"
+            "url": "../classes/ComposerAutoloaderInitd70cf649c6729e26205357ae92cc6898.html#method_loadClassLoader"
         },                {
-            "fqsen": "\\ComposerAutoloaderInitf817bf3519f00d9c72fa828d02a1d637\u003A\u003AgetLoader\u0028\u0029",
+            "fqsen": "\\ComposerAutoloaderInitd70cf649c6729e26205357ae92cc6898\u003A\u003AgetLoader\u0028\u0029",
             "name": "getLoader",
             "summary": "",
-            "url": "../classes/ComposerAutoloaderInitf817bf3519f00d9c72fa828d02a1d637.html#method_getLoader"
+            "url": "../classes/ComposerAutoloaderInitd70cf649c6729e26205357ae92cc6898.html#method_getLoader"
         },                {
-            "fqsen": "\\ComposerAutoloaderInitf817bf3519f00d9c72fa828d02a1d637\u003A\u003A\u0024loader",
+            "fqsen": "\\ComposerAutoloaderInitd70cf649c6729e26205357ae92cc6898\u003A\u003A\u0024loader",
             "name": "loader",
             "summary": "",
-            "url": "../classes/ComposerAutoloaderInitf817bf3519f00d9c72fa828d02a1d637.html#property_loader"
+            "url": "../classes/ComposerAutoloaderInitd70cf649c6729e26205357ae92cc6898.html#property_loader"
         },                {
-            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637",
-            "name": "ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637",
+            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitd70cf649c6729e26205357ae92cc6898",
+            "name": "ComposerStaticInitd70cf649c6729e26205357ae92cc6898",
             "summary": "",
-            "url": "../classes/Composer-Autoload-ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637.html"
+            "url": "../classes/Composer-Autoload-ComposerStaticInitd70cf649c6729e26205357ae92cc6898.html"
         },                {
-            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637\u003A\u003AgetInitializer\u0028\u0029",
+            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitd70cf649c6729e26205357ae92cc6898\u003A\u003AgetInitializer\u0028\u0029",
             "name": "getInitializer",
             "summary": "",
-            "url": "../classes/Composer-Autoload-ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637.html#method_getInitializer"
+            "url": "../classes/Composer-Autoload-ComposerStaticInitd70cf649c6729e26205357ae92cc6898.html#method_getInitializer"
         },                {
-            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637\u003A\u003A\u0024files",
+            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitd70cf649c6729e26205357ae92cc6898\u003A\u003A\u0024files",
             "name": "files",
             "summary": "",
-            "url": "../classes/Composer-Autoload-ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637.html#property_files"
+            "url": "../classes/Composer-Autoload-ComposerStaticInitd70cf649c6729e26205357ae92cc6898.html#property_files"
         },                {
-            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637\u003A\u003A\u0024prefixLengthsPsr4",
+            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitd70cf649c6729e26205357ae92cc6898\u003A\u003A\u0024prefixLengthsPsr4",
             "name": "prefixLengthsPsr4",
             "summary": "",
-            "url": "../classes/Composer-Autoload-ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637.html#property_prefixLengthsPsr4"
+            "url": "../classes/Composer-Autoload-ComposerStaticInitd70cf649c6729e26205357ae92cc6898.html#property_prefixLengthsPsr4"
         },                {
-            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637\u003A\u003A\u0024prefixDirsPsr4",
+            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitd70cf649c6729e26205357ae92cc6898\u003A\u003A\u0024prefixDirsPsr4",
             "name": "prefixDirsPsr4",
             "summary": "",
-            "url": "../classes/Composer-Autoload-ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637.html#property_prefixDirsPsr4"
+            "url": "../classes/Composer-Autoload-ComposerStaticInitd70cf649c6729e26205357ae92cc6898.html#property_prefixDirsPsr4"
         },                {
-            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637\u003A\u003A\u0024prefixesPsr0",
+            "fqsen": "\\Composer\\Autoload\\ComposerStaticInitd70cf649c6729e26205357ae92cc6898\u003A\u003A\u0024prefixesPsr0",
             "name": "prefixesPsr0",
             "summary": "",
-            "url": "../classes/Composer-Autoload-ComposerStaticInitf817bf3519f00d9c72fa828d02a1d637.html#property_prefixesPsr0"
+            "url": "../classes/Composer-Autoload-ComposerStaticInitd70cf649c6729e26205357ae92cc6898.html#property_prefixesPsr0"
         },                {
             "fqsen": "\\Composer\\Autoload\\includeFile\u0028\u0029",
             "name": "includeFile",
