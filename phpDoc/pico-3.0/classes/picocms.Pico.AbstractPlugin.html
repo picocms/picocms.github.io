@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>Pico 3.0 API Documentation (pico-3.0 branch)</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src').replace( /\\/g, '/');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">Pico 3.0 API Documentation (pico-3.0 branch)</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/picocms.html">\picocms</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">8</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">1</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1185257423"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1185257423" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1705862904"></a>
+                                <a href="../namespaces/picocms.html" style="margin-left: 30px; padding-left: 0">picocms</a>
+            </div>
+            <div id="namespace-1705862904" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-947316848"></a>
+                                <a href="../namespaces/picocms.Pico.html" style="margin-left: 30px; padding-left: 0">Pico</a>
+            </div>
+            <div id="namespace-947316848" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/picocms.Pico.PluginInterface.html">PluginInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/picocms.Pico.AbstractPlugin.html">AbstractPlugin</a></li>
+                                                    <li class="class"><a href="../classes/picocms.Pico.TwigExtension.html">TwigExtension</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/picocms.Pico.html">\picocms\Pico</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\picocms\Pico</small>AbstractPlugin</h1>
+                    <p><em>Abstract class to extend from when implementing a Pico plugin</em></p>
+                    <p>Please refer to <a href="../classes/picocms.Pico.PluginInterface.html">\picocms\Pico\PluginInterface</a> for more information about how to
+develop a plugin for Pico.</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_handleEvent" class="">handleEvent()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_setEnabled" class="">setEnabled()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_isEnabled" class="">isEnabled()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_isStatusChanged" class="">isStatusChanged()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_getPico" class="">getPico()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_getPluginConfig" class="">getPluginConfig()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method___call" class="deprecated">__call()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_getDependencies" class="">getDependencies()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_getDependants" class="">getDependants()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_configEnabled" class="">configEnabled()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_checkDependencies" class="">checkDependencies()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_checkDependants" class="">checkDependants()</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#method_checkCompatibility" class="">checkCompatibility()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#property_pico" class="">$pico</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#property_enabled" class="">$enabled</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#property_statusChanged" class="">$statusChanged</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#property_nativePlugin" class="">$nativePlugin</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#property_dependsOn" class="">$dependsOn</a><br />
+                                                                    <a href="../classes/picocms.Pico.AbstractPlugin.html#property_dependants" class="">$dependants</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                            <span class="label label-info">abstract</span>
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/lib.AbstractPlugin.html"><div class="path-wrapper">lib/AbstractPlugin.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\picocms\Pico\AbstractPlugin</div>
+                            </dd>
+
+                                                                            <dt>Implements</dt>
+                                                        <dd><a href="../classes/picocms.Pico.PluginInterface.html"><div class="namespace-wrapper">\picocms\Pico\PluginInterface</div></a></dd>
+                        
+                        
+                        
+                                                                            <dt>See also</dt>
+                                                                                        <dd><a href="../classes/picocms.Pico.PluginInterface.html"><span class="namespace-wrapper">\picocms\Pico\PluginInterface</span></a></dd>
+                                                                                                                                            <dd><a href="http://picocms.org"><span class="namespace-wrapper">http://picocms.org</span></a></dd>
+                                                                            
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                                                        <p>Daniel Rudolf</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                license
+                            </th>
+                            <td>
+                                                                                                        <p><a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a> The MIT License</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                version
+                            </th>
+                            <td>
+                                                                    3.0                                    
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_pico" name="property_pico" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$pico</h3>
+                <pre class="signature">$pico : \picocms\Pico\Pico</pre>
+                <p><em>Current instance of Pico</em></p>
+                
+
+                                <h4>Type</h4>
+                \picocms\Pico\Pico
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/picocms.Pico.PluginInterface.html#method_getPico"><span class="namespace-wrapper">\picocms\Pico\PluginInterface::getPico()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_enabled" name="property_enabled" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$enabled</h3>
+                <pre class="signature">$enabled : boolean|null</pre>
+                <p><em>Boolean indicating if this plugin is enabled (TRUE) or disabled (FALSE)</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean|null
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/picocms.Pico.PluginInterface.html#method_isEnabled"><span class="namespace-wrapper">\picocms\Pico\PluginInterface::isEnabled()</span></a></dd>
+                                            <dd><a href="../classes/picocms.Pico.PluginInterface.html#method_setEnabled"><span class="namespace-wrapper">\picocms\Pico\PluginInterface::setEnabled()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_statusChanged" name="property_statusChanged" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$statusChanged</h3>
+                <pre class="signature">$statusChanged : boolean</pre>
+                <p><em>Boolean indicating if this plugin was ever enabled/disabled manually</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/picocms.Pico.PluginInterface.html#method_isStatusChanged"><span class="namespace-wrapper">\picocms\Pico\PluginInterface::isStatusChanged()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_nativePlugin" name="property_nativePlugin" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$nativePlugin</h3>
+                <pre class="signature">$nativePlugin : boolean|null</pre>
+                <p><em>Boolean indicating whether this plugin matches Pico&#039;s API version</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean|null
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/picocms.Pico.AbstractPlugin.html#method_checkCompatibility"><span class="namespace-wrapper">\picocms\Pico\AbstractPlugin::checkCompatibility()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_dependsOn" name="property_dependsOn" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$dependsOn</h3>
+                <pre class="signature">$dependsOn : array&lt;mixed,string&gt;</pre>
+                <p><em>List of plugins which this plugin depends on</em></p>
+                
+
+                                <h4>Type</h4>
+                array&lt;mixed,string&gt;
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/picocms.Pico.AbstractPlugin.html#method_checkDependencies"><span class="namespace-wrapper">\picocms\Pico\AbstractPlugin::checkDependencies()</span></a></dd>
+                                            <dd><a href="../classes/picocms.Pico.PluginInterface.html#method_getDependencies"><span class="namespace-wrapper">\picocms\Pico\PluginInterface::getDependencies()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_dependants" name="property_dependants" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$dependants</h3>
+                <pre class="signature">$dependants : array&lt;mixed,object&gt;|null</pre>
+                <p><em>List of plugin which depend on this plugin</em></p>
+                
+
+                                <h4>Type</h4>
+                array&lt;mixed,object&gt;|null
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/picocms.Pico.AbstractPlugin.html#method_checkDependants"><span class="namespace-wrapper">\picocms\Pico\AbstractPlugin::checkDependants()</span></a></dd>
+                                            <dd><a href="../classes/picocms.Pico.PluginInterface.html#method_getDependants"><span class="namespace-wrapper">\picocms\Pico\PluginInterface::getDependants()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(\picocms\Pico\Pico  <span class="argument">$pico</span>) </pre>
+                <p><em>Constructs a new instance of a Pico plugin</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\picocms\Pico\Pico</td>
+                                <td>$pico </td>
+                                <td><p>current instance of Pico</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9394   17981520  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    0.9394   17981520  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9406   17982912  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9394   17981520  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    0.9394   17981520  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9412   17999296  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_handleEvent" name="method_handleEvent" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">handleEvent()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">handleEvent(string  <span class="argument">$eventName</span>, array  <span class="argument">$params</span>) </pre>
+                <p><em>Handles a event that was triggered by Pico</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$eventName </td>
+                                <td><p>name of the triggered event</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$params </td>
+                                <td><p>passed parameters</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9425   17997904  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    0.9425   17997904  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9445   17999296  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9425   17997904  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    0.9425   17997904  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9449   18015680  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setEnabled" name="method_setEnabled" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setEnabled()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setEnabled(boolean  <span class="argument">$enabled</span>, boolean  <span class="argument">$recursive = true</span>, boolean  <span class="argument">$auto = false</span>) </pre>
+                <p><em>Enables or disables this plugin</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$enabled </td>
+                                <td><p>enable (TRUE) or disable (FALSE) this plugin</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$recursive </td>
+                                <td><p>when TRUE, enable or disable recursively.
+In other words, if you enable a plugin, all required plugins are
+enabled, too. When disabling a plugin, all depending plugins are
+disabled likewise. Recursive operations are only performed as long
+as a plugin wasn't enabled/disabled manually. This parameter is
+optional and defaults to TRUE.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$auto </td>
+                                <td><p>enable or disable to fulfill a dependency. This
+parameter is optional and defaults to FALSE.</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9757   18014288  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    0.9757   18014288  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9775   18015680  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    0.9757   18014288  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    0.9757   18014288  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.0290   18015680  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isEnabled" name="method_isEnabled" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">isEnabled()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isEnabled() : boolean|null</pre>
+                <p><em>Returns a boolean indicating whether this plugin is enabled or not</em></p>
+                <p>You musn't rely on the return value when Pico's <code>onConfigLoaded</code> event
+wasn't triggered on all plugins yet. This method might even return NULL
+then. The plugin's status might change later.</p>
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.0300   18030672  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.0300   18030672  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.0306   18031368  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.0300   18030672  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.0300   18030672  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.0788   18031368  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                                    <h4>Returns</h4>
+                    boolean|null
+                                            &mdash; <p>plugin is enabled (TRUE) or disabled (FALSE)</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_isStatusChanged" name="method_isStatusChanged" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">isStatusChanged()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">isStatusChanged() : boolean</pre>
+                <p><em>Returns TRUE if the plugin was ever enabled/disabled manually</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.0804   18047056  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.0804   18047056  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.0848   18047752  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.0804   18047056  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.0804   18047056  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.1272   18047752  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>plugin is in its default state (TRUE), FALSE otherwise</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getPico" name="method_getPico" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPico()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPico() : \picocms\Pico\Pico</pre>
+                <p><em>Returns the plugin&#039;s instance of Pico</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.1807   18047056  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.1807   18047056  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.1813   18047752  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.1807   18047056  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.1807   18047056  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.1817   18064136  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                                    <h4>Returns</h4>
+                    \picocms\Pico\Pico
+                                            &mdash; <p>the plugin's instance of Pico</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getPluginConfig" name="method_getPluginConfig" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPluginConfig()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPluginConfig(string  <span class="argument">$configName = null</span>, mixed  <span class="argument">$default = null</span>) : mixed</pre>
+                <p><em>Returns either the value of the specified plugin config variable or
+the config array</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$configName </td>
+                                <td><p>optional name of a config variable</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$default </td>
+                                <td><p>optional default value to return when the
+named config variable doesn't exist</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.2320   18063440  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.2321   18063440  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.2334   18064832  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.2320   18063440  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.2321   18063440  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.2341   18081216  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                                    <h4>Returns</h4>
+                    mixed
+                                            &mdash; <p>if no name of a config variable has been supplied, the
+plugin's config array is returned; otherwise it returns either the
+value of the named config variable, or, if the named config variable
+doesn't exist, the provided default value or NULL</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___call" name="method___call" class="anchor"></a>
+            <article class="method">
+                <h3 class="public deprecated">__call()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__call(string  <span class="argument">$methodName</span>, array  <span class="argument">$params</span>) : mixed</pre>
+                <p><em>Passes all not satisfiable method calls to Pico</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$methodName </td>
+                                <td><p>name of the method to call</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$params </td>
+                                <td><p>parameters to pass</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.2806   18079824  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.2806   18079824  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.2836   18081216  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.2806   18079824  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.2806   18079824  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.3170   18081216  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                                    <h4>Returns</h4>
+                    mixed
+                                            &mdash; <p>return value of the called method</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                                <aside class="alert alert-block alert-error">
+                    <h4>Deprecated since 2.1.0</h4>
+                    
+                </aside>
+                        <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/picocms.Pico.PluginInterface.html#method_getPico"><span class="namespace-wrapper">\picocms\Pico\PluginInterface::getPico()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDependencies" name="method_getDependencies" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDependencies()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDependencies() : array&lt;mixed,string&gt;</pre>
+                <p><em>Returns a list of names of plugins required by this plugin</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.3212   18098088  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.3212   18098088  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.3226   18098784  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.3212   18098088  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.3212   18098088  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.3579   18098784  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                                    <h4>Returns</h4>
+                    array&lt;mixed,string&gt;
+                                            &mdash; <p>required plugins</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDependants" name="method_getDependants" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDependants()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDependants() : array&lt;mixed,object&gt;</pre>
+                <p><em>Returns a list of plugins which depend on this plugin</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.4020   18114472  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.4020   18114472  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.4029   18115168  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.4020   18114472  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:919
+    1.4020   18114472  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.4035   18115168  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                                    <h4>Returns</h4>
+                    array&lt;mixed,object&gt;
+                                            &mdash; <p>dependant plugins</p>
+                                    
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_configEnabled" name="method_configEnabled" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">configEnabled()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">configEnabled() </pre>
+                <p><em>Enables or disables this plugin depending on Pico&#039;s config</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.4413   18114472  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:944
+    1.4413   18114472  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.4420   18115168  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1275
+
+Call Stack:
+    0.0001     412952   1. {main}() /home/travis/__picocms_tools/phpdoc:0
+    0.0447    2216440   2. require('phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc') /home/travis/__picocms_tools/phpdoc:10
+    0.1305   10246904   3. phpDocumentor\Application->run() phar:///home/travis/__picocms_tools/phpdoc/bin/phpdoc:23
+    0.1320   10393768   4. Cilex\Provider\Console\ContainerAwareApplication->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Application.php:183
+    0.1322   10393768   5. Cilex\Provider\Console\ContainerAwareApplication->doRun() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:126
+    0.1324   10393768   6. Cilex\Provider\Console\ContainerAwareApplication->doRunCommand() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:202
+    0.1324   10393768   7. phpDocumentor\Command\Project\RunCommand->run() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Application.php:855
+    0.1328   10397528   8. phpDocumentor\Command\Project\RunCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.1845   13078560   9. phpDocumentor\Transformer\Command\Project\TransformCommand->run() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Command/Project/RunCommand.php:275
+    0.1849   13081256  10. phpDocumentor\Transformer\Command\Project\TransformCommand->execute() phar:///home/travis/__picocms_tools/phpdoc/vendor/symfony/console/Command/Command.php:266
+    0.2210   14129456  11. phpDocumentor\Console\Output\Output->writeTimedLog() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Command/Project/TransformCommand.php:206
+    0.2211   14129456  12. call_user_func_array:{phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59}() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2211   14129848  13. phpDocumentor\Transformer\Transformer->execute() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Console/Output/Output.php:59
+    0.2223   14137520  14. phpDocumentor\Transformer\Transformer->transformProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:141
+    0.4892   18721848  15. phpDocumentor\Transformer\Transformer->applyTransformationToProject() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:275
+    0.4894   18722008  16. phpDocumentor\Plugin\Twig\Writer\Twig->transform() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Transformer/Transformer.php:312
+    0.8097   17863048  17. Twig_Environment->render() phar:///home/travis/__picocms_tools/phpdoc/src/phpDocumentor/Plugin/Twig/Writer/Twig.php:116
+    0.8148   17873760  18. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->render() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Environment.php:362
+    0.8149   17890272  19. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->display() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:411
+    0.8155   17891400  20. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8155   17891400  21. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8155   17891776  22. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->display() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:26
+    0.8156   17892472  23. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayWithErrorHandling() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:403
+    0.8156   17892472  24. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->doDisplay() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:432
+    0.8520   17959728  25. __TwigTemplate_458a6570315643119e1a567457d9cd408b7a270f2b86b97c789a4137c5476b0e->displayBlock() /tmp/phpdoc-twig-cache/40/40ffac82c41162d474c8a457b35678bf63c4f8aab4d536a184d9aa3c390fc640.php:312
+    0.8521   17959728  26. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->block_content() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.4413   18114472  27. __TwigTemplate_8631aa0ab438723ece340c57a8c607af2d9f3e499a7a8949c20c81869fd9e7dc->displayBlock() /tmp/phpdoc-twig-cache/3a/3a38b9d20a04bc5389b91a715ad423b64067c5cac973e18564ea744c12118cb5.php:944
+    1.4413   18114472  28. __TwigTemplate_a078ff11fcc93c86636bb15d43e62f0a97df80e3d85a4eae004b2c7d51eb326d->block_method() phar:///home/travis/__picocms_tools/phpdoc/vendor/twig/twig/lib/Twig/Template.php:215
+    1.4426   18131552  29. twig_length_filter() /tmp/phpdoc-twig-cache/24/248deac109d4193648bcd7df46bd0dbbec0a65be213e577ee4214191fd633eda.php:140
+
+
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkDependencies" name="method_checkDependencies" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">checkDependencies()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkDependencies(boolean  <span class="argument">$recursive</span>) </pre>
+                <p><em>Enables all plugins which this plugin depends on</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$recursive </td>
+                                <td><p>enable required plugins automatically</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\RuntimeException</dt>
+                            <dd><p>thrown when a dependency fails</p></dd>
+                                                                    </dl>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/picocms.Pico.PluginInterface.html#method_getDependencies"><span class="namespace-wrapper">\picocms\Pico\PluginInterface::getDependencies()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkDependants" name="method_checkDependants" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">checkDependants()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkDependants(boolean  <span class="argument">$recursive</span>) </pre>
+                <p><em>Disables all plugins which depend on this plugin</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$recursive </td>
+                                <td><p>disabled dependant plugins automatically</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\RuntimeException</dt>
+                            <dd><p>thrown when a dependency fails</p></dd>
+                                                                    </dl>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/picocms.Pico.PluginInterface.html#method_getDependants"><span class="namespace-wrapper">\picocms\Pico\PluginInterface::getDependants()</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_checkCompatibility" name="method_checkCompatibility" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">checkCompatibility()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">checkCompatibility() </pre>
+                <p><em>Checks compatibility with Pico&#039;s API version</em></p>
+                <p>Pico automatically adds a dependency to \picocms\Pico\PicoDeprecated when the
+plugin's API is older than Pico's API. \picocms\Pico\PicoDeprecated furthermore
+throws a exception if it can't provide compatibility in such cases.
+However, we still have to decide whether this plugin is compatible to
+newer API versions, what requires some special (version specific)
+precaution and is therefore usually not the case.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\RuntimeException</dt>
+                            <dd><p>thrown when the plugin's and Pico's API aren't
+compatible</p></dd>
+                                                                    </dl>
+                
+                
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/picocms.Pico.AbstractPlugin.html"><div class="path-wrapper">\picocms\Pico\AbstractPlugin</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">AbstractPlugin.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/lib/AbstractPlugin.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/picocms.html">\picocms</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on April 11th, 2020 at 19:25.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
