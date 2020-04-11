@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pico 3.0 API Documentation (pico-3.0 branch)</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="icon" href="../images/favicon.ico"/>
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js"></script>
+    <script src="../js/search.js"></script>
+    <script defer src="../js/searchIndex.js"></script>
+    </head>
+<body>
+<header class="phpdocumentor-top-header"></header>
+<header class="phpdocumentor-header">
+    <section class="phpdocumentor-section">
+        <h1 class="phpdocumentor-title">Pico 3.0 API Documentation (pico-3.0 branch)</h1>
+    </section>
+</header>
+<main class="phpdocumentor">
+    <div class="phpdocumentor-section">
+        <aside class="three phpdocumentor-columns phpdocumentor-sidebar">
+    <section data-search-form class="phpdocumentor-search">
+        <h1 class="phpdocumentor-sidebar__category-header">Search</h1>
+        <label class="phpdocumentor-label">
+            <span class="visually-hidden">Search for</span>
+            <input type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading .." disabled />
+        </label>
+    </section>
+
+    
+    <h1 class="phpdocumentor-sidebar__category-header">Namespaces</h1>
+            <h2 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/default.html"><abbr title="\">Global</abbr></a></h2>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/picocms.html"><abbr title="\picocms">picocms</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/picocms-pico.html"><abbr title="\picocms\Pico">Pico</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/composer.html"><abbr title="\Composer">Composer</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/composer-autoload.html"><abbr title="\Composer\Autoload">Autoload</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/symfony.html"><abbr title="\Symfony">Symfony</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/symfony-polyfill.html"><abbr title="\Symfony\Polyfill">Polyfill</abbr></a></li>
+                                    <li><a href="../namespaces/symfony-component.html"><abbr title="\Symfony\Component">Component</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/twig.html"><abbr title="\Twig">Twig</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/twig-cache.html"><abbr title="\Twig\Cache">Cache</abbr></a></li>
+                                    <li><a href="../namespaces/twig-error.html"><abbr title="\Twig\Error">Error</abbr></a></li>
+                                    <li><a href="../namespaces/twig-extension.html"><abbr title="\Twig\Extension">Extension</abbr></a></li>
+                                    <li><a href="../namespaces/twig-loader.html"><abbr title="\Twig\Loader">Loader</abbr></a></li>
+                                    <li><a href="../namespaces/twig-node.html"><abbr title="\Twig\Node">Node</abbr></a></li>
+                                    <li><a href="../namespaces/twig-nodevisitor.html"><abbr title="\Twig\NodeVisitor">NodeVisitor</abbr></a></li>
+                                    <li><a href="../namespaces/twig-profiler.html"><abbr title="\Twig\Profiler">Profiler</abbr></a></li>
+                                    <li><a href="../namespaces/twig-runtimeloader.html"><abbr title="\Twig\RuntimeLoader">RuntimeLoader</abbr></a></li>
+                                    <li><a href="../namespaces/twig-sandbox.html"><abbr title="\Twig\Sandbox">Sandbox</abbr></a></li>
+                                    <li><a href="../namespaces/twig-test.html"><abbr title="\Twig\Test">Test</abbr></a></li>
+                                    <li><a href="../namespaces/twig-tokenparser.html"><abbr title="\Twig\TokenParser">TokenParser</abbr></a></li>
+                                    <li><a href="../namespaces/twig-util.html"><abbr title="\Twig\Util">Util</abbr></a></li>
+                            </ul>
+            
+    
+    <h1 class="phpdocumentor-sidebar__category-header">Reports</h1>
+        <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/deprecated.html">Deprecated</a></h2>
+    <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/errors.html">Errors</a></h2>
+    <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/markers.html">Markers</a></h2>
+</aside>
+
+        <div class="nine phpdocumentor-columns phpdocumentor-content">
+            <ul class="phpdocumentor-breadcrumbs">
+    <li><a href="../index.html">Home</a></li>
+                        <li><a href="../namespaces/picocms.html">picocms</a></li>
+                    <li><a href="../namespaces/picocms-pico.html">Pico</a></li>
+            </ul>
+
+    <article class="phpdocumentor-element phpdocumentor-class">
+        <h2 class="phpdocumentor-content__title">
+            TwigExtension
+                            <span class="phpdocumentor-class__extends">
+                    extends <a href="../classes/Twig-Extension-AbstractExtension.html"><abbr title="\Twig\Extension\AbstractExtension">AbstractExtension</abbr></a>
+                </span>
+                                                        </h2>
+        <aside class="phpdocumentor-element-found-in">
+            <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+            :
+            <span class="phpdocumentor-element-found-in__line">29</span>
+        </aside>
+
+        <p class="phpdocumentor-class__summary">Pico&#039;s Twig extension to implement additional filters</p>
+        <section class="phpdocumentor-class__description"></section>
+
+        <h3>Table of Contents</h3>
+        <table class="phpdocumentor-table_of_contents">
+                                        <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#property_pico">$pico</a></th>
+                    <td class="phpdocumentor-cell">Current instance of Pico</td>
+                    <td class="phpdocumentor-cell"><a href="../classes/picocms-Pico-Pico.html"><abbr title="\picocms\Pico\Pico">Pico</abbr></a></td>
+                </tr>
+                                                                <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method___construct">__construct()</a></th>
+                    <td class="phpdocumentor-cell">Constructs a new instance of this Twig extension</td>
+                    <td class="phpdocumentor-cell">mixed</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_getPico">getPico()</a></th>
+                    <td class="phpdocumentor-cell">Returns the extensions instance of Pico</td>
+                    <td class="phpdocumentor-cell"><a href="../classes/picocms-Pico-Pico.html"><abbr title="\picocms\Pico\Pico">Pico</abbr></a></td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_getName">getName()</a></th>
+                    <td class="phpdocumentor-cell">Returns the name of the extension</td>
+                    <td class="phpdocumentor-cell">string</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_getFilters">getFilters()</a></th>
+                    <td class="phpdocumentor-cell">Returns a list of Pico-specific Twig filters</td>
+                    <td class="phpdocumentor-cell">\Twig\TwigFilter[]</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_getFunctions">getFunctions()</a></th>
+                    <td class="phpdocumentor-cell">Returns a list of Pico-specific Twig functions</td>
+                    <td class="phpdocumentor-cell">\Twig\TwigFunction[]</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_markdownFilter">markdownFilter()</a></th>
+                    <td class="phpdocumentor-cell">Parses a markdown string to HTML</td>
+                    <td class="phpdocumentor-cell">string</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_mapFilter">mapFilter()</a></th>
+                    <td class="phpdocumentor-cell">Returns a array with the values of the given key or key path</td>
+                    <td class="phpdocumentor-cell">array</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_sortByFilter">sortByFilter()</a></th>
+                    <td class="phpdocumentor-cell">Sorts an array by one of its keys or a arbitrary deep sub-key</td>
+                    <td class="phpdocumentor-cell">array</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_getKeyOfVar">getKeyOfVar()</a></th>
+                    <td class="phpdocumentor-cell">Returns the value of a variable item specified by a scalar key or a
+arbitrary deep sub-key using a key path</td>
+                    <td class="phpdocumentor-cell">mixed</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_urlParamFunction">urlParamFunction()</a></th>
+                    <td class="phpdocumentor-cell">Filters a URL GET parameter with a specified filter</td>
+                    <td class="phpdocumentor-cell">mixed</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_formParamFunction">formParamFunction()</a></th>
+                    <td class="phpdocumentor-cell">Filters a HTTP POST parameter with a specified filter</td>
+                    <td class="phpdocumentor-cell">mixed</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/picocms-Pico-TwigExtension.html#method_pagesFunction">pagesFunction()</a></th>
+                    <td class="phpdocumentor-cell">Returns all pages within a particular branch of Pico&#039;s page tree</td>
+                    <td class="phpdocumentor-cell">array[]</td>
+                </tr>
+                                                    <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-Extension-AbstractExtension.html#method_getTokenParsers">getTokenParsers()</a></th>
+                    <td class="phpdocumentor-cell">Returns the token parser instances to add to the existing list.</td>
+                    <td class="phpdocumentor-cell">\Twig\TokenParser\TokenParserInterface[]</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-Extension-AbstractExtension.html#method_getNodeVisitors">getNodeVisitors()</a></th>
+                    <td class="phpdocumentor-cell">Returns the node visitor instances to add to the existing list.</td>
+                    <td class="phpdocumentor-cell">\Twig\NodeVisitor\NodeVisitorInterface[]</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-Extension-AbstractExtension.html#method_getFilters">getFilters()</a></th>
+                    <td class="phpdocumentor-cell">Returns a list of filters to add to the existing list.</td>
+                    <td class="phpdocumentor-cell">\Twig\TwigFilter[]</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-Extension-AbstractExtension.html#method_getTests">getTests()</a></th>
+                    <td class="phpdocumentor-cell">Returns a list of tests to add to the existing list.</td>
+                    <td class="phpdocumentor-cell">\Twig\TwigTest[]</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-Extension-AbstractExtension.html#method_getFunctions">getFunctions()</a></th>
+                    <td class="phpdocumentor-cell">Returns a list of functions to add to the existing list.</td>
+                    <td class="phpdocumentor-cell">\Twig\TwigFunction[]</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-Extension-AbstractExtension.html#method_getOperators">getOperators()</a></th>
+                    <td class="phpdocumentor-cell">Returns a list of operators to add to the existing list.</td>
+                    <td class="phpdocumentor-cell">array[]</td>
+                </tr>
+                    </table>
+
+        
+                    <section>
+                <h3 class="phpdocumentor-properties__header">Properties</h3>
+                                    <a id="property_pico"></a>
+<article
+        class="
+            phpdocumentor-property
+            phpdocumentor-property--private
+                                "
+>
+    <h4 class="phpdocumentor-property__name">$pico</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">37</span>
+    </aside>
+            <p class="phpdocumentor-summary">Current instance of Pico</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__type"><a href="../classes/picocms-Pico-Pico.html"><abbr title="\picocms\Pico\Pico">Pico</abbr></a></span>
+        <span class="phpdocumentor-signature__name">$pico</span>
+            </code>
+    </article>
+                                                            </section>
+        
+                    <section>
+                <h3 class="phpdocumentor-methods__header">Methods</h3>
+                                    <a id="method___construct"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">__construct()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">44</span>
+    </aside>
+        <p class="phpdocumentor-summary">Constructs a new instance of this Twig extension</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">__construct</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$pico</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/picocms-Pico-Pico.html"><abbr title="\picocms\Pico\Pico">Pico</abbr></a></span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$pico</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/picocms-Pico-Pico.html"><abbr title="\picocms\Pico\Pico">Pico</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>current instance of Pico</p></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                                    <a id="method_getPico"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getPico()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">56</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns the extensions instance of Pico</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getPico</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type"><a href="../classes/picocms-Pico-Pico.html"><abbr title="\picocms\Pico\Pico">Pico</abbr></a></span>
+    </code>
+
+    
+    
+                <h5 class="phpdocumentor-tag-list__heading">Tags</h5>
+        <dl class="phpdocumentor-tag-list">
+                                                <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">see</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    </dl>
+    
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="../classes/picocms-Pico-Pico.html"><abbr title="\picocms\Pico\Pico">Pico</abbr></a></span>
+                    &mdash; <span class="phpdocumentor-description"><p>the extension's instance of Pico</p></span>
+            
+</article>
+                                    <a id="method_getName"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getName()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">68</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns the name of the extension</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getName</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">string</span>
+    </code>
+
+    
+    
+                <h5 class="phpdocumentor-tag-list__heading">Tags</h5>
+        <dl class="phpdocumentor-tag-list">
+                                                <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">see</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    </dl>
+    
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash; <span class="phpdocumentor-description"><p>the extension name</p></span>
+            
+</article>
+                                    <a id="method_getFilters"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getFilters()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">80</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns a list of Pico-specific Twig filters</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getFilters</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">\Twig\TwigFilter[]</span>
+    </code>
+
+    
+    
+                <h5 class="phpdocumentor-tag-list__heading">Tags</h5>
+        <dl class="phpdocumentor-tag-list">
+                                                <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">see</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    </dl>
+    
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">\Twig\TwigFilter[]</span>
+                    &mdash; <span class="phpdocumentor-description"><p>array of Pico's Twig filters</p></span>
+            
+</article>
+                                    <a id="method_getFunctions"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getFunctions()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">102</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns a list of Pico-specific Twig functions</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getFunctions</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">\Twig\TwigFunction[]</span>
+    </code>
+
+    
+    
+                <h5 class="phpdocumentor-tag-list__heading">Tags</h5>
+        <dl class="phpdocumentor-tag-list">
+                                                <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">see</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    </dl>
+    
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">\Twig\TwigFunction[]</span>
+                    &mdash; <span class="phpdocumentor-description"><p>array of Pico's Twig functions</p></span>
+            
+</article>
+                                    <a id="method_markdownFilter"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">markdownFilter()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">128</span>
+    </aside>
+        <p class="phpdocumentor-summary">Parses a markdown string to HTML</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">markdownFilter</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$markdown</span> :
+                <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            [,                 <span class="phpdocumentor-signature__argument__name">$meta</span> :
+                <span class="phpdocumentor-signature__argument__return-type">array</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span> ]            </span>
+                    <span class="phpdocumentor-signature__argument">
+            [,                 <span class="phpdocumentor-signature__argument__name">$singleLine</span> :
+                <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span> ]            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">string</span>
+    </code>
+
+        <section class="phpdocumentor-description"><p>This method is registered as the Twig <code class="prettyprint">markdown</code> filter. You can use it
+to e.g. parse a meta variable (<code class="prettyprint">{{ meta.description|markdown }}</code>).
+Don't use it to parse the contents of a page, use the <code class="prettyprint">content</code> filter
+instead, what ensures the proper preparation of the contents.</p></section>
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$markdown</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>markdown to parse</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$meta</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">array</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">[]</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>meta data to use for %meta.*% replacement</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$singleLine</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">false</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>whether to parse just a single line of markup</p></section></dd>
+                    </dl>
+    
+                <h5 class="phpdocumentor-tag-list__heading">Tags</h5>
+        <dl class="phpdocumentor-tag-list">
+                                                <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">see</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">see</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    </dl>
+    
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash; <span class="phpdocumentor-description"><p>parsed HTML</p></span>
+            
+</article>
+                                    <a id="method_mapFilter"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">mapFilter()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">149</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns a array with the values of the given key or key path</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">mapFilter</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$var</span> :
+                <span class="phpdocumentor-signature__argument__return-type">array|<abbr title="\Traversable">Traversable</abbr></span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$mapKeyPath</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">array</span>
+    </code>
+
+        <section class="phpdocumentor-description"><p>This method is registered as the Twig <code class="prettyprint">map</code> filter. You can use this
+filter to e.g. get all page titles (<code class="prettyprint">{{ pages|map("title") }}</code>).</p></section>
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$var</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">array|<abbr title="\Traversable">Traversable</abbr></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>variable to map</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$mapKeyPath</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>key to map; either a scalar or a
+array interpreted as key path (i.e. ['foo', 'bar'] will return all
+$item['foo']['bar'] values)</p></section></dd>
+                    </dl>
+    
+                <h5 class="phpdocumentor-tag-list__heading">Tags</h5>
+        <dl class="phpdocumentor-tag-list">
+                                                <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">throws</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    </dl>
+    
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array</span>
+                    &mdash; <span class="phpdocumentor-description"><p>mapped values</p></span>
+            
+</article>
+                                    <a id="method_sortByFilter"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">sortByFilter()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">191</span>
+    </aside>
+        <p class="phpdocumentor-summary">Sorts an array by one of its keys or a arbitrary deep sub-key</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">sortByFilter</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$var</span> :
+                <span class="phpdocumentor-signature__argument__return-type">array|<abbr title="\Traversable">Traversable</abbr></span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$sortKeyPath</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            [,                 <span class="phpdocumentor-signature__argument__name">$fallback</span> :
+                <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;bottom&#039;</span> ]            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">array</span>
+    </code>
+
+        <section class="phpdocumentor-description"><p>This method is registered as the Twig <code class="prettyprint">sort_by</code> filter. You can use this
+filter to e.g. sort the pages array by a arbitrary meta value. Calling
+<code class="prettyprint">{{ pages|sort_by([ "meta", "nav" ]) }}</code> returns all pages sorted by the
+meta value <code class="prettyprint">nav</code>. The sorting algorithm will never assume equality of
+two values, it will then fall back to the original order. The result is
+always sorted in ascending order, apply Twigs <code class="prettyprint">reverse</code> filter to
+achieve a descending order.</p></section>
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$var</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">array|<abbr title="\Traversable">Traversable</abbr></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>variable to sort</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$sortKeyPath</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>key to use for sorting; either
+a scalar or a array interpreted as key path (i.e. ['foo', 'bar']
+will sort $var by $item['foo']['bar'])</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$fallback</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">&#039;bottom&#039;</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>specify what to do with items
+which don't contain the specified sort key; use &quot;bottom&quot; (default)
+to move these items to the end of the sorted array, &quot;top&quot; to rank
+them first, &quot;keep&quot; to keep the original order, or &quot;remove&quot; to remove
+these items</p></section></dd>
+                    </dl>
+    
+                <h5 class="phpdocumentor-tag-list__heading">Tags</h5>
+        <dl class="phpdocumentor-tag-list">
+                                                <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">throws</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    </dl>
+    
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array</span>
+                    &mdash; <span class="phpdocumentor-description"><p>sorted array</p></span>
+            
+</article>
+                                    <a id="method_getKeyOfVar"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                    phpdocumentor-element--static                    "
+>
+    <h4 class="phpdocumentor-method__name">getKeyOfVar()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">262</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns the value of a variable item specified by a scalar key or a
+arbitrary deep sub-key using a key path</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                        <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getKeyOfVar</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$var</span> :
+                <span class="phpdocumentor-signature__argument__return-type">array|<abbr title="\Traversable">Traversable</abbr>|<abbr title="\ArrayAccess">ArrayAccess</abbr>|object</span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$keyPath</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$var</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">array|<abbr title="\Traversable">Traversable</abbr>|<abbr title="\ArrayAccess">ArrayAccess</abbr>|object</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>base variable</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$keyPath</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>scalar key or a
+array interpreted as key path (when passing e.g. ['foo', 'bar'], the
+method will return $var['foo']['bar']) specifying the value</p></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash; <span class="phpdocumentor-description"><p>the requested value or NULL when the given key or key path
+didn't match</p></span>
+            
+</article>
+                                    <a id="method_urlParamFunction"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">urlParamFunction()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">323</span>
+    </aside>
+        <p class="phpdocumentor-summary">Filters a URL GET parameter with a specified filter</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">urlParamFunction</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$name</span> :
+                <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            [,                 <span class="phpdocumentor-signature__argument__name">$filter</span> :
+                <span class="phpdocumentor-signature__argument__return-type">int|string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span> ]            </span>
+                    <span class="phpdocumentor-signature__argument">
+            [,                 <span class="phpdocumentor-signature__argument__name">$options</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed|array</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span> ]            </span>
+                    <span class="phpdocumentor-signature__argument">
+            [,                 <span class="phpdocumentor-signature__argument__name">$flags</span> :
+                <span class="phpdocumentor-signature__argument__return-type">int|string|int[]|string[]</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span> ]            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+        <section class="phpdocumentor-description"><p>The Twig function disallows the use of the <code class="prettyprint">callback</code> filter.</p></section>
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$name</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>name of the URL GET parameter
+to filter</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$filter</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">int|string</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>the filter to apply</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$options</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed|array</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">null</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>either a associative options
+array to be used by the filter or a scalar default value</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$flags</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">int|string|int[]|string[]</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">null</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>flags and flag strings to be
+used by the filter</p></section></dd>
+                    </dl>
+    
+                <h5 class="phpdocumentor-tag-list__heading">Tags</h5>
+        <dl class="phpdocumentor-tag-list">
+                                                <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">see</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    </dl>
+    
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash; <span class="phpdocumentor-description"><p>either the filtered data, FALSE if the filter fails, or
+NULL if the URL GET parameter doesn't exist and no default value is
+given</p></span>
+            
+</article>
+                                    <a id="method_formParamFunction"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">formParamFunction()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">352</span>
+    </aside>
+        <p class="phpdocumentor-summary">Filters a HTTP POST parameter with a specified filter</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">formParamFunction</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$name</span> :
+                <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            [,                 <span class="phpdocumentor-signature__argument__name">$filter</span> :
+                <span class="phpdocumentor-signature__argument__return-type">int|string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span> ]            </span>
+                    <span class="phpdocumentor-signature__argument">
+            [,                 <span class="phpdocumentor-signature__argument__name">$options</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed|array</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span> ]            </span>
+                    <span class="phpdocumentor-signature__argument">
+            [,                 <span class="phpdocumentor-signature__argument__name">$flags</span> :
+                <span class="phpdocumentor-signature__argument__return-type">int|string|int[]|string[]</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span> ]            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+        <section class="phpdocumentor-description"><p>The Twig function disallows the use of the <code class="prettyprint">callback</code> filter.</p></section>
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$name</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>name of the HTTP POST
+parameter to filter</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$filter</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">int|string</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>the filter to apply</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$options</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed|array</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">null</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>either a associative options
+array to be used by the filter or a scalar default value</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$flags</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">int|string|int[]|string[]</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">null</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>flags and flag strings to be
+used by the filter</p></section></dd>
+                    </dl>
+    
+                <h5 class="phpdocumentor-tag-list__heading">Tags</h5>
+        <dl class="phpdocumentor-tag-list">
+                                                <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">see</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    </dl>
+    
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash; <span class="phpdocumentor-description"><p>either the filtered data, FALSE if the filter fails, or
+NULL if the HTTP POST parameter doesn't exist and no default value
+is given</p></span>
+            
+</article>
+                                    <a id="method_pagesFunction"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">pagesFunction()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="lib/TwigExtension.php"><a href="../files/lib-twigextension.html"><abbr title="lib/TwigExtension.php">TwigExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">434</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns all pages within a particular branch of Pico&#039;s page tree</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">pagesFunction</span>(
+                    <span class="phpdocumentor-signature__argument">
+            [                <span class="phpdocumentor-signature__argument__name">$start</span> :
+                <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span> ]            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$depth</span> :
+                <span class="phpdocumentor-signature__argument__return-type">int|null</span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$depthOffset</span> :
+                <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            [,                 <span class="phpdocumentor-signature__argument__name">$offset</span> :
+                <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">1</span> ]            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">array[]</span>
+    </code>
+
+        <section class="phpdocumentor-description"><p>This function should be used most of the time when dealing with Pico's
+pages array, as it allows one to easily traverse Pico's pages tree
+(<a href="../classes/picocms-Pico-Pico.html#method_getPageTree">\picocms\Pico\Pico::getPageTree()</a>) to retrieve a subset of Pico's pages array
+in a very convenient and performant way.</p>
+<p>The function's default parameters are <code class="prettyprint">$start = ""</code>, <code class="prettyprint">$depth = 0</code>,
+<code class="prettyprint">$depthOffset = 0</code> and <code class="prettyprint">$offset = 1</code>. A positive <code class="prettyprint">$offset</code> is equivalent
+to <code class="prettyprint">$depth = $depth + $offset</code>, <code class="prettyprint">$depthOffset = $depthOffset + $offset</code>
+and <code class="prettyprint">$offset = 0</code>.</p>
+<p>Consequently the default <code class="prettyprint">$start = ""</code>, <code class="prettyprint">$depth = 0</code>, <code class="prettyprint">$depthOffset = 0</code>
+and <code class="prettyprint">$offset = 1</code> is equivalent to <code class="prettyprint">$depth = 1</code>, <code class="prettyprint">$depthOffset = 1</code> and
+<code class="prettyprint">$offset = 0</code>. <code class="prettyprint">$start = ""</code> instruct the function to start from the
+root node (i.e. the node of Pico's main index page at <code class="prettyprint">index.md</code>).
+<code class="prettyprint">$depth</code> tells the function what pages to return. In this example,
+<code class="prettyprint">$depth = 1</code> matches the start node (i.e. the zeroth generation) and all
+its descendant pages until the first generation (i.e. the start node's
+children). <code class="prettyprint">$depthOffset</code> instructs the function to exclude some of the
+older generations. <code class="prettyprint">$depthOffset = 1</code> specifically tells the function
+to exclude the zeroth generation, so that the function returns all of
+Pico's main index page's direct child pages (like <code class="prettyprint">sub/index.md</code> and
+<code class="prettyprint">page.md</code>, but not <code class="prettyprint">sub/page.md</code>) only.</p>
+<p>Passing <code class="prettyprint">$depthOffset = -1</code> only is the same as passing <code class="prettyprint">$start = ""</code>,
+<code class="prettyprint">$depth = 1</code>, <code class="prettyprint">$depthOffset = 0</code> and <code class="prettyprint">$offset = 0</code>. The only difference
+is that <code class="prettyprint">$depthOffset</code> won't exclude the zeroth generation, so that the
+function returns Pico's main index page as well as all of its direct
+child pages.</p>
+<p>Passing <code class="prettyprint">$depth = 0</code>, <code class="prettyprint">$depthOffset = -2</code> and <code class="prettyprint">$offset = 2</code> is the same
+as passing <code class="prettyprint">$depth = 2</code>, <code class="prettyprint">$depthOffset = 0</code> and <code class="prettyprint">$offset = 0</code>. Both will
+return the zeroth, first and second generation of pages. For Pico's main
+index page this would be <code class="prettyprint">index.md</code> (0th gen), <code class="prettyprint">sub/index.md</code> (1st gen),
+<code class="prettyprint">sub/page.md</code> (2nd gen) and <code class="prettyprint">page.md</code> (1st gen). If you want to return
+2nd gen pages only, pass <code class="prettyprint">$offset = 2</code> only (with implicit <code class="prettyprint">$depth = 0</code>
+and <code class="prettyprint">$depthOffset = 0</code> it's the same as <code class="prettyprint">$depth = 2</code>, <code class="prettyprint">$depthOffset = 2</code>
+and <code class="prettyprint">$offset = 0</code>).</p>
+<p>Instead of an integer you can also pass <code class="prettyprint">$depth = null</code>. This is the
+same as passing an infinitely large number as <code class="prettyprint">$depth</code>, so that this
+function simply returns all descendant pages. Consequently passing
+<code class="prettyprint">$start = ""</code>, <code class="prettyprint">$depth = null</code>, <code class="prettyprint">$depthOffset = 0</code> and <code class="prettyprint">$offset = 0</code>
+returns Pico's full pages array.</p>
+<p>If <code class="prettyprint">$depth</code> is negative after taking <code class="prettyprint">$offset</code> into consideration, the
+function will throw a <a href="../classes/Twig-Error-RuntimeError.html">\Twig\Error\RuntimeError</a> exception, since this
+would simply make no sense and is likely an error. Passing a negative
+<code class="prettyprint">$depthOffset</code> is equivalent to passing <code class="prettyprint">$depthOffset = 0</code>.</p>
+<p>But what about a negative <code class="prettyprint">$offset</code>? Passing <code class="prettyprint">$offset = -1</code> instructs
+the function not to start from the given <code class="prettyprint">$start</code> node, but its parent
+node. Consequently <code class="prettyprint">$offset = -2</code> instructs the function to use the
+<code class="prettyprint">$start</code> node's grandparent node. Obviously this won't make any sense
+for Pico's root node, but just image <code class="prettyprint">$start = "sub/index"</code>. Passing
+this together with <code class="prettyprint">$offset = -1</code> is equivalent to <code class="prettyprint">$start = ""</code> and
+<code class="prettyprint">$offset = 0</code>.</p></section>
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$start</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>name of the node to start from</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$depth</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>return pages until the given maximum depth;
+pass NULL to return all descendant pages; defaults to 0</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$depthOffset</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>start returning pages from the given
+minimum depth; defaults to 0</p></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$offset</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">1</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>ascend (positive) or descend (negative) the
+given number of branches before returning pages; defaults to 1</p></section></dd>
+                    </dl>
+    
+                <h5 class="phpdocumentor-tag-list__heading">Tags</h5>
+        <dl class="phpdocumentor-tag-list">
+                                                <dt class="phpdocumentor-tag-list__entry">
+                        <span class="phpdocumentor-tag__name">throws</span>
+                    </dt>
+                    <dd class="phpdocumentor-tag-list__definition"><section class="phpdocumentor-description"></section></dd>
+                                    </dl>
+    
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array[]</span>
+                    &mdash; <span class="phpdocumentor-description"><p>the data of the matched pages</p></span>
+            
+</article>
+                                                                    <a id="method_getTokenParsers"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getTokenParsers()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/Extension/AbstractExtension.php"><a href="../files/vendor-twig-twig-src-extension-abstractextension.html"><abbr title="vendor/twig/twig/src/Extension/AbstractExtension.php">AbstractExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">16</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns the token parser instances to add to the existing list.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getTokenParsers</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">\Twig\TokenParser\TokenParserInterface[]</span>
+    </code>
+
+    
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">\Twig\TokenParser\TokenParserInterface[]</span>
+            
+</article>
+                                    <a id="method_getNodeVisitors"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getNodeVisitors()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/Extension/AbstractExtension.php"><a href="../files/vendor-twig-twig-src-extension-abstractextension.html"><abbr title="vendor/twig/twig/src/Extension/AbstractExtension.php">AbstractExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">21</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns the node visitor instances to add to the existing list.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getNodeVisitors</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">\Twig\NodeVisitor\NodeVisitorInterface[]</span>
+    </code>
+
+    
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">\Twig\NodeVisitor\NodeVisitorInterface[]</span>
+            
+</article>
+                                    <a id="method_getFilters"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getFilters()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/Extension/AbstractExtension.php"><a href="../files/vendor-twig-twig-src-extension-abstractextension.html"><abbr title="vendor/twig/twig/src/Extension/AbstractExtension.php">AbstractExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">26</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns a list of filters to add to the existing list.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getFilters</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">\Twig\TwigFilter[]</span>
+    </code>
+
+    
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">\Twig\TwigFilter[]</span>
+            
+</article>
+                                    <a id="method_getTests"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getTests()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/Extension/AbstractExtension.php"><a href="../files/vendor-twig-twig-src-extension-abstractextension.html"><abbr title="vendor/twig/twig/src/Extension/AbstractExtension.php">AbstractExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">31</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns a list of tests to add to the existing list.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getTests</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">\Twig\TwigTest[]</span>
+    </code>
+
+    
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">\Twig\TwigTest[]</span>
+            
+</article>
+                                    <a id="method_getFunctions"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getFunctions()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/Extension/AbstractExtension.php"><a href="../files/vendor-twig-twig-src-extension-abstractextension.html"><abbr title="vendor/twig/twig/src/Extension/AbstractExtension.php">AbstractExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">36</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns a list of functions to add to the existing list.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getFunctions</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">\Twig\TwigFunction[]</span>
+    </code>
+
+    
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">\Twig\TwigFunction[]</span>
+            
+</article>
+                                    <a id="method_getOperators"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getOperators()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/Extension/AbstractExtension.php"><a href="../files/vendor-twig-twig-src-extension-abstractextension.html"><abbr title="vendor/twig/twig/src/Extension/AbstractExtension.php">AbstractExtension.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">41</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns a list of operators to add to the existing list.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getOperators</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">array[]</span>
+    </code>
+
+    
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array[]</span>
+                    &mdash; <span class="phpdocumentor-description"><p>First array of unary operators, second array of binary operators</p></span>
+            
+</article>
+                            </section>
+            </article>
+            <div data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+
+                <h2>Search results</h2>
+                <ul class="phpdocumentor-search-results__entries">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

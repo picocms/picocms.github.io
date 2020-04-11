@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pico 3.0 API Documentation (pico-3.0 branch)</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="icon" href="../images/favicon.ico"/>
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js"></script>
+    <script src="../js/search.js"></script>
+    <script defer src="../js/searchIndex.js"></script>
+    </head>
+<body>
+<header class="phpdocumentor-top-header"></header>
+<header class="phpdocumentor-header">
+    <section class="phpdocumentor-section">
+        <h1 class="phpdocumentor-title">Pico 3.0 API Documentation (pico-3.0 branch)</h1>
+    </section>
+</header>
+<main class="phpdocumentor">
+    <div class="phpdocumentor-section">
+        <aside class="three phpdocumentor-columns phpdocumentor-sidebar">
+    <section data-search-form class="phpdocumentor-search">
+        <h1 class="phpdocumentor-sidebar__category-header">Search</h1>
+        <label class="phpdocumentor-label">
+            <span class="visually-hidden">Search for</span>
+            <input type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading .." disabled />
+        </label>
+    </section>
+
+    
+    <h1 class="phpdocumentor-sidebar__category-header">Namespaces</h1>
+            <h2 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/default.html"><abbr title="\">Global</abbr></a></h2>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/picocms.html"><abbr title="\picocms">picocms</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/picocms-pico.html"><abbr title="\picocms\Pico">Pico</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/composer.html"><abbr title="\Composer">Composer</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/composer-autoload.html"><abbr title="\Composer\Autoload">Autoload</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/symfony.html"><abbr title="\Symfony">Symfony</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/symfony-polyfill.html"><abbr title="\Symfony\Polyfill">Polyfill</abbr></a></li>
+                                    <li><a href="../namespaces/symfony-component.html"><abbr title="\Symfony\Component">Component</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/twig.html"><abbr title="\Twig">Twig</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/twig-cache.html"><abbr title="\Twig\Cache">Cache</abbr></a></li>
+                                    <li><a href="../namespaces/twig-error.html"><abbr title="\Twig\Error">Error</abbr></a></li>
+                                    <li><a href="../namespaces/twig-extension.html"><abbr title="\Twig\Extension">Extension</abbr></a></li>
+                                    <li><a href="../namespaces/twig-loader.html"><abbr title="\Twig\Loader">Loader</abbr></a></li>
+                                    <li><a href="../namespaces/twig-node.html"><abbr title="\Twig\Node">Node</abbr></a></li>
+                                    <li><a href="../namespaces/twig-nodevisitor.html"><abbr title="\Twig\NodeVisitor">NodeVisitor</abbr></a></li>
+                                    <li><a href="../namespaces/twig-profiler.html"><abbr title="\Twig\Profiler">Profiler</abbr></a></li>
+                                    <li><a href="../namespaces/twig-runtimeloader.html"><abbr title="\Twig\RuntimeLoader">RuntimeLoader</abbr></a></li>
+                                    <li><a href="../namespaces/twig-sandbox.html"><abbr title="\Twig\Sandbox">Sandbox</abbr></a></li>
+                                    <li><a href="../namespaces/twig-test.html"><abbr title="\Twig\Test">Test</abbr></a></li>
+                                    <li><a href="../namespaces/twig-tokenparser.html"><abbr title="\Twig\TokenParser">TokenParser</abbr></a></li>
+                                    <li><a href="../namespaces/twig-util.html"><abbr title="\Twig\Util">Util</abbr></a></li>
+                            </ul>
+            
+    
+    <h1 class="phpdocumentor-sidebar__category-header">Reports</h1>
+        <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/deprecated.html">Deprecated</a></h2>
+    <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/errors.html">Errors</a></h2>
+    <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/markers.html">Markers</a></h2>
+</aside>
+
+        <div class="nine phpdocumentor-columns phpdocumentor-content">
+            <ul class="phpdocumentor-breadcrumbs">
+    <li><a href="../index.html">Home</a></li>
+                </ul>
+
+    <h2>bootstrap.php</h2>
+
+    
+        <h3>Table of Contents</h3>
+    <table class="phpdocumentor-table_of_contents">
+                            <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_alnum"><abbr title="\ctype_alnum()">ctype_alnum()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+                    <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_alpha"><abbr title="\ctype_alpha()">ctype_alpha()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+                    <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_cntrl"><abbr title="\ctype_cntrl()">ctype_cntrl()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+                    <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_digit"><abbr title="\ctype_digit()">ctype_digit()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+                    <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_graph"><abbr title="\ctype_graph()">ctype_graph()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+                    <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_lower"><abbr title="\ctype_lower()">ctype_lower()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+                    <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_print"><abbr title="\ctype_print()">ctype_print()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+                    <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_punct"><abbr title="\ctype_punct()">ctype_punct()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+                    <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_space"><abbr title="\ctype_space()">ctype_space()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+                    <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_upper"><abbr title="\ctype_upper()">ctype_upper()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+                    <tr>
+                <th class="phpdocumentor-heading"><a href="../namespaces/default.html#function_ctype_xdigit"><abbr title="\ctype_xdigit()">ctype_xdigit()</abbr></a></th>
+                <td class="phpdocumentor-cell"></td>
+                <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+            </tr>
+            </table>
+    
+    
+            <section>
+            <h3 class="phpdocumentor-functions__header">Functions</h3>
+                            <a id="function_ctype_alnum"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_alnum()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">15</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_alnum</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                            <a id="function_ctype_alpha"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_alpha()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">16</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_alpha</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                            <a id="function_ctype_cntrl"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_cntrl()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">17</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_cntrl</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                            <a id="function_ctype_digit"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_digit()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">18</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_digit</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                            <a id="function_ctype_graph"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_graph()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">19</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_graph</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                            <a id="function_ctype_lower"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_lower()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">20</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_lower</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                            <a id="function_ctype_print"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_print()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">21</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_print</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                            <a id="function_ctype_punct"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_punct()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">22</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_punct</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                            <a id="function_ctype_space"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_space()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">23</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_space</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                            <a id="function_ctype_upper"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_upper()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">24</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_upper</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                            <a id="function_ctype_xdigit"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-function
+            phpdocumentor-function--
+                    "
+>
+    <h4 class="phpdocumentor-function__name">ctype_xdigit()</h4>
+
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/polyfill-ctype/bootstrap.php"><a href="../files/vendor-symfony-polyfill-ctype-bootstrap.html"><abbr title="vendor/symfony/polyfill-ctype/bootstrap.php">bootstrap.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">25</span>
+    </aside>
+
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+                                <span class="phpdocumentor-signature__name">ctype_xdigit</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$text</span> :
+                <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$text</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                    </section>
+                <div data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+
+                <h2>Search results</h2>
+                <ul class="phpdocumentor-search-results__entries">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

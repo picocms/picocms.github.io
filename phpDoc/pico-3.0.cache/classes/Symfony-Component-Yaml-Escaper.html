@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="icon" href="../images/favicon.ico"/>
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js"></script>
+    <script src="../js/search.js"></script>
+    <script defer src="../js/searchIndex.js"></script>
+    </head>
+<body>
+<header class="phpdocumentor-top-header"></header>
+<header class="phpdocumentor-header">
+    <section class="phpdocumentor-section">
+        <h1 class="phpdocumentor-title">Documentation</h1>
+    </section>
+</header>
+<main class="phpdocumentor">
+    <div class="phpdocumentor-section">
+        <aside class="three phpdocumentor-columns phpdocumentor-sidebar">
+    <section data-search-form class="phpdocumentor-search">
+        <h1 class="phpdocumentor-sidebar__category-header">Search</h1>
+        <label class="phpdocumentor-label">
+            <span class="visually-hidden">Search for</span>
+            <input type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading .." disabled />
+        </label>
+    </section>
+
+    
+    <h1 class="phpdocumentor-sidebar__category-header">Namespaces</h1>
+            <h2 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/default.html"><abbr title="\">Global</abbr></a></h2>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/picocms.html"><abbr title="\picocms">picocms</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/picocms-pico.html"><abbr title="\picocms\Pico">Pico</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/composer.html"><abbr title="\Composer">Composer</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/composer-autoload.html"><abbr title="\Composer\Autoload">Autoload</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/symfony.html"><abbr title="\Symfony">Symfony</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/symfony-polyfill.html"><abbr title="\Symfony\Polyfill">Polyfill</abbr></a></li>
+                                    <li><a href="../namespaces/symfony-component.html"><abbr title="\Symfony\Component">Component</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/twig.html"><abbr title="\Twig">Twig</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/twig-cache.html"><abbr title="\Twig\Cache">Cache</abbr></a></li>
+                                    <li><a href="../namespaces/twig-error.html"><abbr title="\Twig\Error">Error</abbr></a></li>
+                                    <li><a href="../namespaces/twig-extension.html"><abbr title="\Twig\Extension">Extension</abbr></a></li>
+                                    <li><a href="../namespaces/twig-loader.html"><abbr title="\Twig\Loader">Loader</abbr></a></li>
+                                    <li><a href="../namespaces/twig-node.html"><abbr title="\Twig\Node">Node</abbr></a></li>
+                                    <li><a href="../namespaces/twig-nodevisitor.html"><abbr title="\Twig\NodeVisitor">NodeVisitor</abbr></a></li>
+                                    <li><a href="../namespaces/twig-profiler.html"><abbr title="\Twig\Profiler">Profiler</abbr></a></li>
+                                    <li><a href="../namespaces/twig-runtimeloader.html"><abbr title="\Twig\RuntimeLoader">RuntimeLoader</abbr></a></li>
+                                    <li><a href="../namespaces/twig-sandbox.html"><abbr title="\Twig\Sandbox">Sandbox</abbr></a></li>
+                                    <li><a href="../namespaces/twig-test.html"><abbr title="\Twig\Test">Test</abbr></a></li>
+                                    <li><a href="../namespaces/twig-tokenparser.html"><abbr title="\Twig\TokenParser">TokenParser</abbr></a></li>
+                                    <li><a href="../namespaces/twig-util.html"><abbr title="\Twig\Util">Util</abbr></a></li>
+                            </ul>
+            
+    
+    <h1 class="phpdocumentor-sidebar__category-header">Reports</h1>
+        <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/deprecated.html">Deprecated</a></h2>
+    <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/errors.html">Errors</a></h2>
+    <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/markers.html">Markers</a></h2>
+</aside>
+
+        <div class="nine phpdocumentor-columns phpdocumentor-content">
+            <ul class="phpdocumentor-breadcrumbs">
+    <li><a href="../index.html">Home</a></li>
+                        <li><a href="../namespaces/symfony.html">Symfony</a></li>
+                    <li><a href="../namespaces/symfony-component.html">Component</a></li>
+                    <li><a href="../namespaces/symfony-component-yaml.html">Yaml</a></li>
+            </ul>
+
+    <article class="phpdocumentor-element phpdocumentor-class">
+        <h2 class="phpdocumentor-content__title">
+            Escaper
+                                                        </h2>
+        <aside class="phpdocumentor-element-found-in">
+            <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/yaml/Escaper.php"><a href="../files/vendor-symfony-yaml-escaper.html"><abbr title="vendor/symfony/yaml/Escaper.php">Escaper.php</abbr></a></abbr>
+            :
+            <span class="phpdocumentor-element-found-in__line">22</span>
+        </aside>
+
+        <p class="phpdocumentor-class__summary">Escaper encapsulates escaping rules for single and double-quoted
+YAML strings.</p>
+        <section class="phpdocumentor-class__description"></section>
+
+        <h3>Table of Contents</h3>
+        <table class="phpdocumentor-table_of_contents">
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Symfony-Component-Yaml-Escaper.html#constant_REGEX_CHARACTER_TO_ESCAPE">REGEX_CHARACTER_TO_ESCAPE</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell">&quot;[\\x00-\\x1f]|| | | &quot;</td>
+                </tr>
+                                        <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Symfony-Component-Yaml-Escaper.html#property_escapees">$escapees</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Symfony-Component-Yaml-Escaper.html#property_escaped">$escaped</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+                </tr>
+                                                                <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Symfony-Component-Yaml-Escaper.html#method_requiresDoubleQuoting">requiresDoubleQuoting()</a></th>
+                    <td class="phpdocumentor-cell">Determines if a PHP value would require double quoting in YAML.</td>
+                    <td class="phpdocumentor-cell">bool</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Symfony-Component-Yaml-Escaper.html#method_escapeWithDoubleQuotes">escapeWithDoubleQuotes()</a></th>
+                    <td class="phpdocumentor-cell">Escapes and surrounds a PHP value with double quotes.</td>
+                    <td class="phpdocumentor-cell">string</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Symfony-Component-Yaml-Escaper.html#method_requiresSingleQuoting">requiresSingleQuoting()</a></th>
+                    <td class="phpdocumentor-cell">Determines if a PHP value would require single quoting in YAML.</td>
+                    <td class="phpdocumentor-cell">bool</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Symfony-Component-Yaml-Escaper.html#method_escapeWithSingleQuotes">escapeWithSingleQuotes()</a></th>
+                    <td class="phpdocumentor-cell">Escapes and surrounds a PHP value with single quotes.</td>
+                    <td class="phpdocumentor-cell">string</td>
+                </tr>
+                                            </table>
+
+                    <section>
+                <h3 class="phpdocumentor-constants__header">Constants</h3>
+                                    <a id="constant_REGEX_CHARACTER_TO_ESCAPE"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-constant
+            phpdocumentor-constant--
+                    "
+>
+    <h4 class="phpdocumentor-constant__name">REGEX_CHARACTER_TO_ESCAPE</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/yaml/Escaper.php"><a href="../files/vendor-symfony-yaml-escaper.html"><abbr title="vendor/symfony/yaml/Escaper.php">Escaper.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">25</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__name">$REGEX_CHARACTER_TO_ESCAPE</span>
+        = <span class="phpdocumentor-signature__default-value">&quot;[\\x00-\\x1f]|| | | &quot;</span>
+    </code>
+    </article>
+                                            </section>
+        
+                    <section>
+                <h3 class="phpdocumentor-properties__header">Properties</h3>
+                                    <a id="property_escapees"></a>
+<article
+        class="
+            phpdocumentor-property
+            phpdocumentor-property--private
+            phpdocumentor-property--static                    "
+>
+    <h4 class="phpdocumentor-property__name">$escapees</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/yaml/Escaper.php"><a href="../files/vendor-symfony-yaml-escaper.html"><abbr title="vendor/symfony/yaml/Escaper.php">Escaper.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">31</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__name">$escapees</span>
+         = <span class="phpdocumentor-signature__default-value">[&#039;\\&#039;, &#039;\\\\&#039;, &#039;\\&quot;&#039;, &#039;&quot;&#039;, &quot;\0&quot;, &quot;\1&quot;, &quot;\2&quot;, &quot;\3&quot;, &quot;\4&quot;, &quot;\5&quot;, &quot;\6&quot;, &quot;\7&quot;, &quot;\10&quot;, &quot;\t&quot;, &quot;\n&quot;, &quot;\v&quot;, &quot;\f&quot;, &quot;\r&quot;, &quot;\16&quot;, &quot;\17&quot;, &quot;\20&quot;, &quot;\21&quot;, &quot;\22&quot;, &quot;\23&quot;, &quot;\24&quot;, &quot;\25&quot;, &quot;\26&quot;, &quot;\27&quot;, &quot;\30&quot;, &quot;\31&quot;, &quot;\32&quot;, &quot;\33&quot;, &quot;\34&quot;, &quot;\35&quot;, &quot;\36&quot;, &quot;\37&quot;, &quot;&quot;, &quot; &quot;, &quot; &quot;, &quot; &quot;]</span>    </code>
+    </article>
+                                    <a id="property_escaped"></a>
+<article
+        class="
+            phpdocumentor-property
+            phpdocumentor-property--private
+            phpdocumentor-property--static                    "
+>
+    <h4 class="phpdocumentor-property__name">$escaped</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/yaml/Escaper.php"><a href="../files/vendor-symfony-yaml-escaper.html"><abbr title="vendor/symfony/yaml/Escaper.php">Escaper.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">38</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__name">$escaped</span>
+         = <span class="phpdocumentor-signature__default-value">[&#039;\\\\&#039;, &#039;\\&quot;&#039;, &#039;\\\\&#039;, &#039;\\&quot;&#039;, &#039;\\0&#039;, &#039;\\x01&#039;, &#039;\\x02&#039;, &#039;\\x03&#039;, &#039;\\x04&#039;, &#039;\\x05&#039;, &#039;\\x06&#039;, &#039;\\a&#039;, &#039;\\b&#039;, &#039;\\t&#039;, &#039;\\n&#039;, &#039;\\v&#039;, &#039;\\f&#039;, &#039;\\r&#039;, &#039;\\x0e&#039;, &#039;\\x0f&#039;, &#039;\\x10&#039;, &#039;\\x11&#039;, &#039;\\x12&#039;, &#039;\\x13&#039;, &#039;\\x14&#039;, &#039;\\x15&#039;, &#039;\\x16&#039;, &#039;\\x17&#039;, &#039;\\x18&#039;, &#039;\\x19&#039;, &#039;\\x1a&#039;, &#039;\\e&#039;, &#039;\\x1c&#039;, &#039;\\x1d&#039;, &#039;\\x1e&#039;, &#039;\\x1f&#039;, &#039;\\N&#039;, &#039;\\_&#039;, &#039;\\L&#039;, &#039;\\P&#039;]</span>    </code>
+    </article>
+                                                            </section>
+        
+                    <section>
+                <h3 class="phpdocumentor-methods__header">Methods</h3>
+                                    <a id="method_requiresDoubleQuoting"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                    phpdocumentor-element--static                    "
+>
+    <h4 class="phpdocumentor-method__name">requiresDoubleQuoting()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/yaml/Escaper.php"><a href="../files/vendor-symfony-yaml-escaper.html"><abbr title="vendor/symfony/yaml/Escaper.php">Escaper.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">53</span>
+    </aside>
+        <p class="phpdocumentor-summary">Determines if a PHP value would require double quoting in YAML.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                        <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">requiresDoubleQuoting</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$value</span> :
+                <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">bool</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$value</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>A PHP value</p></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash; <span class="phpdocumentor-description"><p>True if the value would require double quotes</p></span>
+            
+</article>
+                                    <a id="method_escapeWithDoubleQuotes"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                    phpdocumentor-element--static                    "
+>
+    <h4 class="phpdocumentor-method__name">escapeWithDoubleQuotes()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/yaml/Escaper.php"><a href="../files/vendor-symfony-yaml-escaper.html"><abbr title="vendor/symfony/yaml/Escaper.php">Escaper.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">65</span>
+    </aside>
+        <p class="phpdocumentor-summary">Escapes and surrounds a PHP value with double quotes.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                        <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">escapeWithDoubleQuotes</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$value</span> :
+                <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">string</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$value</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>A PHP value</p></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash; <span class="phpdocumentor-description"><p>The quoted, escaped string</p></span>
+            
+</article>
+                                    <a id="method_requiresSingleQuoting"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                    phpdocumentor-element--static                    "
+>
+    <h4 class="phpdocumentor-method__name">requiresSingleQuoting()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/yaml/Escaper.php"><a href="../files/vendor-symfony-yaml-escaper.html"><abbr title="vendor/symfony/yaml/Escaper.php">Escaper.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">77</span>
+    </aside>
+        <p class="phpdocumentor-summary">Determines if a PHP value would require single quoting in YAML.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                        <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">requiresSingleQuoting</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$value</span> :
+                <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">bool</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$value</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>A PHP value</p></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash; <span class="phpdocumentor-description"><p>True if the value would require single quotes</p></span>
+            
+</article>
+                                    <a id="method_escapeWithSingleQuotes"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                    phpdocumentor-element--static                    "
+>
+    <h4 class="phpdocumentor-method__name">escapeWithSingleQuotes()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/symfony/yaml/Escaper.php"><a href="../files/vendor-symfony-yaml-escaper.html"><abbr title="vendor/symfony/yaml/Escaper.php">Escaper.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">97</span>
+    </aside>
+        <p class="phpdocumentor-summary">Escapes and surrounds a PHP value with single quotes.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                        <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">escapeWithSingleQuotes</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$value</span> :
+                <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">string</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$value</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>A PHP value</p></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash; <span class="phpdocumentor-description"><p>The quoted, escaped string</p></span>
+            
+</article>
+                                                            </section>
+            </article>
+            <div data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+
+                <h2>Search results</h2>
+                <ul class="phpdocumentor-search-results__entries">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

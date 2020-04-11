@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pico 3.0 API Documentation (pico-3.0 branch)</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/template.css">
+    <link rel="icon" href="../images/favicon.ico"/>
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.6/fuse.min.js"></script>
+    <script src="../js/search.js"></script>
+    <script defer src="../js/searchIndex.js"></script>
+    </head>
+<body>
+<header class="phpdocumentor-top-header"></header>
+<header class="phpdocumentor-header">
+    <section class="phpdocumentor-section">
+        <h1 class="phpdocumentor-title">Pico 3.0 API Documentation (pico-3.0 branch)</h1>
+    </section>
+</header>
+<main class="phpdocumentor">
+    <div class="phpdocumentor-section">
+        <aside class="three phpdocumentor-columns phpdocumentor-sidebar">
+    <section data-search-form class="phpdocumentor-search">
+        <h1 class="phpdocumentor-sidebar__category-header">Search</h1>
+        <label class="phpdocumentor-label">
+            <span class="visually-hidden">Search for</span>
+            <input type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading .." disabled />
+        </label>
+    </section>
+
+    
+    <h1 class="phpdocumentor-sidebar__category-header">Namespaces</h1>
+            <h2 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/default.html"><abbr title="\">Global</abbr></a></h2>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/picocms.html"><abbr title="\picocms">picocms</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/picocms-pico.html"><abbr title="\picocms\Pico">Pico</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/composer.html"><abbr title="\Composer">Composer</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/composer-autoload.html"><abbr title="\Composer\Autoload">Autoload</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/symfony.html"><abbr title="\Symfony">Symfony</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/symfony-polyfill.html"><abbr title="\Symfony\Polyfill">Polyfill</abbr></a></li>
+                                    <li><a href="../namespaces/symfony-component.html"><abbr title="\Symfony\Component">Component</abbr></a></li>
+                            </ul>
+                    <h3 class="phpdocumentor-sidebar__root-namespace"><a href="../namespaces/twig.html"><abbr title="\Twig">Twig</abbr></a></h3>
+            <ul class="phpdocumentor-list">
+                                    <li><a href="../namespaces/twig-cache.html"><abbr title="\Twig\Cache">Cache</abbr></a></li>
+                                    <li><a href="../namespaces/twig-error.html"><abbr title="\Twig\Error">Error</abbr></a></li>
+                                    <li><a href="../namespaces/twig-extension.html"><abbr title="\Twig\Extension">Extension</abbr></a></li>
+                                    <li><a href="../namespaces/twig-loader.html"><abbr title="\Twig\Loader">Loader</abbr></a></li>
+                                    <li><a href="../namespaces/twig-node.html"><abbr title="\Twig\Node">Node</abbr></a></li>
+                                    <li><a href="../namespaces/twig-nodevisitor.html"><abbr title="\Twig\NodeVisitor">NodeVisitor</abbr></a></li>
+                                    <li><a href="../namespaces/twig-profiler.html"><abbr title="\Twig\Profiler">Profiler</abbr></a></li>
+                                    <li><a href="../namespaces/twig-runtimeloader.html"><abbr title="\Twig\RuntimeLoader">RuntimeLoader</abbr></a></li>
+                                    <li><a href="../namespaces/twig-sandbox.html"><abbr title="\Twig\Sandbox">Sandbox</abbr></a></li>
+                                    <li><a href="../namespaces/twig-test.html"><abbr title="\Twig\Test">Test</abbr></a></li>
+                                    <li><a href="../namespaces/twig-tokenparser.html"><abbr title="\Twig\TokenParser">TokenParser</abbr></a></li>
+                                    <li><a href="../namespaces/twig-util.html"><abbr title="\Twig\Util">Util</abbr></a></li>
+                            </ul>
+            
+    
+    <h1 class="phpdocumentor-sidebar__category-header">Reports</h1>
+        <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/deprecated.html">Deprecated</a></h2>
+    <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/errors.html">Errors</a></h2>
+    <h2 class="phpdocumentor-sidebar__root-package"><a href="../reports/markers.html">Markers</a></h2>
+</aside>
+
+        <div class="nine phpdocumentor-columns phpdocumentor-content">
+            <ul class="phpdocumentor-breadcrumbs">
+    <li><a href="../index.html">Home</a></li>
+                        <li><a href="../namespaces/twig.html">Twig</a></li>
+                    <li><a href="../namespaces/twig-nodevisitor.html">NodeVisitor</a></li>
+            </ul>
+
+    <article class="phpdocumentor-element phpdocumentor-class">
+        <h2 class="phpdocumentor-content__title">
+            OptimizerNodeVisitor
+                                                    <span class="phpdocumentor-class__implements">
+                    implements
+                                            <a href="../classes/Twig-NodeVisitor-NodeVisitorInterface.html"><abbr title="\Twig\NodeVisitor\NodeVisitorInterface">NodeVisitorInterface</abbr></a>                                    </span>
+                                </h2>
+        <aside class="phpdocumentor-element-found-in">
+            <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+            :
+            <span class="phpdocumentor-element-found-in__line">38</span>
+        </aside>
+
+        <p class="phpdocumentor-class__summary">Tries to optimize the AST.</p>
+        <section class="phpdocumentor-class__description"><p>This visitor is always the last registered one.</p>
+<p>You can configure which optimizations you want to activate via the
+optimizer mode.</p></section>
+
+        <h3>Table of Contents</h3>
+        <table class="phpdocumentor-table_of_contents">
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#constant_OPTIMIZE_ALL">OPTIMIZE_ALL</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell">-1</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#constant_OPTIMIZE_NONE">OPTIMIZE_NONE</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell">0</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#constant_OPTIMIZE_FOR">OPTIMIZE_FOR</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell">2</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#constant_OPTIMIZE_RAW_FILTER">OPTIMIZE_RAW_FILTER</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell">4</td>
+                </tr>
+                                        <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#property_loops">$loops</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#property_loopsTargets">$loopsTargets</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#property_optimizers">$optimizers</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell"><a href=""><abbr title=""></abbr></a></td>
+                </tr>
+                                                                <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#method___construct">__construct()</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell">mixed</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#method_enterNode">enterNode()</a></th>
+                    <td class="phpdocumentor-cell">Called before child nodes are visited.</td>
+                    <td class="phpdocumentor-cell"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#method_leaveNode">leaveNode()</a></th>
+                    <td class="phpdocumentor-cell">Called after child nodes are visited.</td>
+                    <td class="phpdocumentor-cell"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a>|null</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#method_optimizePrintNode">optimizePrintNode()</a></th>
+                    <td class="phpdocumentor-cell">Optimizes print nodes.</td>
+                    <td class="phpdocumentor-cell"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#method_optimizeRawFilter">optimizeRawFilter()</a></th>
+                    <td class="phpdocumentor-cell">Removes &quot;raw&quot; filters.</td>
+                    <td class="phpdocumentor-cell"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#method_enterOptimizeFor">enterOptimizeFor()</a></th>
+                    <td class="phpdocumentor-cell">Optimizes &quot;for&quot; tag by removing the &quot;loop&quot; variable creation whenever possible.</td>
+                    <td class="phpdocumentor-cell">void</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#method_leaveOptimizeFor">leaveOptimizeFor()</a></th>
+                    <td class="phpdocumentor-cell">Optimizes &quot;for&quot; tag by removing the &quot;loop&quot; variable creation whenever possible.</td>
+                    <td class="phpdocumentor-cell">void</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#method_addLoopToCurrent">addLoopToCurrent()</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell">void</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#method_addLoopToAll">addLoopToAll()</a></th>
+                    <td class="phpdocumentor-cell"></td>
+                    <td class="phpdocumentor-cell">void</td>
+                </tr>
+                            <tr>
+                    <th class="phpdocumentor-heading"><a href="../classes/Twig-NodeVisitor-OptimizerNodeVisitor.html#method_getPriority">getPriority()</a></th>
+                    <td class="phpdocumentor-cell">Returns the priority for this visitor.</td>
+                    <td class="phpdocumentor-cell">int</td>
+                </tr>
+                                            </table>
+
+                    <section>
+                <h3 class="phpdocumentor-constants__header">Constants</h3>
+                                    <a id="constant_OPTIMIZE_ALL"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-constant
+            phpdocumentor-constant--
+                    "
+>
+    <h4 class="phpdocumentor-constant__name">OPTIMIZE_ALL</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">40</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__name">$OPTIMIZE_ALL</span>
+        = <span class="phpdocumentor-signature__default-value">-1</span>
+    </code>
+    </article>
+                                    <a id="constant_OPTIMIZE_NONE"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-constant
+            phpdocumentor-constant--
+                    "
+>
+    <h4 class="phpdocumentor-constant__name">OPTIMIZE_NONE</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">41</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__name">$OPTIMIZE_NONE</span>
+        = <span class="phpdocumentor-signature__default-value">""</span>
+    </code>
+    </article>
+                                    <a id="constant_OPTIMIZE_FOR"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-constant
+            phpdocumentor-constant--
+                    "
+>
+    <h4 class="phpdocumentor-constant__name">OPTIMIZE_FOR</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">42</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__name">$OPTIMIZE_FOR</span>
+        = <span class="phpdocumentor-signature__default-value">2</span>
+    </code>
+    </article>
+                                    <a id="constant_OPTIMIZE_RAW_FILTER"></a>
+<article
+        class="
+            phpdocumentor-element
+            phpdocumentor-constant
+            phpdocumentor-constant--
+                    "
+>
+    <h4 class="phpdocumentor-constant__name">OPTIMIZE_RAW_FILTER</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">43</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility"></span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__name">$OPTIMIZE_RAW_FILTER</span>
+        = <span class="phpdocumentor-signature__default-value">4</span>
+    </code>
+    </article>
+                                            </section>
+        
+                    <section>
+                <h3 class="phpdocumentor-properties__header">Properties</h3>
+                                    <a id="property_loops"></a>
+<article
+        class="
+            phpdocumentor-property
+            phpdocumentor-property--private
+                                "
+>
+    <h4 class="phpdocumentor-property__name">$loops</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">45</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__name">$loops</span>
+         = <span class="phpdocumentor-signature__default-value">[]</span>    </code>
+    </article>
+                                    <a id="property_loopsTargets"></a>
+<article
+        class="
+            phpdocumentor-property
+            phpdocumentor-property--private
+                                "
+>
+    <h4 class="phpdocumentor-property__name">$loopsTargets</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">46</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__name">$loopsTargets</span>
+         = <span class="phpdocumentor-signature__default-value">[]</span>    </code>
+    </article>
+                                    <a id="property_optimizers"></a>
+<article
+        class="
+            phpdocumentor-property
+            phpdocumentor-property--private
+                                "
+>
+    <h4 class="phpdocumentor-property__name">$optimizers</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">47</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__name">$optimizers</span>
+            </code>
+    </article>
+                                                            </section>
+        
+                    <section>
+                <h3 class="phpdocumentor-methods__header">Methods</h3>
+                                    <a id="method___construct"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">__construct()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">52</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">__construct</span>(
+                    <span class="phpdocumentor-signature__argument">
+            [                <span class="phpdocumentor-signature__argument__name">$optimizers</span> :
+                <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">-1</span> ]            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">mixed</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$optimizers</span>
+                    : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                     = <span class="phpdocumentor-signature__argument__default-value">-1</span>                </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"><p>The optimizer mode</p></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+            
+</article>
+                                    <a id="method_enterNode"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">enterNode()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">61</span>
+    </aside>
+        <p class="phpdocumentor-summary">Called before child nodes are visited.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">enterNode</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$node</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$env</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$node</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$env</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                    &mdash; <span class="phpdocumentor-description"><p>The modified node</p></span>
+            
+</article>
+                                    <a id="method_leaveNode"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">leaveNode()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">70</span>
+    </aside>
+        <p class="phpdocumentor-summary">Called after child nodes are visited.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">leaveNode</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$node</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$env</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a>|null</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$node</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$env</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a>|null</span>
+                    &mdash; <span class="phpdocumentor-description"><p>The modified node or null if the node must be removed</p></span>
+            
+</article>
+                                    <a id="method_optimizePrintNode"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--private
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">optimizePrintNode()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">92</span>
+    </aside>
+        <p class="phpdocumentor-summary">Optimizes print nodes.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+                                <span class="phpdocumentor-signature__name">optimizePrintNode</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$node</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$env</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+    </code>
+
+        <section class="phpdocumentor-description"><p>It replaces:</p>
+<ul>
+<li>&quot;echo $this-&gt;render(Parent)Block()&quot; with &quot;$this-&gt;display(Parent)Block()&quot;</li>
+</ul></section>
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$node</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$env</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+            
+</article>
+                                    <a id="method_optimizeRawFilter"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--private
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">optimizeRawFilter()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">114</span>
+    </aside>
+        <p class="phpdocumentor-summary">Removes &quot;raw&quot; filters.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+                                <span class="phpdocumentor-signature__name">optimizeRawFilter</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$node</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$env</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$node</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$env</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+            
+</article>
+                                    <a id="method_enterOptimizeFor"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--private
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">enterOptimizeFor()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">126</span>
+    </aside>
+        <p class="phpdocumentor-summary">Optimizes &quot;for&quot; tag by removing the &quot;loop&quot; variable creation whenever possible.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+                                <span class="phpdocumentor-signature__name">enterOptimizeFor</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$node</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$env</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">void</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$node</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$env</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+    
+</article>
+                                    <a id="method_leaveOptimizeFor"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--private
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">leaveOptimizeFor()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">190</span>
+    </aside>
+        <p class="phpdocumentor-summary">Optimizes &quot;for&quot; tag by removing the &quot;loop&quot; variable creation whenever possible.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+                                <span class="phpdocumentor-signature__name">leaveOptimizeFor</span>(
+                    <span class="phpdocumentor-signature__argument">
+                            <span class="phpdocumentor-signature__argument__name">$node</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                            </span>
+                    <span class="phpdocumentor-signature__argument">
+            ,                 <span class="phpdocumentor-signature__argument__name">$env</span> :
+                <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                            </span>
+                )
+        : <span class="phpdocumentor-signature__response_type">void</span>
+    </code>
+
+    
+            <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+        <dl class="phpdocumentor-argument-list">
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$node</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Node-Node.html"><abbr title="\Twig\Node\Node">Node</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                            <dt class="phpdocumentor-argument-list__entry">
+                    <span class="phpdocumentor-signature__argument__name">$env</span>
+                    : <span class="phpdocumentor-signature__argument__return-type"><a href="../classes/Twig-Environment.html"><abbr title="\Twig\Environment">Environment</abbr></a></span>
+                                    </dt>
+                <dd class="phpdocumentor-argument-list__definition"><section class="phpdocumentor-description"></section></dd>
+                    </dl>
+    
+        
+    
+</article>
+                                    <a id="method_addLoopToCurrent"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--private
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">addLoopToCurrent()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">199</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+                                <span class="phpdocumentor-signature__name">addLoopToCurrent</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">void</span>
+    </code>
+
+    
+    
+        
+    
+</article>
+                                    <a id="method_addLoopToAll"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--private
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">addLoopToAll()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">204</span>
+    </aside>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+                                <span class="phpdocumentor-signature__name">addLoopToAll</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">void</span>
+    </code>
+
+    
+    
+        
+    
+</article>
+                                    <a id="method_getPriority"></a>
+<article
+        class="
+            phpdocumentor-method
+            phpdocumentor-method--public
+                                                        "
+>
+    <h4 class="phpdocumentor-method__name">getPriority()</h4>
+    <aside class="phpdocumentor-element-found-in">
+        <abbr class="phpdocumentor-element-found-in__file" title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php"><a href="../files/vendor-twig-twig-src-nodevisitor-optimizernodevisitor.html"><abbr title="vendor/twig/twig/src/NodeVisitor/OptimizerNodeVisitor.php">OptimizerNodeVisitor.php</abbr></a></abbr>
+        :
+        <span class="phpdocumentor-element-found-in__line">211</span>
+    </aside>
+        <p class="phpdocumentor-summary">Returns the priority for this visitor.</p>
+        <code class="phpdocumentor-signature phpdocumentor-code ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+                                <span class="phpdocumentor-signature__name">getPriority</span>(
+                )
+        : <span class="phpdocumentor-signature__response_type">int</span>
+    </code>
+
+        <section class="phpdocumentor-description"><p>Priority should be between -10 and 10 (0 is the default).</p></section>
+    
+    
+        
+            <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int</span>
+                    &mdash; <span class="phpdocumentor-description"><p>The priority level</p></span>
+            
+</article>
+                                                            </section>
+            </article>
+            <div data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+
+                <h2>Search results</h2>
+                <ul class="phpdocumentor-search-results__entries">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
