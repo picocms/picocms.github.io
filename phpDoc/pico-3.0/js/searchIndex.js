@@ -41,11 +41,6 @@ Search.appendIndex(
             "summary": "Returns\u0020either\u0020the\u0020value\u0020of\u0020the\u0020specified\u0020plugin\u0020config\u0020variable\u0020or\nthe\u0020config\u0020array",
             "url": "../classes/picocms-Pico-AbstractPlugin.html#method_getPluginConfig"
         },                {
-            "fqsen": "\\picocms\\Pico\\AbstractPlugin\u003A\u003A__call\u0028\u0029",
-            "name": "__call",
-            "summary": "Passes\u0020all\u0020not\u0020satisfiable\u0020method\u0020calls\u0020to\u0020Pico",
-            "url": "../classes/picocms-Pico-AbstractPlugin.html#method___call"
-        },                {
             "fqsen": "\\picocms\\Pico\\AbstractPlugin\u003A\u003AgetDependencies\u0028\u0029",
             "name": "getDependencies",
             "summary": "Returns\u0020a\u0020list\u0020of\u0020names\u0020of\u0020plugins\u0020required\u0020by\u0020this\u0020plugin",
@@ -270,11 +265,6 @@ Search.appendIndex(
             "name": "substituteUrl",
             "summary": "Substitutes\u0020URL\u0020placeholders\u0020\u0028e.g.\u0020\u0025base_url\u0025\u0029",
             "url": "../classes/picocms-Pico-Pico.html#method_substituteUrl"
-        },                {
-            "fqsen": "\\picocms\\Pico\\Pico\u003A\u003AgetBaseThemeUrl\u0028\u0029",
-            "name": "getBaseThemeUrl",
-            "summary": "Returns\u0020the\u0020URL\u0020of\u0020the\u0020themes\u0020folder\u0020of\u0020this\u0020Pico\u0020instance",
-            "url": "../classes/picocms-Pico-Pico.html#method_getBaseThemeUrl"
         },                {
             "fqsen": "\\picocms\\Pico\\Pico\u003A\u003AgetUrlFromPath\u0028\u0029",
             "name": "getUrlFromPath",
