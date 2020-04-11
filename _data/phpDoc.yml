@@ -97,7 +97,7 @@
 - id: pico-3.0
   type: branch
   title: <code>pico-3.0</code> branch
-  last_update: 1586636299
+  last_update: 1586639775
 - id: v3.0.0-alpha.1
   type: version
   title: Pico 3.0.0-alpha.1
