@@ -9,11 +9,11 @@ info:
   License: "[The MIT License](https://github.com/nliautaud/pico-pages-list/blob/master/LICENCE.md)"
 ---
 
-Print a nested pages list in theme with `{% raw %}{{ pages_list }}{% endraw %}`.
+Create a nested HTML navigation tree in your theme using `{% raw %}{{ nested_pages | navigation }}{% endraw %}`.
 
 Features:
 - Nested hierarchy
-- Pages links with titles or page name
+- Supports page filtering
+- Creates page links with page title or page ID
 - Shows category slug if no index page exists
-- Provides utility css classes (`.is-parent, .is-current`) for menu building or filtering
-- Hide specific pages and paths with config setting
+- Provides utility css classes (`.is-page`, `.is-directory`, `.is-current`, `.is-active`, `.has-childs`) for menu building or filtering
