@@ -9,9 +9,9 @@ info:
   License: "[The MIT License](https://github.com/nliautaud/pico-pages-list/blob/master/LICENCE.md)"
 ---
 
-Print a nested pages list in theme with `{{ pages_list }}`.
+Print a nested pages list in theme with `{% raw %}{{ pages_list }}{% endraw %}`.
 
-Features :
+Features:
 - Nested hierarchy
 - Pages links with titles or page name
 - Shows category slug if no index page exists
