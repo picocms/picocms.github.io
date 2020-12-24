@@ -114,3 +114,7 @@
   type: version
   title: Pico 2.1.4
   last_update: 1598715103
+- id: v3.0.0-alpha.2
+  type: version
+  title: Pico 3.0.0-alpha.2
+  last_update: 1608848827
