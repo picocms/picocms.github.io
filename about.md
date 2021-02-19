@@ -87,7 +87,7 @@ galleries:
         fullsize: /style/images/docs/about/fullsize/default_theme.png
       -
         heading: NotePaper
-        description: "[NotePaper](http://development.sjmcdougall.com/pico-themes/NotePaper/) - A highly customizable theme, designed exclusively for Pico."
+        description: "[NotePaper](http://notepaper.mayamcdougall.me) - A highly customizable theme, designed exclusively for Pico."
         thumbnail: /style/images/docs/about/thumbnails/notepaper.jpg
         fullsize: /style/images/docs/about/fullsize//notepaper.jpg
       -
