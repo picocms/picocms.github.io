@@ -5,13 +5,13 @@ categories:
   - single-page
   - portfolio
 description: A projection of yourself.
-link: https://github.com/smcdougall/astral-pico
+link: https://github.com/mayamcdougall/astral-pico
 images:
   - themes/images/fullsize/astral.jpg
   - themes/images/fullsize/astral-gallery.jpg
   - themes/images/fullsize/astral-contact.jpg
 info:
-  Ported By: "[Simon McDougall](http://sjmcdougall.com)"
+  Ported By: "[Maya McDougall](http://mayamcdougall.me)"
   Original By: "[HTML5 UP!](https://html5up.net/astral)"
   License: "[Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/)"
 ---
