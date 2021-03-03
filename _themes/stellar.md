@@ -1,16 +1,16 @@
 ---
 heading: Stellar
-thumbnail: themes/images/thumbnails/stellar.jpg
+thumbnail: themes/images/thumbnails/stellar.png
 categories:
   - single-page
   - portfolio
 description: A projection of yourself.
 link: https://github.com/mayamcdougall/stellar-pico
 images:
-  - themes/images/fullsize/stellar1.jpg
-  - themes/images/fullsize/stellar2.jpg
-  - themes/images/fullsize/stellar3.jpg
-  - themes/images/fullsize/stellar4.jpg
+  - themes/images/fullsize/stellar1.png
+  - themes/images/fullsize/stellar2.png
+  - themes/images/fullsize/stellar3.png
+  - themes/images/fullsize/stellar4.png
 info:
   Ported By: "[Maya McDougall](http://mayamcdougall.me)"
   Original By: "[HTML5 UP!](https://html5up.net/stellar)"
