@@ -4,7 +4,7 @@ thumbnail: themes/images/thumbnails/stellar.png
 categories:
   - single-page
   - portfolio
-description: A projection of yourself.
+description: Shine bright and vibrant.
 link: https://github.com/mayamcdougall/stellar-pico
 images:
   - themes/images/fullsize/stellar1.png
