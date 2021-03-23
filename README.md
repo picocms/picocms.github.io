@@ -1,7 +1,7 @@
 Pico
 ====
 
-This is the repository of [Pico's official website](http://picocms.org/). Pico is a stupidly simple, blazing fast, flat file CMS.
+This is the repository of [Pico's official website](https://picocms.org/). Pico is a stupidly simple, blazing fast, flat file CMS.
 
 For information about how to edit the contents of this website, please refer to the ["Contributing" section](https://github.com/picocms/Pico/#contributing) of the main repository.
 
