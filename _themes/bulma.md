@@ -2,7 +2,7 @@
 heading: Bulma
 thumbnail: themes/images/thumbnails/bulma.png
 categories:
-description: the **modern** CSS framework that just **works.**
+description: the modern CSS framework that just works.
 link: https://github.com/unicate/pico-bulma
 images:
   - themes/images/fullsize/bulma.png
