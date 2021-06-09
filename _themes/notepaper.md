@@ -2,6 +2,7 @@
 heading: NotePaper
 thumbnail: themes/images/thumbnails/notepaper.jpg
 categories:
+  - general
   - blog
 description: Dark wood grain, lined paper, and sticky note widgets.
 link: http://notepaper.mayamcdougall.me

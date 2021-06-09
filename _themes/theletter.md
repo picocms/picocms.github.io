@@ -2,6 +2,7 @@
 heading: The Letter
 thumbnail: themes/images/thumbnails/theletter.png
 categories:
+  - general
   - blog
 description: Pages and leather.
 link: https://github.com/yomli/pico-plugins/tree/master/deprecated/themes/the-letter

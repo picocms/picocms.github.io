@@ -2,6 +2,7 @@
 heading: FlatUI Blog
 thumbnail: themes/images/thumbnails/flatuiblog.png
 categories:
+  - general
   - blog
 description: Can't get much flatter.
 link: https://github.com/fuzzyfox/pico-flatui-blog

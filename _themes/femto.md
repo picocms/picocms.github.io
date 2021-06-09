@@ -2,6 +2,7 @@
 heading: Femto
 thumbnail: themes/images/thumbnails/femto.png
 categories:
+  - general
   - blog
 description: Put your title front and center.
 link: https://github.com/randomchars42/pico-femto
