@@ -12,4 +12,4 @@ info:
   License: "[CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode)"
 ---
 
-A responsive theme with cool background images. Can be used for pretty much, but recommended for portfolio pages due to its minimal-ness.
+A responsive theme with cool background images. Can be used for pretty much anything, but recommended for portfolio pages due to its minimal-ness.
