@@ -217,7 +217,7 @@ These aren't just new "skins" or "widgets" you can apply to your website either.
 
 ### Theming With Twig Templates
 
-Pico's default theme is *not* intended for production use.  It is provided as a great, but minimal starting place for you to develop your own customized website.  If you aren't familiar with HTML, fear not, we have an ever-growing variety of community-created themes available [here on our site][Themes], as well as some more on [our wiki][WikiThemes].
+Pico's default theme is *not* intended for production use.  It is provided as a great, but minimal starting place for you to develop your own customized website.  If you aren't familiar with HTML, fear not, we have an ever-growing variety of community-created themes available on our [themes][Themes] page.
 
 Pico's themes are built using [Twig Templates][Twig].  Twig is a template engine which provides an easy and powerful way to customize your website.  You can use small amounts of Twig to add dynamic content to a mostly-static HTML website, or use large amounts of Twig to build in some really incredible features.  Twig is so powerful that you'll find it can accomplish most tasks by itself, eliminating the need for plugins.  You can find more information on making your own templates in [Twig's Documentation][TwigDocs] and see how they relate to Pico in our own [Documentation][DocsThemes].
 
@@ -256,7 +256,6 @@ Ready to try Pico for yourself?  Head on over to our [Download][] page to get yo
 [License]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/LICENSE.md
 
 [Themes]: {{ site.github.url }}/themes
-[WikiThemes]: {{ site.gh_project_url }}/wiki/Pico-Themes
 [Plugins]: {{ site.github.url }}/plugins
 [WikiPlugins]: {{ site.gh_project_url }}/wiki/Pico-Plugins
 

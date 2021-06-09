@@ -20,7 +20,7 @@ This is all Greek to you? Don't worry, you don't have to spend time on these tec
 
 You can create themes for your Pico installation in the `themes` folder. Pico uses [Twig][] for template rendering. You can select your theme by setting the `theme` option in `config/config.yml` to the name of your theme folder.
 
-[Pico's default theme][PicoTheme] isn't really intended to be used for a productive website, it's rather a starting point for creating your own theme. If the default theme isn't sufficient for you, and you don't want to create your own theme, you can use one of the great themes third-party developers and designers created in the past. As with plugins, you can find themes in [our Wiki][WikiThemes] and on [our website][OfficialThemes].
+[Pico's default theme][PicoTheme] isn't really intended to be used for a productive website, it's rather a starting point for creating your own theme. If the default theme isn't sufficient for you, and you don't want to create your own theme, you can use one of the great themes third-party developers and designers created in the past. As with plugins, you can find themes on our [themes][OfficialThemes] page.
 
 All themes must include an `index.twig` file to define the HTML structure of the theme, and a `pico-theme.yml` to set the necessary config parameters. Just refer to Pico's default theme as an example. You can use different templates for different content files by specifying the `Template` meta header. Simply add e.g. `Template: blog` to the YAML header of a content file and Pico will use the `blog.twig` template in your theme folder to display the page.
 
@@ -118,7 +118,6 @@ You're a plugin developer? We love you guys! You can find tons of information ab
 [FeaturesPageTree]: {{ site.github.url }}/in-depth/features/page-tree/
 [FeaturesPagesFunction]: {{ site.github.url }}/in-depth/features/pages-function/
 [PicoTheme]: https://github.com/picocms/pico-theme
-[WikiThemes]: {{ site.gh_project_url }}/wiki/Pico-Themes
 [WikiPlugins]: {{ site.gh_project_url }}/wiki/Pico-Plugins
 [OfficialPlugins]: {{ site.github.url }}/plugins/
 [OfficialThemes]: {{ site.github.url }}/themes/
