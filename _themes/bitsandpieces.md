@@ -2,7 +2,7 @@
 heading: Bits and Pieces
 thumbnail: themes/images/thumbnails/bitsandpieces.png
 categories:
-  - none
+  - general
 description: Just the useful bits.
 link: https://github.com/lostkeys/Bits-and-Pieces-Theme-for-Pico
 images:

@@ -2,6 +2,7 @@
 heading: Bootstrap
 thumbnail: themes/images/thumbnails/bootstrap.png
 categories:
+  - general
 description: Pull yourself up.
 link: https://github.com/julindra/pico_bootstrap
 images:

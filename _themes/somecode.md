@@ -2,6 +2,7 @@
 heading: Somecode
 thumbnail: themes/images/thumbnails/somecode.png
 categories:
+  - general
 description: Clean and sharp.
 link: https://github.com/michael-hxx/somecode-theme
 images:

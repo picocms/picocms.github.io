@@ -2,6 +2,7 @@
 heading: Pico Pure
 thumbnail: themes/images/thumbnails/picopure.png
 categories:
+  - general
 description: Simple and responsive, with a sidebar.
 link: https://github.com/narcis-radu/pico-pure
 images:

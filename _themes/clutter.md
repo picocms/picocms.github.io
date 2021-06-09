@@ -2,7 +2,7 @@
 heading: Clutter
 thumbnail: themes/images/thumbnails/clutter.jpg
 categories:
-  - none
+  - general
 description: A place for your mental clutter.
 link: https://github.com/luo-ooo/clutter
 images:

@@ -2,6 +2,7 @@
 heading: Uncluttered
 thumbnail: themes/images/thumbnails/uncluttered.png
 categories:
+  - general
 description: Clean things up.
 link: https://github.com/randomchars42/pico-uncluttered
 images:

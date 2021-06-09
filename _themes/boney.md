@@ -2,6 +2,7 @@
 heading: Boney
 thumbnail: themes/images/thumbnails/boney.png
 categories:
+  - general
 description: A little bit Pico, a little bit Skeleton
 link: https://github.com/jgabrielsen/Boney
 images:

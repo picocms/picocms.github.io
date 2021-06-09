@@ -2,6 +2,7 @@
 heading: Pico-JonBeckett
 thumbnail: themes/images/thumbnails/picojonbeckett.png
 categories:
+  - general
 description: A simple theme to get you Bootstrap'd.
 link: https://github.com/jonbeckett/pico-jonbeckett
 images:

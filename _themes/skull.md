@@ -2,6 +2,7 @@
 heading: Skull
 thumbnail: themes/images/thumbnails/skull.png
 categories:
+  - general
 description: Gotta have a good head on your shoulders.
 link: https://github.com/bananana/skull
 images:

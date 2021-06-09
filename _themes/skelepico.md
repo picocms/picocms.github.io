@@ -2,6 +2,7 @@
 heading: Skelepico
 thumbnail: themes/images/thumbnails/skelepico.png
 categories:
+  - general
 description: Built with strong bones.
 link: https://github.com/paulcarl/skelepico-theme
 images:

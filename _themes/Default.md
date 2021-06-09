@@ -2,6 +2,7 @@
 heading: Default
 thumbnail: themes/images/thumbnails/default.png
 categories:
+  - general
 description: It comes in the box.
 link: https://github.com/picocms/pico-theme
 images:
