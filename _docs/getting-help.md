@@ -12,7 +12,7 @@ nav: 6
 
 ### Getting Help as a user
 
-If you want to get started using Pico, please refer to the [user docs][HelpUserDocs] (you're reading them right now!). Please read the [upgrade notes][HelpUpgrade] if you want to upgrade from Pico 1.0 to Pico 2.0. You can find officially supported [plugins][OfficialPlugins] and [themes][OfficialThemes] here on our website. A greater choice of third-party plugins and themes can be found in our [Wiki][] on the [plugins][WikiPlugins] or [themes][WikiThemes] pages respectively. If you want to create your own plugin or theme, please refer to the ["Getting Help as a developer" section][HelpDevOverview] below.
+If you want to get started using Pico, please refer to the [user docs][HelpUserDocs] (you're reading them right now!). Please read the [upgrade notes][HelpUpgrade] if you want to upgrade from Pico 1.0 to Pico 2.0.
 
 ### Getting Help as a developer
 
@@ -27,13 +27,7 @@ When the docs can't answer your question, you can get help by joining us on [#pi
 [HelpUpgrade]: {{ site.github.url }}/in-depth/upgrade/
 [HelpUserDocs]: {{ site.github.url }}/docs/
 [HelpDevDocs]: {{ site.github.url }}/development/
-[HelpDevOverview]: {{ site.github.url }}/docs/#getting-help-as-a-developer
 [HelpDevContribute]: {{ site.github.url }}/docs/#contributing
-[OfficialPlugins]: {{ site.github.url }}/plugins/
-[OfficialThemes]: {{ site.github.url }}/themes/
-[Wiki]: {{ site.gh_project_url }}/wiki
-[WikiPlugins]: {{ site.gh_project_url }}/wiki/Pico-Plugins
-[WikiThemes]: {{ site.gh_project_url }}/wiki/Pico-Themes
 [Issues]: {{ site.gh_project_url }}/issues
 [IssuesSearch]: {{ site.gh_project_url }}/search?type=Issues
 [ContributionGuidelines]: {{ site.gh_project_url }}/blob/{{ site.gh_project_branch }}/CONTRIBUTING.md

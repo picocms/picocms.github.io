@@ -2,13 +2,13 @@
 heading: Clutter
 thumbnail: themes/images/thumbnails/clutter.jpg
 categories:
-  - none
+  - general
 description: A place for your mental clutter.
-link: https://github.com/alan-luo/clutter
+link: https://github.com/luo-ooo/clutter
 images:
   - themes/images/fullsize/clutter.jpg
 info:
-  By: "[Alan Luo](https://alanluo.com)"
+  By: "[Aly Luo](https://github.com/luo-ooo)"
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
 ---
 
