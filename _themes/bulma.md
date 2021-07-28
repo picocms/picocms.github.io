@@ -3,7 +3,7 @@ heading: Bulma
 thumbnail: themes/images/thumbnails/bulma.png
 categories:
   - general
-description: The modern CSS framework that just works.
+description: A lightweight Bulma theme for Pico CMS.
 link: https://github.com/unicate/pico-bulma
 images:
   - themes/images/fullsize/bulma.png
@@ -13,7 +13,7 @@ info:
   License: "[The MIT License](https://github.com/unicate/pico-bulma/blob/master/LICENSE)"
 ---
 
-This project basically provides a Bulma-Theme and starter project for Pico CMS. It can be used as foundation to build your own customized Bulma themes for Pico CMS.
+A lightweight Bulma theme for Pico CMS.
 
 - [Bulma](https://bulma.io/) is a modern CSS framework that just works.
 - Icons from [Fontawesome-free](https://fontawesome.com/icons?m=free) are included and ready to use.

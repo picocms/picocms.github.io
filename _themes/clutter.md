@@ -4,11 +4,11 @@ thumbnail: themes/images/thumbnails/clutter.jpg
 categories:
   - general
 description: A place for your mental clutter.
-link: https://github.com/luo-ooo/clutter
+link: https://github.com/alan-luo/clutter
 images:
   - themes/images/fullsize/clutter.jpg
 info:
-  By: "[Aly Luo](https://github.com/luo-ooo)"
+  By: "[Alan Luo](https://github.com/alan-luo)"
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
 ---
 

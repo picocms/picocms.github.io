@@ -8,7 +8,7 @@ link: https://github.com/alan-luo/attache
 images:
   - themes/images/fullsize/attache.jpg
 info:
-  By: "[Alan Luo](https://alanluo.com)"
+  By: "[Alan Luo](https://github.com/alan-luo)"
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
 ---
 
