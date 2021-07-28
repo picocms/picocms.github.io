@@ -14,6 +14,6 @@ info:
 
 An "uncluttered" theme for Pico CMS.
 
-Based on the [Bits and Pieces](https://github.com/lostkeys/Bits-and-Pieces-Theme-for-Pico) theme by [@lostkeys](https://github.com/lostkeys) and ideas from [Pico Clutter](https://github.com/luo-ooo/clutter) by [@lou-ooo](https://github.com/luo-ooo).
+Based on the [Bits and Pieces](https://github.com/lostkeys/Bits-and-Pieces-Theme-for-Pico) theme by [@lostkeys](https://github.com/lostkeys) and ideas from [Pico Clutter](https://github.com/alan-luo/clutter) by [Alan Luo](https://github.com/alan-luo).
 
 It currently relies on the CurrentLevel-Plugin to display a breadcrumb-esque directory structure.
