@@ -8,7 +8,8 @@ a.button,
 .forms fieldset .btn-submit,
 .comment-form .btn-submit,
 .filter li a,
-.page-navi ul li a {
+.page-navi ul li a,
+div.button-like {
     background-color: #2EAE9B;
 }
 ul li:before {
@@ -145,6 +146,11 @@ ul.contact-info li i {
     background-color: #2EAE9B;
 }
 
+.items li:hover {
+    border: 1px solid #2EAE9B;
+    box-shadow: 0px 0px 6px #2EAE9B;
+}
+
 .fancybox .link:hover {
     background-color: #2EAE9B;
 }
@@ -153,7 +159,7 @@ ul.contact-info li i {
 .items li a .overlay,
 .items li.defaultThumbnail:hover a .overlay,
 .items li.defaultThumbnail.active a .overlay {
-    background-color: rgba(46,174,155, 0.92);
+    background-color: #fffa;
 }
 .item-info li a:hover {
     color: #2EAE9B;
