@@ -3,7 +3,7 @@ heading: File Prefixes
 categories:
   - admin
   - official
-description: Drop file prefixes from page URLs.
+description: PicoFilePrefixes removes file prefixes (e.g. date identifiers) from page URLs.
 link: https://github.com/PhrozenByte/pico-file-prefixes
 info:
   By: "[PhrozenByte](https://github.com/PhrozenByte/)"

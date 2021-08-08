@@ -2,7 +2,7 @@
 heading: Ampia
 categories:
   - utility
-description: Instantly get AMPed!
+description: Provides Google AMP and Facebook Instant Articles versions of all your content pages.
 link: https://github.com/bigicoin/PicoAmpia
 info:
   By: "[bigicoin](https://github.com/bigicoin)"

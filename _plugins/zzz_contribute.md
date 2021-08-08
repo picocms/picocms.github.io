@@ -4,7 +4,7 @@ view: card
 thumbnail: plugins/images/thumbnails/contribute.png
 images:
   - plugins/images/fullsize/contribute.png
-description: Share your own plugin.
+description: Have you made your own plugin and you'd like to see it featured here?  You're in luck!  We're always interested in new submissions.
 link: http://picocms.org/in-depth/submission_guidelines/
 button: Learn More
 ---

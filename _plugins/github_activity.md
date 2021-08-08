@@ -2,7 +2,7 @@
 heading: GitHub Activity
 categories:
   - utility
-description: Have you been active lately?
+description: Display your GitHub public activity feed on your Pico site.
 link: https://github.com/theshka/pico_githubactivity
 info:
   By: "[theshka](https://github.com/theshka)"

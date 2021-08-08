@@ -2,7 +2,7 @@
 heading: Random Page
 categories:
   - utility
-description: Take me anywhere.
+description: This simple plugin allows you to open a random page from your Pico site by using a special, customizable link such as "yoursite.com/random".
 link: https://github.com/PontusHorn/Pico-Random-Page
 info:
   By: "[PontusHorn](https://github.com/PontusHorn)"

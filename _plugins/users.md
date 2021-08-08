@@ -2,7 +2,7 @@
 heading: Users
 categories:
   - admin
-description: Users and rights management.
+description: Adds simple users and rights management.
 link: https://github.com/nliautaud/pico-users
 info:
   By: "[nliautaud](https://github.com/nliautaud)"

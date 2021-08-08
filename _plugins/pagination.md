@@ -2,7 +2,7 @@
 heading: Pagination
 categories:
   - theming
-description: For those with too many pages.
+description: Provides basic pagination support for Pico.  It divides up your "pages" array into a new "paged_pages" variable that allows you to limit the number of pages displayed.
 link: https://github.com/rewdy/Pico-Pagination
 info:
   By: "[rewdy](https://github.com/rewdy)"
