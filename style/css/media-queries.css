@@ -52,23 +52,21 @@
 	.box-layout .portfolio-detail-view-remove	{
 		width:100%;
 	}
-  .items h3 {
+  .items h3,
+  .items h3 .labels,
+  .items h3 .right-side {
     font-size: 18px;
     padding: 18px;
   }
-  .items h3::after {
-    width: 36px;
-    height: 36px;
-  }
   .items h3 .labels {
-    right: 18px;
-    bottom: 18px;
+    padding-left: 36px;
   }
-  .items h3 .labels::before,
-  .items h3 .labels::after {
-      width: 18px;
-      height: 36px;
-      margin-left: -18px;
+  .plugins .items li {
+      width: 486px;
+  }
+  .plugins .items p {
+    font-size: 12px;
+    padding: 0px 18px 18px 18px;
   }
 }
 /* Tablet Portrait size to standard 960 (devices and browsers) */
@@ -193,23 +191,22 @@
 	.box-layout .portfolio-detail-view-remove	{
 		width:100%;
 	}
-  .items h3 {
+  .items h3,
+  .items h3 .labels,
+  .items h3 .right-side {
     font-size: 18px;
     padding: 18px;
   }
-  .items h3::after {
-    width: 36px;
-    height: 36px;
-  }
   .items h3 .labels {
-    right: 18px;
-    bottom: 18px;
+    padding-left: 36px;
   }
-  .items h3 .labels::before,
-  .items h3 .labels::after {
-      width: 18px;
-      height: 36px;
-      margin-left: -18px;
+  .plugins .items li {
+      width: 486px;
+      height: 150px;
+  }
+  .plugins .items p {
+    font-size: 12px;
+    padding: 0px 18px 18px 18px;
   }
 } /* END Smaller than standard 960 (devices and browsers) */
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -449,23 +446,22 @@
 	.resp-navigator {
 	    display: block
 	}
-  .items h3 {
+  .items h3,
+  .items h3 .labels,
+  .items h3 .right-side {
     font-size: 16px;
     padding: 16px;
   }
-  .items h3::after {
-    width: 32px;
-    height: 32px;
-  }
   .items h3 .labels {
-    right: 16px;
-    bottom: 16px;
+    padding-left: 32px;
   }
-  .items h3 .labels::before,
-  .items h3 .labels::after {
-      width: 16px;
-      height: 32px;
-      margin-left: -16px;
+  .plugins .items li {
+      width: 430px;
+      height: 150px;
+  }
+  .plugins .items p {
+    font-size: 11px;
+    padding: 0px 16px 16px 16px;
   }
 } /* END Mobile Landscape Size to Tablet Portrait (devices and browsers) */
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -728,7 +724,9 @@
 	}
 	dd { margin-left: 0; }
 
-  .items h3 {
+  .items h3,
+  .items h3 .labels,
+  .items h3 .right-side {
     font-size: 12px;
     padding: 12px;
   }
@@ -738,22 +736,29 @@
   }
 
   .items h3 .labels {
-    left: 20px;
     background: none;
-    bottom: 0;
+    left: 0;
+    margin-bottom: -10px;
+    padding-left: 12px;
   }
 
-  .items h3 .labels::before,
-  .items h3 .labels::after {
-    content: none;
-    background: none;
+  .plugins .items h3 .labels {
+    margin-top: 10px;
   }
 
   .items h3 .r2g,
   .items h3 .cf,
   .description .r2g,
   .description .cf {
-      font-size: xx-small;
-      padding: 2px 3px;
+    font-size: 9px;
+    padding: 2px 3px;
+  }
+  .plugins .items li {
+    width: 270px;
+    height: 150px;
+  }
+  .plugins .items p {
+    font-size: 11px;
+    padding: 0px 12px 12px 12px;
   }
 } /* END Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */

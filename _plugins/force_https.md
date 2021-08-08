@@ -2,7 +2,7 @@
 heading: Force HTTPS
 categories:
   - utility
-description: Force the use of HTTPS.
+description: Makes sure that users always use the HTTPS protocol when accessing your Pico website.
 link: https://github.com/alejandroliu/ForceHttpsPlugin
 info:
   By: "[alejandroliu](https://github.com/alejandroliu)"
@@ -10,4 +10,3 @@ info:
 ---
 
 Makes sure that users always use the HTTPS protocol when accessing your Pico website.
-

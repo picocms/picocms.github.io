@@ -1,7 +1,12 @@
 {% assign portfolio = include.portfolio | default: page.portfolio.items %}
 {% assign categories = include.categories | default: page.portfolio.categories %}
+{% if page.url contains "themes" %}
+  {% assign portfolio_class = "themes" %}
+{% elsif page.url contains "plugins" %}
+  {% assign portfolio_class = "plugins" %}
+{% endif %}
 
-<div class="portfolio-wrapper showcase">
+<div class="portfolio-wrapper showcase {{ portfolio_class }}">
     <ul class="filter">
         <li><a class="active" href="#" data-filter="*">All</a></li>
         {% for category in categories %}
@@ -99,20 +104,26 @@
                     <div class="overlay">
                         <div class="button-like">Learn More</div>
                     </div>
-                    <img src="{{ site.github.url }}/{{ item.thumbnail | default: page.portfolio.defaultThumbnail | default: "style/images/defaultThumbnail.png" }}" alt="" />
-                    <h3 {% if item.labels contains "cf" or item.labels contains "r2g" %} class="with-labels"{% endif %}>
+                    {% if page.url contains "themes" %}
+                      <img src="{{ site.github.url }}/{{ item.thumbnail | default: page.portfolio.defaultThumbnail | default: "style/images/defaultThumbnail.png" }}" alt="" />
+                    {% endif %}
+                    <h3 {% if item.categories contains "cf" or item.categories contains "r2g" %} class="with-labels"{% endif %}>
                         {{ item.heading | markdownify | remove: "<p>" | remove: "</p>" }}
-                        {% if item.labels contains "cf" or item.labels contains "r2g" %}
+                        <span class="right-side">&nbsp;</span>
+                        {% if item.categories contains "cf" or item.categories contains "r2g" %}
                             <span class="labels">
-                            {% if item.labels contains "r2g" %}
+                            {% if item.categories contains "r2g" %}
                                 <span class="r2g">R2G</span>
                             {% endif %}
-                            {% if item.labels contains "cf" %}
+                            {% if item.categories contains "cf" %}
                                 <span class="cf">CF</span>
                             {% endif %}
                             </span>
                         {% endif %}
                     </h3>
+                    {% if page.url contains "plugins" %}
+                      <p>{{ item.description }}</p>
+                    {% endif %}
                 </a>
             </li>
         {% endfor %}

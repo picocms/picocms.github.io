@@ -2,7 +2,7 @@
 heading: GAnalytics
 categories:
   - utility
-description: They're tracking you anyway...
+description: Google Analytics for Pico with basic options.
 link: https://github.com/bricebou/pico_ganalytics
 info:
   By: "[bricebou](https://github.com/bricebou)"

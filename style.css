@@ -1096,38 +1096,21 @@ ul.contact-info li i {
     white-space: nowrap;
 }
 
-.items h3::after {
-  content: "";
-  background: linear-gradient(to right, #FFF0, #FFF 50%);
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  right: 0;
-  bottom: 1.25ex;
+.items h3 .labels,
+.items h3 .right-side {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    background: linear-gradient(to right, #FFF0, #FFF 20px);
 }
 
 .items h3 .labels {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    background: white;
-    z-index: 1
+    padding-left: 40px;
 }
 
-.items h3 .labels::before,
-.items h3 .labels::after {
-    content: "";
-    background: linear-gradient(to right, #FFF0, #FFFD, #FFF);
-    width: 20px;
-    height: 40px;
-    position: absolute;
-    top: -0.5ex;
-    margin-left: -20px;
-}
-
-.items h3 .labels::after {
-    background: white;
-    margin-left: 0 !important;
+.items h3 .right-side {
+    width: 0;
 }
 
 .description .label {
@@ -1139,12 +1122,11 @@ ul.contact-info li i {
 .description .r2g,
 .description .cf {
     color: white;
-    font-size: x-small;
+    font-size: 10px;
     font-weight: 400;
     background-color: #2EAE9B;
     border-radius: 3px;
     padding: 4px 5px;
-    margin-left: 2px;
     vertical-align: bottom;
 }
 
@@ -1152,6 +1134,32 @@ ul.contact-info li i {
 .description .cf {
     background-color: #BEA5CA;
     }
+
+.plugins .items li {
+    width: 540px;
+    height: 180px;
+    background: url(style/images/puzzle.png) no-repeat bottom left;
+    background-color: white;
+}
+
+.plugins .items a {
+    height: 100%;
+}
+
+.plugins .items h3 {
+    border-top: 0;
+}
+
+.plugins .items p {
+    color: #616161;
+    padding: 0 20px 20px 20px;
+}
+
+.plugins .items h3 .labels,
+.plugins .items h3 .right-side {
+    top: 0;
+    bottom: initial;
+}
 
 .fancybox img {
     display: inline-block;

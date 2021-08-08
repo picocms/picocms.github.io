@@ -2,7 +2,7 @@
 heading: Search
 categories:
   - utility
-description: Search through your pages.
+description: Allows you to create a very basic search form that searches through titles and content of your pages.
 link: https://github.com/PontusHorn/Pico-Search
 info:
   By: "[PontusHorn](https://github.com/PontusHorn)"

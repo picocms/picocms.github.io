@@ -4,7 +4,7 @@ view: card
 thumbnail: plugins/images/thumbnails/more.png
 images:
   - plugins/images/fullsize/more.png
-description: Get more plugins!
+description: Get more plugins over on our Wiki!
 link: https://github.com/picocms/Pico/wiki/Pico-Plugins
 button: Open Wiki
 ---
