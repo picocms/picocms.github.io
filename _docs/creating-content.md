@@ -71,11 +71,10 @@ Robots: noindex,nofollow
 Template: index
 ---</code></pre>
 
-These values will be contained in the `{% raw %}{{ meta }}{% endraw %}` variable in themes (see below). Meta headers sometimes have a special meaning. A few examples: 
+These values will be contained in the `{% raw %}{{ meta }}{% endraw %}` variable in themes (see below). Meta headers can sometimes have special functions. For example: 
 
-- `Title` tells Pico the page title for display and navigation. Pages with no `Title` don't appear in the navigation menu.
 - `Date` tells Pico when the page was created, letting you sort your pages not just alphabetically, but by date. 
-- `Template` controls what Twig template Pico uses to display the page. For exaemple, if you add `Template: blog`, Pico uses `blog.twig`.
+- `Template` controls what Twig template Pico uses to display the page. For example, if you add `Template: blog`, Pico uses `blog.twig`.
 
 You can create your own meta attributes and use them in your content or when modifying a theme. For example, if you create an `Order` attribute, you can set `pages_order_by_meta: Order` and `pages_order_by: meta ` in `config.yml` to sort pages in the navigation menu in a custom order.
 
