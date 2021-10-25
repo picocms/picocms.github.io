@@ -111,7 +111,7 @@ Plugins which were written to work with Pico 1.0 and later can be enabled and di
 
 You're a plugin developer? We love you guys! You can find tons of information about how to develop plugins at [{{ site.github.url }}/development/][PluginDocs]. If you've developed a plugin before and want to upgrade it to Pico 2.0, refer to the [upgrade section of the docs][PluginUpgrade].
 
-[Twig]: https://twig.sensiolabs.org/documentation
+[Twig]: https://twig.symfony.com/doc/1.x/
 [UnixTimestamp]: https://en.wikipedia.org/wiki/Unix_timestamp
 [Composer]: https://getcomposer.org/
 [FeaturesHttpParams]: {{ site.github.url }}/in-depth/features/http-params/
