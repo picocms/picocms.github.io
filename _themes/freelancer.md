@@ -5,23 +5,27 @@ categories:
   - single-page
   - portfolio
 description: Show everyone what you can do.
-link: https://github.com/mayamcdougall/startbootstrap-freelancer-pico
+link: https://github.com/mayamcdougall/freelancer-pico
 images:
   - themes/images/fullsize/freelancer.png
-  - themes/images/fullsize/freelancer-portfolio.png
-  - themes/images/fullsize/freelancer-modal.png
+  - themes/images/fullsize/freelancer-2.png
+  - themes/images/fullsize/freelancer-3.png
+  - themes/images/fullsize/freelancer-4.png
+  - themes/images/fullsize/freelancer-5.png
 info:
   Ported By: "[Maya McDougall](http://mayamcdougall.me)"
-  Original By: "[Start Bootstrap](https://startbootstrap.com/template-overviews/freelancer/)"
-  License: "[The MIT License](https://github.com/mayamcdougall/startbootstrap-freelancer-pico/blob/master/LICENSE)"
+  Original By: "[Start Bootstrap](https://startbootstrap.com/theme/freelancer)"
+  License: "[The MIT License](https://github.com/mayamcdougall/freelancer-pico/blob/main/LICENSE)"
 ---
 
-Freelancer is a one page Bootstrap-based portfolio theme for freelancers.
+Freelancer is a one page portfolio theme that features several content sections, a responsive portfolio grid, modal windows, and a contact form/buttons.
 
 Features:
 
-* Fixed top navigation that collapses on scroll.
-* Responsive portfolio grid with hover effects.
-* Full screen modal windows for featuring project details.
-* Customizable Social buttons using Font Awesome icons.
-* Optional contact form with validation. (Requires additional setup).
+- A responsive portfolio gallery supporting high-resolution thumbnails and header images.
+- Elegant popup modal dialogs with details of each portfolio item.
+- Customizable "action" buttons for your About section, Gallery Items, and standalone pages.
+- Limited support for separate, standalone pages giving you extra versatility.
+- Choose between contact buttons and a contact form (extra setup required). Or have both!
+- Social icons for all your networking needs.
+- Easily configurable entirely in metadata.  Never change a line of code!
