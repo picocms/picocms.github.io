@@ -54,12 +54,12 @@ Please take the opportunity to check whether your webserver is proberly configur
 
 Skipping Twig 2 altogether, Pico now ships with the [Twig 3.3][TwigDocs] template engine for theming.  This update will likely cause some issues, for a complete list please refer to the deprecated features as of [Twig 1.x][TwigDeprecated1] and [Twig 2.x][TwigDeprecated2].  Most changes affect plugin developers only, but a few changes might also break your custom theme, most notably the following:
 
-* You can no longer add an `if` condition to the `for` loop (i.e. `{% for … in … if … %}`), as previously used by Pico's default theme and many 3rd-party themes.  Use a `filter` filter or an `{% if … %}` condition inside the `{% for … in … %}` body instead.
-* The `{% spaceless %}` tag was deprecated in favour of the `spaceless` filter.  You can use `{% apply spaceless %}` as an alternative.
-* Speaking of the `{% apply … %}` tag, the `{% filter … %}` tag was deprecated in favour of the `{% apply … %}` tag.
+* You can no longer add an `if` condition to the `for` loop (i.e. `{% raw %}{% for … in … if … %}{% endraw %}`), as previously used by Pico's default theme and many 3rd-party themes.  Use a `filter` filter or an `{% raw %}{% if … %}{% endraw %}` condition inside the `{% raw %}{% for … in … %}{% endraw %}` body instead.
+* The `{% raw %}{% spaceless %}{% endraw %}` tag was deprecated in favour of the `spaceless` filter.  You can use `{% raw %}{% apply spaceless %}{% endraw %}` as an alternative.
+* Speaking of the `{% raw %}{% apply … %}{% endraw %}` tag, the `{% raw %}{% filter … %}{% endraw %}` tag was deprecated in favour of the `{% raw %}{% apply … %}{% endraw %}` tag.
 * The `sameas` and `divisibleby` tests are deprecated in favor of `same as` and `divisible by` tests respectively.
-* The `{% raw %}` tag (don't confuse this with the `raw` filter) was deprecated.  Use `{% verbatim %}` instead.
-* The `_self` global variable now returns the current template name instead of the current `\Twig\Template` object.  `_self` was often used to retrieve the current template's name, so simply replace `{{ _self.templateName }}` by `{{ _self }}`.
+* The `{% raw %}{% raw %}{% endraw %}` tag (don't confuse this with the `raw` filter) was deprecated.  Use `{% raw %}{% verbatim %}{% endraw %}` instead.
+* The `_self` global variable now returns the current template name instead of the current `\Twig\Template` object.  `_self` was often used to retrieve the current template's name, so simply replace `{% raw %}{{ _self.templateName }}{% endraw %}` by `{% raw %}{{ _self }}{% endraw %}`.
 
 This also brings a bit of new Twig functionality to Pico though.  If you've ever run into an unsupported Twig filter or function due to Pico's older Twig version, now's the time to try it again!  Please refer to [Twig's documentation][TwigDocs] for a complete list of all features.
 
