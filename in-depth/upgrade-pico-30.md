@@ -4,14 +4,10 @@ title: Upgrade to Pico 3.0
 headline: Upgrade Pico 2.1 to Pico 3.0
 description: A small update with a lot of external changes!
 toc:
-    twig-updates-times-two: Twig Updates Times Two
-    yaml-changes-and-urls: YAML Changes and URLs
-    parsedown-downgrade: Parsedown… downgrade
-    upgrading-to-pico-30:
-      _title: Upgrading to Pico 3.0
-      pre-bundled: Pre-Bundled
-      composer: Composer
-      additional-concerns: Additional Concerns
+    how-to-upgrade: How to upgrade
+    upgrade-to-twig-3.3: Upgrade to Twig 3.3
+    upgrade-to-symfony-yaml-5.4: Upgrade to Symfony YAML 5.4
+    downgrade-to-parsedown-1.7: Downgrade to Parsedown 1.7
 more:
     /in-depth/upgrade-pico-10: Upgrade to Pico 1.0
     /in-depth/upgrade-pico-20: Upgrade to Pico 2.0
@@ -24,71 +20,85 @@ redirect_from:
     - /upgrade.html
 ---
 
-Pico 3.0 is now the latest release of PicoCMS.  3.0 is a major version update, but brings with it only minor changes to Pico's core.  What it does bring it might be the biggest "minor change" Pico's had in a while, with majorly updated dependencies.  These updates include switching to Twig v3.x (from v1.x!), Symfony YAML v5.x (from v2.8!), but also a slight step back from parsedown v1.8-beta to the stable 1.7 line.
+You want to learn more about Pico's latest major installment, Pico 3.0?  Pico 3.0 is a major release, but brings relatively small changes to Pico's core.  What it does bring might be the biggest "minor change" Pico had in a while: majorly updated dependencies.  These updates include switching to [Twig 3.3][TwigDocs] (from Twig 1.44), to [Symfony YAML 5.4][YamlDocs]) (from YAML 2.8), but also a slight step back from [Parsedown][] 1.8-beta to the stable Parsedown 1.7 line.
 
-The main reason for these updated dependencies is to finally add support for PHP 8.0.  This should be great news to the majority of Pico users, however, it does also mean Pico now **requires PHP 7.2.5** or newer and that we will no longer be supporting older PHP 5 based environments.
+The main reason for these updates is to better support PHP 8.0.  This should be great news to the majority of Pico users, however, it does also mean that Pico now requires PHP 7.2.5 or newer and that Pico no longer supports (ancient) PHP 5 based environments.
 
 If you have any questions about Pico 3.0, the upgrade process, or if you experience compatibility issues with the upgrade, please see the ["Getting Help" section][GettingHelp] of the docs, and don't be afraid to open a new [Issue][Issues] on GitHub.
 
-## Twig Updates Times Two
+## How to upgrade
 
-Skipping 2.0 altogether, Pico now ships with the Twig 3.x line.  This will hopefully be a smooth transition, but there could be some Theme incompatibility since we have not just [one](https://twig.symfony.com/doc/1.x/deprecated.html), but [two](https://twig.symfony.com/doc/2.x/deprecated.html) rounds of **Deprecated Features** to be on the lookout for.
+Pico 3.0 is a major release, thus **it will likely break your website** at first.  Check out the changes below to learn what to change to fix the expected issues.  This documentation assumes that you've upgraded to Pico 2.1 before; if you're running an older version, check out the upgrade docs to their respective successor first ([to Pico 1.0][UpgradePico10], [to Pico 2.0][UpgradePico20], and [to Pico 2.1][UpgradePico21]).  No matter what, make sure to **create a backup of your Pico installation before upgrading**.  After that you can follow the regular [Upgrade instructions][Upgrade] for major releases.  For convenience, these instructions are also provided below:
 
-This also brings a bit of new Twig functionality to Pico though.  If you've ever run into an unsupported Twig filter or function due to Pico's older Twig version, now's the time to try it again!
+1. **Create a backup of your Pico installation.**
 
-If you encounter issues with existing Pico Themes, be sure to let their respective developers know (as well as pointing them toward this page)!
+2. Think about how you've installed Pico in the past. Did you use [Composer][] or one of Pico's pre-bundled releases?
 
+    - If you've used Composer to install Pico, upgrading Pico itself is no more than running a single command.  Open a shell and navigate to Pico's install directory within the `httpdocs` directory (e.g. `/var/www/html/pico`) of your server.  You can now upgrade Pico using the following command:
 
-## YAML Changes and URLs
+        ```shell
+        $ php composer.phar update
+        ```
 
-Pico now uses the current v5.x version of Symfony YAML.  This change should go mostly unnoticed, however if you have issues with your YAML after updating, you should check Symfony YAML's [Changelog](https://github.com/symfony/yaml/blob/5.4/CHANGELOG.md).
+        That's it! Composer will automatically update Pico and all plugins and themes you've installed using Composer.
 
-**Of Important Note** to Pico users however is that starting an unquoted string with `%` is no longer allowed!
+   - If you've used one of Pico's pre-bundled releases, the upgrade steps are dead simple, too.  First you'll have to delete the `vendor` directory of your Pico installation (e.g. if you've installed Pico to `/var/www/html/pico`, delete `/var/www/html/pico/vendor`).  Then [download the latest Pico release][LatestRelease] and upload all files to your existing Pico installation directory.  You will be prompted whether you want to overwrite files like `index.php`, `.htaccess`, ... - simply hit "Yes". That's it!
 
-This means that any urls in your YAML metadata that start with a variable (eg `%base_url%`, `%assets_url%`), must now be quoted! For example:
+3. Check all your custom plugins and themes whether there are updates available and follow the provided upgrade instructions to upgrade them.  Pico 3.0 introduces the new API version 4 for both plugins and themes. However, Pico 3.0 is mostly backwards-compatible to Pico 2.1 (using API version 3) and earlier.  This is achieved by Pico's official [`PicoDeprecated` plugin][PicoDeprecated].  The `PicoDeprecated` plugin is installed by default, so usually you don't have to do anything.  However, if you've removed `PicoDeprecated` from your Pico installation before, make sure to either upgrade all your plugins and themes to the latest API version 4, or install `PicoDeprecated` by following the plugin's install instructions.
 
-```yml
-Logo: "%assets_url%/img/pico-white.svg"
-```
+4. The most important change of Pico 3.0 are updated dependencies - namely [Twig 3.3][TwigDocs], to [Symfony YAML 5.4][YamlDocs]), and [Parsedown 1.7][Parsedown].  The new versions of Twig and YAML will very likely cause some issues for you!  Refer to the ["Upgrade to Twig 3.3"][UpgradeTwig], ["Upgrade to Symfony YAML 5.4"][UpgradeYaml], and ["Downgrade to Parsedown 1.7"][UpgradeParsedown] sections below to learn what has changed and how to fix the issues.
 
-If you were doing this already, you won't notice a change.  But, if you haven't been using quotes, you'll likely have to search out and fix these.
+Please take the opportunity to check whether your webserver is proberly configured, and access to Pico's internal files and directories is denied.  Just refer to the ["URL Rewriting" section in the docs][UrlRewriting].  By following the instructions, you will not just enable URL rewriting, but also deny access to Pico's internal files and directories.
 
-If your editor has a "Find in Files" feature, you can probably find them all with a simple search for `: %` in your content folder.
+## Upgrade to Twig 3.3
 
-## Parsedown... downgrade
+Skipping Twig 2 altogether, Pico now ships with the [Twig 3.3][TwigDocs] template engine for theming.  This update will likely cause some issues, for a complete list please refer to the deprecated features as of [Twig 1.x][TwigDeprecated1] and [Twig 2.x][TwigDeprecated2].  Most changes affect plugin developers only, but a few changes might also break your custom theme, most notably the following:
 
-Due to the long development time on Parsedown's version 1.8, which is still in beta, we've decided to revert to using Parsedown 1.7.x for the time being.  This shouldn't have much of an impact on Pico users, however we do recommend you give your content files a quick look over to make sure they still render correctly in the older version.
+* You can no longer add an `if` condition to the `for` loop (i.e. `{% for … in … if … %}`), as previously used by Pico's default theme and many 3rd-party themes.  Use a `filter` filter or an `{% if … %}` condition inside the `{% for … in … %}` body instead.
+* The `{% spaceless %}` tag was deprecated in favour of the `spaceless` filter.  You can use `{% apply spaceless %}` as an alternative.
+* Speaking of the `{% apply … %}` tag, the `{% filter … %}` tag was deprecated in favour of the `{% apply … %}` tag.
+* The `sameas` and `divisibleby` tests are deprecated in favor of `same as` and `divisible by` tests respectively.
+* The `{% raw %}` tag (don't confuse this with the `raw` filter) was deprecated.  Use `{% verbatim %}` instead.
+* The `_self` global variable now returns the current template name instead of the current `\Twig\Template` object.  `_self` was often used to retrieve the current template's name, so simply replace `{{ _self.templateName }}` by `{{ _self }}`.
 
----
+This also brings a bit of new Twig functionality to Pico though.  If you've ever run into an unsupported Twig filter or function due to Pico's older Twig version, now's the time to try it again!  Please refer to [Twig's documentation][TwigDocs] for a complete list of all features.
 
-## Upgrading to Pico 3.0
+If you encounter issues with existing 3rd-party Pico themes, be sure to let their respective developers know and point them toward this page.
 
-Upgrading Pico is as easy as always.  Before you begin, make sure to **create a backup of your Pico installation** in case you encounter problems!  Always better to be safe than sorry.
+## Upgrade to Symfony YAML 5.4
 
-### Pre-Bundled
+Pico now utilizes the latest [Symfony YAML 5.4][YamlDocs]) release to parse YAML.  This change should go mostly unnoticed, but might still cause some minor issues with the YAML Frontmatters your Markdown files, or your config files.  Please check out Symfony's [changelog][YamlChangelog] for a complete list of changes.  Most notably the following might require some changes:
 
-If you're using a Pre-Bundled release, the upgrade process is the same as a fresh install.  Start by grabbing the [new version][LatestRelease] from GitHub.  Move or rename your old Pico folder.  Extract the files from the new release into an empty folder, and name it as desired.  Migrate over your personal files (config, content, assets, themes, and plugins) to the new Pico install and you're good to go.
+* Unquoted YAML values must no longer start with a percent sign (`%`), at sign (`@`), grave accent (```), vertical bar (`|`), or greater-than sign (`>`).  This will most likely cause some issues with Pico's URL placeholders (e.g. `%base_url%`, or `%assets_url%`), as you must now quote these strings.  For example, `Logo: %assets_url%/img/pico-white.svg` must be replaced by `Logo: "%assets_url%/img/pico-white.svg"`.
+* When surrounding strings with double-quotes, you must now escape the backslash character (`\`; e.g. `class: "Foo\Bar"` must be replaced by `class: "Foo\\Bar"`).
+* Symfony YAML streamlined the use of mappings (i.e. `key: value` pairs): You can no longer use non-string mapping keys (replace e.g. `123: integer` by `"123": integer`), as they now cause errors.  Duplicate mapping keys (i.e. using the same key twice) will now also cause an error.  Symfony YAML now additionally requires a whitespace after the colon (`:`) separating key and value of a mapping (replace e.g. `key:value` by `key: value`).
+* You can no longer use mappings inside multi-line strings.
+* Support for the comma (`,`) as a group separator for floats has been dropped.  Use the underscore (`_`) instead (i.e. use `1_234.56` instead of `1,234.56`).
+* Symfony YAML changed the behaviour of various custom (non-standard) YAML tags (e.g. `!php/object`).  Check out the changelog for more details.
 
-While you're at it, you might want to check if any of your Themes and Plugins have been updated.  If you encounter any issues with them, be sure to contact their respective developers and let them know!
+## Downgrade to Parsedown 1.7
 
-### Composer
+In regards of Pico's Markdown parser - [Parsedown][] - we perform a downgrade to Parsedown 1.7.  We upgraded to Parsedown 1.8-beta with Pico 2.1 due to its major improvements regarding its improved support for [CommonMark][], but considering its long development time and abandonment in favour of Parsedown 2.0 (also still in development), we decided to switch back to the more commonly used stable Parsedown 1.7.  This shouldn't have much of an impact on Pico users, however we do recommend you give your content files a quick look over to make sure they still render correctly in the older Parsedown 1.7 version.
 
-If you installed via Composer, you can upgrade with one command.  Just navigate to your Pico directory and run:
+[UpgradeTwig]: #upgrade-to-twig-3.3
+[UpgradeYaml]: #upgrade-to-symfony-yaml-5.4
+[UpgradeParsedown]: #downgrade-to-parsedown-1.7
 
-```shell
-$ php composer.phar update
-```
-
-That's it!  If you have any manually installed Themes or Plugins (as in, *not* installed via Composer), you might want to check if any of them have been updated.  If you encounter any issues with Themes or Plugins, be sure to contact their respective developers and let them know!
-
-### Additional Concerns
-
-As mentioned above, there may be some **compatibility issues** to be on the lookout for this time around.  Since we're upgrading Twig by *two* versions in this release, it might introduce bugs or errors with some Themes.  Be sure to contact the Theme's developer if you discover an incompatibility!  (In the meantime, feel free to inquire on [GitHub][Issues], and we'll see if we can help you through it.)
-
-The upgrade to Symfony YAML might cause you issues if you haven't been quoting your URLs, so get some quotes wrapped around those!
-
-And finally, the Parsedown downgrade might effect the rendering of your content in some edge cases, so give your pages a quick look-over to make sure your content is all still good.
-
-[LatestRelease]: {{ site.gh_project_url }}/releases/latest
 [GettingHelp]: {{ site.github.url }}/docs/#getting-help
 [Issues]: {{ site.gh_project_url }}/issues
+
+[Upgrade]: {{ site.github.url }}/docs/#upgrade
+[UpgradePico10]: {{ site.github.url }}/in-depth/upgrade-pico-10
+[UpgradePico20]: {{ site.github.url }}/in-depth/upgrade-pico-20
+[UpgradePico21]: {{ site.github.url }}/in-depth/upgrade-pico-21
+[LatestRelease]: {{ site.gh_project_url }}/releases/latest
+
+[TwigDocs]: https://twig.symfony.com/doc/3.x/
+[TwigDeprecated1]: https://twig.symfony.com/doc/1.x/deprecated.html
+[TwigDeprecated2]: https://twig.symfony.com/doc/2.x/deprecated.html
+[YamlDocs]: https://symfony.com/doc/5.4/components/yaml.html
+[YamlChangelog]: https://github.com/symfony/yaml/blob/5.4/CHANGELOG.md
+[Parsedown]: https://parsedown.org/
+[CommonMark]: https://commonmark.org/
+
+[PicoDeprecated]: https://github.com/picocms/pico-deprecated
