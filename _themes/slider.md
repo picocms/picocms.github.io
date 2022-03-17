@@ -5,15 +5,12 @@ categories:
   - single-page 
 description: All your pages embed in a slider.
 link: https://github.com/psic/PicoCMS-slider-theme
-
 images:
-  - themes/imagess/fullsize/slider_withTOC.png
-  - themes/imagess/fullsize/slider_wihtoutTOC.png
-
+  - themes/images/fullsize/slider_withTOC.png
+  - themes/images/fullsize/slider_wihtoutTOC.png
 info:
   By: "[psic](https://github.com/psic)"
-License: "[WTF public license ](http://www.wtfpl.net/)"
-
+  License: "[WTF public license ](http://www.wtfpl.net/)"
 ---
 
 A simple picoCMS theme :
