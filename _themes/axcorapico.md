@@ -4,7 +4,7 @@ thumbnail: themes/images/thumbnails/axcorapico.jpg
 categories:
   - single-page
   - portfolio
-description: Axcorapico with pico css feat pico cms.
+description: A clean and minimalistic design, featuring Pico CSS.
 link: https://github.com/mesinkasir/axcora-pico
 images:
   - themes/images/fullsize/axcorapico.png
@@ -13,6 +13,4 @@ info:
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
 ---
 
-Axcorapico just picohollic !!
-
-Minimalist clean design with pico cms feat pico css bonus fontawesome
+A clean and minimalistic design, featuring Pico CSS (no relation to Pico CMS) and Font Awesome support.
