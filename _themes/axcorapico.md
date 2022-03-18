@@ -1,6 +1,6 @@
 ---
 heading: AxcoraPico
-thumbnail: themes/images/thumbnails/axcorapico.jpg
+thumbnail: themes/images/thumbnails/axcorapico.png
 categories:
   - single-page
   - portfolio
