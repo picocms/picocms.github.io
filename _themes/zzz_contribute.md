@@ -15,6 +15,6 @@ Our entire website is featured on [GitHub][EditThemes].  Submitting a new item f
 
 We appreciate any and all contributions, whether you've created something original or ported an existing HTML theme (license permitting), we'd love to see it!
 
-[EditThemes]: {{ site.gh_project_url }}/tree/{{ site.gh_pages_branch }}/_themes
+[EditThemes]: {{ site.gh_pages_url }}/tree/{{ site.gh_pages_branch }}/_themes
 [HelpPR]: https://help.github.com/articles/creating-a-pull-request/
 [SubmissionGuidelines]: {{ site.github.url }}/in-depth/submission_guidelines

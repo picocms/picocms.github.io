@@ -24,7 +24,7 @@
         <script type="text/javascript">
         function loadExternalCodeSnippets() {
             Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-                var src = pre.getAttribute('data-src');
+                var src = pre.getAttribute('data-src').replace( /\\/g, '/');
                 var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
                 var language = 'php';
 
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-119029032"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-530739147"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-119029032" class="accordion-body collapse in">
+            <div id="namespace-530739147" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -236,19 +236,19 @@ to update your plugin to use Pico's latest API version.</p>
                                             <tr>
                             <th>author</th>
                             <td>
-                                                                    <p>Daniel Rudolf</p>
+                                                                                                        <p>Daniel Rudolf</p>
                                                             </td>
                         </tr>
                                             <tr>
                             <th>license</th>
                             <td>
-                                                                    <p><a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a> The MIT License</p>
+                                                                                                        <p><a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a> The MIT License</p>
                                                             </td>
                         </tr>
                                             <tr>
                             <th>version</th>
                             <td>
-                                                                    
+                                                                    2.1                                    
                                                             </td>
                         </tr>
                                         </table>
@@ -288,13 +288,15 @@ to update your plugin to use Pico's latest API version.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoPluginInterface.html"><div class="path-wrapper">\PicoPluginInterface</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -343,13 +345,15 @@ parameter is optional and defaults to FALSE.</p></td>
                             <dd><p>thrown when a dependency fails</p></dd>
                                                                     </dl>
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoPluginInterface.html"><div class="path-wrapper">\PicoPluginInterface</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/PicoPluginInterface.html#method_isEnabled"><span class="namespace-wrapper">\PicoPluginInterface::isEnabled()</span></a></dd>
                                             <dd><a href="../classes/PicoPluginInterface.html#method_isStatusChanged"><span class="namespace-wrapper">\PicoPluginInterface::isStatusChanged()</span></a></dd>
                                                                 </dl>
@@ -377,13 +381,15 @@ then. The plugin's status might change later.</p>
                                     <h4>Returns</h4>
                     boolean|null
                                             &mdash; <p>plugin is enabled (TRUE) or disabled (FALSE)</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoPluginInterface.html"><div class="path-wrapper">\PicoPluginInterface</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/PicoPluginInterface.html#method_setEnabled"><span class="namespace-wrapper">\PicoPluginInterface::setEnabled()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -408,13 +414,15 @@ then. The plugin's status might change later.</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>plugin is in its default state (TRUE), FALSE otherwise</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoPluginInterface.html"><div class="path-wrapper">\PicoPluginInterface</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/PicoPluginInterface.html#method_setEnabled"><span class="namespace-wrapper">\PicoPluginInterface::setEnabled()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -439,13 +447,15 @@ then. The plugin's status might change later.</p>
                                     <h4>Returns</h4>
                     array&lt;mixed,string&gt;
                                             &mdash; <p>required plugins</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoPluginInterface.html"><div class="path-wrapper">\PicoPluginInterface</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -468,13 +478,15 @@ then. The plugin's status might change later.</p>
                                     <h4>Returns</h4>
                     array&lt;mixed,object&gt;
                                             &mdash; <p>dependant plugins</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                            </dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoPluginInterface.html"><div class="path-wrapper">\PicoPluginInterface</div></a></dd>
+                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -497,14 +509,16 @@ then. The plugin's status might change later.</p>
                                     <h4>Returns</h4>
                     <a href="../classes/Pico.html">\Pico</a>
                                             &mdash; <p>the plugin's instance of Pico</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
-                                                                <dd><a href=""><span class="namespace-wrapper">\\Pico</span></a></dd>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/PicoPluginInterface.html"><div class="path-wrapper">\PicoPluginInterface</div></a></dd>
+                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/Pico.html"><span class="namespace-wrapper">\Pico</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -562,7 +576,7 @@ then. The plugin's status might change later.</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 31st, 2019 at 15:39.
+                    on August 29th, 2020 at 15:19.
                 </section>
             </section>
         </section>

@@ -24,7 +24,7 @@
     <script type="text/javascript">
     function loadExternalCodeSnippets() {
         Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-            var src = pre.getAttribute('data-src');
+            var src = pre.getAttribute('data-src').replace( /\\/g, '/');
             var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
             var language = 'php';
 
@@ -136,10 +136,10 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-435791802"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1416563841"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-435791802" class="accordion-body collapse in">
+            <div id="namespace-1416563841" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
@@ -287,7 +287,7 @@ Simply remove the events you don't need and add your own logic.</p>
                         
                                                                             <dt>See also</dt>
                                                                                         <dd><a href="http://picocms.org"><span class="namespace-wrapper">http://picocms.org</span></a></dd>
-                                                    
+                                                                            
                                                                         </dl>
                     <h2>Tags</h2>
                     <table class="table table-condensed">
@@ -296,7 +296,7 @@ Simply remove the events you don't need and add your own logic.</p>
                                 author
                             </th>
                             <td>
-                                                                    <p>Daniel Rudolf</p>
+                                                                                                        <p>Daniel Rudolf</p>
                                                             </td>
                         </tr>
                                             <tr>
@@ -304,7 +304,7 @@ Simply remove the events you don't need and add your own logic.</p>
                                 license
                             </th>
                             <td>
-                                                                    <p><a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a> The MIT License</p>
+                                                                                                        <p><a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a> The MIT License</p>
                                                             </td>
                         </tr>
                                             <tr>
@@ -312,7 +312,7 @@ Simply remove the events you don't need and add your own logic.</p>
                                 version
                             </th>
                             <td>
-                                                                    
+                                                                    2.1                                    
                                                             </td>
                         </tr>
                                         </table>
@@ -332,7 +332,7 @@ Simply remove the events you don't need and add your own logic.</p>
             <a id="constant_API_VERSION" name="constant_API_VERSION" class="anchor"></a>
             <article id="constant_API_VERSION" class="constant">
                 <h3 class="">API_VERSION</h3>
-                <pre class="signature">API_VERSION</pre>
+                <pre class="signature">API_VERSION = 3 : integer</pre>
                 <p><em>API version used by this plugin</em></p>
                 
             </article>
@@ -416,7 +416,7 @@ plugin in Pico's config.</p>
             <h1><i class="icon-arrow-down"></i></h1>
                         <dl>
                                                                             <dt>See also</dt>
-                                                                <dd><a href="../classes/AbstractPicoPlugin.html#property_enabled"><span class="namespace-wrapper">\AbstractPicoPlugin::enabled</span></a></dd>
+                                                                <dd><a href=""><span class="namespace-wrapper">\AbstractPicoPlugin::$enabled</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -500,7 +500,7 @@ property.</p>
             <h1><i class="icon-arrow-down"></i></h1>
                         <dl>
                                                                             <dt>See also</dt>
-                                                                <dd><a href="../classes/AbstractPicoPlugin.html#property_dependsOn"><span class="namespace-wrapper">\AbstractPicoPlugin::dependsOn</span></a></dd>
+                                                                <dd><a href=""><span class="namespace-wrapper">\AbstractPicoPlugin::$dependsOn</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
@@ -565,7 +565,7 @@ property.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -606,7 +606,7 @@ property.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -658,7 +658,7 @@ parameter is optional and defaults to FALSE.</p></td>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -691,7 +691,7 @@ then. The plugin's status might change later.</p>
                                     <h4>Returns</h4>
                     boolean|null
                                             &mdash; <p>plugin is enabled (TRUE) or disabled (FALSE)</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -722,7 +722,7 @@ then. The plugin's status might change later.</p>
                                     <h4>Returns</h4>
                     boolean
                                             &mdash; <p>plugin is in its default state (TRUE), FALSE otherwise</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -753,7 +753,7 @@ then. The plugin's status might change later.</p>
                                     <h4>Returns</h4>
                     <a href="../classes/Pico.html">\Pico</a>
                                             &mdash; <p>the plugin's instance of Pico</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -802,7 +802,7 @@ named config variable doesn't exist</p></td>
 plugin's config array is returned; otherwise it returns either the
 value of the named config variable, or, if the named config variable
 doesn't exist, the provided default value or NULL</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -846,7 +846,7 @@ doesn't exist, the provided default value or NULL</p>
                                     <h4>Returns</h4>
                     mixed
                                             &mdash; <p>return value of the called method</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -883,7 +883,7 @@ doesn't exist, the provided default value or NULL</p>
                                     <h4>Returns</h4>
                     array&lt;mixed,string&gt;
                                             &mdash; <p>required plugins</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -914,7 +914,7 @@ doesn't exist, the provided default value or NULL</p>
                                     <h4>Returns</h4>
                     array&lt;mixed,object&gt;
                                             &mdash; <p>dependant plugins</p>
-                                    				
+                                    
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -951,13 +951,15 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_loadPlugin"><span class="namespace-wrapper">\Pico::loadPlugin()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPlugin"><span class="namespace-wrapper">\Pico::getPlugin()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPlugins"><span class="namespace-wrapper">\Pico::getPlugins()</span></a></dd>
@@ -989,13 +991,15 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_loadPlugin"><span class="namespace-wrapper">\Pico::loadPlugin()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPlugin"><span class="namespace-wrapper">\Pico::getPlugin()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPlugins"><span class="namespace-wrapper">\Pico::getPlugins()</span></a></dd>
@@ -1027,13 +1031,15 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getConfig"><span class="namespace-wrapper">\Pico::getConfig()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getBaseUrl"><span class="namespace-wrapper">\Pico::getBaseUrl()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_isUrlRewritingEnabled"><span class="namespace-wrapper">\Pico::isUrlRewritingEnabled()</span></a></dd>
@@ -1065,13 +1071,15 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_loadTheme"><span class="namespace-wrapper">\Pico::loadTheme()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onThemeLoaded"><span class="namespace-wrapper">\DummyPlugin::onThemeLoaded()</span></a></dd>
                                                                 </dl>
@@ -1112,13 +1120,15 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onThemeLoading"><span class="namespace-wrapper">\DummyPlugin::onThemeLoading()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getTheme"><span class="namespace-wrapper">\Pico::getTheme()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getThemeApiVersion"><span class="namespace-wrapper">\Pico::getThemeApiVersion()</span></a></dd>
@@ -1150,13 +1160,15 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getRequestUrl"><span class="namespace-wrapper">\Pico::getRequestUrl()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -1186,13 +1198,15 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_resolveFilePath"><span class="namespace-wrapper">\Pico::resolveFilePath()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getRequestFile"><span class="namespace-wrapper">\Pico::getRequestFile()</span></a></dd>
                                                                 </dl>
@@ -1215,13 +1229,15 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_loadFileContent"><span class="namespace-wrapper">\Pico::loadFileContent()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onContentLoaded"><span class="namespace-wrapper">\DummyPlugin::onContentLoaded()</span></a></dd>
                                                                 </dl>
@@ -1244,13 +1260,15 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_load404Content"><span class="namespace-wrapper">\Pico::load404Content()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_on404ContentLoaded"><span class="namespace-wrapper">\DummyPlugin::on404ContentLoaded()</span></a></dd>
                                                                 </dl>
@@ -1281,13 +1299,15 @@ It is NOT guaranteed that plugin dependencies are fulfilled!</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_on404ContentLoading"><span class="namespace-wrapper">\DummyPlugin::on404ContentLoading()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getRawContent"><span class="namespace-wrapper">\Pico::getRawContent()</span></a></dd>
                                             <dd><a href=""><span class="namespace-wrapper">\Pico::is404Content()</span></a></dd>
@@ -1321,13 +1341,15 @@ case when necessary.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onContentLoading"><span class="namespace-wrapper">\DummyPlugin::onContentLoading()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getRawContent"><span class="namespace-wrapper">\Pico::getRawContent()</span></a></dd>
                                             <dd><a href=""><span class="namespace-wrapper">\Pico::is404Content()</span></a></dd>
@@ -1351,13 +1373,15 @@ case when necessary.</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_parseFileMeta"><span class="namespace-wrapper">\Pico::parseFileMeta()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onMetaParsed"><span class="namespace-wrapper">\DummyPlugin::onMetaParsed()</span></a></dd>
                                                                 </dl>
@@ -1388,13 +1412,15 @@ case when necessary.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onMetaParsing"><span class="namespace-wrapper">\DummyPlugin::onMetaParsing()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getFileMeta"><span class="namespace-wrapper">\Pico::getFileMeta()</span></a></dd>
                                                                 </dl>
@@ -1417,13 +1443,15 @@ case when necessary.</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_prepareFileContent"><span class="namespace-wrapper">\Pico::prepareFileContent()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_substituteFileContent"><span class="namespace-wrapper">\Pico::substituteFileContent()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onContentPrepared"><span class="namespace-wrapper">\DummyPlugin::onContentPrepared()</span></a></dd>
@@ -1456,13 +1484,15 @@ case when necessary.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onContentParsing"><span class="namespace-wrapper">\DummyPlugin::onContentParsing()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_parseFileContent"><span class="namespace-wrapper">\Pico::parseFileContent()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onContentParsed"><span class="namespace-wrapper">\DummyPlugin::onContentParsed()</span></a></dd>
@@ -1494,13 +1524,15 @@ case when necessary.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onContentParsing"><span class="namespace-wrapper">\DummyPlugin::onContentParsing()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onContentPrepared"><span class="namespace-wrapper">\DummyPlugin::onContentPrepared()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getFileContent"><span class="namespace-wrapper">\Pico::getFileContent()</span></a></dd>
@@ -1524,13 +1556,15 @@ case when necessary.</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onPagesDiscovered"><span class="namespace-wrapper">\DummyPlugin::onPagesDiscovered()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onPagesLoaded"><span class="namespace-wrapper">\DummyPlugin::onPagesLoaded()</span></a></dd>
                                                                 </dl>
@@ -1571,13 +1605,15 @@ pages array, otherwise leave it unchanged</p></td>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onSinglePageContent"><span class="namespace-wrapper">\DummyPlugin::onSinglePageContent()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onSinglePageLoaded"><span class="namespace-wrapper">\DummyPlugin::onSinglePageLoaded()</span></a></dd>
                                                                 </dl>
@@ -1615,13 +1651,15 @@ raw contents of this page were loaded already.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onSinglePageLoading"><span class="namespace-wrapper">\DummyPlugin::onSinglePageLoading()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onSinglePageLoaded"><span class="namespace-wrapper">\DummyPlugin::onSinglePageLoaded()</span></a></dd>
                                                                 </dl>
@@ -1653,13 +1691,15 @@ structure of a single page's data.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onSinglePageLoading"><span class="namespace-wrapper">\DummyPlugin::onSinglePageLoading()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onSinglePageContent"><span class="namespace-wrapper">\DummyPlugin::onSinglePageContent()</span></a></dd>
                                                                 </dl>
@@ -1693,13 +1733,15 @@ page's data.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onPagesLoading"><span class="namespace-wrapper">\DummyPlugin::onPagesLoading()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onPagesLoaded"><span class="namespace-wrapper">\DummyPlugin::onPagesLoaded()</span></a></dd>
                                                                 </dl>
@@ -1732,13 +1774,15 @@ data.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onPagesLoading"><span class="namespace-wrapper">\DummyPlugin::onPagesLoading()</span></a></dd>
                                             <dd><a href="../classes/DummyPlugin.html#method_onPagesDiscovered"><span class="namespace-wrapper">\DummyPlugin::onPagesDiscovered()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPages"><span class="namespace-wrapper">\Pico::getPages()</span></a></dd>
@@ -1783,13 +1827,15 @@ page's data.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getCurrentPage"><span class="namespace-wrapper">\Pico::getCurrentPage()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getPreviousPage"><span class="namespace-wrapper">\Pico::getPreviousPage()</span></a></dd>
                                             <dd><a href="../classes/Pico.html#method_getNextPage"><span class="namespace-wrapper">\Pico::getNextPage()</span></a></dd>
@@ -1822,13 +1868,15 @@ the structure of Pico's page tree array.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getPageTree"><span class="namespace-wrapper">\Pico::getPageTree()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -1863,13 +1911,15 @@ the structure of Pico's page tree array.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onPageRendered"><span class="namespace-wrapper">\DummyPlugin::onPageRendered()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -1899,13 +1949,15 @@ the structure of Pico's page tree array.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/DummyPlugin.html#method_onPageRendering"><span class="namespace-wrapper">\DummyPlugin::onPageRendering()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -1935,13 +1987,15 @@ the structure of Pico's page tree array.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getMetaHeaders"><span class="namespace-wrapper">\Pico::getMetaHeaders()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -1971,13 +2025,15 @@ the structure of Pico's page tree array.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getYamlParser"><span class="namespace-wrapper">\Pico::getYamlParser()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -2007,13 +2063,15 @@ the structure of Pico's page tree array.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getParsedown"><span class="namespace-wrapper">\Pico::getParsedown()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -2043,13 +2101,15 @@ the structure of Pico's page tree array.</p>
                                             </table>
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                                                            <dt>See also</dt>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/DummyPlugin.html"><div class="path-wrapper">\DummyPlugin</div></a></dd>
+                                                                            <dt>See also</dt>
                                                                 <dd><a href="../classes/Pico.html#method_getTwig"><span class="namespace-wrapper">\Pico::getTwig()</span></a></dd>
                                                                 </dl>
             <h2>Tags</h2>
@@ -2071,7 +2131,7 @@ the structure of Pico's page tree array.</p>
 
                 
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2112,7 +2172,7 @@ the structure of Pico's page tree array.</p>
                             <dd><p>thrown when a dependency fails</p></dd>
                                                                     </dl>
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2155,7 +2215,7 @@ the structure of Pico's page tree array.</p>
                             <dd><p>thrown when a dependency fails</p></dd>
                                                                     </dl>
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2196,7 +2256,7 @@ precaution and is therefore usually not the case.</p>
 compatible</p></dd>
                                                                     </dl>
                 
-                				
+                
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -2261,7 +2321,7 @@ compatible</p></dd>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 31st, 2019 at 15:39.
+                    on August 29th, 2020 at 15:19.
                 </section>
             </section>
         </section>

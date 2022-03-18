@@ -86,7 +86,7 @@ Pico CMS for Nextcloud allows your users to create and manage their own websites
 
 Pico CMS for Nextcloud gives you everything you would expect from a extremely powerful admin interface for Pico. Just give it a try!
 
-1. First you'll have to download and install [Nextcloud][]. [Download Nextcloud server][NextcloudDownload] and follow the [install instructions][NextcloudInstall] in Nextcloud's admin manual. Unfortunately it's not as easy as installing Pico. If you need any help, head over to Nextcloud's IRC channel [#nextcloud on Freenode IRC][NextcloudChat] or the [Nextcloud forums][NextcloudHelp].
+1. First you'll have to download and install [Nextcloud][]. [Download Nextcloud server][NextcloudDownload] and follow the [install instructions][NextcloudInstall] in Nextcloud's admin manual. Unfortunately it's not as easy as installing Pico. If you need any help, head over to Nextcloud's IRC channel [#nextcloud on Libera.Chat][NextcloudChat] or the [Nextcloud forums][NextcloudHelp].
 
 2. After installing Nextcloud on your server, head over to the Apps management page of your Nextcloud. You can now either search for "Pico CMS" or check the "Tools" section to find Pico CMS for Nextcloud in [Nextcloud's app store][NextcloudApp]. Hit the "Download and enable" button and you're ready to go!
 
@@ -246,7 +246,7 @@ If you have a question about one of the new features of Pico 2.1, please check o
 [NextcloudApp]: https://apps.nextcloud.com/apps/cms_pico
 [NextcloudDownload]: https://nextcloud.com/install/#instructions-server
 [NextcloudInstall]: https://docs.nextcloud.com/server/stable/admin_manual/installation/
-[NextcloudChat]: https://webchat.freenode.net/?channels=nextcloud
+[NextcloudChat]: https://web.libera.chat/#nextcloud
 [NextcloudHelp]: http://help.nextcloud.com/
 [NextcloudCredits]: https://github.com/daita
 
