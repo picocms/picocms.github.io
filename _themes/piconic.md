@@ -5,7 +5,7 @@ categories:
   - single-page
   - portfolio
 description: Axcorapico with pico css feat pico cms.
-link: https://github.com/mesinkasir/axcora-pico
+link: https://github.com/mesinkasir/piconic
 images:
   - themes/images/fullsize/piconics.png
   - themes/images/fullsize/piconics1.png
