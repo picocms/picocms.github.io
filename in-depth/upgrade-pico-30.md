@@ -21,9 +21,11 @@ redirect_from:
     - /upgrade.html
 ---
 
-You want to learn more about Pico's latest major installment, Pico 3.0?  Pico 3.0 is a major release, but brings relatively small changes to Pico's core.  What it does bring might be the biggest "minor change" Pico had in a while: majorly updated dependencies.  These updates include switching to [Twig 3.3][Twig] (from Twig 1.44) and [Symfony YAML 5.4][Yaml] (from YAML 2.8), but also a slight step back from [Parsedown][] 1.8-beta to the stable Parsedown 1.7 line.
+You want to learn more about Pico's latest major installment, Pico 3.0?  Pico 3.0 is a major release, but brings relatively small changes to Pico's core.  What it does bring might be the biggest "minor change" Pico had in a while: majorly updated dependencies.  These updates include switching to [Twig 3.3][Twig] (from Twig 1.44) and [Symfony YAML 5.4][Yaml] (from YAML 2.8), but also a slight step back from [Parsedown][] 1.8-beta to the stable Parsedown 1.7 line.  The main reason for these updates is to better support PHP 8.0.  This should be great news to the majority of Pico users, however, it does also mean that Pico now requires PHP 7.2.5 or later, and that Pico no longer supports (ancient) PHP 5 based environments.
 
-The main reason for these updates is to better support PHP 8.0.  This should be great news to the majority of Pico users, however, it does also mean that Pico now requires PHP 7.2.5 or later, and that Pico no longer supports (ancient) PHP 5 based environments.
+We're also pleased to announce [Pico CMS for Nextcloud 2.0][NextcloudApp].  You didn't hear about Pico CMS for Nextcloud yet?  Pico CMS for Nextcloud fully integrates Pico into [Nextcloud][], a free and open-source collaboration platform for creating and using file hosting services.  Pico CMS for Nextcloud allows one to create simple, secure, shareable and amazingly powerful websites with just a few clicks.  It gives you everything you would expect from a extremely powerful admin interface for Pico.
+
+Anyway, what holds true for Pico 3.0, also holds true for Pico CMS for Nextcloud 2.0: It's a major release, but brings relatively small changes besides updated dependencies.  Pico CMS for Nextcloud 2.0 is powered by Pico 3.0, thus all changes to Pico 3.0 are also part of the Nextcloud app.  The biggest addition is that users can now share their websites with other Nextcloud groups more easily.  Besides, Pico CMS for Nextcloud now fully supports forms, allows users to rename their websites and includes Pico's `DummyPlugin` as plugin template.  Furthermore there were a whole lot of improvements "under the hood".
 
 If you have any questions about Pico 3.0, the upgrade process, or if you experience compatibility issues with the upgrade, please check out the ["Getting Help" section][GettingHelp] of the docs, and don't be afraid to open a new [Issue][Issues] on GitHub.
 
@@ -43,7 +45,7 @@ Pico 3.0 is a major release, thus **it will likely break your website** at first
 
         That's it! Composer will automatically update Pico and all plugins and themes you've installed using Composer.
 
-   - If you've used one of Pico's pre-bundled releases, the upgrade steps are dead simple, too.  First you'll have to delete the `vendor` directory of your Pico installation (e.g. if you've installed Pico to `/var/www/html/pico`, delete `/var/www/html/pico/vendor`).  Then [download the latest Pico release][LatestRelease] and upload all files to your existing Pico installation directory.  You will be prompted whether you want to overwrite files like `index.php`, `.htaccess`, ... - simply hit "Yes". That's it!
+   - If you've used one of Pico's pre-bundled releases, the upgrade steps are dead simple, too.  First you'll have to delete the `vendor` directory of your Pico installation (e.g. if you've installed Pico to `/var/www/html/pico`, delete `/var/www/html/pico/vendor`).  Also delete the `plugins/PicoDeprecated` directory.  Then [download the latest Pico release][LatestRelease] and upload all files to your existing Pico installation directory.  You will be prompted whether you want to overwrite files like `index.php`, `.htaccess`, … - simply hit "Yes". That's it!
 
 3. Check all your custom plugins and themes whether there are updates available and follow the provided upgrade instructions to upgrade them.  Pico 3.0 introduces the new API version 4 for both plugins and themes. However, Pico 3.0 is mostly backwards-compatible to Pico 2.1 (using API version 3) and earlier.  This is achieved by Pico's official [`PicoDeprecated` plugin][PicoDeprecated].  The `PicoDeprecated` plugin is installed by default, so usually you don't have to do anything.  However, if you've removed `PicoDeprecated` from your Pico installation before, make sure to either upgrade all your plugins and themes to the latest API version 4, or install `PicoDeprecated` by following the plugin's install instructions.
 
@@ -169,3 +171,6 @@ If you have a question about one of the new features of Pico 3.0, please check o
 [Composer]: https://getcomposer.org/
 [PicoTheme]: https://github.com/picocms/pico-theme
 [PicoDeprecated]: https://github.com/picocms/pico-deprecated
+
+[Nextcloud]: https://nextcloud.com/
+[NextcloudApp]: https://apps.nextcloud.com/apps/cms_pico
