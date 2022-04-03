@@ -89,7 +89,7 @@ In regards of Pico's Markdown parser - [Parsedown][] resp. [Parsedown Extra][Par
 
 As explained earlier, Pico 3.0 comes with a rather small number of changes to its core. Both [Pico's default theme][PicoTheme] and Pico's official [`PicoDeprecated` plugin][PicoDeprecated] now use API version 4, even though this API version doesn't really change much apart from the already mentioned above.
 
-Pico now prints an error message when the designated theme directory doesn't exist. As a convinience feature, you can now use the `%page_id%`, `%page_url%`, and `%page_path%` placeholders in your Markdown files. They will be replaced by the current page's ID (e.g. `sub/index` for `content/sub/index.md`, `sub/page` for `content/sub/page.md`, …), its URL (`sub` resp. `sub/page` in our examples), or its directory path (`sub` in both examples) respectively. This is useful for e.g. asset management: You can now put assets for pages in the `content/sub/` directory in the `assets/sub/` directory, and reference them using `%assets_url%/%page_path%/my_asset.png`.
+As a convinience feature, you can now use the `%page_id%`, `%page_url%`, and `%page_path%` placeholders in your Markdown files. They will be replaced by the current page's ID (e.g. `sub/index` for `content/sub/index.md`, `sub/page` for `content/sub/page.md`, …), its URL (`sub` resp. `sub/page` in our examples), or its directory path (`sub` in both examples) respectively. This is useful for e.g. asset management: You can now put assets for pages in the `content/sub/` directory in the `assets/sub/` directory, and reference them using `%assets_url%/%page_path%/my_asset.png`. Furthermore, Pico now prints an error message when the designated theme directory doesn't exist. Speaking of themes, Pico's default theme no longer justifies contents by default, and now includes non-hidden pages without a title in the navigation menu.
 
 And that's basically it. However, please note that this document doesn't cover all improvements and changes, because they simply don't affect the average Pico user, but developers. Below you will find a complete, more tech-oriented list of changes. It's a extract of Pico's [`CHANGELOG.md`][Changelog]. Please note that Pico's `CHANGELOG.md` isn't supposed to be read as-is; it's rather an supplement to the actual code changes.
 
@@ -137,6 +137,47 @@ If you have a question about one of the new features of Pico 3.0, please check o
 * [Fixed] Add a proper error message for a missing theme directory
 * [Removed] ! Remove Pico's `map` Twig filter; it conflicts with Twig's `map`
             filter and can be replaced by Twig's `column` or `map` filter
+```
+
+</div>
+</div>
+</div>
+
+<div class="toggle">
+<h4 class="title"><code>CHANGELOG.md</code> of Pico's default theme</h4>
+<div class="togglebox">
+<div markdown="1">
+
+```
+* [New] Update to API version 4 (no changes necessary)
+* [Changed] Include non-hidden pages without a title in the navigation menu;
+            use the page ID as fallback for the missing page title
+* [Changed] Don't justify text contents by default
+* [Changed] Update syntax to Twig 3.3
+* [Changed] Update credits in theme footer
+```
+
+</div>
+</div>
+</div>
+
+<div class="toggle">
+<h4 class="title"><code>CHANGELOG.md</code> of <code>PicoDeprecated</code></h4>
+<div class="togglebox">
+<div markdown="1">
+
+```
+* [New] Update to API version 4 (no functional changes necessary)
+* [New] Add new continous integration (CI) pipeline using GitHub Actions
+* [New] Add new build script and Makefile to simplify PicoDeprecated's build
+        and release process; see Pico's `CONTRIBUTING.md` for details
+* [New] Add `PicoDeprecated::VERSION` and `PicoDeprecated::VERSION_ID`
+        constants (similar to Pico's matching constants)
+* [New] Add plugin and theme compatibility plugin for API version 3
+* [Changed] Enable PHP strict typing
+* [Changed] ! Move classes to `\picocms\PicoDeprecated\…` PHP namespace
+* [Fixed] Don't instantiate compatibility plugins multiple times
+* [Fixed] Update Twig API usage to be compatible with Twig 3.3
 ```
 
 </div>
