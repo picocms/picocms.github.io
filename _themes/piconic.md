@@ -1,20 +1,20 @@
 ---
 heading: Piconic
-thumbnail: themes/images/thumbnails/piconicsthumb.png
+thumbnail: themes/images/thumbnails/piconic.png
 categories:
   - single-page
   - portfolio
-description: Axcorapico with pico css feat pico cms.
+description: Mobile web apps using Ionic
 link: https://github.com/mesinkasir/piconic
 images:
-  - themes/images/fullsize/piconics.png
-  - themes/images/fullsize/piconics1.png
-  - themes/images/fullsize/piconics2.png
+  - themes/images/fullsize/piconic.png
+  - themes/images/fullsize/piconic1.png
+  - themes/images/fullsize/piconic2.png
 info:
   By: "[Piconic](https://axcora.my.id/piconic/)"
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
 ---
 
-When Pico cms meet Ionic
+When Pico CMS meets Ionic.
 
-Built an Mobile website application with pico cms is easy.
+Easily build a mobile web app using Pico and the Ionic Framework.

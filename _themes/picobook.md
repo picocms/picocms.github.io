@@ -4,7 +4,7 @@ thumbnail: themes/images/thumbnails/picobook.png
 categories:
   - single-page
   - portfolio
-description: Picobook unique design with sidebar menu
+description: A unique design with a sidebar menu.
 link: https://github.com/mesinkasir/picobook
 images:
   - themes/images/fullsize/picobook.png
@@ -15,6 +15,4 @@ info:
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
 ---
 
-Picobook
-
-Minimalist clean design simple include sidebar menu with picobook.
+Picobook is a clean and minimalist theme that includes a prominent sidebar menu.
