@@ -5,11 +5,11 @@ categories:
   - single-page
   - portfolio
 description: A clean and minimalistic design, featuring Pico CSS.
-link: https://github.com/mesinkasir/axcora-pico
+link: https://axcora.my.id/pico/
 images:
   - themes/images/fullsize/axcorapico.png
 info:
-  By: "[Axcorapico](https://axcora.my.id/pico/)"
+  By: "[Mesin Kasir](https://github.com/mesinkasir)"
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
 ---
 
