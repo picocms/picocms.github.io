@@ -5,7 +5,7 @@ categories:
   - single-page
   - portfolio
 description: A clean and minimalistic design, featuring Pico CSS.
-link: https://axcora.my.id/pico/
+link: https://axcora.my.id/pico/axcorapico
 images:
   - themes/images/fullsize/axcorapico.png
 info:
