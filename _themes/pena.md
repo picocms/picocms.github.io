@@ -4,16 +4,16 @@ thumbnail: themes/images/thumbnails/pena.png
 categories:
   - blog
   - portfolio
-description: Pena pico clean design just for blogger with auto SEO
-link: https://github.com/mesinkasir/picopena
+description: A clean design for blogging with SEO.
+link: https://axcora.my.id/pena/
 images:
-  - themes/images/fullsize/picopena.png
-  - themes/images/fullsize/picopena1.png
+  - themes/images/fullsize/pena.png
+  - themes/images/fullsize/pena-page.png
 info:
-  By: "[Pena](https://axcora.my.id/pena/)"
+  By: "[Mesin Kasir](https://github.com/mesinkasir)"
   License: "[The MIT License](https://opensource.org/licenses/MIT)"
 ---
 
 Pena - just write content
 
-Clean design unique with pena pico - optimation for blooger with SEO features.
+A clean and unique design, optimized for blogging with SEO features.
