@@ -52,7 +52,7 @@ But what can I do with Pico's page tree? Probably the most common task is to bui
   * Shipping
 * Contact
 
-Implementing this using a [Twig macro](https://twig.symfony.com/doc/1.x/tags/macro.html) is pretty straight forward:
+Implementing this using a [Twig macro](https://twig.symfony.com/doc/tags/macro.html) is pretty straight forward:
 
 {% highlight html %}{% raw %}
 {% macro tree(parent) %}

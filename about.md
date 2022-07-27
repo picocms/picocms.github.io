@@ -264,8 +264,8 @@ Ready to try Pico for yourself?  Head on over to our [Download][] page to get yo
 [Markdown]: https://daringfireball.net/projects/markdown/basics
 [MarkdownSyntax]: https://daringfireball.net/projects/markdown/syntax
 [MarkdownExtra]: https://michelf.ca/projects/php-markdown/extra/
-[Twig]: https://twig.sensiolabs.org/
-[TwigDocs]: https://twig.sensiolabs.org/documentation
+[Twig]: https://twig.symfony.com
+[TwigDocs]: https://twig.symfony.com/doc/
 [YAML]: https://en.wikipedia.org/wiki/YAML
 [Hooking]: https://en.wikipedia.org/wiki/Hooking
 [DraftsPluginExample]: {{ site.github.url }}/plugins/drafts-example/
