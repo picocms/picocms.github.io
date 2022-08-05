@@ -12,7 +12,7 @@ images:
 info:
   Ported By: "[Winnie Soon](http://siusoon.net)"
   Original By: "[sonst-ws](https://github.com/sonst-was/simpleTwo)"
-  License: "[The MIT License](https://github.com/sonst-was/simpleTwo/blob/master/LICENSE)"
+  License: "[The MIT License](https://gitlab.com/siusoon/soonish/-/blob/main/LICENSE)"
 ---
 
 soonish theme is a free and open source portfolio theme designed for PicoCMS, a flat file CMS, with the attention to file structures, layout design, web responsive feature. It is modified from a two columns one titled [simpleTwo](https://github.com/sonst-was/simpleTwo) with the following changes and new features:
