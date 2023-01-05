@@ -89,7 +89,7 @@ In regards of Pico's Markdown parser - [Parsedown][] resp. [Parsedown Extra][Par
 
 As explained earlier, Pico 3.0 comes with a rather small number of changes to its core. Both [Pico's default theme][PicoTheme] and Pico's official [`PicoDeprecated` plugin][PicoDeprecated] now use API version 4, even though this API version doesn't really change much apart from the already mentioned above.
 
-As a convinience feature, you can now use the `%page_id%`, `%page_url%`, and `%page_path%` placeholders in your Markdown files. They will be replaced by the current page's ID (e.g. `sub/index` for `content/sub/index.md`, `sub/page` for `content/sub/page.md`, …), its URL (`sub` resp. `sub/page` in our examples), or its directory path (`sub` in both examples) respectively. This is useful for e.g. asset management: You can now put assets for pages in the `content/sub/` directory in the `assets/sub/` directory, and reference them using `%assets_url%/%page_path%/my_asset.png`. Furthermore, Pico now prints an error message when the designated theme directory doesn't exist. Speaking of themes, Pico's default theme no longer justifies contents by default, and now includes non-hidden pages without a title in the navigation menu.
+As a convinience feature, you can now use the `%page_id%`, `%page_url%`, and `%page_path%` placeholders in your Markdown files. They will be replaced by the current page's ID (e.g. `sub/index` for `content/sub/index.md`, `sub/page` for `content/sub/page.md`, …), its URL (`sub` resp. `sub/page` in our examples), or its directory path (`sub` in both examples) respectively. This is useful for e.g. asset management: You can now put assets for pages in the `content/sub/` directory in the `assets/sub/` directory, and reference them using `%assets_url%/%page_path%/my_asset.png`. Furthermore, Pico now prints an error message when the designated theme directory doesn't exist. Speaking of themes, Pico's default theme no longer justifies contents by default, and now includes non-hidden pages without a title in the navigation menu. Last but not least, there's now a new `page()` Twig function, returning a page's data when passing a page ID (use `{% raw %}{{ page("sub/page").title }}{% endraw %}` instead of `{% raw %}{{ pages["sub/page"].title }}{% endraw %}`).
 
 And that's basically it. However, please note that this document doesn't cover all improvements and changes, because they simply don't affect the average Pico user, but developers. Below you will find a complete, more tech-oriented list of changes. It's a extract of Pico's [`CHANGELOG.md`][Changelog]. Please note that Pico's `CHANGELOG.md` isn't supposed to be read as-is; it's rather an supplement to the actual code changes.
 
@@ -112,6 +112,7 @@ If you have a question about one of the new features of Pico 3.0, please check o
 * [New] `Pico::prepareFileContent()` and `Pico::substituteFileContent()` both
         now receive the (optional) `$pageId` argument for the new `%page_*%`
         Markdown placeholders
+* [New] Add `page()` Twig function to access a page's data
 * [Changed] ! Pico now requires PHP 7.2.5 or later (this includes full PHP 8
             support, also see #528, #534, #608)
 * [Changed] ! Pico now depends on Twig 3.3, skipping Twig 2.x altogether; this
