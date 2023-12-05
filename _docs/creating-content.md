@@ -108,12 +108,14 @@ If you want to use Pico as a blogging software, you probably want to do somethin
     <li>
         Create the new Twig template <code>blog-index.twig</code> (the file name must match the <code>Template</code> meta header from Step 2) in your theme directory. This template probably isn't very different from your default <code>index.twig</code> (i.e. copy <code>index.twig</code>), it will create a list of all your blog articles. Add the following Twig snippet to <code>blog-index.twig</code> near <code>{% raw %}{{ content }}{% endraw %}</code>:
 
-{% raw %}<pre><code>{% for page in pages(&quot;blog&quot;)|sort_by(&quot;time&quot;)|reverse if not page.hidden %}
-    &lt;div class=&quot;post&quot;&gt;
-        &lt;h3&gt;&lt;a href=&quot;{{ page.url }}&quot;&gt;{{ page.title }}&lt;/a&gt;&lt;/h3&gt;
-        &lt;p class=&quot;date&quot;&gt;{{ page.date_formatted }}&lt;/p&gt;
-        &lt;p class=&quot;excerpt&quot;&gt;{{ page.description }}&lt;/p&gt;
-    &lt;/div&gt;
+{% raw %}<pre><code>{% for page in pages(&quot;blog&quot;)|sort_by(&quot;time&quot;)|reverse %}
+    {% if not page.hidden %}
+        &lt;div class=&quot;post&quot;&gt;
+            &lt;h3&gt;&lt;a href=&quot;{{ page.url }}&quot;&gt;{{ page.title }}&lt;/a&gt;&lt;/h3&gt;
+            &lt;p class=&quot;date&quot;&gt;{{ page.date_formatted }}&lt;/p&gt;
+            &lt;p class=&quot;excerpt&quot;&gt;{{ page.description }}&lt;/p&gt;
+        &lt;/div&gt;
+    {% endif %}
 {% endfor %}</code></pre>{% endraw %}
     </li>
 </ol>
