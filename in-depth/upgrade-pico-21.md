@@ -61,10 +61,6 @@ galleries:
 
 nav-url: /docs/
 gh_release: v2.1.0
-redirect_from:
-    - /in-depth/upgrade/index.html
-    - /upgrade/index.html
-    - /upgrade.html
 ---
 
 {% include gallery.html gallery='logo' %}
